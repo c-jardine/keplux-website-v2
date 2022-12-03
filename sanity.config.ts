@@ -4,11 +4,11 @@ import { schemaTypes } from './src/studio/schemas';
 
 const config = defineConfig({
   name: 'default',
-  title: '',
+  title: 'Keplux Development',
 
   basePath: '/studio',
-  projectId: '',
-  dataset: '',
+  projectId: 'odwzr8ji',
+  dataset: 'production',
 
   plugins: [deskTool()],
 
