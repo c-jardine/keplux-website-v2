@@ -1,3 +1,4 @@
+import { codeInput } from '@sanity/code-input';
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { schemaTypes } from './src/studio/schemas';
@@ -10,7 +11,7 @@ const config = defineConfig({
   projectId: 'odwzr8ji',
   dataset: 'production',
 
-  plugins: [deskTool()],
+  plugins: [deskTool(), codeInput()],
 
   schema: {
     types: schemaTypes,
