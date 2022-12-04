@@ -1,11 +1,15 @@
 import {
   Avatar,
   Box,
+  Card,
+  CardBody,
+  CardHeader,
   Container,
   Divider,
   Flex,
   Heading,
   Image,
+  SimpleGrid,
   Text,
 } from '@chakra-ui/react';
 import { format } from 'date-fns';
@@ -52,8 +56,8 @@ const BlogPageContent = (props: Omit<PostProps, 'coverPhoto'>) => {
   }, [props.publishedOn, props._createdAt]);
 
   return (
-    <Flex flexDirection={{ base: 'column', xl: 'row' }} gap={8} mt={16}>
-      <Box maxW={{ xl: '75%' }} w="full" bg="white" shadow="md" p={8}>
+    <Card gridColumn={{ base: '1', xl: '1 / span 2' }}>
+      <CardHeader>
         <Heading as="h1" size="3xl" mb={4}>
           {props.title}
         </Heading>
@@ -73,11 +77,41 @@ const BlogPageContent = (props: Omit<PostProps, 'coverPhoto'>) => {
             </Text>
           </Box>
         </Flex>
-        <Divider my={8} />
+      </CardHeader>
+      <Divider my={8} />
+      <CardBody>
         <PortableText value={props.content} />
-      </Box>
-      <Box maxW={{ xl: '25%' }} w="full"></Box>
-    </Flex>
+      </CardBody>
+    </Card>
+  );
+};
+
+const BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
+  const { author } = props;
+  return (
+    <Card h="fit-content">
+      <CardHeader>
+        <Flex flexDirection="column" alignItems="center" gap={4}>
+          <Image
+            src={urlForImage(author.avatar).url()}
+            alt={author.name}
+            rounded="full"
+            boxSize="150px"
+          />
+          <Text
+            fontSize="lg"
+            fontWeight="semibold"
+            textTransform="uppercase"
+            letterSpacing="wider"
+          >
+            {author.name}
+          </Text>
+        </Flex>
+      </CardHeader>
+      <CardBody>
+        <Text>{author.bio}</Text>
+      </CardBody>
+    </Card>
   );
 };
 
@@ -86,9 +120,12 @@ const BlogPageContent = (props: Omit<PostProps, 'coverPhoto'>) => {
  */
 const BlogPageLayout = (props: PostProps) => {
   return (
-    <Container maxW="7xl">
+    <Container maxW="6xl">
       <BlogPageHeader coverPhoto={props.coverPhoto} />
-      <BlogPageContent {...props} />
+      <SimpleGrid columns={{ base: 1, xl: 3 }} gap={8} mt={16}>
+        <BlogPageContent {...props} />
+        <BlogPageAuthorCard author={props.author} />
+      </SimpleGrid>
     </Container>
   );
 };
