@@ -1,4 +1,5 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
+import { TypedObject } from 'sanity';
 import { SlugProps, SanityResponseBaseProps } from './core.types';
 
 /**
@@ -26,7 +27,7 @@ export interface SeriesProps extends SanityResponseBaseProps {
  */
 export interface PostProps extends SanityResponseBaseProps {
   author: AuthorProps;
-  content: unknown;
+  content: TypedObject | TypedObject[];
   postSeries?: SeriesProps;
   slug: SlugProps;
   title: string;

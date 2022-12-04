@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
+import { PortableText } from '../../../src/components/core';
 import {
   allPostSlugsQuery,
   client,
@@ -8,7 +9,7 @@ import {
 import { PostProps, SlugProps } from '../../../src/lib/studio/types';
 
 const BlogPostPage: NextPage = (props: PostProps) => {
-  return <div>{props.title}</div>;
+  return <PortableText value={props.content} />;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
