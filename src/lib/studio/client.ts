@@ -6,4 +6,8 @@
 import { createClient } from 'next-sanity';
 import config from '../../../sanity.config';
 
-export const client = createClient({ ...config, useCdn: true });
+export const client = createClient({
+  ...config,
+  useCdn: true,
+  apiVersion: '2022-03-13',
+});
