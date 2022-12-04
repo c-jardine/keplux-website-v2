@@ -34,6 +34,7 @@ export interface PostProps extends SanityResponseBaseProps {
   content: TypedObject | TypedObject[];
   coverPhoto: CoverPhotoProps;
   postSeries?: SeriesProps;
+  publishedOn: string;
   slug: SlugProps;
   title: string;
 }

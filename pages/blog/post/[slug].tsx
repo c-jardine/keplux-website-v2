@@ -41,7 +41,12 @@ const BlogPostPage: NextPage = (props: PostProps) => {
               size="lg"
               bg="purple.500"
             />
-            <Text>{props.author.name}</Text>
+            <Box>
+              <Text>{props.author.name}</Text>
+              <Text>
+                {props.publishedOn} || {props._createdAt}
+              </Text>
+            </Box>
           </Flex>
           <PortableText value={props.content} />
         </Box>
