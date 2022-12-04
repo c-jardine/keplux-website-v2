@@ -1,4 +1,12 @@
-import { Box, Container, Flex, Heading, Image } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Image,
+  Text,
+} from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { PortableText } from '../../../src/components/core';
@@ -26,6 +34,15 @@ const BlogPostPage: NextPage = (props: PostProps) => {
           <Heading as="h1" size="3xl" mb={4}>
             {props.title}
           </Heading>
+          <Flex>
+            <Avatar
+              src={urlForImage(props.author.avatar).url()}
+              name={props.author.name}
+              size="lg"
+              bg="purple.500"
+            />
+            <Text>{props.author.name}</Text>
+          </Flex>
           <PortableText value={props.content} />
         </Box>
         <Box maxW={{ xl: '25%' }} w="full"></Box>
