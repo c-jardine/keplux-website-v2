@@ -1,3 +1,4 @@
+import { Box, Container, Flex, Heading } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { PortableText } from '../../../src/components/core';
@@ -9,7 +10,19 @@ import {
 import { PostProps, SlugProps } from '../../../src/lib/studio/types';
 
 const BlogPostPage: NextPage = (props: PostProps) => {
-  return <PortableText value={props.content} />;
+  return (
+    <Container maxW="6xl">
+      <Flex flexDirection={{ base: 'column', xl: 'row' }} gap={8}>
+        <Box maxW={{ xl: '75%' }} w="full">
+          <Heading as="h1" size="3xl" mb={4}>
+            {props.title}
+          </Heading>
+          <PortableText value={props.content} />
+        </Box>
+        <Box maxW={{ xl: '25%' }} w="full"></Box>
+      </Flex>
+    </Container>
+  );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
