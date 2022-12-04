@@ -1,6 +1,7 @@
-import { Box, Divider, Heading, Link, Text } from '@chakra-ui/react';
+import { Box, Divider, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import { CopyCodeButton } from '../CopyCodeButton';
 import { CodeBlockProps } from './PortableText.types';
 
 const block = {
@@ -56,30 +57,39 @@ const marks = {
 };
 
 const types = {
-  code: ({ value }: { value: CodeBlockProps }) => (
-    <Box bg="gray.100" rounded="xl" overflow="hidden">
-      <Box p={4}>
-        <SyntaxHighlighter
-          language={value.language}
-          customStyle={{ background: 'transparent', padding: 0 }}
+  code: ({ value }: { value: CodeBlockProps }) => {
+    return (
+      <Box bg="gray.100" rounded="xl" overflow="hidden">
+        <Box p={4}>
+          <SyntaxHighlighter
+            language={value.language}
+            customStyle={{ background: 'transparent', padding: 0 }}
+          >
+            {value.code}
+          </SyntaxHighlighter>
+        </Box>
+        <Divider borderColor="gray.500" rounded="full" />
+        <Flex
+          px={4}
+          py={2}
+          bg="gray.300"
+          justifyContent="space-between"
+          alignItems="center"
         >
-          {value.code}
-        </SyntaxHighlighter>
+          <Text
+            textTransform="uppercase"
+            fontSize="xs"
+            fontWeight="semibold"
+            letterSpacing="wider"
+            color="gray.600"
+          >
+            {value.language}
+          </Text>
+          <CopyCodeButton codeToCopy={value.code} />
+        </Flex>
       </Box>
-      <Divider borderColor="gray.500" rounded="full" />
-      <Box px={4} py={2} bg="gray.300">
-        <Text
-          textTransform="uppercase"
-          fontSize="xs"
-          fontWeight="semibold"
-          letterSpacing="wider"
-          color="gray.600"
-        >
-          {value.language}
-        </Text>
-      </Box>
-    </Box>
-  ),
+    );
+  },
 };
 
 export const PortableTextComponents = {
