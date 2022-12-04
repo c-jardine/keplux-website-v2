@@ -27,9 +27,10 @@ const postType = defineType({
       group: 'info',
     },
     {
-      name: 'inSeries',
+      name: 'postSeries',
       title: 'Series',
-      type: 'postSeries',
+      type: 'reference',
+      to: [{ type: 'series' }],
       group: 'info',
     },
     {

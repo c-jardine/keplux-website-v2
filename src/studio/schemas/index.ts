@@ -1,13 +1,7 @@
 import { authorType, navbarType, postType, seriesType } from './documents';
-import {
-  linkType,
-  navbarLinkType,
-  pageType,
-  partOfSeriesType,
-  tagType,
-} from './objects';
+import { linkType, navbarLinkType, pageType, tagType } from './objects';
 
-const objects = [linkType, pageType, navbarLinkType, tagType, partOfSeriesType];
+const objects = [linkType, pageType, navbarLinkType, tagType];
 
 const documents = [navbarType, postType, seriesType, authorType];
 
