@@ -39,7 +39,7 @@ const BlogPostPage: NextPage = (props: PostProps) => {
   }, [props.publishedOn, props._createdAt]);
 
   return (
-    <Container maxW="6xl">
+    <Container maxW="7xl">
       <Image
         src={urlForImage(props.coverPhoto).url()}
         alt={props.coverPhoto.caption}
@@ -49,7 +49,7 @@ const BlogPostPage: NextPage = (props: PostProps) => {
         objectFit="cover"
       />
       <Flex flexDirection={{ base: 'column', xl: 'row' }} gap={8} mt={16}>
-        <Box maxW={{ xl: '75%' }} w="full">
+        <Box maxW={{ xl: '75%' }} w="full" bg="white" shadow="md" p={8}>
           <Heading as="h1" size="3xl" mb={4}>
             {props.title}
           </Heading>
