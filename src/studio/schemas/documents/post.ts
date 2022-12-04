@@ -67,6 +67,13 @@ const postType = defineType({
       group: 'info',
     },
     {
+      name: 'coverPhoto',
+      title: 'Cover Photo',
+      type: 'coverPhoto',
+      validation: (Rule) => Rule.required(),
+      group: 'content',
+    },
+    {
       name: 'content',
       title: 'Content',
       type: 'array',

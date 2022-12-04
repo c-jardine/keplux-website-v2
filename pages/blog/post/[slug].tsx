@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading } from '@chakra-ui/react';
+import { Box, Container, Flex, Heading, Image } from '@chakra-ui/react';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
 import { PortableText } from '../../../src/components/core';
@@ -8,10 +8,19 @@ import {
   postBySlugQuery,
 } from '../../../src/lib/studio';
 import { PostProps, SlugProps } from '../../../src/lib/studio/types';
+import { urlForImage } from '../../../src/lib/studio/urlForImage';
 
 const BlogPostPage: NextPage = (props: PostProps) => {
   return (
     <Container maxW="6xl">
+      <Image
+        src={urlForImage(props.coverPhoto).url()}
+        alt={props.coverPhoto.caption}
+        w="full"
+        maxH="sm"
+        h="full"
+        objectFit="cover"
+      />
       <Flex flexDirection={{ base: 'column', xl: 'row' }} gap={8}>
         <Box maxW={{ xl: '75%' }} w="full">
           <Heading as="h1" size="3xl" mb={4}>
