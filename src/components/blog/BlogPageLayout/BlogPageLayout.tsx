@@ -3,13 +3,15 @@ import {
   Box,
   Card,
   CardBody,
+  CardFooter,
   CardHeader,
   Container,
   Divider,
   Flex,
   Heading,
   Image,
-  SimpleGrid,
+  Link,
+  Stack,
   Text,
 } from '@chakra-ui/react';
 import { format } from 'date-fns';
@@ -26,8 +28,11 @@ const BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
     <Image
       src={urlForImage(props.coverPhoto).url()}
       alt={props.coverPhoto.caption}
+      mx="auto"
+      rounded="md"
+      maxW="8xl"
       w="full"
-      maxH="sm"
+      maxH="lg"
       h="full"
       objectFit="cover"
     />
@@ -37,7 +42,7 @@ const BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
 /**
  * Component that displays the main blog content.
  */
-const BlogPageContent = (props: Omit<PostProps, 'coverPhoto'>) => {
+const BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
   const [publishedOn, setPublishedOn] = React.useState<string>(null);
 
   React.useEffect(() => {
@@ -56,48 +61,65 @@ const BlogPageContent = (props: Omit<PostProps, 'coverPhoto'>) => {
   }, [props.publishedOn, props._createdAt]);
 
   return (
-    <Card gridColumn={{ base: '1', xl: '1 / span 2' }}>
-      <CardHeader>
-        <Heading as="h1" size="3xl" mb={4}>
-          {props.title}
-        </Heading>
-        <Flex alignItems="center" gap={4} mt={8}>
-          <Avatar
-            src={urlForImage(props.author.avatar).url()}
-            name={props.author.name}
-            size="lg"
-            bg="purple.500"
-          />
-          <Box>
-            <Text fontSize="sm" textTransform="uppercase">
-              {props.author.name}
-            </Text>
-            <Text fontSize="xs" color="gray.500">
-              {publishedOn}
-            </Text>
-          </Box>
-        </Flex>
-      </CardHeader>
+    <Box maxW="6xl" w="full">
+      <Flex alignItems="center" gap={4} mt={8}>
+        <Box>
+          <Text
+            fontSize="sm"
+            textTransform="uppercase"
+            letterSpacing="wider"
+            fontWeight="semibold"
+          >
+            {props.author.name}
+          </Text>
+          <Text fontSize="xs" color="gray.500">
+            {publishedOn}
+          </Text>
+        </Box>
+      </Flex>
+      <Heading as="h1" size="3xl" mb={4}>
+        {props.title}
+      </Heading>
+      <BlogPagePartOfSeriesSection postSeries={props.postSeries} />
       <Divider my={8} />
-      <CardBody>
+      <Box maxW="4xl" w="full" mx="auto">
         <PortableText value={props.content} />
-      </CardBody>
-    </Card>
+      </Box>
+    </Box>
   );
 };
 
+const BlogPagePartOfSeriesSection = (props: Pick<PostProps, 'postSeries'>) => {
+  return (
+    <Flex gap={2} alignItems="center">
+      <Text
+        bg="gray.200"
+        color="gray.600"
+        fontSize="sm"
+        fontWeight="semibold"
+        textTransform="uppercase"
+        letterSpacing="wider"
+        rounded="md"
+        px={2}
+        py={1}
+      >
+        Series
+      </Text>
+      <Link>{props.postSeries.title}</Link>
+    </Flex>
+  );
+};
+
+/**
+ * Card component containing the author's information.
+ */
 const BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
   const { author } = props;
   return (
     <Card h="fit-content">
       <CardHeader>
         <Flex flexDirection="column" alignItems="center" gap={4}>
-          <Image
-            src={urlForImage(author.avatar).url()}
-            alt={author.name}
-            rounded="full"
-            boxSize="150px"
-          />
+          <Avatar src={urlForImage(author.avatar).url()} name={author.name} />
           <Text
             fontSize="lg"
             fontWeight="semibold"
@@ -111,6 +133,9 @@ const BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
       <CardBody>
         <Text>{author.bio}</Text>
       </CardBody>
+      <CardFooter>
+        <Text>Placeholder for social links</Text>
+      </CardFooter>
     </Card>
   );
 };
@@ -120,17 +145,14 @@ const BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
  */
 const BlogPageLayout = (props: PostProps) => {
   return (
-    <Container maxW="6xl">
+    <Stack spacing={16} alignItems="center" my={16}>
       <BlogPageHeader coverPhoto={props.coverPhoto} />
-      <SimpleGrid columns={{ base: 1, xl: 3 }} gap={8} mt={16}>
-        <BlogPageContent {...props} />
+      <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
+        <BlogPageMain {...props} />
         <BlogPageAuthorCard author={props.author} />
-      </SimpleGrid>
-    </Container>
+      </Container>
+    </Stack>
   );
 };
-
-BlogPageLayout.Header = BlogPageHeader;
-BlogPageLayout.Content = BlogPageContent;
 
 export default BlogPageLayout;
