@@ -2,6 +2,14 @@ import React from 'react';
 import { useToast, chakra, Box, Text } from '@chakra-ui/react';
 import copy from 'copy-to-clipboard';
 
+/**
+ * An inline text component that copies the parameter's contents to the user's
+ * clipboard. When the text is clicked, the copier function runs and calls a
+ * toast component notifying the user that something was copied to their
+ * clipboard.
+ * @param codeToCopy - The code to be copied to the clipboard.
+ * @see {@link CopyCodeButton}
+ */
 const CopyCodeInline = (props: { codeToCopy: string }) => {
   const toast = useToast();
 
