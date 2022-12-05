@@ -15,6 +15,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { CopyCodeButton } from '../CopyCodeButton';
 import { CopyCodeInline } from '../CopyCodeInline';
 import { CodeBlockProps } from './PortableText.types';
+import { lightfair } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 const block = {
   h1: ({ children }) => (
@@ -109,6 +110,7 @@ const types = {
           )}
           <SyntaxHighlighter
             language={value.code.language}
+            style={lightfair}
             customStyle={{
               background: 'transparent',
               padding: 0,
