@@ -23,7 +23,7 @@ import { PortableText } from '../../core';
 /**
  * Header component to display the post's cover photo.
  */
-const BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
+const _BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
   return (
     <Image
       src={urlForImage(props.coverPhoto).url()}
@@ -42,7 +42,7 @@ const BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
 /**
  * Component that displays the main blog content.
  */
-const BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
+const _BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
   const [publishedOn, setPublishedOn] = React.useState<string>(null);
 
   React.useEffect(() => {
@@ -80,7 +80,7 @@ const BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
       <Heading as="h1" size="3xl" mb={4}>
         {props.title}
       </Heading>
-      <BlogPagePartOfSeriesSection postSeries={props.postSeries} />
+      {props.postSeries && <_BlogPageSeries postSeries={props.postSeries} />}
       <Divider my={8} />
       <Box maxW="4xl" w="full" mx="auto">
         <PortableText value={props.content} />
@@ -89,7 +89,10 @@ const BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
   );
 };
 
-const BlogPagePartOfSeriesSection = (props: Pick<PostProps, 'postSeries'>) => {
+/**
+ * Section showing what series the post belongs to, if any.
+ */
+const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
   return (
     <Flex gap={2} alignItems="center">
       <Text
@@ -113,7 +116,7 @@ const BlogPagePartOfSeriesSection = (props: Pick<PostProps, 'postSeries'>) => {
 /**
  * Card component containing the author's information.
  */
-const BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
+const _BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
   const { author } = props;
   return (
     <Card h="fit-content">
@@ -146,10 +149,10 @@ const BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
 const BlogPageLayout = (props: PostProps) => {
   return (
     <Stack spacing={16} alignItems="center" my={16}>
-      <BlogPageHeader coverPhoto={props.coverPhoto} />
+      <_BlogPageHeader coverPhoto={props.coverPhoto} />
       <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
-        <BlogPageMain {...props} />
-        <BlogPageAuthorCard author={props.author} />
+        <_BlogPageMain {...props} />
+        <_BlogPageAuthorCard author={props.author} />
       </Container>
     </Stack>
   );

@@ -1,6 +1,8 @@
 import { authorType, navbarType, postType, seriesType } from './documents';
 import {
   codeBlockType,
+  codeTabGroupType,
+  codeTabType,
   coverPhotoType,
   linkType,
   navbarLinkType,
@@ -11,8 +13,10 @@ import {
 const objects = [
   linkType,
   pageType,
-  navbarLinkType,
   tagType,
+  navbarLinkType,
+  codeTabType,
+  codeTabGroupType,
   coverPhotoType,
   codeBlockType,
 ];
