@@ -5,6 +5,7 @@ export interface PortableTextProps {
 }
 
 export interface CodeBlockProps {
+  _type: string;
   filename: string;
   language: string;
   code: {

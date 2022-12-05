@@ -1,9 +1,10 @@
-import { TypedObject } from 'sanity';
+import { CodeBlockProps } from '../PortableText';
 
 export interface CodeTabProps {
   _key: string;
+  _type: 'codeTab';
   label: string;
-  content: TypedObject | TypedObject[];
+  content: CodeBlockProps;
 }
 
 export interface CodeTabsProps {

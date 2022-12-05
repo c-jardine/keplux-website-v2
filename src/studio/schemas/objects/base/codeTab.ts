@@ -13,8 +13,7 @@ const codeTabType = defineType({
     {
       name: 'content',
       title: 'Content',
-      type: 'array',
-      of: [{ type: 'block' }, { type: 'codeBlock' }],
+      type: 'codeBlock',
     },
   ],
 });

@@ -31,7 +31,7 @@ const CodeTabs = (props: CodeTabsProps) => {
       <TabPanels>
         {props.tabs.map((tab) => (
           <TabPanel key={tab._key}>
-            <CodeBlock {...tab.content[0]} />
+            <CodeBlock {...tab.content} />
           </TabPanel>
         ))}
       </TabPanels>
