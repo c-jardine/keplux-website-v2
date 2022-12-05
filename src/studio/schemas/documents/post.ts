@@ -77,7 +77,7 @@ const postType = defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'code' }],
+      of: [{ type: 'block' }, { type: 'codeBlock' }],
       validation: (Rule) => Rule.required(),
       group: 'content',
     },

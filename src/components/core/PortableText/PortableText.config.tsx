@@ -13,6 +13,7 @@ import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 import React from 'react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { CopyCodeButton } from '../CopyCodeButton';
+import { CopyCodeInline } from '../CopyCodeInline';
 import { CodeBlockProps } from './PortableText.types';
 
 const block = {
@@ -49,6 +50,9 @@ const block = {
 };
 
 const marks = {
+  code: ({ children }) => {
+    return <CopyCodeInline codeToCopy={children as string} />;
+  },
   link: ({
     children,
     value,
@@ -82,15 +86,36 @@ const list = {
 };
 
 const types = {
-  code: ({ value }: { value: CodeBlockProps }) => {
+  codeBlock: ({ value }: { value: CodeBlockProps }) => {
     return (
-      <Box bg="gray.100" rounded="xl" overflow="hidden">
-        <Box p={4}>
+      <Box bg="gray.100" rounded="lg">
+        <Box position="relative" px={4} py={6}>
+          {value.filename && (
+            <Box
+              bg="gray.200"
+              px={2}
+              py={1}
+              position="absolute"
+              top={-3}
+              left={8}
+              rounded="md"
+              w="fit-content"
+              shadow="sm"
+            >
+              <Text fontSize="xs" color="gray.600" letterSpacing="wide">
+                {value.filename}
+              </Text>
+            </Box>
+          )}
           <SyntaxHighlighter
-            language={value.language}
-            customStyle={{ background: 'transparent', padding: 0 }}
+            language={value.code.language}
+            customStyle={{
+              background: 'transparent',
+              padding: 0,
+              fontSize: '0.8rem',
+            }}
           >
-            {value.code}
+            {value.code.code}
           </SyntaxHighlighter>
         </Box>
         <Divider borderColor="gray.500" rounded="full" />
@@ -100,17 +125,18 @@ const types = {
           bg="gray.300"
           justifyContent="space-between"
           alignItems="center"
+          roundedBottom="lg"
         >
           <Text
             textTransform="uppercase"
-            fontSize="xs"
+            fontSize="0.75rem"
             fontWeight="semibold"
             letterSpacing="wider"
             color="gray.600"
           >
             {value.language}
           </Text>
-          <CopyCodeButton codeToCopy={value.code} />
+          <CopyCodeButton codeToCopy={value.code.code} />
         </Flex>
       </Box>
     );

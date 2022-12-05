@@ -1,5 +1,6 @@
 import { authorType, navbarType, postType, seriesType } from './documents';
 import {
+  codeBlockType,
   coverPhotoType,
   linkType,
   navbarLinkType,
@@ -7,7 +8,14 @@ import {
   tagType,
 } from './objects';
 
-const objects = [linkType, pageType, navbarLinkType, tagType, coverPhotoType];
+const objects = [
+  linkType,
+  pageType,
+  navbarLinkType,
+  tagType,
+  coverPhotoType,
+  codeBlockType,
+];
 
 const documents = [navbarType, postType, seriesType, authorType];
 
