@@ -1,6 +1,10 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { TypedObject } from 'sanity';
-import { SlugProps, SanityResponseBaseProps } from './core.types';
+import {
+  CoverPhotoProps,
+  SanityResponseBaseProps,
+  SlugProps,
+} from './core.types';
 
 /**
  * Props returned by Sanity queries on the Author document type.
@@ -28,7 +32,9 @@ export interface SeriesProps extends SanityResponseBaseProps {
 export interface PostProps extends SanityResponseBaseProps {
   author: AuthorProps;
   content: TypedObject | TypedObject[];
+  coverPhoto: CoverPhotoProps;
   postSeries?: SeriesProps;
+  publishedOn: string;
   slug: SlugProps;
   title: string;
 }

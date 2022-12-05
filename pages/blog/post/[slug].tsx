@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import React from 'react';
-import { PortableText } from '../../../src/components/core';
+import { BlogPageLayout } from '../../../src/components/blog';
 import {
   allPostSlugsQuery,
   client,
@@ -9,9 +8,12 @@ import {
 import { PostProps, SlugProps } from '../../../src/lib/studio/types';
 
 const BlogPostPage: NextPage = (props: PostProps) => {
-  return <PortableText value={props.content} />;
+  return <BlogPageLayout {...props} />;
 };
 
+/**
+ * Get all of the existing blog post slugs to statically build the routes.
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   const slugs: { slug: SlugProps }[] = await client.fetch(allPostSlugsQuery);
 
@@ -23,6 +25,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+/**
+ * Get the blog post details for the slug contained in the route being visited.
+ */
 export const getStaticProps: GetStaticProps = async (context) => {
   const post: PostProps = await client.fetch(postBySlugQuery, {
     slug: context.params.slug,

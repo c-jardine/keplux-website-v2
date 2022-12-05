@@ -1,3 +1,4 @@
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 export interface SanityResponseBaseProps {
   _createdAt: string;
   _id: string;
@@ -8,4 +9,8 @@ export interface SanityResponseBaseProps {
 export type SlugProps = {
   _type: 'slug';
   current: string;
+};
+
+export type CoverPhotoProps = SanityImageSource & {
+  caption: string;
 };
