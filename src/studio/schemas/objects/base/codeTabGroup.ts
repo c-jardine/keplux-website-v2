@@ -1,7 +1,7 @@
 import { defineType } from 'sanity';
 
-const tabGroupType = defineType({
-  name: 'tabGroup',
+const codeTabGroupType = defineType({
+  name: 'codeTabGroup',
   title: 'Tab Group',
   type: 'object',
   fields: [
@@ -9,9 +9,9 @@ const tabGroupType = defineType({
       name: 'tabs',
       title: 'Tabs',
       type: 'array',
-      of: [{ type: 'tab' }],
+      of: [{ type: 'codeTab' }],
     },
   ],
 });
 
-export default tabGroupType;
+export default codeTabGroupType;

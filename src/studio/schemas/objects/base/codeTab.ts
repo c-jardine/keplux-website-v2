@@ -1,7 +1,7 @@
 import { defineType } from 'sanity';
 
-const tabType = defineType({
-  name: 'tab',
+const codeTabType = defineType({
+  name: 'codeTab',
   title: 'Tab',
   type: 'object',
   fields: [
@@ -19,4 +19,4 @@ const tabType = defineType({
   ],
 });
 
-export default tabType;
+export default codeTabType;
