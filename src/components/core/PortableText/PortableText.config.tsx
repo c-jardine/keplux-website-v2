@@ -90,7 +90,13 @@ const types = {
   codeBlock: ({ value }: { value: CodeBlockProps }) => {
     return (
       <Box bg="gray.100" rounded="lg">
-        <Box position="relative" px={4} py={6}>
+        <Flex
+          position="relative"
+          px={4}
+          py={6}
+          alignItems="flex-start"
+          justifyContent="space-between"
+        >
           {value.filename && (
             <Box
               bg="gray.200"
@@ -119,27 +125,31 @@ const types = {
           >
             {value.code.code}
           </SyntaxHighlighter>
-        </Box>
-        <Divider borderColor="gray.500" rounded="full" />
-        <Flex
-          px={4}
-          py={2}
-          bg="gray.300"
-          justifyContent="space-between"
-          alignItems="center"
-          roundedBottom="lg"
-        >
-          <Text
-            textTransform="uppercase"
-            fontSize="0.75rem"
-            fontWeight="semibold"
-            letterSpacing="wider"
-            color="gray.600"
-          >
-            {value.language}
-          </Text>
           <CopyCodeButton codeToCopy={value.code.code} />
         </Flex>
+        {value.filename && (
+          <>
+            <Divider borderColor="gray.500" rounded="full" />
+            <Flex
+              px={4}
+              py={2}
+              bg="gray.300"
+              justifyContent="space-between"
+              alignItems="center"
+              roundedBottom="lg"
+            >
+              <Text
+                textTransform="uppercase"
+                fontSize="0.75rem"
+                fontWeight="semibold"
+                letterSpacing="wider"
+                color="gray.600"
+              >
+                {value.language}
+              </Text>
+            </Flex>
+          </>
+        )}
       </Box>
     );
   },
