@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const codeBlock = defineType({
+const codeBlockType = defineType({
   name: 'codeBlock',
   title: 'Code Block',
   type: 'object',
@@ -26,4 +26,4 @@ const codeBlock = defineType({
   ],
 });
 
-export default codeBlock;
+export default codeBlockType;
