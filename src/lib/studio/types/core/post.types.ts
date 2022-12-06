@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from '@portabletext/types';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import { TypedObject } from 'sanity';
 import {
@@ -30,9 +31,11 @@ export interface SeriesProps extends SanityResponseBaseProps {
  * Props returned by Sanity queries on the Post document type.
  */
 export interface PostProps extends SanityResponseBaseProps {
+  _id: string;
   author: AuthorProps;
-  content: TypedObject | TypedObject[];
+  content: PortableTextBlock[] | TypedObject | TypedObject[];
   coverPhoto: CoverPhotoProps;
+  excerpt: string;
   postSeries?: SeriesProps;
   publishedOn: string;
   slug: SlugProps;

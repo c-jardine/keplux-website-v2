@@ -14,33 +14,33 @@ import { CopyCodeInline } from '../CopyCodeInline';
 import { CodeBlockProps } from './PortableText.types';
 
 const block = {
-  h1: ({ children }) => (
-    <Heading as="h1" size="3xl" pt={8}>
+  h1: ({ children, value }) => (
+    <Heading id={value._key} as="h1" size="3xl" pt={8}>
       {children}
     </Heading>
   ),
-  h2: ({ children }) => (
-    <Heading as="h2" size="2xl" pt={8}>
+  h2: ({ children, value }) => (
+    <Heading id={value._key} as="h2" size="2xl" pt={8}>
       {children}
     </Heading>
   ),
-  h3: ({ children }) => (
-    <Heading as="h3" size="xl" pt={8}>
+  h3: ({ children, value }) => (
+    <Heading id={value._key} as="h3" size="xl" pt={8}>
       {children}
     </Heading>
   ),
-  h4: ({ children }) => (
-    <Heading as="h4" size="lg" pt={8}>
+  h4: ({ children, value }) => (
+    <Heading id={value._key} as="h4" size="lg" pt={8}>
       {children}
     </Heading>
   ),
-  h5: ({ children }) => (
-    <Heading as="h5" size="md" pt={8}>
+  h5: ({ children, value }) => (
+    <Heading id={value._key} as="h5" size="md" pt={8}>
       {children}
     </Heading>
   ),
-  h6: ({ children }) => (
-    <Heading as="h6" size="sm" pt={8}>
+  h6: ({ children, value }) => (
+    <Heading id={value._key} as="h6" size="sm" pt={8}>
       {children}
     </Heading>
   ),
