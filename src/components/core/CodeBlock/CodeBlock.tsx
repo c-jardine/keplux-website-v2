@@ -27,7 +27,7 @@ const CodeBlock = (props: CodeBlockProps) => {
         {props.filename && (
           <Code
             position="absolute"
-            top={-3}
+            top={-3.5}
             left={8}
             px={2}
             py={1}
