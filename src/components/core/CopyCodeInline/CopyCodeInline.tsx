@@ -1,5 +1,4 @@
-import React from 'react';
-import { useToast, chakra, Box, Text } from '@chakra-ui/react';
+import { Box, Code, Text, useToast } from '@chakra-ui/react';
 import copy from 'copy-to-clipboard';
 
 /**
@@ -14,11 +13,8 @@ const CopyCodeInline = (props: { codeToCopy: string }) => {
   const toast = useToast();
 
   return (
-    <chakra.span
-      fontFamily="monospace"
-      bg="gray.200"
+    <Code
       px={1}
-      py={0.5}
       rounded="md"
       cursor="pointer"
       onClick={() => {
@@ -44,7 +40,7 @@ const CopyCodeInline = (props: { codeToCopy: string }) => {
       transition="200ms ease-in-out"
     >
       {props.codeToCopy}
-    </chakra.span>
+    </Code>
   );
 };
 
