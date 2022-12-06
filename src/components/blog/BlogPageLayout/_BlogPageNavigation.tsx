@@ -1,17 +1,16 @@
 import {
   Accordion,
-  AccordionItem,
   AccordionButton,
+  AccordionItem,
   AccordionPanel,
-  List,
   Box,
-  ListItem,
+  List,
   ListIcon,
+  ListItem,
   Text,
 } from '@chakra-ui/react';
 import type { PortableTextBlock } from '@portabletext/types';
-
-import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
+import { FaCircle } from '@react-icons/all-files/fa/FaCircle';
 import Link from 'next/link';
 import { PostProps } from '../../../lib/studio/types';
 
@@ -49,22 +48,31 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
             {headerBlocks.map((block) => (
               <>
                 {block.style === 'h2' && (
-                  <ListItem key={block._key} display="flex" alignItems="center">
-                    <ListIcon
-                      as={FaChevronRight}
-                      w={3}
-                      h={3}
-                      color="brand.500"
-                    />
-                    <Link
-                      href={`#${block._key}`}
-                      fontSize="sm"
-                      fontWeight="semibold"
-                      letterSpacing="wide"
-                      lineHeight="taller"
-                      color="brand.500"
-                    >
+                  <ListItem
+                    key={block._key}
+                    position="relative"
+                    display="flex"
+                    alignItems="center"
+                    fontSize="sm"
+                    fontWeight="bold"
+                    letterSpacing="wide"
+                    lineHeight="taller"
+                    color="gray.700"
+                    w="fit-content"
+                  >
+                    <Link href={`#${block._key}`} role="group">
                       {block.children[0].text}
+                      <Box
+                        position="absolute"
+                        bottom={0}
+                        h={1}
+                        w="full"
+                        bg="gray.500"
+                        transform="scaleY(0%)"
+                        transformOrigin="top"
+                        _groupHover={{ transform: 'scaleY(100%)' }}
+                        transition="200ms ease-in-out"
+                      />
                     </Link>
                   </ListItem>
                 )}
@@ -73,17 +81,13 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                     key={block._key}
                     display="flex"
                     alignItems="center"
-                    gap={1.5}
-                    ml={4}
-                    lineHeight="shorter"
+                    ml={2}
+                    fontSize="sm"
+                    letterSpacing="wide"
+                    color="gray.600"
                   >
-                    <Text>&bull;</Text>
-                    <Link
-                      href={`#${block._key}`}
-                      fontSize="xs"
-                      letterSpacing="wide"
-                      color="gray.700"
-                    >
+                    <ListIcon as={FaCircle} w={1} h={1} />
+                    <Link href={`#${block._key}`}>
                       {block.children[0].text}
                     </Link>
                   </ListItem>
