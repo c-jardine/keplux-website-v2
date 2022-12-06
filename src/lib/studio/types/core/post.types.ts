@@ -31,9 +31,11 @@ export interface SeriesProps extends SanityResponseBaseProps {
  * Props returned by Sanity queries on the Post document type.
  */
 export interface PostProps extends SanityResponseBaseProps {
+  _id: string;
   author: AuthorProps;
   content: PortableTextBlock[] | TypedObject | TypedObject[];
   coverPhoto: CoverPhotoProps;
+  excerpt: string;
   postSeries?: SeriesProps;
   publishedOn: string;
   slug: SlugProps;

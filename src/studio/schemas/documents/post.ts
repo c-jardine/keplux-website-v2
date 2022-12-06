@@ -27,6 +27,12 @@ const postType = defineType({
       group: 'info',
     },
     {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      group: 'info',
+    },
+    {
       name: 'postSeries',
       title: 'Series',
       type: 'reference',
