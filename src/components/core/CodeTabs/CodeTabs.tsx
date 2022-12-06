@@ -20,6 +20,7 @@ const CodeTabs = (props: CodeTabsProps) => {
   return (
     <Tabs position="relative" variant="unstyled" w="full">
       <TabList
+        className="hideScrollbar"
         position="absolute"
         top={0.5}
         gap={2}
