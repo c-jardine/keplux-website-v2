@@ -1,8 +1,5 @@
 import {
   Box,
-  Card,
-  CardBody,
-  CardHeader,
   Heading,
   Image,
   Link,
