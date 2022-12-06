@@ -48,6 +48,7 @@ const CodeBlock = (props: CodeBlockProps) => {
             background: 'transparent',
             padding: 0,
             fontSize: '0.8rem',
+            alignSelf: 'center',
           }}
         >
           {props.code?.code}
