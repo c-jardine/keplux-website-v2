@@ -28,7 +28,7 @@ const CodeBlock = (props: CodeBlockProps) => {
           <Code
             position="absolute"
             top={-3.5}
-            left={8}
+            left={4}
             px={2}
             py={1}
             bg="brand.100"

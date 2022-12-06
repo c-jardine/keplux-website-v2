@@ -25,7 +25,7 @@ const CodeTabs = (props: CodeTabsProps) => {
         top={0.5}
         gap={2}
         w="full"
-        px={8}
+        px={4}
         overflowX="auto"
         borderWidth={0}
         zIndex={1}
