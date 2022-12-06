@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Text } from '@chakra-ui/react';
+import { Box, Code, Divider, Flex, Text } from '@chakra-ui/react';
 import { CodeBlockProps } from '../PortableText';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { CopyCodeButton } from '../CopyCodeButton';
@@ -16,7 +16,7 @@ import { lightfair } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
  */
 const CodeBlock = (props: CodeBlockProps) => {
   return (
-    <Box bg="gray.100" rounded="lg">
+    <Box bg="white" rounded="lg" borderWidth={1} borderColor="gray.200">
       <Flex
         position="relative"
         px={4}
@@ -25,21 +25,21 @@ const CodeBlock = (props: CodeBlockProps) => {
         justifyContent="space-between"
       >
         {props.filename && (
-          <Box
-            bg="gray.200"
-            px={2}
-            py={1}
+          <Code
             position="absolute"
             top={-3}
             left={8}
-            rounded="md"
-            w="fit-content"
-            shadow="sm"
+            px={2}
+            py={1}
+            bg="brand.100"
+            borderWidth={1}
+            borderColor="brand.200"
+            fontSize="xs"
+            color="gray.600"
+            letterSpacing="wide"
           >
-            <Text fontSize="xs" color="gray.600" letterSpacing="wide">
-              {props.filename}
-            </Text>
-          </Box>
+            {props.filename}
+          </Code>
         )}
         <SyntaxHighlighter
           language={props.code?.language}
@@ -56,11 +56,11 @@ const CodeBlock = (props: CodeBlockProps) => {
       </Flex>
       {props.filename && (
         <>
-          <Divider borderColor="gray.500" rounded="full" />
+          <Divider borderColor="gray.200" rounded="full" />
           <Flex
             px={4}
             py={2}
-            bg="gray.300"
+            bg="gray.100"
             justifyContent="space-between"
             alignItems="center"
             roundedBottom="lg"
