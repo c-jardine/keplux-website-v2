@@ -1,4 +1,11 @@
-import { authorType, navbarType, postType, seriesType } from './documents';
+import {
+  authorType,
+  navbarType,
+  pageType,
+  postType,
+  seriesType,
+  tagType,
+} from './documents';
 import {
   codeBlockType,
   codeTabGroupType,
@@ -6,14 +13,10 @@ import {
   coverPhotoType,
   linkType,
   navbarLinkType,
-  pageType,
-  tagType,
 } from './objects';
 
 const objects = [
   linkType,
-  pageType,
-  tagType,
   navbarLinkType,
   codeTabType,
   codeTabGroupType,
@@ -21,6 +24,13 @@ const objects = [
   codeBlockType,
 ];
 
-const documents = [navbarType, postType, seriesType, authorType];
+const documents = [
+  navbarType,
+  postType,
+  seriesType,
+  authorType,
+  pageType,
+  tagType,
+];
 
 export const schemaTypes = [...objects, ...documents];

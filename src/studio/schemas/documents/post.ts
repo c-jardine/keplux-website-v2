@@ -1,8 +1,10 @@
 import { defineType } from 'sanity';
+import { FaFile } from '@react-icons/all-files/fa/FaFile';
 
 const postType = defineType({
   name: 'post',
   title: 'Post',
+  icon: FaFile,
   type: 'document',
   groups: [
     { name: 'info', title: 'Info', default: true },
@@ -87,6 +89,13 @@ const postType = defineType({
       group: 'content',
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'author.name',
+      media: 'coverPhoto.asset',
+    },
+  },
 });
 
 export default postType;

@@ -4,3 +4,4 @@ export * from './CopyCodeButton';
 export * from './CopyCodeInline';
 export * from './Navbar';
 export * from './PortableText';
+export * from './Tag';

@@ -1,8 +1,10 @@
 import { defineType } from 'sanity';
+import { FaUser } from '@react-icons/all-files/fa/FaUser';
 
 const authorType = defineType({
   name: 'author',
   title: 'Author',
+  icon: FaUser,
   type: 'document',
   fields: [
     {
