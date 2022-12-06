@@ -1,4 +1,8 @@
 import {
+  Accordion,
+  AccordionButton,
+  AccordionItem,
+  AccordionPanel,
   Avatar,
   Box,
   Card,
@@ -11,9 +15,14 @@ import {
   Heading,
   Image,
   Link,
+  List,
+  ListIcon,
+  ListItem,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import type { PortableTextBlock } from '@portabletext/types';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 import { format } from 'date-fns';
 import React from 'react';
 import { urlForImage } from '../../../lib/studio';
@@ -29,13 +38,94 @@ const _BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
       src={urlForImage(props.coverPhoto).url()}
       alt={props.coverPhoto.caption}
       mx="auto"
-      rounded="md"
       maxW="8xl"
       w="full"
       maxH="lg"
       h="full"
       objectFit="cover"
     />
+  );
+};
+
+const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
+  const { content }: { content: PortableTextBlock[] } = props;
+
+  const tags: string[] = ['h2', 'h3'];
+  const headerBlocks: PortableTextBlock[] = content.filter(
+    (block: PortableTextBlock) => tags.includes(block.style)
+  );
+
+  return (
+    <Accordion allowToggle>
+      <AccordionItem
+        bg="brand.100"
+        flexDirection="column"
+        borderWidth={1}
+        borderColor="brand.200"
+      >
+        <AccordionButton px={{ base: 4, md: 8 }} py={4}>
+          <Box>
+            <Text
+              fontSize="xl"
+              fontWeight="bold"
+              textTransform="uppercase"
+              letterSpacing="wide"
+              color="brand.600"
+            >
+              Jump to section
+            </Text>
+          </Box>
+        </AccordionButton>
+        <AccordionPanel bg="brand.50">
+          <List mt={2}>
+            {headerBlocks.map((block) => (
+              <>
+                {block.style === 'h2' && (
+                  <ListItem key={block._key} display="flex" alignItems="center">
+                    <ListIcon
+                      as={FaChevronRight}
+                      w={3}
+                      h={3}
+                      color="brand.500"
+                    />
+                    <Link
+                      href={`#${block._key}`}
+                      fontSize="sm"
+                      fontWeight="semibold"
+                      letterSpacing="wide"
+                      lineHeight="taller"
+                      color="brand.500"
+                    >
+                      {block.children[0].text}
+                    </Link>
+                  </ListItem>
+                )}
+                {block.style === 'h3' && (
+                  <ListItem
+                    key={block._key}
+                    display="flex"
+                    alignItems="center"
+                    gap={1.5}
+                    ml={4}
+                    lineHeight="shorter"
+                  >
+                    <Text>&bull;</Text>
+                    <Link
+                      href={`#${block._key}`}
+                      fontSize="xs"
+                      letterSpacing="wide"
+                      color="gray.700"
+                    >
+                      {block.children[0].text}
+                    </Link>
+                  </ListItem>
+                )}
+              </>
+            ))}
+          </List>
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
   );
 };
 
@@ -61,8 +151,13 @@ const _BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
   }, [props.publishedOn, props._createdAt]);
 
   return (
-    <Box maxW="6xl" w="full">
-      <Flex alignItems="center" gap={4} mt={8}>
+    <Stack spacing={16} maxW="6xl" w="full">
+      <Divider borderWidth={2} borderColor="brand.600" />
+      <Stack spacing={4}>
+        {props.postSeries && <_BlogPageSeries postSeries={props.postSeries} />}
+        <Heading as="h1" size="3xl">
+          {props.title}
+        </Heading>
         <Box>
           <Text
             fontSize="sm"
@@ -76,16 +171,14 @@ const _BlogPageMain = (props: Omit<PostProps, 'coverPhoto'>) => {
             {publishedOn}
           </Text>
         </Box>
-      </Flex>
-      <Heading as="h1" size="3xl" mb={4}>
-        {props.title}
-      </Heading>
-      {props.postSeries && <_BlogPageSeries postSeries={props.postSeries} />}
-      <Divider my={8} />
-      <Box maxW="4xl" w="full" mx="auto">
+      </Stack>
+      <Divider borderWidth={2} borderColor="brand.600" />
+
+      <Stack spacing={8} maxW="4xl" w="full" mx="auto" alignSelf="center">
+        <_BlogPageNavigation content={props.content} />
         <PortableText value={props.content} />
-      </Box>
-    </Box>
+      </Stack>
+    </Stack>
   );
 };
 
@@ -148,13 +241,11 @@ const _BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
  */
 const BlogPageLayout = (props: PostProps) => {
   return (
-    <Stack spacing={16} alignItems="center" my={16}>
+    <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
       <_BlogPageHeader coverPhoto={props.coverPhoto} />
-      <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
-        <_BlogPageMain {...props} />
-        <_BlogPageAuthorCard author={props.author} />
-      </Container>
-    </Stack>
+      <_BlogPageMain {...props} />
+      <_BlogPageAuthorCard author={props.author} />
+    </Container>
   );
 };
 
