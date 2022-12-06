@@ -40,7 +40,7 @@ const _BlogPageHeader = (props: Pick<PostProps, 'coverPhoto'>) => {
       mx="auto"
       maxW="8xl"
       w="full"
-      maxH="lg"
+      maxH="xl"
       h="full"
       objectFit="cover"
     />
@@ -241,7 +241,7 @@ const _BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
  */
 const BlogPageLayout = (props: PostProps) => {
   return (
-    <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
+    <Container as={Stack} spacing={16} my={16} alignItems="center" maxW="8xl">
       <_BlogPageHeader coverPhoto={props.coverPhoto} />
       <_BlogPageMain {...props} />
       <_BlogPageAuthorCard author={props.author} />
