@@ -38,6 +38,7 @@ const CodeTabs = (props: CodeTabsProps) => {
             bg="gray.50"
             borderWidth={1}
             borderColor="brand.200"
+            _hover={{ bg: 'brand.100' }}
             _selected={{ bg: 'brand.100' }}
           >
             <Code
