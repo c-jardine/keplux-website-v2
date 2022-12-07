@@ -6,12 +6,19 @@ import { PostProps } from '../../../lib/studio/types';
  */
 const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
   return (
-    <Flex gap={2} alignItems="center">
+    <Flex
+      flexDirection={{ base: 'column', sm: 'row' }}
+      gap={2}
+      alignItems={{ md: 'center' }}
+    >
       <Text
-        bg="gray.200"
-        color="gray.600"
+        w="fit-content"
+        bg="brand.100"
+        color="brand.600"
         fontSize="sm"
-        fontWeight="semibold"
+        borderWidth={1}
+        borderColor="brand.200"
+        fontWeight="bold"
         textTransform="uppercase"
         letterSpacing="wider"
         rounded="md"

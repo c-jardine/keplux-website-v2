@@ -6,6 +6,7 @@ import {
   SanityResponseBaseProps,
   SlugProps,
 } from './core.types';
+import { SeoProps } from './seo.types';
 
 /**
  * Props returned by Sanity queries on the Author document type.
@@ -38,6 +39,7 @@ export interface PostProps extends SanityResponseBaseProps {
   excerpt: string;
   postSeries?: SeriesProps;
   publishedOn: string;
+  seo: SeoProps;
   slug: SlugProps;
   title: string;
 }

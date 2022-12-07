@@ -1,8 +1,10 @@
 import { defineType } from 'sanity';
+import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 
 const series = defineType({
   name: 'series',
   title: 'Series',
+  icon: IoIosPaper,
   type: 'document',
   fields: [
     {
@@ -26,14 +28,22 @@ const series = defineType({
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'tag' }] }],
     },
-    {
-      name: 'posts',
-      title: 'Posts',
-      description: 'The posts in the series.',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'post' }] }],
-    },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      tag: 'tags.0.label',
+    },
+    prepare(selection: { title: string; tag: string }) {
+      const { title, tag } = selection;
+      return {
+        title,
+        subtitle: tag
+          ? `Tagged with: ${tag}`
+          : 'No tags - consider adding some',
+      };
+    },
+  },
 });
 
 export default series;

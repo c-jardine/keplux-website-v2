@@ -1,4 +1,11 @@
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
+import {
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Code,
+} from '@chakra-ui/react';
 import { CodeBlock } from '../CodeBlock';
 import { CodeTabsProps } from './CodeTabs.types';
 
@@ -11,28 +18,39 @@ import { CodeTabsProps } from './CodeTabs.types';
  */
 const CodeTabs = (props: CodeTabsProps) => {
   return (
-    <Tabs>
-      <TabList overflowX="auto" borderColor="brand.500">
+    <Tabs position="relative" variant="unstyled" w="full">
+      <TabList
+        className="hideScrollbar"
+        position="absolute"
+        top={0.5}
+        gap={2}
+        w="full"
+        px={4}
+        overflowX="auto"
+        borderWidth={0}
+        zIndex={1}
+      >
         {props.tabs.map((tab) => (
           <Tab
             key={tab._key}
-            fontSize="sm"
-            fontWeight="semibold"
-            // Use important to avoid tracking the state of the currently
-            // selected tab. This prevents the selected tab's border color
-            // from being overridden on hover.
-            _selected={{
-              borderColor: 'brand.500 !important',
-              bg: 'brand.500',
-              color: 'brand.50',
-            }}
-            _hover={{
-              borderColor: 'brand.300',
-              bg: 'brand.500',
-              color: 'brand.50',
-            }}
+            p={0}
+            role="group"
+            bg="gray.50"
+            borderWidth={1}
+            borderColor="brand.200"
+            _hover={{ bg: 'brand.100' }}
+            _selected={{ bg: 'brand.100' }}
           >
-            {tab.label}
+            <Code
+              px={2}
+              py={1}
+              fontSize="xs"
+              color="gray.600"
+              letterSpacing="wide"
+              bg="transparent"
+            >
+              {tab.label}
+            </Code>
           </Tab>
         ))}
       </TabList>

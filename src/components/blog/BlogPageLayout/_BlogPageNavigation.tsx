@@ -46,10 +46,9 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
         <AccordionPanel bg="brand.50">
           <List mt={2}>
             {headerBlocks.map((block) => (
-              <>
+              <Box key={block._key}>
                 {block.style === 'h2' && (
                   <ListItem
-                    key={block._key}
                     position="relative"
                     display="flex"
                     alignItems="center"
@@ -78,7 +77,6 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                 )}
                 {block.style === 'h3' && (
                   <ListItem
-                    key={block._key}
                     display="flex"
                     alignItems="center"
                     ml={2}
@@ -92,7 +90,7 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                     </Link>
                   </ListItem>
                 )}
-              </>
+              </Box>
             ))}
           </List>
         </AccordionPanel>

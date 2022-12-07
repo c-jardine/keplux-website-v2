@@ -16,7 +16,7 @@ const CopyCodeButton = (props: { codeToCopy: string }) => {
       aria-label="Copy code to clipboard"
       icon={<FaCopy />}
       size="xs"
-      colorScheme="blackAlpha"
+      colorScheme="brand"
       onClick={() => {
         copy(props.codeToCopy);
         toast({

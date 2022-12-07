@@ -1,12 +1,15 @@
 import { defineType } from 'sanity';
+import { FaFile } from '@react-icons/all-files/fa/FaFile';
 
 const postType = defineType({
   name: 'post',
   title: 'Post',
+  icon: FaFile,
   type: 'document',
   groups: [
     { name: 'info', title: 'Info', default: true },
     { name: 'content', title: 'Content' },
+    { name: 'metadata', title: 'Metadata' },
   ],
   fields: [
     {
@@ -76,7 +79,6 @@ const postType = defineType({
       name: 'coverPhoto',
       title: 'Cover Photo',
       type: 'coverPhoto',
-      validation: (Rule) => Rule.required(),
       group: 'content',
     },
     {
@@ -87,7 +89,20 @@ const postType = defineType({
       validation: (Rule) => Rule.required(),
       group: 'content',
     },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+      group: 'metadata',
+    },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'author.name',
+      media: 'coverPhoto.asset',
+    },
+  },
 });
 
 export default postType;
