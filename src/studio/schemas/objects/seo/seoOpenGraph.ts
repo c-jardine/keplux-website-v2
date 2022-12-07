@@ -10,6 +10,11 @@ const seoOpenGraph = defineType({
       title: 'URL',
       type: 'url',
     },
+    {
+      name: 'shareImg',
+      title: 'Share Image',
+      type: 'image',
+    },
   ],
 });
 
