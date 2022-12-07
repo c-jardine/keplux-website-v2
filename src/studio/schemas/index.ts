@@ -13,6 +13,10 @@ import {
   coverPhotoType,
   linkType,
   navbarLinkType,
+  seoMetadataType,
+  seoOpenGraphType,
+  seoOptionsType,
+  seoType,
 } from './objects';
 
 const objects = [
@@ -22,6 +26,10 @@ const objects = [
   codeTabGroupType,
   coverPhotoType,
   codeBlockType,
+  seoType,
+  seoMetadataType,
+  seoOptionsType,
+  seoOpenGraphType,
 ];
 
 const documents = [

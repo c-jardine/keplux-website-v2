@@ -9,6 +9,7 @@ const postType = defineType({
   groups: [
     { name: 'info', title: 'Info', default: true },
     { name: 'content', title: 'Content' },
+    { name: 'metadata', title: 'Metadata' },
   ],
   fields: [
     {
@@ -87,6 +88,12 @@ const postType = defineType({
       of: [{ type: 'block' }, { type: 'codeBlock' }, { type: 'codeTabGroup' }],
       validation: (Rule) => Rule.required(),
       group: 'content',
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
+      group: 'metadata',
     },
   ],
   preview: {
