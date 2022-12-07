@@ -30,7 +30,7 @@ const config = defineConfig({
     visionTool({
       // Note: These are both optional
       defaultApiVersion: 'v2021-10-21',
-      defaultDataset: 'some-dataset',
+      defaultDataset: 'production',
     }),
   ],
 
