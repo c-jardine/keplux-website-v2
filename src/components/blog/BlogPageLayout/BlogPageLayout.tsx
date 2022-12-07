@@ -30,6 +30,9 @@ const BlogPageLayout = (props: PostProps) => {
             },
           ],
         }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
       />
       {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
         <_BlogPageHeader coverPhoto={props.coverPhoto} />
