@@ -15,7 +15,7 @@ import { urlForImage } from '../../../lib/studio/urlForImage';
 const BlogCard = (props: PostProps) => {
   return (
     <LinkBox as="article" role="group">
-      {Object.keys(props.coverPhoto).length > 2 && (
+      {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
         <Image
           src={urlForImage(props.coverPhoto).url()}
           alt={props.coverPhoto.caption}

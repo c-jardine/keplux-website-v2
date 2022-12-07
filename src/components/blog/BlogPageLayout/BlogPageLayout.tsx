@@ -10,7 +10,7 @@ import _BlogPageMain from './_BlogPageMain';
 const BlogPageLayout = (props: PostProps) => {
   return (
     <Container as={Stack} spacing={16} my={16} alignItems="center" maxW="8xl">
-      {Object.keys(props.coverPhoto).length > 2 && (
+      {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
         <_BlogPageHeader coverPhoto={props.coverPhoto} />
       )}
       <_BlogPageMain {...props} />

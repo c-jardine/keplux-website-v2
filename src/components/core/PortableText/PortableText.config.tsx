@@ -1,9 +1,11 @@
 import {
+  Code,
   Heading,
   Link,
   List,
   ListIcon,
   ListItem,
+  OrderedList,
   Text,
 } from '@chakra-ui/react';
 import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
@@ -47,8 +49,12 @@ const block = {
 };
 
 const marks = {
-  code: ({ children }) => {
-    return <CopyCodeInline codeToCopy={children as string} />;
+  code: ({ children }: { children: string }) => {
+    return children[0].startsWith('npm') || children[0].startsWith('npx') ? (
+      <CopyCodeInline codeToCopy={children} />
+    ) : (
+      <Code>{children}</Code>
+    );
   },
   link: ({
     children,
@@ -70,7 +76,16 @@ const marks = {
 
 const list = {
   list: {
-    bullet: ({ children }) => <List spacing={3}>{children}</List>,
+    bullet: ({ children }) => (
+      <List spacing={2} pl={10}>
+        {children}
+      </List>
+    ),
+    number: ({ children }) => (
+      <OrderedList spacing={2} pl={10}>
+        {children}
+      </OrderedList>
+    ),
   },
   listItem: {
     bullet: ({ children }) => (
@@ -79,6 +94,7 @@ const list = {
         <Text>{children}</Text>
       </ListItem>
     ),
+    number: ({ children }) => <ListItem>{children}</ListItem>,
   },
 };
 
