@@ -1,40 +1,9 @@
-import { Box, Container, Flex, Link, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Link } from '@chakra-ui/react';
 import Image from 'next/image';
 import logo from '../../../../public/keplux-logo-square-dark.png';
-import { NavItems } from './Navbar.constant';
-import { NavbarItemProps } from './Navbar.types';
-
-const NavbarItem = (props: NavbarItemProps) => {
-  return (
-    <Flex
-      key={props.label}
-      as={!props.items ? Link : Flex}
-      href={!props.items ? props.href : '#'}
-      position="relative"
-      role="group"
-      justifyContent="center"
-      alignItems="center"
-      px={2}
-      h="full"
-      cursor="pointer"
-      _hover={{ textDecor: 'none' }}
-    >
-      <Text fontSize="sm" textTransform="uppercase">
-        {props.label}
-      </Text>
-      <Box
-        position="absolute"
-        bottom={0}
-        h={1}
-        w="full"
-        bg="brand.500"
-        transform="scaleY(0%)"
-        _groupHover={{ transform: 'scaleY(100%)' }}
-        transition="200ms ease-in-out"
-      />
-    </Flex>
-  );
-};
+import { NavItems } from './Navbar.constants';
+import NavbarDropdown from './NavbarDropdown';
+import NavbarItem from './NavbarItem';
 
 const Navbar = () => {
   return (
@@ -56,9 +25,13 @@ const Navbar = () => {
           />
         </Box>
         <Flex h="full" gap={2}>
-          {NavItems.map((item) => (
-            <NavbarItem key={item.label} {...item} />
-          ))}
+          {NavItems.map((item) => {
+            return !item.items ? (
+              <NavbarItem key={item.label} {...item} />
+            ) : (
+              <NavbarDropdown key={item.label} {...item} />
+            );
+          })}
         </Flex>
       </Container>
     </Box>
