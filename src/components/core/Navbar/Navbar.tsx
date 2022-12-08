@@ -22,12 +22,15 @@ import { NavItems } from './Navbar.constants';
 import NavbarDropdown from './NavbarDropdown';
 import NavbarItem from './NavbarItem';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 /**
  * The main navbar component.
  * TODO: Disable scrolling when mobile nav is open.
  */
 const Navbar = () => {
+  const router = useRouter();
+
   const NavbarDesktop = () => {
     return (
       <Flex h="full" gap={2}>
@@ -84,6 +87,10 @@ const Navbar = () => {
                     _hover={{ textDecor: 'none' }}
                     fontSize="sm"
                     textTransform="uppercase"
+                    borderLeftWidth={4}
+                    borderColor={
+                      router.route === item.href ? 'brand.500' : 'transparent'
+                    }
                   >
                     {item.label}
                   </Link>
