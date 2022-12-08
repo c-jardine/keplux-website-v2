@@ -1,5 +1,7 @@
-import { Container, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
+import Image from 'next/image';
+import logo from '../../public/keplux-logo-full-dark.png';
 import { BlogCard } from '../../src/components/blog';
 import { allPostsQuery, client } from '../../src/lib/studio';
 import { PostProps } from '../../src/lib/studio/types';
@@ -7,12 +9,23 @@ import { PostProps } from '../../src/lib/studio/types';
 const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
   const { posts } = props;
   return (
-    <Container maxW="6xl" my={16}>
-      <SimpleGrid gap={16}>
-        {posts.map((post: PostProps) => (
-          <BlogCard key={post._id} {...post} />
-        ))}
-      </SimpleGrid>
+    <Container as={Stack} spacing={16} maxW="6xl" my={16}>
+      <Box position="relative" w="full" h={32}>
+        <Image
+          src={logo}
+          alt="Keplux Development logo"
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      </Box>
+      <Stack>
+        <Heading as="h1">Latest posts</Heading>
+        <Stack gap={16} divider={<StackDivider />}>
+          {posts.map((post: PostProps) => (
+            <BlogCard key={post._id} {...post} />
+          ))}
+        </Stack>
+      </Stack>
     </Container>
   );
 };
