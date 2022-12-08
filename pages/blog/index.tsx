@@ -8,7 +8,7 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
   const { posts } = props;
   return (
     <Container maxW="6xl" my={16}>
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap={16}>
+      <SimpleGrid gap={16}>
         {posts.map((post: PostProps) => (
           <BlogCard key={post._id} {...post} />
         ))}

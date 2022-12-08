@@ -1,4 +1,4 @@
-import { Container, Stack } from '@chakra-ui/react';
+import { AspectRatio, Container, Image, Stack } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { PostProps } from '../../../lib/studio/types';
@@ -37,8 +37,18 @@ const BlogPageLayout = (props: PostProps) => {
         }}
       />
       {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
-        <_BlogPageHeader coverPhoto={props.coverPhoto} />
+        <_BlogPageHeader {...props} />
       )}
+      <AspectRatio ratio={1.91 / 1} maxW="4xl" w="full">
+        <Image
+          src={urlForImage(props.coverPhoto).url()}
+          alt={props.coverPhoto.caption}
+          mx="auto"
+          w="full"
+          h="full"
+          objectFit="cover"
+        />
+      </AspectRatio>
       <_BlogPageMain {...props} />
       <_BlogPageAuthorCard author={props.author} />
     </Container>

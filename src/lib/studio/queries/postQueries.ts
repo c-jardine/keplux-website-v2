@@ -8,7 +8,8 @@ export const allPostsQuery = groq`
   *[_type == "post"] {
     ...,
     "author": author->{...},
-    "postSeries": postSeries->{...}
+    "postSeries": postSeries->{...},
+    "tags": tags[]->{...}
   }
 `;
 
@@ -16,6 +17,7 @@ export const postBySlugQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
     ...,
     "author": author->{...},
-    "postSeries": postSeries->{...}
+    "postSeries": postSeries->{...},
+    "tags": tags[]->{...}
   }
 `;
