@@ -19,6 +19,7 @@ const NavbarDropdownItem = (props: NavbarItemProps) => {
   return (
     <LinkBox
       as="article"
+      aria-label={`View ${props.label} solutions`}
       role="group"
       p={4}
       rounded="md"
