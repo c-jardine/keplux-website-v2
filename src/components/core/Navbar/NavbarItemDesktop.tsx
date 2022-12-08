@@ -2,7 +2,7 @@ import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { NavbarItemProps } from './Navbar.types';
 
-const NavbarItem = (props: NavbarItemProps) => {
+const NavbarItemDesktop = (props: NavbarItemProps) => {
   const router = useRouter();
   return (
     <Flex
@@ -42,4 +42,4 @@ const NavbarItem = (props: NavbarItemProps) => {
   );
 };
 
-export default NavbarItem;
+export default NavbarItemDesktop;

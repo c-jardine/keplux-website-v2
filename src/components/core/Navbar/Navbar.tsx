@@ -1,8 +1,4 @@
 import {
-  Accordion,
-  AccordionButton,
-  AccordionItem,
-  AccordionPanel,
   Box,
   Collapse,
   Container,
@@ -11,7 +7,6 @@ import {
   Link,
   Show,
   Stack,
-  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
@@ -19,26 +14,24 @@ import { MdClose } from '@react-icons/all-files/md/MdClose';
 import Image from 'next/image';
 import logo from '../../../../public/keplux-logo-square-dark.png';
 import { NavItems } from './Navbar.constants';
-import NavbarDropdown from './NavbarDropdown';
-import NavbarItem from './NavbarItem';
-import React from 'react';
-import { useRouter } from 'next/router';
+import NavbarDropdownDesktop from './NavbarDropdownDesktop';
+import NavbarDropdownMobile from './NavbarDropdownMobile';
+import NavbarItemDesktop from './NavbarItemDesktop';
+import NavbarItemMobile from './NavbarItemMobile';
 
 /**
  * The main navbar component.
  * TODO: Disable scrolling when mobile nav is open.
  */
 const Navbar = () => {
-  const router = useRouter();
-
   const NavbarDesktop = () => {
     return (
       <Flex h="full" gap={2}>
         {NavItems.map((item) => {
           return !item.items ? (
-            <NavbarItem key={item.label} {...item} />
+            <NavbarItemDesktop key={item.label} {...item} />
           ) : (
-            <NavbarDropdown key={item.label} {...item} />
+            <NavbarDropdownDesktop key={item.label} {...item} />
           );
         })}
       </Flex>
@@ -73,68 +66,9 @@ const Navbar = () => {
             <Stack bg="white" p={4}>
               {NavItems.map((item) => {
                 return !item.items ? (
-                  <Link
-                    key={item.label}
-                    onClick={item.onClick}
-                    href={!item.items ? item.href : '#'}
-                    position="relative"
-                    role="group"
-                    justifyContent="center"
-                    alignItems="center"
-                    p={2}
-                    h="full"
-                    cursor="pointer"
-                    _hover={{ textDecor: 'none' }}
-                    fontSize="sm"
-                    textTransform="uppercase"
-                    borderLeftWidth={4}
-                    borderColor={
-                      router.route === item.href ? 'brand.500' : 'transparent'
-                    }
-                  >
-                    {item.label}
-                  </Link>
+                  <NavbarItemMobile {...item} />
                 ) : (
-                  <Accordion allowToggle borderWidth={0}>
-                    <AccordionItem borderWidth={'0 !important'}>
-                      <AccordionButton
-                        borderWidth={0}
-                        p={2}
-                        _hover={{ all: 'none' }}
-                      >
-                        <Text fontSize="sm" textTransform="uppercase">
-                          {item.label}
-                        </Text>
-                      </AccordionButton>
-                      <AccordionPanel
-                        as={Stack}
-                        borderWidth={0}
-                        borderLeftWidth={2}
-                        borderColor="gray.200"
-                        ml={2}
-                        py={1}
-                      >
-                        {item.items.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            href={subItem.href}
-                            position="relative"
-                            role="group"
-                            justifyContent="center"
-                            alignItems="center"
-                            py={1}
-                            h="full"
-                            cursor="pointer"
-                            _hover={{ textDecor: 'none' }}
-                            fontSize="xs"
-                            textTransform="uppercase"
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </AccordionPanel>
-                    </AccordionItem>
-                  </Accordion>
+                  <NavbarDropdownMobile {...item} />
                 );
               })}
             </Stack>
