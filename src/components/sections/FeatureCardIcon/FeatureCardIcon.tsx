@@ -8,11 +8,19 @@ const FeatureCardIcon = (props: {
   description: string;
 }) => {
   return (
-    <Stack alignItems="center" maxW="xs" w="full" p={4} rounded="lg">
+    <Stack
+      alignItems="center"
+      maxW="xs"
+      w="full"
+      p={8}
+      rounded="lg"
+      bg="white"
+      shadow="md"
+    >
       <IconHeader icon={props.icon} />
       <Heading
         as="h3"
-        pt={4}
+        pt={8}
         fontSize="md"
         textAlign="center"
         textTransform="uppercase"

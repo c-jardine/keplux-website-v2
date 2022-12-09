@@ -27,6 +27,7 @@ const Home = () => {
         alignItems="center"
         position="relative"
         zIndex={1}
+        pb={28}
         bg="gray.50"
         w="full"
         maxW="100vw"
@@ -87,13 +88,16 @@ const Home = () => {
       </Container>
 
       {/* Conversions card section */}
-      <Box position="relative" bg="brand.500">
-        {/* <AngleDivider /> */}
-        <Container>
+      <Box position="relative" bg="brand.600" pb={40}>
+        <AngleDivider
+          style={{ width: '100%', filter: 'drop-shadow(5px 0 5px #000000AA)' }}
+        />
+        <Container position="relative" zIndex={2} mt={-64}>
           <Box
             zIndex={2}
-            w="calc(100% - 2rem)"
+            mx="auto"
             maxW="xl"
+            w="full"
             bg="brand.100"
             p={{ base: 4, md: 8 }}
             rounded="lg"
@@ -131,12 +135,21 @@ const Home = () => {
             </Text>
           </Box>
         </Container>
-      </Box>
-
-      <Box position="relative" zIndex={1} mt={-1} w="full" bg="gray.50">
-        <Stack alignItems="center" maxW="2xl" w="full" mx="auto">
-          <Heading as="h2" textTransform="uppercase">
-            <chakra.span fontWeight="black" color="brand.600">
+        <Stack
+          alignItems="center"
+          maxW="2xl"
+          w="full"
+          mx="auto"
+          mt={32}
+          color="brand.300"
+        >
+          <Heading
+            as="h2"
+            textTransform="uppercase"
+            color="brand.300"
+            textAlign="center"
+          >
+            <chakra.span fontWeight="black" color="white">
               What
             </chakra.span>{' '}
             we do
@@ -148,12 +161,17 @@ const Home = () => {
             possible.
           </Text>
         </Stack>
+      </Box>
+
+      <Box position="relative" mt={-24}>
         <SimpleGrid
           columns={{ base: 1, md: 3 }}
-          mx="auto"
-          maxW="6xl"
           w="full"
           gap={16}
+          maxW="6xl"
+          mx="auto"
+          placeItems="center"
+          alignItems="stretch"
         >
           <FeatureCardIcon
             icon={FaDesktop}
