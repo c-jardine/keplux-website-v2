@@ -282,6 +282,18 @@ const Home = () => {
             </Box>
           </SplitSection.RightContent>
         </SplitSection>
+        <Stack
+          mt={8}
+          direction={{ base: 'column', md: 'row' }}
+          justifyContent="center"
+          alignItems="center"
+          gap={4}
+        >
+          <Text fontSize="2xl" fontWeight="bold">
+            Sound like what you need?
+          </Text>
+          <Button colorScheme="brand">Contact Now</Button>
+        </Stack>
       </Container>
     </Box>
   );
