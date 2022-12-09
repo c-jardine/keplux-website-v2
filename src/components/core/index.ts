@@ -4,6 +4,5 @@ export * from './CopyCodeButton';
 export * from './CopyCodeInline';
 export * from './IconFeature';
 export * from './IconHeader';
-export * from './Navbar';
 export * from './PortableText';
 export * from './Tag';
