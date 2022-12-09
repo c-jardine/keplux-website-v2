@@ -3,24 +3,23 @@ import {
   Button,
   chakra,
   Container,
-  Flex,
   Heading,
-  Icon,
   Link,
   SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
 import { FaDesktop } from '@react-icons/all-files/fa/FaDesktop';
 import { HiOutlinePuzzle } from '@react-icons/all-files/hi/HiOutlinePuzzle';
 import { MdDevices } from '@react-icons/all-files/md/MdDevices';
 import Image from 'next/image';
-import webIllustration from '../public/illustrations/web-development.png';
-import paymentIllustration from '../public/illustrations/payments.png';
-import logo from '../public/keplux-logo-full-dark.png';
-import { FeatureCardIcon, SplitSection } from '../src/components/sections';
 import AngleDivider from '../public/dividers/angle.svg';
-import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
+import paymentIllustration from '../public/illustrations/payments.png';
+import webIllustration from '../public/illustrations/web-development.png';
+import logo from '../public/keplux-logo-full-dark.png';
+import { IconFeature } from '../src/components/core';
+import { FeatureCardIcon, SplitSection } from '../src/components/sections';
 
 const Home = () => {
   return (
@@ -199,6 +198,7 @@ const Home = () => {
         </SimpleGrid>
       </Box>
 
+      {/* Basic pricing section */}
       <Container w="full" maxW="8xl">
         <SplitSection containerStyle={{ mt: 28, mx: 'auto' }}>
           <SplitSection.LeftContent>
@@ -213,151 +213,62 @@ const Home = () => {
               </chakra.span>{' '}
               per month.
             </Heading>
-            <Text>
+            <Text color="gray.600">
               If your business just needs an online presence, we offer a simple
               package that gives you everything you need to get online and stay
               online. By providing your own content, this package keeps your
               costs low. However, addons are available if you need them.
             </Text>
             <SimpleGrid columns={{ base: 1, lg: 2 }} gap={8} mt={8}>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    Website template
-                  </Heading>
-                  <Text fontSize="sm">
-                    Choose one of our beautiful, high performance templates and
-                    provide content for up to 5 pages.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    Responsive design
-                  </Heading>
-                  <Text fontSize="sm">
-                    We make sure your site looks great on mobile devices,
-                    desktop devices, and everything in between.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    Unlimited content updates
-                  </Heading>
-                  <Text fontSize="sm">
-                    Need to make a change to your content? Let us know and
-                    we&apos;ll take care of it the same day! Larger updates may
-                    take up to 24 hours.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    SEO and accessibility
-                  </Heading>
-                  <Text fontSize="sm">
-                    Help your page rank high in search engine results with
-                    crucial SEO and accessibility implementations.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    Hosting
-                  </Heading>
-                  <Text fontSize="sm">
-                    Free hosting with one of our hosting providers. Includes a
-                    free SSL certificate generated with Let&apos;s Encrypt.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    Google Maps
-                  </Heading>
-                  <Text fontSize="sm">
-                    Show your visitors where your business is located with an
-                    interactive map provided byy Google Maps.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    24/7 support and maintenance
-                  </Heading>
-                  <Text fontSize="sm">
-                    We&apos;re available at any time to provide service. We will
-                    also perform maintenance when necessary, such as patching
-                    security vulnerabilities.
-                  </Text>
-                </Stack>
-              </Flex>
-              <Flex gap={3}>
-                <Icon as={FaCheck} mt={-0.5} color="green.500" w={6} h={6} />
-                <Stack spacing={1}>
-                  <Heading
-                    as="h3"
-                    fontSize="lg"
-                    fontWeight="black"
-                    textTransform="uppercase"
-                  >
-                    Custom contact form
-                  </Heading>
-                  <Text fontSize="sm">
-                    Let users provide your business with the information you
-                    need. We&apos;ll make sure it gets to your inbox.
-                  </Text>
-                </Stack>
-              </Flex>
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="Website template"
+                description="Choose one of our beautiful, high performance templates and
+                    provide content for up to 5 pages."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="Responsive design"
+                description="We make sure your site looks great on mobile devices, desktop devices, and everything in between."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="Unlimited content updates"
+                description="Need to make a change to your content? Let us know and we'll take care of it the same day! Larger updates may take up to 24 hours."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="SEO and accessibility"
+                description="Help your page rank high in search engine results with crucial SEO and accessibility implementations."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="Hosting"
+                description="Free hosting with one of our hosting providers. Includes a free SSL certificate generated with Let's Encrypt."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="Google Maps"
+                description="Show your visitors where your business is located with an interactive map provided byy Google Maps."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="24/7 maintenance and support"
+                description="We're available at any time to provide service. We will also perform maintenance when necessary, such as patching security vulnerabilities."
+              />
+              <IconFeature
+                headingAs="h3"
+                icon={FaCheck}
+                heading="Custom contact form"
+                description="Let users provide your business with the information you need. We'll make sure it gets to your inbox."
+              />
             </SimpleGrid>
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
