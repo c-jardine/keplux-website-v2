@@ -13,12 +13,13 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavbarItemProps } from './Navbar.types';
-import NavbarItem from './NavbarItem';
+import NavbarItemDesktop from './NavbarItemDesktop';
 
-const NavbarDropdownItem = (props: NavbarItemProps) => {
+const NavbarDropdownDesktopItem = (props: NavbarItemProps) => {
   return (
     <LinkBox
       as="article"
+      aria-label={`View ${props.label} solutions`}
       role="group"
       p={4}
       rounded="md"
@@ -45,13 +46,13 @@ const NavbarDropdownItem = (props: NavbarItemProps) => {
   );
 };
 
-const NavbarDropdown = (props: NavbarItemProps) => {
+const NavbarDropdownDesktop = (props: NavbarItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const ref = React.useRef<HTMLDivElement>();
 
   return (
     <>
-      <NavbarItem {...props} ref={ref} onClick={onOpen} />
+      <NavbarItemDesktop {...props} ref={ref} onClick={onOpen} />
       <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
         <DrawerOverlay mt={16} />
         <DrawerContent mt={16} py={8} bg="gray.50">
@@ -59,7 +60,7 @@ const NavbarDropdown = (props: NavbarItemProps) => {
           <DrawerBody maxW="7xl" w="full" mx="auto">
             <SimpleGrid columns={{ md: 2, xl: 4 }} gap={2}>
               {props.items.map((item) => (
-                <NavbarDropdownItem key={item.label} {...item} />
+                <NavbarDropdownDesktopItem key={item.label} {...item} />
               ))}
             </SimpleGrid>
           </DrawerBody>
@@ -68,4 +69,4 @@ const NavbarDropdown = (props: NavbarItemProps) => {
     </>
   );
 };
-export default NavbarDropdown;
+export default NavbarDropdownDesktop;

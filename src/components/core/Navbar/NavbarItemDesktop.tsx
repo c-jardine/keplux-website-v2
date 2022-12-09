@@ -1,7 +1,9 @@
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { NavbarItemProps } from './Navbar.types';
 
-const NavbarItem = (props: NavbarItemProps) => {
+const NavbarItemDesktop = (props: NavbarItemProps) => {
+  const router = useRouter();
   return (
     <Flex
       key={props.label}
@@ -18,7 +20,12 @@ const NavbarItem = (props: NavbarItemProps) => {
       cursor="pointer"
       _hover={{ textDecor: 'none' }}
     >
-      <Text fontSize="sm" textTransform="uppercase">
+      <Text
+        fontSize="sm"
+        textTransform="uppercase"
+        fontWeight={router.route === props.href ? 'bold' : 'normal'}
+        letterSpacing="wider"
+      >
         {props.label}
       </Text>
       <Box
@@ -27,7 +34,7 @@ const NavbarItem = (props: NavbarItemProps) => {
         h={1}
         w="full"
         bg="brand.500"
-        transform="scaleY(0%)"
+        transform={router.route === props.href ? 'scaleY(100%)' : 'scaleY(0%)'}
         _groupHover={{ transform: 'scaleY(100%)' }}
         transition="200ms ease-in-out"
       />
@@ -35,4 +42,4 @@ const NavbarItem = (props: NavbarItemProps) => {
   );
 };
 
-export default NavbarItem;
+export default NavbarItemDesktop;
