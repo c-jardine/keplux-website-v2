@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, Heading, Link, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import paymentIllustration from '../../../../../public/illustrations/payments.png';
 import { SplitSection } from '../../../sections';
@@ -22,7 +22,12 @@ const ReferralHeader = () => {
               investment from you. There really are no strings attached!
             </Text>
           </Stack>
-          <Button colorScheme="brand" mt={8}>
+          <Button
+            as={Link}
+            href="/referral-program/join"
+            colorScheme="brand"
+            mt={8}
+          >
             Join Now
           </Button>
         </Box>

@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Collapse,
   Container,
   Flex,
@@ -18,6 +19,7 @@ import NavbarDropdownDesktop from './NavbarDropdownDesktop';
 import NavbarDropdownMobile from './NavbarDropdownMobile';
 import NavbarItemDesktop from './NavbarItemDesktop';
 import NavbarItemMobile from './NavbarItemMobile';
+import { signIn } from 'next-auth/react';
 
 /**
  * The main navbar component.
@@ -34,6 +36,9 @@ const Navbar = () => {
             <NavbarDropdownDesktop key={item.label} {...item} />
           );
         })}
+        <Button as={Link} href="/referral-program/sign-in">
+          Sign in
+        </Button>
       </Flex>
     );
   };

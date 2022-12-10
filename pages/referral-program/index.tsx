@@ -6,7 +6,7 @@ import {
   ReferAFriendSection,
   ReferralHeader,
   ReferralPayoutChart,
-} from '../src/components/pageContents/referralProgram';
+} from '../../src/components/pageContents/referralProgram';
 
 const ReferralProgramPage: NextPage = () => {
   return (
