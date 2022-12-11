@@ -1,6 +1,6 @@
 import { Container, Heading } from '@chakra-ui/react';
-import { NextPage } from 'next';
-import { getSession } from 'next-auth/react';
+import { createServerSupabaseClient } from '@supabase/auth-helpers-nextjs';
+import { GetServerSidePropsContext, NextPage } from 'next';
 
 const ReferralProgramDashboardPage: NextPage = () => {
   return (
@@ -10,19 +10,37 @@ const ReferralProgramDashboardPage: NextPage = () => {
   );
 };
 
-export const getServerSideProps = async (context) => {
-  const { res } = context;
-  const session = await getSession(context);
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const supabase = createServerSupabaseClient(context);
+  const {
+    data: { session },
+  } = await supabase.auth.getSession();
 
   if (!session) {
-    res.writeHead(302, {
-      Location: '/',
-    });
-    return res.end();
+    return {
+      redirect: {
+        destination: '/referral-program/sign-in',
+        permanent: false,
+      },
+    };
+  }
+
+  if (Object.keys(session.user.user_metadata).length === 0) {
+    return {
+      redirect: {
+        destination: '/referral-program/profile',
+        permanent: false,
+      },
+    };
   }
 
   return {
-    props: { session },
+    props: {
+      initialSession: session,
+      user: session.user,
+    },
   };
 };
 

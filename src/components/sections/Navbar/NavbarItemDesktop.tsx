@@ -30,7 +30,7 @@ const NavbarItemDesktop = (props: NavbarItemProps) => {
       </Text>
       <Box
         position="absolute"
-        bottom={0}
+        bottom={-2}
         h={1}
         w="full"
         bg="brand.500"
