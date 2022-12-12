@@ -1,29 +1,18 @@
 import {
   Box,
-  Button,
-  Circle,
   Collapse,
   Container,
-  Divider,
   Flex,
   HStack,
   IconButton,
-  Image as ChakraImage,
   Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
   Show,
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
-import { FaSignOutAlt } from '@react-icons/all-files/fa/FaSignOutAlt';
 import { MdClose } from '@react-icons/all-files/md/MdClose';
-import { useSupabaseClient, useUser } from '@supabase/auth-helpers-react';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import logo from '../../../../public/keplux-logo-square-dark.png';
 import { NavItems } from './Navbar.constants';
 import NavbarDropdownDesktop from './NavbarDropdownDesktop';
@@ -36,60 +25,6 @@ import NavbarItemMobile from './NavbarItemMobile';
  * TODO: Disable scrolling when mobile nav is open.
  */
 const Navbar = () => {
-  const AuthBlock = () => {
-    const router = useRouter();
-    const supabaseClient = useSupabaseClient();
-    const user = useUser();
-
-    const _handleSignOut = async () => {
-      await supabaseClient.auth.signOut();
-      await router.push('/');
-    };
-
-    return user ? (
-      <Menu>
-        <MenuButton>
-          <Circle size={12} overflow="hidden">
-            <ChakraImage
-              src={
-                user.user_metadata?.avatar_url ||
-                'https://cdn.icon-icons.com/icons2/1371/PNG/512/robot02_90810.png'
-              }
-              alt="Avatar"
-            />
-          </Circle>
-        </MenuButton>
-        <MenuList>
-          <MenuItem
-            as={Link}
-            href="/referral-program/dashboard"
-            _hover={{ textDecoration: 'none' }}
-          >
-            Dashboard
-          </MenuItem>
-          <Divider />
-          <MenuItem
-            icon={<FaSignOutAlt />}
-            as={Link}
-            onClick={_handleSignOut}
-            _hover={{ textDecoration: 'none' }}
-          >
-            Sign out
-          </MenuItem>
-        </MenuList>
-      </Menu>
-    ) : (
-      <Button
-        colorScheme="brand"
-        px={8}
-        as={Link}
-        href="/referral-program/sign-in"
-        _hover={{ textDecoration: 'none' }}
-      >
-        Referral Program
-      </Button>
-    );
-  };
   const NavbarDesktop = () => {
     return (
       <Flex
@@ -108,7 +43,6 @@ const Navbar = () => {
             );
           })}
         </HStack>
-        <AuthBlock />
       </Flex>
     );
   };
