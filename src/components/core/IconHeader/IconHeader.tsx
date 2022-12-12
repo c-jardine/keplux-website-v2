@@ -3,7 +3,7 @@ import { IconType } from '@react-icons/all-files';
 
 const IconHeader = (props: { icon: IconType }) => {
   return (
-    <Flex position="relative">
+    <Flex position="relative" w="fit-content">
       <AbsoluteCenter>
         <Box
           bg="orange.200"

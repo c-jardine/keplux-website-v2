@@ -77,7 +77,7 @@ const Navbar = () => {
                 return !item.items ? (
                   <NavbarItemMobile {...item} />
                 ) : (
-                  <NavbarDropdownMobile {...item} />
+                  <NavbarDropdownMobile {...item} onClick={onClose} />
                 );
               })}
             </Stack>

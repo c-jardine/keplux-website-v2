@@ -25,6 +25,7 @@ const NavbarDropdownDesktopItem = (props: NavbarItemProps) => {
       rounded="md"
       _hover={{ bg: 'brand.50' }}
       transition="200ms ease-in-out"
+      onClick={props.onClick}
     >
       <Icon
         as={props.icon}
@@ -60,7 +61,11 @@ const NavbarDropdownDesktop = (props: NavbarItemProps) => {
           <DrawerBody maxW="7xl" w="full" mx="auto">
             <SimpleGrid columns={{ md: 2, xl: 4 }} gap={2}>
               {props.items.map((item) => (
-                <NavbarDropdownDesktopItem key={item.label} {...item} />
+                <NavbarDropdownDesktopItem
+                  key={item.label}
+                  {...item}
+                  onClick={onClose}
+                />
               ))}
             </SimpleGrid>
           </DrawerBody>
