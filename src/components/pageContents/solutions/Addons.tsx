@@ -16,7 +16,7 @@ const Addons = () => {
     <Container position="relative" id="design" w="full" maxW="6xl">
       <SimpleGrid columns={{ base: 1, lg: 2 }} gap={16}>
         <Stack id="ecommerce" scrollMarginTop="5rem" alignItems="center">
-          <Parallax speed={10} opacity={[4, -1]}>
+          <Parallax speed={10} opacity={[7, -1]}>
             <Box
               position="relative"
               w="full"
@@ -58,7 +58,7 @@ const Addons = () => {
           scrollMarginTop="5rem"
           alignItems="center"
         >
-          <Parallax speed={10} opacity={[4, -1]}>
+          <Parallax speed={10} opacity={[7, -1]}>
             <Box
               position="relative"
               w="full"

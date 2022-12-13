@@ -8,32 +8,7 @@ import {
 const SolutionsPage = () => {
   return (
     <Box overflow="hidden">
-      {/* <Box position="fixed" maxH={64} w="full" top={16}>
-        <Image
-          src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-          alt=""
-          filter="saturate(125%)"
-        />
-        <Box
-          position="absolute"
-          top={0}
-          left={0}
-          w="full"
-          h="full"
-          bgGradient="linear-gradient(to-br, brand.600, orange.600)"
-          opacity={0.85}
-        />
-        <AbsoluteCenter>
-          <Parallax speed={10}>
-            <Heading as="h1" mt={16}>
-              Solutions
-            </Heading>
-            <Text></Text>
-          </Parallax>
-        </AbsoluteCenter>
-      </Box> */}
       <Box
-        // mt={64}
         as={Stack}
         alignItems="center"
         position="relative"

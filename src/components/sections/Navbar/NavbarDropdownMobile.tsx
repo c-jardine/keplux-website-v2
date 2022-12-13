@@ -1,6 +1,7 @@
 import {
   Accordion,
   AccordionButton,
+  AccordionIcon,
   AccordionItem,
   AccordionPanel,
   Link,
@@ -35,10 +36,17 @@ const NavbarDropdownMobile = (props: NavbarItemProps) => {
   return (
     <Accordion allowToggle borderWidth={0}>
       <AccordionItem borderWidth={'0 !important'}>
-        <AccordionButton borderWidth={0} p={2} _hover={{ all: 'none' }}>
+        <AccordionButton
+          borderWidth={0}
+          borderLeftWidth={4}
+          borderColor="transparent"
+          p={2}
+          _hover={{ all: 'none' }}
+        >
           <Text fontSize="sm" textTransform="uppercase">
             {props.label}
           </Text>
+          <AccordionIcon />
         </AccordionButton>
         <AccordionPanel
           as={Stack}
