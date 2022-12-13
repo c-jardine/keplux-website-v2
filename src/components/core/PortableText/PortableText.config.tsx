@@ -16,32 +16,68 @@ import { CopyCodeInline } from '../CopyCodeInline';
 import { CodeBlockProps } from './PortableText.types';
 
 const block = {
-  h1: ({ children, value }) => (
+  h1: ({
+    children,
+    value,
+  }: {
+    children: React.ReactNode;
+    value: { _key: string };
+  }) => (
     <Heading id={value._key} as="h1" size="3xl" pt={8}>
       {children}
     </Heading>
   ),
-  h2: ({ children, value }) => (
+  h2: ({
+    children,
+    value,
+  }: {
+    children: React.ReactNode;
+    value: { _key: string };
+  }) => (
     <Heading id={value._key} as="h2" size="2xl" pt={8}>
       {children}
     </Heading>
   ),
-  h3: ({ children, value }) => (
+  h3: ({
+    children,
+    value,
+  }: {
+    children: React.ReactNode;
+    value: { _key: string };
+  }) => (
     <Heading id={value._key} as="h3" size="xl" pt={8}>
       {children}
     </Heading>
   ),
-  h4: ({ children, value }) => (
+  h4: ({
+    children,
+    value,
+  }: {
+    children: React.ReactNode;
+    value: { _key: string };
+  }) => (
     <Heading id={value._key} as="h4" size="lg" pt={8}>
       {children}
     </Heading>
   ),
-  h5: ({ children, value }) => (
+  h5: ({
+    children,
+    value,
+  }: {
+    children: React.ReactNode;
+    value: { _key: string };
+  }) => (
     <Heading id={value._key} as="h5" size="md" pt={8}>
       {children}
     </Heading>
   ),
-  h6: ({ children, value }) => (
+  h6: ({
+    children,
+    value,
+  }: {
+    children: React.ReactNode;
+    value: { _key: string };
+  }) => (
     <Heading id={value._key} as="h6" size="sm" pt={8}>
       {children}
     </Heading>

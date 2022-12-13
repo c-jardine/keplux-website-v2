@@ -12,5 +12,4 @@ const colors = {
     900: '#312e81',
   },
 };
-
 export default colors;

@@ -1,5 +1,4 @@
 import { IconType } from '@react-icons/all-files';
-import React from 'react';
 
 export interface NavbarItemProps {
   label: string;
@@ -8,5 +7,4 @@ export interface NavbarItemProps {
   description?: string;
   items?: NavbarItemProps[];
   onClick?: () => void;
-  ref: React.MutableRefObject<HTMLDivElement>;
 }

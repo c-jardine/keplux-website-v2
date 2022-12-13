@@ -9,10 +9,10 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { formatDistanceToNow } from 'date-fns';
+import React from 'react';
 import { PostProps } from '../../../lib/studio/types';
 import { urlForImage } from '../../../lib/studio/urlForImage';
 import { Tag } from '../../core';
-import React from 'react';
 
 const BlogCard = (props: PostProps) => {
   const [publishedOn, setPublishedOn] = React.useState<string>(
@@ -51,7 +51,7 @@ const BlogCard = (props: PostProps) => {
       <Box>
         <Flex gap={4}>
           {props.tags.map((tag) => (
-            <Tag {...tag} />
+            <Tag key={tag._key} {...tag} />
           ))}
         </Flex>
         <Heading as="h3" size="lg">

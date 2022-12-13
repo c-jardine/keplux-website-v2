@@ -24,6 +24,7 @@ const NavbarDropdownMobileItem = (props: NavbarItemProps) => {
       _hover={{ textDecor: 'none' }}
       fontSize="xs"
       textTransform="uppercase"
+      onClick={props.onClick}
     >
       {props.label}
     </Link>
@@ -48,7 +49,11 @@ const NavbarDropdownMobile = (props: NavbarItemProps) => {
           py={1}
         >
           {props.items.map((subItem) => (
-            <NavbarDropdownMobileItem key={subItem.label} {...subItem} />
+            <NavbarDropdownMobileItem
+              key={subItem.label}
+              {...subItem}
+              onClick={props.onClick}
+            />
           ))}
         </AccordionPanel>
       </AccordionItem>

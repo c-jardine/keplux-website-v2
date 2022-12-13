@@ -3,6 +3,7 @@ import {
   Collapse,
   Container,
   Flex,
+  HStack,
   IconButton,
   Link,
   Show,
@@ -26,14 +27,22 @@ import NavbarItemMobile from './NavbarItemMobile';
 const Navbar = () => {
   const NavbarDesktop = () => {
     return (
-      <Flex h="full" gap={2}>
-        {NavItems.map((item) => {
-          return !item.items ? (
-            <NavbarItemDesktop key={item.label} {...item} />
-          ) : (
-            <NavbarDropdownDesktop key={item.label} {...item} />
-          );
-        })}
+      <Flex
+        w="full"
+        h="full"
+        gap={2}
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <HStack w="full">
+          {NavItems.map((item) => {
+            return !item.items ? (
+              <NavbarItemDesktop key={item.label} {...item} />
+            ) : (
+              <NavbarDropdownDesktop key={item.label} {...item} />
+            );
+          })}
+        </HStack>
       </Flex>
     );
   };
@@ -68,7 +77,7 @@ const Navbar = () => {
                 return !item.items ? (
                   <NavbarItemMobile {...item} />
                 ) : (
-                  <NavbarDropdownMobile {...item} />
+                  <NavbarDropdownMobile {...item} onClick={onClose} />
                 );
               })}
             </Stack>

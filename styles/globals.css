@@ -6,3 +6,37 @@
 .hideScrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.supabase-ui-auth_ui-anchor {
+  text-decoration: none !important;
+  text-transform: uppercase;
+}
+
+.supabase-ui-auth_ui-anchor:hover {
+  color: #4f46e5 !important;
+}
+
+.supabase-ui-auth_ui-input {
+  letter-spacing: 1px;
+}
+
+.supabase-ui-auth_ui-button,
+.supabase-ui-auth_ui-input,
+.supabase-ui-auth_ui-anchor {
+  transition: 150ms ease-in-out !important;
+}
+
+.supabase-ui-auth_ui-input[name='password'] {
+  letter-spacing: 1px;
+}
+
+.supabase-ui-auth_ui-button {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.supabase-ui-auth_ui-label,
+.supabase-ui-auth_ui-divider {
+  display: none !important;
+}

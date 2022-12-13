@@ -7,7 +7,7 @@ const NavbarItemDesktop = (props: NavbarItemProps) => {
   return (
     <Flex
       key={props.label}
-      ref={props.ref}
+      // ref={props.ref}
       onClick={props.onClick}
       as={!props.items ? Link : Flex}
       href={!props.items ? props.href : '#'}
@@ -30,7 +30,7 @@ const NavbarItemDesktop = (props: NavbarItemProps) => {
       </Text>
       <Box
         position="absolute"
-        bottom={0}
+        bottom={-2}
         h={1}
         w="full"
         bg="brand.500"
