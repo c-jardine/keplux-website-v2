@@ -20,7 +20,7 @@ const Development = () => {
       <Box position="absolute" w="full" h="full" top={0} left={0}>
         <ChakraImage
           src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
-          alt=""
+          alt="A person typing on a laptop at a desk."
           objectFit="cover"
           w="full"
           h="full"
