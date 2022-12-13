@@ -6,6 +6,8 @@ import {
   Stack,
   Text,
   Container,
+  Image as ChakraImage,
+  SlideFade,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -14,13 +16,25 @@ import { SplitSection } from '../../sections';
 
 const Development = () => {
   return (
-    <Stack
-      id="development"
-      bgGradient="linear-gradient(to-br, brand.600, brand.300)"
-      w="full"
-      alignItems="center"
-    >
-      <Container w="full" maxW="7xl">
+    <Stack id="development" position="relative" w="full" alignItems="center">
+      <Box position="absolute" w="full" h="full" top={0} left={0}>
+        <ChakraImage
+          src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+          alt=""
+          objectFit="cover"
+          w="full"
+          h="full"
+        />
+        <Box
+          position="absolute"
+          top={0}
+          bgGradient="linear-gradient(to-br, brand.600, brand.300)"
+          w="full"
+          h="full"
+          opacity={0.95}
+        />
+      </Box>
+      <Container w="full" maxW="7xl" position="relative">
         <SplitSection
           containerStyle={{
             maxW: '8xl',
@@ -30,35 +44,36 @@ const Development = () => {
           }}
         >
           <SplitSection.LeftContent>
-            <Box py={28}>
-              <Heading as="h1" fontWeight="black" color="brand.300">
-                Modern <chakra.span color="white">web development</chakra.span>
-              </Heading>
-              <Stack mt={6} color="whiteAlpha.700">
-                <Text>
-                  By using modern tools like{' '}
-                  <Link href="https://reactjs.org">
-                    <chakra.span color="white" fontWeight="semibold">
-                      React.js
-                    </chakra.span>
-                  </Link>
-                  , your website will be lightning fast. Frequently used tools
-                  like WordPress and SquareSpace are often bloated with themes
-                  and require additional plugins to be done right, and also
-                  require maintenance and updates you may not have the time or
-                  skills to perform.
-                </Text>
-                <Text>
-                  With Keplux Development, the features you need are hand-coded
-                  into your project. And with our Keplux One package, we&apos;ll
-                  maintain and update your project for as long as you&apos;re a
-                  customer.
-                </Text>
-              </Stack>
-              <Button as={Link} href="/contact" colorScheme="gray" mt={8}>
-                Contact Us
-              </Button>
-            </Box>
+            <SlideFade in={true}>
+              <Box py={28}>
+                <Heading as="h1" fontWeight="black" color="brand.200">
+                  Modern{' '}
+                  <chakra.span color="white">web development</chakra.span>
+                </Heading>
+                <Stack mt={6} color="whiteAlpha.800">
+                  <Text>
+                    By using modern tools like{' '}
+                    <Link href="https://reactjs.org">
+                      <chakra.span color="brand.50" fontWeight="semibold">
+                        React.js
+                      </chakra.span>
+                    </Link>
+                    , your website will be lightning fast. Frequently used tools
+                    like WordPress and SquareSpace are often bloated and require
+                    time and skills to maintain that you may not have.
+                  </Text>
+                  <Text>
+                    With Keplux Development, the features you need are
+                    hand-coded into your project. And with our Keplux One
+                    package, we&apos;ll maintain and update your project for as
+                    long as you&apos;re a customer.
+                  </Text>
+                </Stack>
+                <Button as={Link} href="/contact" colorScheme="gray" mt={8}>
+                  Contact Us
+                </Button>
+              </Box>
+            </SlideFade>
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
             <Box

@@ -1,12 +1,10 @@
-import { NavbarItemProps } from './Navbar.types';
-import { FaPencilRuler } from '@react-icons/all-files/fa/FaPencilRuler';
-import { FaTerminal } from '@react-icons/all-files/fa/FaTerminal';
-import { FaShoppingCart } from '@react-icons/all-files/fa/FaShoppingCart';
+import { FaChartBar } from '@react-icons/all-files/fa/FaChartBar';
 import { FaCog } from '@react-icons/all-files/fa/FaCog';
 import { FaServer } from '@react-icons/all-files/fa/FaServer';
-import { FaSearch } from '@react-icons/all-files/fa/FaSearch';
-import { FaChartBar } from '@react-icons/all-files/fa/FaChartBar';
+import { FaShoppingCart } from '@react-icons/all-files/fa/FaShoppingCart';
+import { FaTerminal } from '@react-icons/all-files/fa/FaTerminal';
 import { FaTools } from '@react-icons/all-files/fa/FaTools';
+import { NavbarItemProps } from './Navbar.types';
 
 export const NavItems: NavbarItemProps[] = [
   {
@@ -16,13 +14,13 @@ export const NavItems: NavbarItemProps[] = [
   {
     label: 'Solutions',
     items: [
-      {
-        label: 'Design',
-        href: '/solutions#design',
-        icon: FaPencilRuler,
-        description:
-          'We work with you to build a design that represents your business and looks great on all devices, whether you need a blog, landing pages, or e-commerce.',
-      },
+      // {
+      //   label: 'Design',
+      //   href: '/solutions#design',
+      //   icon: FaPencilRuler,
+      //   description:
+      //     'We work with you to build a design that represents your business and looks great on all devices, whether you need a blog, landing pages, or e-commerce.',
+      // },
       {
         label: 'Development',
         href: '/solutions#development',
@@ -51,13 +49,13 @@ export const NavItems: NavbarItemProps[] = [
         description:
           'Websites live on the internet through a hosting provider. You can choose to host with us or we can help you get set up on your own hosting.',
       },
-      {
-        label: 'SEO & Accessibility',
-        href: '/solutions#seo-and-accessibility',
-        icon: FaSearch,
-        description:
-          "Having a website is only useful if it can be found. The modern tools we use will boost your website higher than what you'd get from our competitors.",
-      },
+      // {
+      //   label: 'SEO & Accessibility',
+      //   href: '/solutions#seo-and-accessibility',
+      //   icon: FaSearch,
+      //   description:
+      //     "Having a website is only useful if it can be found. The modern tools we use will boost your website higher than what you'd get from our competitors.",
+      // },
       {
         label: 'Analytics',
         href: '/solutions#analytics',

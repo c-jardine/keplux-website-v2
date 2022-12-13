@@ -1,4 +1,5 @@
 import { Box, ChakraProvider } from '@chakra-ui/react';
+import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -12,6 +13,25 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <ParallaxProvider>
+        <DefaultSeo
+          titleTemplate="%s | Keplux Development"
+          openGraph={{
+            type: 'website',
+            locale: 'en_US',
+            url: 'https://www.keplux.com',
+            siteName: 'Keplux Development',
+            images: [
+              {
+                url: 'https://i.imgur.com/5qsDLWr.png',
+              },
+            ],
+          }}
+          twitter={{
+            handle: '@kepluxdev',
+            site: '@kepluxdev',
+            cardType: 'summary_large_image',
+          }}
+        />
         {!router.asPath.startsWith('/studio') && <Navbar />}
         <Box py={!router.asPath.startsWith('/studio') && 16}>
           <Component {...pageProps} />

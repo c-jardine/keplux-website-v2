@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   Accordion,
   AccordionButton,
@@ -15,6 +16,7 @@ import Link from 'next/link';
 import { PostProps } from '../../../lib/studio/types';
 
 const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
+  // @ts-ignore
   const { content }: { content: PortableTextBlock[] } = props;
 
   const tags: string[] = ['h2', 'h3'];

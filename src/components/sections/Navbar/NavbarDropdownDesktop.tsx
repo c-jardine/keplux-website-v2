@@ -49,17 +49,16 @@ const NavbarDropdownDesktopItem = (props: NavbarItemProps) => {
 
 const NavbarDropdownDesktop = (props: NavbarItemProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const ref = React.useRef<HTMLDivElement>();
 
   return (
     <>
-      <NavbarItemDesktop {...props} ref={ref} onClick={onOpen} />
+      <NavbarItemDesktop {...props} onClick={onOpen} />
       <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
         <DrawerOverlay mt={16} />
         <DrawerContent mt={16} py={8} bg="gray.50">
           <DrawerCloseButton zIndex={1} />
           <DrawerBody maxW="7xl" w="full" mx="auto">
-            <SimpleGrid columns={{ md: 2, xl: 4 }} gap={2}>
+            <SimpleGrid columns={{ md: 2, lg: 3 }} gap={2}>
               {props.items.map((item) => (
                 <NavbarDropdownDesktopItem
                   key={item.label}
