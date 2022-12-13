@@ -1,7 +1,6 @@
-import { defineType } from 'sanity';
-import { FaTag } from '@react-icons/all-files/fa/FaTag';
 import { Circle } from '@chakra-ui/react';
-import { ColorInputProps } from '@sanity/color-input';
+import { FaTag } from '@react-icons/all-files/fa/FaTag';
+import { defineType } from 'sanity';
 
 const tagType = defineType({
   name: 'tag',
@@ -35,7 +34,7 @@ const tagType = defineType({
       title: 'label',
       color: 'color',
     },
-    prepare(selection: { title: string; color: ColorInputProps }) {
+    prepare(selection: { title: string; color: { hex: string } }) {
       const { title, color } = selection;
       return {
         title: title,

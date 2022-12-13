@@ -7,7 +7,7 @@ const NavbarItemDesktop = (props: NavbarItemProps) => {
   return (
     <Flex
       key={props.label}
-      ref={props.ref}
+      // ref={props.ref}
       onClick={props.onClick}
       as={!props.items ? Link : Flex}
       href={!props.items ? props.href : '#'}

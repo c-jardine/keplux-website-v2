@@ -6,13 +6,12 @@ import { SplitSection } from '../../sections';
 
 const Design = () => {
   return (
-    <Container id="design" w="full" maxW="8xl">
+    <Container id="design" w="full" maxW="7xl">
       <SplitSection
         containerStyle={{
           maxW: '8xl',
           w: 'full',
           gap: { base: 0, lg: 16 },
-          mt: 16,
         }}
       >
         <SplitSection.LeftContent>

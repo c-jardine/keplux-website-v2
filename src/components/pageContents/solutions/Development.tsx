@@ -14,8 +14,13 @@ import { SplitSection } from '../../sections';
 
 const Development = () => {
   return (
-    <Stack id="development" bg="brand.200" w="full" alignItems="center">
-      <Container w="full" maxW="8xl">
+    <Stack
+      id="development"
+      bgGradient="linear-gradient(to-br, brand.600, brand.300)"
+      w="full"
+      alignItems="center"
+    >
+      <Container w="full" maxW="7xl">
         <SplitSection
           containerStyle={{
             maxW: '8xl',
@@ -26,14 +31,14 @@ const Development = () => {
         >
           <SplitSection.LeftContent>
             <Box py={28}>
-              <Heading as="h1" fontWeight="black">
-                Modern web development
+              <Heading as="h1" fontWeight="black" color="brand.300">
+                Modern <chakra.span color="white">web development</chakra.span>
               </Heading>
-              <Stack mt={6} color="gray.600">
+              <Stack mt={6} color="whiteAlpha.700">
                 <Text>
                   By using modern tools like{' '}
                   <Link href="https://reactjs.org">
-                    <chakra.span color="brand.600" fontWeight="semibold">
+                    <chakra.span color="white" fontWeight="semibold">
                       React.js
                     </chakra.span>
                   </Link>
@@ -50,7 +55,7 @@ const Development = () => {
                   customer.
                 </Text>
               </Stack>
-              <Button as={Link} href="/contact" colorScheme="brand" mt={8}>
+              <Button as={Link} href="/contact" colorScheme="gray" mt={8}>
                 Contact Us
               </Button>
             </Box>
