@@ -1,5 +1,6 @@
 import { Box, Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import logo from '../../public/keplux-logo-full-dark.png';
 import { BlogCard } from '../../src/components/blog';
@@ -9,24 +10,31 @@ import { PostProps } from '../../src/lib/studio/types';
 const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
   const { posts } = props;
   return (
-    <Container as={Stack} spacing={16} maxW="6xl" my={16}>
-      <Box position="relative" w="full" h={32}>
-        <Image
-          src={logo}
-          alt="Keplux Development logo"
-          fill
-          style={{ objectFit: 'contain' }}
-        />
-      </Box>
-      <Stack>
-        <Heading as="h1">Latest posts</Heading>
-        <Stack gap={16} divider={<StackDivider />}>
-          {posts.map((post: PostProps) => (
-            <BlogCard key={post._id} {...post} />
-          ))}
+    <>
+      <NextSeo
+        title="Blog"
+        description="Learn about our development process and how to implement some of what we do into your own projects."
+        canonical="https://www.keplux.com/blog"
+      />
+      <Container as={Stack} spacing={16} maxW="6xl" my={16}>
+        <Box position="relative" w="full" h={32}>
+          <Image
+            src={logo}
+            alt="Keplux Development logo"
+            fill
+            style={{ objectFit: 'contain' }}
+          />
+        </Box>
+        <Stack>
+          <Heading as="h1">Latest posts</Heading>
+          <Stack gap={16} divider={<StackDivider />}>
+            {posts.map((post: PostProps) => (
+              <BlogCard key={post._id} {...post} />
+            ))}
+          </Stack>
         </Stack>
-      </Stack>
-    </Container>
+      </Container>
+    </>
   );
 };
 
