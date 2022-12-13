@@ -1,5 +1,4 @@
 import {
-  Box,
   Container,
   Heading,
   Stack,
@@ -8,8 +7,6 @@ import {
 } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import Image from 'next/image';
-import logo from '../../public/keplux-logo-full-dark.png';
 import { BlogCard } from '../../src/components/blog';
 import { allPostsQuery, client } from '../../src/lib/studio';
 import { PostProps } from '../../src/lib/studio/types';
