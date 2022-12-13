@@ -116,10 +116,10 @@ const Navbar = () => {
             fill
           />
         </Box>
-        <Show above="lg">
+        <Show above="md">
           <NavbarDesktop />
         </Show>
-        <Show below="lg">
+        <Show below="md">
           <NavbarMobile />
         </Show>
       </Container>

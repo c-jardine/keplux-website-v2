@@ -17,7 +17,7 @@ import { SplitSection } from '../../sections';
 
 const Features = () => {
   return (
-    <Box py={16} w="full" position="relative" zIndex={1}>
+    <Box w="full" position="relative" zIndex={1}>
       <Container id="hosting" w="full" maxW="7xl">
         <SplitSection containerStyle={{ gap: 8 }}>
           <SplitSection.LeftContent>
@@ -45,7 +45,7 @@ const Features = () => {
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
             <SimpleGrid columns={{ base: 1, xl: 2 }} gap={8}>
-              <Parallax opacity={[0, 2]}>
+              <Parallax opacity={[-0.5, 2.5]}>
                 <Stack
                   position="relative"
                   id="hosting"
@@ -76,7 +76,7 @@ const Features = () => {
                 </Stack>
               </Parallax>
 
-              <Parallax opacity={[0, 2]}>
+              <Parallax opacity={[-0.5, 2.5]}>
                 <Stack
                   position="relative"
                   id="maintenance"
@@ -107,7 +107,7 @@ const Features = () => {
                 </Stack>
               </Parallax>
 
-              <Parallax opacity={[0, 2]}>
+              <Parallax opacity={[-0.5, 2.5]}>
                 <Stack
                   position="relative"
                   id="maintenance"
@@ -139,7 +139,7 @@ const Features = () => {
                 </Stack>
               </Parallax>
 
-              <Parallax opacity={[0, 2]}>
+              <Parallax opacity={[-0.5, 2.5]}>
                 <Stack
                   position="relative"
                   id="analytics"
@@ -161,10 +161,10 @@ const Features = () => {
                   </Heading>
                   <Stack color="gray.600" fontSize="sm">
                     <Text>
-                      With the Keplux One package, there are a variety of
-                      updates we can perform for you. Some are automatic, others
-                      are at your request. Our goal is to let you focus on your
-                      business while we handle your website.
+                      Google Analytics provides useful insights about your
+                      website&apos;s traffic and engagement. We&apos;ll include
+                      it in every Keplux One project, or you can add it to a
+                      custom package for a small fee.
                     </Text>
                   </Stack>
                 </Stack>

@@ -1,7 +1,6 @@
 import { Box, Stack } from '@chakra-ui/react';
 import {
   Addons,
-  Design,
   Development,
   Features,
 } from '../src/components/pageContents/solutions';
@@ -53,7 +52,7 @@ const SolutionsPage = () => {
             position="absolute"
             w="container.lg"
             h="container.lg"
-            top={-48}
+            top={-64}
             left={-96}
           >
             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +65,7 @@ const SolutionsPage = () => {
           </Box>
           <Features />
         </Box>
-        <Design />
+        {/* <Design /> */}
       </Box>
     </Box>
   );

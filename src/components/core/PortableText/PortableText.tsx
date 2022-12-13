@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Stack } from '@chakra-ui/react';
 import { PortableText as RPortableText } from '@portabletext/react';
 import { PortableTextComponents } from './PortableText.config';
@@ -12,6 +13,7 @@ const PortableText = (props: PortableTextProps) => {
   return (
     <Stack spacing={4}>
       {/* TODO: Fix this TypeScript problem. */}
+      {/* @ts-ignore */}
       <RPortableText value={props.value} components={PortableTextComponents} />
     </Stack>
   );
