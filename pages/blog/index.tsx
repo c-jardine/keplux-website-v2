@@ -1,4 +1,11 @@
-import { Box, Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  Stack,
+  StackDivider,
+  Text,
+} from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
@@ -13,20 +20,26 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
     <>
       <NextSeo
         title="Blog"
-        description="Learn about our development process and how to implement some of what we do into your own projects."
+        description="Geared towards developers, you can learn about our development process and how to implement some of what we do into your own projects."
         canonical="https://www.keplux.com/blog"
       />
       <Container as={Stack} spacing={16} maxW="6xl" my={16}>
-        <Box position="relative" w="full" h={32}>
-          <Image
-            src={logo}
-            alt="Keplux Development logo"
-            fill
-            style={{ objectFit: 'contain' }}
-          />
-        </Box>
+        <Stack
+          maxW="4xl"
+          w="full"
+          alignItems="center"
+          textAlign="center"
+          mx="auto"
+        >
+          <Heading as="h1">Blog</Heading>
+          <Text>
+            Learn about our development process and the tools we use.
+            You&apos;ll find tutorials for React and Next.js, TypeScript,
+            content management systems, and more.
+          </Text>
+        </Stack>
         <Stack>
-          <Heading as="h1">Latest posts</Heading>
+          <Heading as="h2">Latest posts</Heading>
           <Stack gap={16} divider={<StackDivider />}>
             {posts.map((post: PostProps) => (
               <BlogCard key={post._id} {...post} />

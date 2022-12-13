@@ -27,7 +27,7 @@ const Home = () => {
     <>
       <NextSeo
         title="Web development in Toledo, OH"
-        description="Websites built with modern technologies, resulting in lightning performance."
+        description="Websites built with modern technologies, resulting in lightning performance, amazing SEO, and more conversions."
         canonical="https://www.keplux.com"
       />
       <Box py={16}>
