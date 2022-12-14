@@ -80,18 +80,14 @@ const Footer = () => {
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
-                <Link href="/solutions/design">Design</Link>
-                <Link href="/solutions/development">Development</Link>
-                <Link href="/solutions/e-commerce">E-Commerce</Link>
-                <Link href="/solutions/content-management">
+                <Link href="/solutions#development">Development</Link>
+                <Link href="/solutions#ecommerce">E-Commerce</Link>
+                <Link href="/solutions#content-management">
                   Content Management
                 </Link>
-                <Link href="/solutions/hosting">Hosting</Link>
-                <Link href="/solutions/seo-and-accessibility">
-                  SEO & Accessibility
-                </Link>
-                <Link href="/solutions/analytics">Analytics</Link>
-                <Link href="/solutions/maintenance">Maintenance</Link>
+                <Link href="/solutions#hosting">Hosting</Link>
+                <Link href="/solutions#analytics">Analytics</Link>
+                <Link href="/solutions#maintenance">Maintenance</Link>
               </Stack>
             </Stack>
           </SimpleGrid>

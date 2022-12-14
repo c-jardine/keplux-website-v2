@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Collapse,
   Container,
   Flex,
@@ -43,6 +44,16 @@ const Navbar = () => {
             );
           })}
         </HStack>
+        <Button
+          aria-label="Log in to your customer account."
+          as={Link}
+          href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
+          target="_blank"
+          rel="external"
+          variant="primaryLink"
+        >
+          Customer Login
+        </Button>
       </Flex>
     );
   };
@@ -80,6 +91,16 @@ const Navbar = () => {
                   <NavbarDropdownMobile {...item} onClick={onClose} />
                 );
               })}
+              <Button
+                aria-label="Log in to your customer account."
+                as={Link}
+                href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
+                target="_blank"
+                rel="external"
+                colorScheme="brand"
+              >
+                Customer Login
+              </Button>
             </Stack>
           </Collapse>
         </Box>

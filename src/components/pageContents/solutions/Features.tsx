@@ -45,7 +45,7 @@ const Features = () => {
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
             <SimpleGrid columns={{ base: 1, xl: 2 }} gap={8}>
-              <Parallax opacity={[-0.5, 2.5]}>
+              <Parallax opacity={[0, 3]}>
                 <Stack
                   position="relative"
                   id="hosting"
@@ -76,7 +76,7 @@ const Features = () => {
                 </Stack>
               </Parallax>
 
-              <Parallax opacity={[-0.5, 2.5]}>
+              <Parallax opacity={[0, 3]}>
                 <Stack
                   position="relative"
                   id="maintenance"
@@ -107,7 +107,7 @@ const Features = () => {
                 </Stack>
               </Parallax>
 
-              <Parallax opacity={[-0.5, 2.5]}>
+              <Parallax opacity={[0, 3]}>
                 <Stack
                   position="relative"
                   id="maintenance"
@@ -139,7 +139,7 @@ const Features = () => {
                 </Stack>
               </Parallax>
 
-              <Parallax opacity={[-0.5, 2.5]}>
+              <Parallax opacity={[0, 3]}>
                 <Stack
                   position="relative"
                   id="analytics"
