@@ -90,7 +90,7 @@ const Home = () => {
                     threats.
                   </Text>
                 </Stack>
-                <Button as={Link} href="/contact" colorScheme="brand" mt={8}>
+                <Button as={Link} href="/contact" mt={8} variant="primaryLink">
                   Contact Us
                 </Button>
               </Box>
@@ -309,7 +309,12 @@ const Home = () => {
             <Text fontSize="2xl" fontWeight="bold">
               Sound like what you need?
             </Text>
-            <Button colorScheme="brand">Contact Now</Button>
+            <Button as="a" href="/contact" variant="primaryLink">
+              Contact Now
+            </Button>
+            <Button as="a" href="/pricing" variant="secondaryLink">
+              Other Options
+            </Button>
           </Stack>
         </Container>
       </Box>

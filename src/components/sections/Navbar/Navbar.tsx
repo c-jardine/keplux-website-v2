@@ -50,7 +50,7 @@ const Navbar = () => {
           href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
           target="_blank"
           rel="external"
-          colorScheme="brand"
+          variant="primaryLink"
         >
           Customer Login
         </Button>

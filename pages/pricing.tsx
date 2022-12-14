@@ -6,7 +6,6 @@ import {
   Heading,
   HStack,
   Image as ChakraImage,
-  Link,
   List,
   ListIcon,
   ListItem,
@@ -16,8 +15,11 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
+import { FaShoppingCart } from '@react-icons/all-files/fa/FaShoppingCart';
+import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { NextPage } from 'next';
 import { Parallax } from 'react-scroll-parallax';
+import { IconHeader } from '../src/components/core';
 
 const SmallBusinessPricing = [
   {
@@ -125,7 +127,7 @@ const PricingPage: NextPage = () => {
           shadow="lg"
         >
           <Stack gridColumn={{ xl: '1 / span 3' }}>
-            <Box p={{ base: 4, md: 8 }}>
+            <Box p={{ base: 4, md: 12 }}>
               <Heading as="h2">Small Business Starter</Heading>
               <Text>
                 This package is designed for small business who don&apos;t need
@@ -144,7 +146,7 @@ const PricingPage: NextPage = () => {
               >
                 What&apos;s included
               </Text>
-              <Box h={0.25} flexGrow={1} bg="gray.200" />
+              <Box h={0.25} flexGrow={1} bg="brand.50" />
             </Flex>
             <List
               as={SimpleGrid}
@@ -168,7 +170,7 @@ const PricingPage: NextPage = () => {
             </List>
           </Stack>
           <Stack
-            bg="gray.200"
+            bg="brand.50"
             justifyContent="center"
             alignItems="center"
             roundedRight="lg"
@@ -191,29 +193,34 @@ const PricingPage: NextPage = () => {
             </Text>
             <HStack pt={8}>
               <Button
-                as={Link}
+                as="a"
                 href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
                 target="_blank"
                 rel="external"
-                colorScheme="brand"
+                variant="primaryLink"
               >
                 Buy now
               </Button>
-              <Button as={Link} href="/contact">
+              <Button as="a" href="/contact" variant="secondaryLink">
                 Contact us
               </Button>
             </HStack>
-            <Text pt={4} fontSize="xs" fontStyle="italic">
-              To reduce spam and scams, a down payment of $75 is required before
-              work is performed.
+            <Text
+              pt={4}
+              fontSize="xs"
+              fontStyle="italic"
+              color="blackAlpha.600"
+            >
+              To reduce spam and scams, a non-refundable retainer fee of $75 is
+              required before work is performed.
             </Text>
           </Stack>
         </SimpleGrid>
       </Container>
 
-      <Container mt={28}>
+      <Container mt={28} maxW="7xl" w="full">
         <Box>
-          <Heading as="h1" fontWeight="black" textAlign="center">
+          <Heading as="h2" fontWeight="black" textAlign="center">
             Other services
           </Heading>
           <Stack mt={2} color="gray.600">
@@ -223,6 +230,133 @@ const PricingPage: NextPage = () => {
             </Text>
           </Stack>
         </Box>
+        <SimpleGrid columns={{ base: 1, lg: 2 }} gap={16} mt={16}>
+          <Stack
+            bg="white"
+            rounded="lg"
+            shadow="lg"
+            justifyContent="space-between"
+          >
+            <Stack p={{ base: 4, md: 8 }}>
+              <Box pl={4} pt={4}>
+                <IconHeader icon={FaShoppingCart} />
+              </Box>
+              <Heading as="h3" pt={4}>
+                E-Commerce
+              </Heading>
+              <Text fontSize="sm" color="gray.600">
+                Looking to sell goods and/or services online? We&apos;ll help
+                get you set up!
+              </Text>
+              <Text fontSize="sm" color="gray.600">
+                If you already have a website, our e-commerce solutions can be
+                customized to match your existing website. Otherwise, don&apos;t
+                forget to purchase website development services as well!
+              </Text>
+            </Stack>
+            <Stack
+              bg="brand.50"
+              justifyContent="center"
+              alignItems="center"
+              spacing={0}
+              px={4}
+              py={8}
+            >
+              <Text textTransform="uppercase" color="gray.600">
+                Starts at
+              </Text>
+              <Text fontWeight="black" fontSize="6xl" lineHeight={1}>
+                $495
+              </Text>
+              <HStack pt={8}>
+                <Button
+                  as="a"
+                  href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
+                  target="_blank"
+                  rel="external"
+                  variant="primaryLink"
+                >
+                  Build package
+                </Button>
+                <Button as="a" href="/contact" variant="secondaryLink">
+                  Contact us
+                </Button>
+              </HStack>
+              <Text
+                pt={4}
+                fontSize="xs"
+                fontStyle="italic"
+                color="blackAlpha.600"
+              >
+                To reduce spam and scams, a non-refundable retainer fee of $250
+                is required before work is performed.
+              </Text>
+            </Stack>
+          </Stack>
+
+          <Stack
+            bg="white"
+            rounded="lg"
+            shadow="lg"
+            justifyContent="space-between"
+          >
+            <Stack p={{ base: 4, md: 8 }}>
+              <Box pl={4} pt={4}>
+                <IconHeader icon={IoIosPaper} />
+              </Box>
+              <Heading as="h3" pt={4}>
+                Content Management
+              </Heading>
+              <Text fontSize="sm" color="gray.600">
+                Whether you&apos;re a blogger, a realtor, a restaurant, or some
+                other service provider, our content management systems can be
+                customized to give you whatever control you need over your
+                content.
+              </Text>
+              <Text fontSize="sm" color="gray.600">
+                Make sure
+              </Text>
+            </Stack>
+            <Stack
+              bg="brand.50"
+              justifyContent="center"
+              alignItems="center"
+              spacing={0}
+              px={4}
+              py={8}
+            >
+              <Text textTransform="uppercase" color="gray.600">
+                Starts at
+              </Text>
+              <Text fontWeight="black" fontSize="6xl" lineHeight={1}>
+                $495
+              </Text>
+              <HStack pt={8}>
+                <Button
+                  as="a"
+                  href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
+                  target="_blank"
+                  rel="external"
+                  variant="primaryLink"
+                >
+                  Build package
+                </Button>
+                <Button as="a" href="/contact" variant="secondaryLink">
+                  Contact us
+                </Button>
+              </HStack>
+              <Text
+                pt={4}
+                fontSize="xs"
+                fontStyle="italic"
+                color="blackAlpha.600"
+              >
+                To reduce spam and scams, a non-refundable retainer fee of $250
+                is required before work is performed.
+              </Text>
+            </Stack>
+          </Stack>
+        </SimpleGrid>
       </Container>
     </>
   );
