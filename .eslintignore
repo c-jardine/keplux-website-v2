@@ -1,2 +1,4 @@
 next.config.js
 next-sitemap.config.js
+
+src/lib/googleAnalytics/gtag.ts

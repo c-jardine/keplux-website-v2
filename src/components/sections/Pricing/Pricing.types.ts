@@ -10,7 +10,7 @@ export interface PricingStructureProps {
   abovePrice?: string;
   price: string;
   belowPrice?: string;
-  primaryCta: React.ReactNode;
+  primaryCta?: React.ReactNode;
   secondaryCta?: React.ReactNode;
   disclaimer?: string;
 }

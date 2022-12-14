@@ -4,6 +4,7 @@ import {
   Container,
   Heading,
   Image as ChakraImage,
+  SimpleGrid,
   SlideFade,
   Stack,
   Text,
@@ -16,6 +17,7 @@ import {
   ProfessionalFeatures,
   StarterFeatures,
 } from '../src/components/sections/Pricing/features';
+import { PricingAddon } from '../src/components/sections/PricingAddon';
 
 const PricingPage: NextPage = () => {
   return (
@@ -98,14 +100,24 @@ const PricingPage: NextPage = () => {
 
         <Pricing
           heading="Professional"
-          description="Whether you're a blogger, a realtor, a restaurant, or some
+          description={
+            <Stack>
+              <Text>
+                Whether you&apos;re a blogger, a realtor, a restaurant, or some
                 other service provider, our content management systems can be
                 customized to give you whatever control you need over your
-                content."
+                content.
+              </Text>
+              <Text fontWeight="semibold" fontSize="sm">
+                Note: This package doesn&apos;t include monthly hosting,
+                maintenance, or updates.
+              </Text>
+            </Stack>
+          }
           features={ProfessionalFeatures}
           price={{
             abovePrice: 'Starting at',
-            price: '$795',
+            price: '$799',
             belowPrice: 'with blogging*',
             primaryCta: (
               <Button
@@ -130,13 +142,23 @@ const PricingPage: NextPage = () => {
 
         <Pricing
           heading="E-Commerce"
-          description="If you already have a website, our e-commerce solutions can be
-                customized to match your existing website. Otherwise, don't
-                forget to purchase website development services as well!"
+          description={
+            <Stack>
+              <Text>
+                If you already have a website, our e-commerce solutions can be
+                customized to match your existing website. Otherwise, don&apos;t
+                forget to purchase website development services as well!
+              </Text>
+              <Text fontWeight="semibold" fontSize="sm">
+                Note: This package doesn&apos;t include monthly hosting,
+                maintenance, or updates.
+              </Text>
+            </Stack>
+          }
           features={ECommerceFeatures}
           price={{
             abovePrice: 'Starting at',
-            price: '$1495',
+            price: '$1499',
             primaryCta: (
               <Button
                 as="a"
@@ -155,6 +177,52 @@ const PricingPage: NextPage = () => {
             ),
           }}
         />
+      </Stack>
+
+      <Stack alignItems="center">
+        <Stack pt={28} maxW="4xl" w="full" mx="auto">
+          <Heading as="h2" fontWeight="black" textAlign="center">
+            Add-ons and other services
+          </Heading>
+          <Stack mt={2} color="gray.600">
+            <Text textAlign="center">
+              Not all businesses require the same features on their website.
+              Whether you need something simple to showcase your business or
+              portfolio, or a platform to run your business on, we&apos;ve got
+              you covered.
+            </Text>
+          </Stack>
+        </Stack>
+
+        <Container maxW="7xl" w="full">
+          <SimpleGrid columns={{ base: 1, lg: 3 }} gap={16}>
+            <PricingAddon
+              heading="Landing page"
+              description="Make a statement and boost your conversions with a custom landing page that visitors will see after clicking an ad for your business."
+              price={{ abovePrice: 'Starting at', price: '$495' }}
+            />
+            <PricingAddon
+              heading="Hosting, maintenance, and updates"
+              description="We'll handle hosting, maintenance, and content updates for your website."
+              price={{ price: '$95', belowPrice: 'per month' }}
+            />
+            <PricingAddon
+              heading="Google Analytics"
+              description="Get valuable insight on how your visitors engage with your website. This helps you understand what is and isn't working with your marketing strategy."
+              price={{ price: '$75', belowPrice: 'setup fee' }}
+            />
+            <PricingAddon
+              heading="On-page SEO"
+              description="Add or optimize priority SEO tags and structure, optimize images for SEO and performance, and verify internal links to reduce bounce rate."
+              price={{ price: '$149', belowPrice: 'per page' }}
+            />
+            <PricingAddon
+              heading="Additional pages"
+              description="If you need more pages than what's included in your package, you can add more any time!"
+              price={{ price: '$95', belowPrice: 'per page' }}
+            />
+          </SimpleGrid>
+        </Container>
       </Stack>
     </>
   );

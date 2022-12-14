@@ -2,13 +2,32 @@ import { Box, ChakraProvider } from '@chakra-ui/react';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import React from 'react';
+import { hotjar } from 'react-hotjar';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Footer, Navbar } from '../src/components/sections';
+import * as gtag from '../src/lib/googleAnalytics/gtag';
 import '../styles/globals.css';
 import theme from '../styles/theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
+
+  // Hotjar
+  React.useEffect(() => {
+    hotjar.initialize(3288819, 1);
+  }, []);
+
+  // Google Analytics
+  React.useEffect(() => {
+    const handleRouteChange = (url) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <ChakraProvider theme={theme}>
