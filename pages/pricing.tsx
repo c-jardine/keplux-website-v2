@@ -6,7 +6,6 @@ import {
   Heading,
   HStack,
   Image as ChakraImage,
-  Kbd,
   List,
   ListIcon,
   ListItem,
@@ -231,7 +230,6 @@ const PricingPage: NextPage = () => {
             </Text>
           </Stack>
         </Box>
-        <Kbd colorScheme="brand">shift</Kbd>
         <SimpleGrid columns={{ base: 1, lg: 2 }} gap={16} mt={16}>
           <Stack
             bg="white"
