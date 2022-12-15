@@ -1,12 +1,9 @@
 import {
-  AbsoluteCenter,
   Box,
   Button,
   Center,
   chakra,
-  Circle,
   Container,
-  Flex,
   Heading,
   HStack,
   Icon,
@@ -16,21 +13,28 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { CgListTree } from '@react-icons/all-files/cg/CgListTree';
 import { FaBolt } from '@react-icons/all-files/fa/FaBolt';
 import { FaChartLine } from '@react-icons/all-files/fa/FaChartLine';
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
+import { FaCog } from '@react-icons/all-files/fa/FaCog';
+import { FaDollarSign } from '@react-icons/all-files/fa/FaDollarSign';
+import { FaEye } from '@react-icons/all-files/fa/FaEye';
 import { FaGlobe } from '@react-icons/all-files/fa/FaGlobe';
+import { FaPlug } from '@react-icons/all-files/fa/FaPlug';
 import { FaTrash } from '@react-icons/all-files/fa/FaTrash';
+import { FaUsers } from '@react-icons/all-files/fa/FaUsers';
 import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import paymentIllustration from '../public/illustrations/payments.png';
 import { IconFeature, LighthouseScore } from '../src/components/core';
-import { SplitSection, Subsection } from '../src/components/sections';
-import { FaCog } from '@react-icons/all-files/fa/FaCog';
-import { FaEye } from '@react-icons/all-files/fa/FaEye';
-import { CgListTree } from '@react-icons/all-files/cg/CgListTree';
-import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
+import {
+  LeadInHeading,
+  SplitSection,
+  Subsection,
+} from '../src/components/sections';
 
 const Home = () => {
   return (
@@ -76,33 +80,12 @@ const Home = () => {
 
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" w="full" spacing={8}>
-            <Text textTransform="uppercase" fontSize="sm" fontWeight="semibold">
-              Why choose Keplux Development?
-            </Text>
-            <Stack spacing={0} alignItems="center">
-              <Box position="relative" h={32} w="1px" bg="brand.400">
-                <Box
-                  h={32}
-                  w="1px"
-                  bgGradient="linear-gradient(to-b, gray.50, transparent)"
-                />
-              </Box>
-              <Circle
-                bgGradient="linear-gradient(to-r, brand.600, brand.400)"
-                size={12}
-              >
-                <Icon as={FaBolt} color="white" />
-              </Circle>
-            </Stack>
-            <Heading
-              as="h3"
-              fontWeight="bold"
-              fontSize="3xl"
-              bgGradient="linear-gradient(to-r, brand.600, brand.400)"
-              bgClip="text"
-            >
-              Performance
-            </Heading>
+            <LeadInHeading
+              smallText="Why choose Keplux Development?"
+              heading="Performance"
+              icon={FaBolt}
+              color={['brand.600', 'brand.400']}
+            />
             <Stack alignItems="center" spacing={16} w="full">
               <Stack alignItems="center">
                 <Heading as="h4" maxW="3xl" w="full" textAlign="center">
@@ -143,7 +126,12 @@ const Home = () => {
                 <SplitSection.RightContent>
                   <Stack spacing={8} px={{ base: 4, md: 8 }}>
                     <Stack spacing={3}>
-                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                      <Center
+                        bgGradient="linear-gradient(to-br, brand.600, brand.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
                         <Icon as={FaGlobe} color="white" w={5} h={5} />
                       </Center>
                       <Heading as="h5" fontSize="xl" fontWeight="semibold">
@@ -155,7 +143,12 @@ const Home = () => {
                       </Text>
                     </Stack>
                     <Stack spacing={3}>
-                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                      <Center
+                        bgGradient="linear-gradient(to-br, brand.600, brand.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
                         <Icon as={FaTrash} color="white" w={5} h={5} />
                       </Center>
                       <Heading as="h5" fontSize="xl" fontWeight="semibold">
@@ -167,7 +160,12 @@ const Home = () => {
                       </Text>
                     </Stack>
                     <Stack spacing={3}>
-                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                      <Center
+                        bgGradient="linear-gradient(to-br, brand.600, brand.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
                         <Icon as={FaChartLine} color="white" w={6} h={6} />
                       </Center>
                       <Heading as="h5" fontSize="xl" fontWeight="semibold">
@@ -188,37 +186,16 @@ const Home = () => {
 
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" w="full" spacing={8}>
-            <Text textTransform="uppercase" fontSize="sm" fontWeight="semibold">
-              Customizable content management system
-            </Text>
-            <Stack spacing={0} alignItems="center">
-              <Box position="relative" h={32} w="1px" bg="orange.400">
-                <Box
-                  h={32}
-                  w="1px"
-                  bgGradient="linear-gradient(to-b, gray.50, transparent)"
-                />
-              </Box>
-              <Circle
-                bgGradient="linear-gradient(to-r, orange.600, orange.400)"
-                size={12}
-              >
-                <Icon as={IoIosPaper} color="white" />
-              </Circle>
-            </Stack>
-            <Heading
-              as="h3"
-              fontWeight="bold"
-              fontSize="3xl"
-              bgGradient="linear-gradient(to-r, orange.600, orange.400)"
-              bgClip="text"
-            >
-              Content Management
-            </Heading>
+            <LeadInHeading
+              smallText="Customizable content management system"
+              heading="Headless Content Management"
+              icon={IoIosPaper}
+              color={['orange.600', 'orange.400']}
+            />
             <Stack alignItems="center" spacing={{ base: 0, lg: 16 }} w="full">
               <Stack alignItems="center">
                 <Heading as="h4" maxW="3xl" w="full" textAlign="center">
-                  Manage your content the way you need
+                  Manage your content any way you want
                 </Heading>
                 <Text
                   maxW="xl"
@@ -245,7 +222,12 @@ const Home = () => {
                         h="full"
                         alignItems={{ lg: 'flex-end' }}
                       >
-                        <Center bg="gray.500" w={12} h={12} rounded="lg">
+                        <Center
+                          bgGradient="linear-gradient(to-br, orange.600, orange.400)"
+                          w={12}
+                          h={12}
+                          rounded="lg"
+                        >
                           <Icon as={CgListTree} color="white" w={5} h={5} />
                         </Center>
                         <Heading as="h5" fontSize="xl" fontWeight="semibold">
@@ -256,7 +238,7 @@ const Home = () => {
                           letterSpacing="wide"
                           textAlign={{ lg: 'right' }}
                         >
-                          Whatever the content is, it&apos;s easy to add,
+                          Whatever the content is, it&apos;s easy to create,
                           update, remove, collaborate, and revert to previous
                           states.
                         </Text>
@@ -305,7 +287,12 @@ const Home = () => {
                   }
                   rightContent={
                     <Stack spacing={3} mt={{ lg: '4.5rem' }} h="full">
-                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                      <Center
+                        bgGradient="linear-gradient(to-br, orange.600, orange.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
                         <Icon as={FaCog} color="white" w={5} h={5} />
                       </Center>
                       <Heading as="h5" fontSize="xl" fontWeight="semibold">
@@ -329,7 +316,12 @@ const Home = () => {
                       h="full"
                       alignItems={{ lg: 'flex-end' }}
                     >
-                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                      <Center
+                        bgGradient="linear-gradient(to-br, orange.600, orange.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
                         <Icon as={FaEye} color="white" w={5} h={5} />
                       </Center>
                       <Heading as="h5" fontSize="xl" fontWeight="semibold">
@@ -359,6 +351,118 @@ const Home = () => {
                   }
                 />
               </Box>
+            </Stack>
+          </Stack>
+        </Container>
+
+        <Container maxW="7xl" w="full">
+          <Stack alignItems="center" w="full" spacing={8}>
+            <LeadInHeading
+              smallText="Customizable e-commerce platform"
+              heading="Headless E-Commerce"
+              icon={IoIosPaper}
+              color={['cyan.600', 'cyan.400']}
+            />
+            <Stack alignItems="center" spacing={16} w="full">
+              <Stack alignItems="center">
+                <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                  Start selling online
+                </Heading>
+                <Text
+                  maxW="xl"
+                  w="full"
+                  fontSize="xl"
+                  textAlign="center"
+                  color="gray.500"
+                >
+                  Fully customizable e-commerce platform that looks and performs
+                  the way you want it to.
+                </Text>
+              </Stack>
+              <SplitSection
+                containerStyle={{ maxW: '6xl', w: 'full', gap: 16 }}
+              >
+                <SplitSection.LeftContent>
+                  <Stack spacing={12}>
+                    <Link
+                      href="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ChakraImage
+                        src="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
+                        alt=""
+                      />
+                    </Link>
+                  </Stack>
+                </SplitSection.LeftContent>
+                <SplitSection.RightContent>
+                  <Stack spacing={8} px={{ base: 4, md: 8 }}>
+                    <Stack spacing={3}>
+                      <Center
+                        bgGradient="linear-gradient(to-br, cyan.600, cyan.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
+                        <Icon as={FaDollarSign} color="white" w={5} h={5} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        Choose the right plan for you*
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Get selling for 2.0% of sales or $299/mo. with a 0%
+                        transaction fee up to $500k/yr., then 1.5%.
+                      </Text>
+                    </Stack>
+                    <Stack spacing={3}>
+                      <Center
+                        bgGradient="linear-gradient(to-br, cyan.600, cyan.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
+                        <Icon as={FaPlug} color="white" w={5} h={5} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        40+ integrations
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Including Square, Stripe, PayPal, HubSpot, Mailchimp,
+                        ShipStation, and Zapier.
+                      </Text>
+                    </Stack>
+                    <Stack spacing={3}>
+                      <Center
+                        bgGradient="linear-gradient(to-br, cyan.600, cyan.400)"
+                        w={12}
+                        h={12}
+                        rounded="lg"
+                      >
+                        <Icon as={FaUsers} color="white" w={6} h={6} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        Multiple user support
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Have a larger business? Add up to three* admin users to
+                        your store to stay on top of things.
+                      </Text>
+                    </Stack>
+                    <Text fontSize="sm" fontStyle="italic" color="gray.500">
+                      *When using the Swell headless e-commerce platform.{' '}
+                      <Link
+                        href="https://www.swell.is"
+                        target="_blank"
+                        rel="noreferrer"
+                        fontWeight="semibold"
+                      >
+                        Click to learn more about Swell.
+                      </Link>
+                    </Text>
+                  </Stack>
+                </SplitSection.RightContent>
+              </SplitSection>
             </Stack>
           </Stack>
         </Container>
