@@ -271,16 +271,18 @@ const Home = () => {
                     </Stack>
                   }
                   rightContent={
-                    <Link
-                      href="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ChakraImage
-                        src="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
-                        alt=""
-                      />
-                    </Link>
+                    <Box>
+                      <Link
+                        href="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <ChakraImage
+                          src="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
+                          alt=""
+                        />
+                      </Link>
+                    </Box>
                   }
                 />
 

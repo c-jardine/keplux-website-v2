@@ -138,11 +138,11 @@ const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
 };
 
 const LighthouseScore = (props: LighthouseScoreProps) => {
-  const getColor = (value: number): string => {
-    if (value < 50) return 'red.500';
-    else if (value >= 50 && value < 90) return 'yellow.400';
-    else return 'green.600';
-  };
+  // const getColor = (value: number): string => {
+  //   if (value < 50) return 'red.500';
+  //   else if (value >= 50 && value < 90) return 'yellow.400';
+  //   else return 'green.600';
+  // };
 
   return (
     <Box position="relative">
