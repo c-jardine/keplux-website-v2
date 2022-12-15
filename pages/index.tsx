@@ -11,6 +11,7 @@ import {
   HStack,
   Icon,
   Image as ChakraImage,
+  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -25,9 +26,11 @@ import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import paymentIllustration from '../public/illustrations/payments.png';
 import { IconFeature, LighthouseScore } from '../src/components/core';
-import { SplitSection } from '../src/components/sections';
+import { SplitSection, Subsection } from '../src/components/sections';
 import { FaCog } from '@react-icons/all-files/fa/FaCog';
 import { FaEye } from '@react-icons/all-files/fa/FaEye';
+import { CgListTree } from '@react-icons/all-files/cg/CgListTree';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 
 const Home = () => {
   return (
@@ -212,7 +215,7 @@ const Home = () => {
             >
               Content Management
             </Heading>
-            <Stack alignItems="center" spacing={16} w="full">
+            <Stack alignItems="center" spacing={{ base: 0, lg: 16 }} w="full">
               <Stack alignItems="center">
                 <Heading as="h4" maxW="3xl" w="full" textAlign="center">
                   Manage your content the way you need
@@ -228,94 +231,134 @@ const Home = () => {
                   rental properties, or anything else you can think of.
                 </Text>
               </Stack>
-              <SimpleGrid
-                templateColumns="1fr auto 1fr"
-                maxW="6xl"
-                w="full"
-                gap="16"
-              >
-                <Stack spacing={12}>
-                  <ChakraImage
-                    src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
-                    alt=""
-                  />
-                </Stack>
 
-                <Stack position="relative" spacing={0} alignItems="center">
-                  <AbsoluteCenter top={0}>
-                    <Box
-                      h="4.5rem"
-                      w={1}
-                      bgGradient="linear-gradient(to-b, gray.50, transparent)"
-                    />
-                  </AbsoluteCenter>
-                  <Box
-                    h="full"
-                    borderLeftWidth="1px"
-                    borderColor="gray.400"
-                    borderStyle="dashed"
-                  />
-                  <AbsoluteCenter top={24}>
-                    <Box bg="gray.50" p={3}>
-                      <AbsoluteCenter>
-                        <Circle bg="gray.400" size={4} />
-                      </AbsoluteCenter>
-                      <AbsoluteCenter>
-                        <Circle bg="gray.50" size={3} />
-                      </AbsoluteCenter>
-                    </Box>
-                  </AbsoluteCenter>
-                </Stack>
+              <Box>
+                <Subsection
+                  markerPos={40}
+                  isFirst
+                  flipContentOnMobile
+                  leftContent={
+                    <Stack spacing={8}>
+                      <Stack
+                        spacing={3}
+                        mt={{ lg: '4.5rem' }}
+                        h="full"
+                        alignItems={{ lg: 'flex-end' }}
+                      >
+                        <Center bg="gray.500" w={12} h={12} rounded="lg">
+                          <Icon as={CgListTree} color="white" w={5} h={5} />
+                        </Center>
+                        <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                          Structured content matching your workflow
+                        </Heading>
+                        <Text
+                          color="gray.500"
+                          letterSpacing="wide"
+                          textAlign={{ lg: 'right' }}
+                        >
+                          Whatever the content is, it&apos;s easy to add,
+                          update, remove, collaborate, and revert to previous
+                          states.
+                        </Text>
+                      </Stack>
+                      <Button
+                        variant="subtle"
+                        as={Link}
+                        href="https://www.sanity.io/structured-content"
+                        target="_blank"
+                        rel="noreferrer"
+                        justifyContent="space-between"
+                        w="full"
+                      >
+                        <Text>Read more about structured content</Text>
+                        <Icon as={FaChevronRight} color="brand.600" />
+                      </Button>
+                    </Stack>
+                  }
+                  rightContent={
+                    <Link
+                      href="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ChakraImage
+                        src="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
+                        alt=""
+                      />
+                    </Link>
+                  }
+                />
 
-                <Stack mt="4.5rem" spacing={8} px={{ base: 4, md: 8 }} h="full">
-                  <Stack spacing={3}>
-                    <Center bg="gray.500" w={12} h={12} rounded="lg">
-                      <Icon as={FaCog} color="white" w={5} h={5} />
-                    </Center>
-                    <Heading as="h5" fontSize="xl" fontWeight="semibold">
-                      Update your website data dynamically
-                    </Heading>
-                    <Text color="gray.500" letterSpacing="wide">
-                      Easily change metadata for your website, the color
-                      palette, navigation, and much more.
-                    </Text>
-                  </Stack>
-                </Stack>
-              </SimpleGrid>
+                <Subsection
+                  markerPos={40}
+                  leftContent={
+                    <Link
+                      href="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ChakraImage
+                        src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
+                        alt=""
+                      />
+                    </Link>
+                  }
+                  rightContent={
+                    <Stack spacing={3} mt={{ lg: '4.5rem' }} h="full">
+                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                        <Icon as={FaCog} color="white" w={5} h={5} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        Dynamically update your website
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Easily change metadata for your website, the color
+                        palette, navigation, and much more.
+                      </Text>
+                    </Stack>
+                  }
+                />
 
-              <SplitSection
-                containerStyle={{ maxW: '6xl', w: 'full', gap: 16 }}
-              >
-                <SplitSection.LeftContent>
-                  <Stack spacing={12}>
-                    <ChakraImage
-                      src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
-                      alt=""
-                    />
-                  </Stack>
-                </SplitSection.LeftContent>
-                <SplitSection.RightContent>
-                  <Stack
-                    spacing={8}
-                    px={{ base: 4, md: 8 }}
-                    h="full"
-                    justifyContent="center"
-                  >
-                    <Stack spacing={3}>
+                <Subsection
+                  markerPos={40}
+                  flipContentOnMobile
+                  leftContent={
+                    <Stack
+                      spacing={3}
+                      mt={{ lg: '4.5rem' }}
+                      h="full"
+                      alignItems={{ lg: 'flex-end' }}
+                    >
                       <Center bg="gray.500" w={12} h={12} rounded="lg">
                         <Icon as={FaEye} color="white" w={5} h={5} />
                       </Center>
                       <Heading as="h5" fontSize="xl" fontWeight="semibold">
                         Custom content previews
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text
+                        color="gray.500"
+                        letterSpacing="wide"
+                        textAlign={{ lg: 'right' }}
+                      >
                         Make sure your content looks the way you want it to
                         before publishing it.
                       </Text>
                     </Stack>
-                  </Stack>
-                </SplitSection.RightContent>
-              </SplitSection>
+                  }
+                  rightContent={
+                    <Link
+                      href="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <ChakraImage
+                        src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
+                        alt=""
+                      />
+                    </Link>
+                  }
+                />
+              </Box>
             </Stack>
           </Stack>
         </Container>

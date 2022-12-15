@@ -47,6 +47,21 @@ const secondary = defineStyle({
   fontSize: 'sm',
 });
 
+const subtle = defineStyle({
+  fontSize: 'xs',
+  color: 'gray.600',
+  borderWidth: 1,
+  borderColor: 'gray.400',
+  h: 'fit-content',
+  fontWeight: 'light',
+  py: 2,
+  transition: '200ms ease-in-out',
+  _hover: {
+    color: 'black',
+    borderColor: 'black',
+  },
+});
+
 const Button = defineStyleConfig({
   baseStyle: {
     letterSpacing: 'wide',
@@ -54,7 +69,7 @@ const Button = defineStyleConfig({
       textDecoration: 'none',
     },
   },
-  variants: { primaryLink, secondaryLink, primary, secondary },
+  variants: { primaryLink, secondaryLink, primary, secondary, subtle },
 });
 
 export default Button;
