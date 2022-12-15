@@ -1,27 +1,33 @@
 import {
+  AbsoluteCenter,
   Box,
   Button,
+  Center,
   chakra,
+  Circle,
   Container,
+  Flex,
   Heading,
   HStack,
-  Link,
+  Icon,
+  Image as ChakraImage,
   SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { FaBolt } from '@react-icons/all-files/fa/FaBolt';
+import { FaChartLine } from '@react-icons/all-files/fa/FaChartLine';
 import { FaCheck } from '@react-icons/all-files/fa/FaCheck';
-import { FaDesktop } from '@react-icons/all-files/fa/FaDesktop';
-import { HiOutlinePuzzle } from '@react-icons/all-files/hi/HiOutlinePuzzle';
-import { MdDevices } from '@react-icons/all-files/md/MdDevices';
+import { FaGlobe } from '@react-icons/all-files/fa/FaGlobe';
+import { FaTrash } from '@react-icons/all-files/fa/FaTrash';
+import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
-import AngleDivider from '../public/dividers/angle.svg';
 import paymentIllustration from '../public/illustrations/payments.png';
-import webIllustration from '../public/illustrations/web-development.png';
-import logo from '../public/keplux-logo-full-dark.png';
-import { IconFeature } from '../src/components/core';
-import { FeatureCardIcon, SplitSection } from '../src/components/sections';
+import { IconFeature, LighthouseScore } from '../src/components/core';
+import { SplitSection } from '../src/components/sections';
+import { FaCog } from '@react-icons/all-files/fa/FaCog';
+import { FaEye } from '@react-icons/all-files/fa/FaEye';
 
 const Home = () => {
   return (
@@ -31,7 +37,7 @@ const Home = () => {
         description="Websites built with modern technologies, resulting in lightning performance, amazing SEO, and more conversions."
         canonical="https://www.keplux.com"
       />
-      <Box py={28}>
+      <Stack alignItems="center" spacing={16} py={28}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">
@@ -40,14 +46,23 @@ const Home = () => {
                 fontSize={['5xl', , '6xl', '7xl']}
                 fontWeight="black"
                 textAlign="center"
+                color="black"
               >
                 Modern Web Development
               </Heading>
-              <Text maxW="2xl" w="full" fontSize="xl" textAlign="center">
+              <Heading
+                as="h2"
+                maxW="2xl"
+                w="full"
+                fontSize="xl"
+                textAlign="center"
+                fontWeight="medium"
+                color="gray.500"
+              >
                 At Keplux Development, we build websites with modern
                 technologies and strategies that give your website lightning
                 fast performance and amazing SEO that help boost conversions.
-              </Text>
+              </Heading>
             </Stack>
             <HStack spacing={4}>
               <Button variant="primary">Start your project</Button>
@@ -55,8 +70,258 @@ const Home = () => {
             </HStack>
           </Stack>
         </Container>
+
+        <Container maxW="7xl" w="full">
+          <Stack alignItems="center" w="full" spacing={8}>
+            <Text textTransform="uppercase" fontSize="sm" fontWeight="semibold">
+              Why choose Keplux Development?
+            </Text>
+            <Stack spacing={0} alignItems="center">
+              <Box position="relative" h={32} w="1px" bg="brand.400">
+                <Box
+                  h={32}
+                  w="1px"
+                  bgGradient="linear-gradient(to-b, gray.50, transparent)"
+                />
+              </Box>
+              <Circle
+                bgGradient="linear-gradient(to-r, brand.600, brand.400)"
+                size={12}
+              >
+                <Icon as={FaBolt} color="white" />
+              </Circle>
+            </Stack>
+            <Heading
+              as="h3"
+              fontWeight="bold"
+              fontSize="3xl"
+              bgGradient="linear-gradient(to-r, brand.600, brand.400)"
+              bgClip="text"
+            >
+              Performance
+            </Heading>
+            <Stack alignItems="center" spacing={16} w="full">
+              <Stack alignItems="center">
+                <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                  Don&apos;t miss out on conversions because of a slow website.
+                </Heading>
+                <Text
+                  maxW="xl"
+                  w="full"
+                  fontSize="xl"
+                  textAlign="center"
+                  color="gray.500"
+                >
+                  The longer your website takes to load, the sooner your
+                  visitors will leave. That shouldn&apos;t happen.
+                </Text>
+              </Stack>
+              <SplitSection
+                containerStyle={{ maxW: '6xl', w: 'full', gap: 16 }}
+              >
+                <SplitSection.LeftContent>
+                  <Stack spacing={12}>
+                    <LighthouseScore
+                      heading="Keplux Development"
+                      performance={96}
+                      accessibility={98}
+                      bestPractices={100}
+                      seo={100}
+                    />
+                    <LighthouseScore
+                      heading="WordPress Websites"
+                      performance={43}
+                      accessibility={65}
+                      bestPractices={58}
+                      seo={86}
+                    />
+                  </Stack>
+                </SplitSection.LeftContent>
+                <SplitSection.RightContent>
+                  <Stack spacing={8} px={{ base: 4, md: 8 }}>
+                    <Stack spacing={3}>
+                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                        <Icon as={FaGlobe} color="white" w={5} h={5} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        Websites built with the power of React
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Your website is built with the same technology used by
+                        Facebook, Netflix, Instagram, and more.
+                      </Text>
+                    </Stack>
+                    <Stack spacing={3}>
+                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                        <Icon as={FaTrash} color="white" w={5} h={5} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        No unnecessary packages or plugins
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Websites with unnecessary packages and plugins reduce
+                        performance and increase security risks.
+                      </Text>
+                    </Stack>
+                    <Stack spacing={3}>
+                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                        <Icon as={FaChartLine} color="white" w={6} h={6} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        Performance monitoring throughout development
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        We catch performance issues quickly, eliminating
+                        bottlenecks and ensuring your website is as fast as
+                        possible.
+                      </Text>
+                    </Stack>
+                  </Stack>
+                </SplitSection.RightContent>
+              </SplitSection>
+            </Stack>
+          </Stack>
+        </Container>
+
+        <Container maxW="7xl" w="full">
+          <Stack alignItems="center" w="full" spacing={8}>
+            <Text textTransform="uppercase" fontSize="sm" fontWeight="semibold">
+              Customizable content management system
+            </Text>
+            <Stack spacing={0} alignItems="center">
+              <Box position="relative" h={32} w="1px" bg="orange.400">
+                <Box
+                  h={32}
+                  w="1px"
+                  bgGradient="linear-gradient(to-b, gray.50, transparent)"
+                />
+              </Box>
+              <Circle
+                bgGradient="linear-gradient(to-r, orange.600, orange.400)"
+                size={12}
+              >
+                <Icon as={IoIosPaper} color="white" />
+              </Circle>
+            </Stack>
+            <Heading
+              as="h3"
+              fontWeight="bold"
+              fontSize="3xl"
+              bgGradient="linear-gradient(to-r, orange.600, orange.400)"
+              bgClip="text"
+            >
+              Content Management
+            </Heading>
+            <Stack alignItems="center" spacing={16} w="full">
+              <Stack alignItems="center">
+                <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                  Manage your content the way you need
+                </Heading>
+                <Text
+                  maxW="xl"
+                  w="full"
+                  fontSize="xl"
+                  textAlign="center"
+                  color="gray.500"
+                >
+                  Fully customizable content management system to manage blogs,
+                  rental properties, or anything else you can think of.
+                </Text>
+              </Stack>
+              <SimpleGrid
+                templateColumns="1fr auto 1fr"
+                maxW="6xl"
+                w="full"
+                gap="16"
+              >
+                <Stack spacing={12}>
+                  <ChakraImage
+                    src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
+                    alt=""
+                  />
+                </Stack>
+
+                <Stack position="relative" spacing={0} alignItems="center">
+                  <AbsoluteCenter top={0}>
+                    <Box
+                      h="4.5rem"
+                      w={1}
+                      bgGradient="linear-gradient(to-b, gray.50, transparent)"
+                    />
+                  </AbsoluteCenter>
+                  <Box
+                    h="full"
+                    borderLeftWidth="1px"
+                    borderColor="gray.400"
+                    borderStyle="dashed"
+                  />
+                  <AbsoluteCenter top={24}>
+                    <Box bg="gray.50" p={3}>
+                      <AbsoluteCenter>
+                        <Circle bg="gray.400" size={4} />
+                      </AbsoluteCenter>
+                      <AbsoluteCenter>
+                        <Circle bg="gray.50" size={3} />
+                      </AbsoluteCenter>
+                    </Box>
+                  </AbsoluteCenter>
+                </Stack>
+
+                <Stack mt="4.5rem" spacing={8} px={{ base: 4, md: 8 }} h="full">
+                  <Stack spacing={3}>
+                    <Center bg="gray.500" w={12} h={12} rounded="lg">
+                      <Icon as={FaCog} color="white" w={5} h={5} />
+                    </Center>
+                    <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      Update your website data dynamically
+                    </Heading>
+                    <Text color="gray.500" letterSpacing="wide">
+                      Easily change metadata for your website, the color
+                      palette, navigation, and much more.
+                    </Text>
+                  </Stack>
+                </Stack>
+              </SimpleGrid>
+
+              <SplitSection
+                containerStyle={{ maxW: '6xl', w: 'full', gap: 16 }}
+              >
+                <SplitSection.LeftContent>
+                  <Stack spacing={12}>
+                    <ChakraImage
+                      src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
+                      alt=""
+                    />
+                  </Stack>
+                </SplitSection.LeftContent>
+                <SplitSection.RightContent>
+                  <Stack
+                    spacing={8}
+                    px={{ base: 4, md: 8 }}
+                    h="full"
+                    justifyContent="center"
+                  >
+                    <Stack spacing={3}>
+                      <Center bg="gray.500" w={12} h={12} rounded="lg">
+                        <Icon as={FaEye} color="white" w={5} h={5} />
+                      </Center>
+                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        Custom content previews
+                      </Heading>
+                      <Text color="gray.500" letterSpacing="wide">
+                        Make sure your content looks the way you want it to
+                        before publishing it.
+                      </Text>
+                    </Stack>
+                  </Stack>
+                </SplitSection.RightContent>
+              </SplitSection>
+            </Stack>
+          </Stack>
+        </Container>
+
         {/* Main header container */}
-        <Container
+        {/* <Container
           as={Stack}
           alignItems="center"
           position="relative"
@@ -66,7 +331,6 @@ const Home = () => {
           w="full"
           maxW="100vw"
         >
-          {/* CTA section */}
           <SplitSection
             containerStyle={{
               maxW: '8xl',
@@ -110,10 +374,10 @@ const Home = () => {
               </Box>
             </SplitSection.RightContent>
           </SplitSection>
-        </Container>
+        </Container> */}
 
         {/* Conversions card section */}
-        <Box position="relative" bg="brand.600" pb={40}>
+        {/* <Box position="relative" bg="brand.600" pb={40}>
           <AngleDivider
             style={{
               width: '100%',
@@ -194,9 +458,9 @@ const Home = () => {
               experience possible.
             </Text>
           </Stack>
-        </Box>
+        </Box> */}
 
-        <Box position="relative" mt={-24}>
+        {/* <Box position="relative" mt={-24}>
           <SimpleGrid
             columns={{ base: 1, md: 3 }}
             w="full"
@@ -226,7 +490,7 @@ const Home = () => {
               build a custom solution that fits your business needs."
             />
           </SimpleGrid>
-        </Box>
+        </Box> */}
 
         {/* Basic pricing section */}
         <Container w="full" maxW="8xl">
@@ -331,7 +595,7 @@ const Home = () => {
             </Button>
           </Stack>
         </Container>
-      </Box>
+      </Stack>
     </>
   );
 };
