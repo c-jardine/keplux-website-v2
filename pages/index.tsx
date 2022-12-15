@@ -664,6 +664,29 @@ const Home = () => {
                   />
                 ))}
               </Stack>
+              <HStack spacing={4}>
+                <Tooltip label="Pay a 50% retainer and we'll be in touch with the next steps.">
+                  <Button
+                    as={Link}
+                    href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
+                    target="_blank"
+                    rel="external"
+                    bg="#d946ef"
+                    color="white"
+                    transition="200ms ease-in-out"
+                    _hover={{
+                      textDecoration: 'none',
+                      filter: 'brightness(110%)',
+                    }}
+                    gap={4}
+                  >
+                    Buy now
+                  </Button>
+                </Tooltip>
+                <Button as={Link} href="/pricing" variant="secondary">
+                  View other options
+                </Button>
+              </HStack>
             </Stack>
           </Stack>
         </Container>
