@@ -1,94 +1,191 @@
 import {
+  AbsoluteCenter,
   Box,
   Center,
   chakra,
-  CircularProgress,
-  CircularProgressLabel,
+  Circle,
+  HStack,
+  Show,
   SimpleGrid,
+  Stack,
+  StackDivider,
   Text,
 } from '@chakra-ui/react';
 import { LighthouseScoreProps } from './LighthouseScore.types';
 
+const MobileLighthouseScore = (props: LighthouseScoreProps) => {
+  return (
+    <SimpleGrid columns={2} maxW="sm" w="full" mx="auto" px={4}>
+      <Stack
+        py={8}
+        alignItems="center"
+        px={4}
+        borderRightWidth={1}
+        borderBottomWidth={1}
+      >
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.performance}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          Performance
+        </Text>
+      </Stack>
+      <Stack py={8} alignItems="center" px={4} borderBottomWidth={1}>
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.accessibility}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          Accessibility
+        </Text>
+      </Stack>
+      <Stack py={8} alignItems="center" borderRightWidth={1}>
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.bestPractices}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          Best Practices
+        </Text>
+      </Stack>
+      <Stack py={8} alignItems="center">
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.seo}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          SEO
+        </Text>
+      </Stack>
+    </SimpleGrid>
+  );
+};
+
+const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
+  return (
+    <HStack justifyContent="center" divider={<StackDivider />}>
+      <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.performance}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          Performance
+        </Text>
+      </Stack>
+      <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.accessibility}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          Accessibility
+        </Text>
+      </Stack>
+      <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.bestPractices}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          Best Practices
+        </Text>
+      </Stack>
+      <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
+        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+          {props.seo}%
+        </Text>
+        <Text
+          color="gray.500"
+          fontWeight="semibold"
+          textTransform="uppercase"
+          fontSize="xs"
+        >
+          SEO
+        </Text>
+      </Stack>
+    </HStack>
+  );
+};
+
 const LighthouseScore = (props: LighthouseScoreProps) => {
   const getColor = (value: number): string => {
-    if (value < 50) return 'brand.200';
-    else if (value >= 50 && value < 90) return 'brand.400';
-    else return 'brand.600';
+    if (value < 50) return 'red.500';
+    else if (value >= 50 && value < 90) return 'yellow.400';
+    else return 'green.600';
   };
 
   return (
     <Box position="relative">
-      <Center>
+      <AbsoluteCenter w="full" h="50%" zIndex={0}>
+        <Circle
+          bgGradient="linear-gradient(to-br, brand.600, orange.400)"
+          filter="blur(32px) brightness(150%)"
+          p={8}
+        />
+      </AbsoluteCenter>
+      <Center position="relative" zIndex={1}>
         <chakra.span
           position="relative"
           bg="gray.50"
           px={4}
+          py={2}
           fontWeight="semibold"
           textTransform="uppercase"
           letterSpacing="wide"
+          rounded="md"
+          borderWidth={1}
+          borderColor="gray.300"
         >
           {props.heading}
         </chakra.span>
       </Center>
-      <Box mt={-3} h={16} borderWidth={1} borderColor="gray.300" rounded="lg" />
-      <Center>
-        <SimpleGrid
-          columns={4}
-          placeItems="center"
-          mt={-9}
-          bg="gray.50"
-          w="fit-content"
-        >
-          <CircularProgress
-            value={props.performance}
-            color={getColor(props.performance)}
-            size="72px"
-          >
-            <CircularProgressLabel fontSize="sm">
-              {props.performance}%
-            </CircularProgressLabel>
-          </CircularProgress>
-          <CircularProgress
-            value={props.accessibility}
-            color={getColor(props.accessibility)}
-            size="72px"
-          >
-            <CircularProgressLabel fontSize="sm">
-              {props.accessibility}%
-            </CircularProgressLabel>
-          </CircularProgress>
-          <CircularProgress
-            value={props.bestPractices}
-            color={getColor(props.bestPractices)}
-            size="72px"
-          >
-            <CircularProgressLabel fontSize="sm">
-              {props.bestPractices}%
-            </CircularProgressLabel>
-          </CircularProgress>
-          <CircularProgress
-            value={props.seo}
-            color={getColor(props.seo)}
-            size="72px"
-          >
-            <CircularProgressLabel fontSize="sm">
-              {props.seo}%
-            </CircularProgressLabel>
-          </CircularProgress>
-          <Text fontSize="sm" textAlign="center">
-            Performance
-          </Text>
-          <Text fontSize="sm" textAlign="center">
-            Accessibility
-          </Text>
-          <Text fontSize="sm" textAlign="center">
-            Best Practices
-          </Text>
-          <Text fontSize="sm" textAlign="center">
-            SEO
-          </Text>
-        </SimpleGrid>
-      </Center>
+      <Box
+        position="relative"
+        bg="gray.50"
+        mt="-22px"
+        pt={9}
+        pb={4}
+        borderWidth={1}
+        borderColor="gray.300"
+        rounded="lg"
+      >
+        <Show below="lg">
+          <MobileLighthouseScore {...props} />
+        </Show>
+        <Show above="lg">
+          <DesktopLighthouseScore {...props} />
+        </Show>
+      </Box>
     </Box>
   );
 };

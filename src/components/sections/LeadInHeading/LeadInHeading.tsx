@@ -17,7 +17,7 @@ const LeadInHeading = (props: LeadInHeadingProps) => {
           />
         </Box>
         <Circle bgGradient={gradient} size={12}>
-          <Icon as={props.icon} color="white" />
+          <Icon as={props.icon} color="white" w={5} h={5} />
         </Circle>
       </Stack>
       <Heading

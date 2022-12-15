@@ -28,6 +28,7 @@ const secondaryLink = defineStyle({
 
 const primary = defineStyle({
   bg: 'brand.600',
+  fontSize: 'sm',
   color: 'white',
   _hover: {
     bg: 'brand.500',
