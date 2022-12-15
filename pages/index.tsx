@@ -4,6 +4,7 @@ import {
   chakra,
   Container,
   Heading,
+  HStack,
   Link,
   SimpleGrid,
   Stack,
@@ -30,7 +31,30 @@ const Home = () => {
         description="Websites built with modern technologies, resulting in lightning performance, amazing SEO, and more conversions."
         canonical="https://www.keplux.com"
       />
-      <Box py={16}>
+      <Box py={28}>
+        <Container maxW="7xl" w="full">
+          <Stack alignItems="center" spacing={12}>
+            <Stack alignItems="center">
+              <Heading
+                as="h1"
+                fontSize={['5xl', , '6xl', '7xl']}
+                fontWeight="black"
+                textAlign="center"
+              >
+                Modern Web Development
+              </Heading>
+              <Text maxW="2xl" w="full" fontSize="xl" textAlign="center">
+                At Keplux Development, we build websites with modern
+                technologies and strategies that give your website lightning
+                fast performance and amazing SEO that help boost conversions.
+              </Text>
+            </Stack>
+            <HStack spacing={4}>
+              <Button variant="primary">Start your project</Button>
+              <Button variant="secondary">View pricing</Button>
+            </HStack>
+          </Stack>
+        </Container>
         {/* Main header container */}
         <Container
           as={Stack}
@@ -42,16 +66,6 @@ const Home = () => {
           w="full"
           maxW="100vw"
         >
-          {/* Logo */}
-          <Box position="relative" w="full" h={32}>
-            <Image
-              src={logo}
-              alt="Keplux Development logo"
-              fill
-              style={{ objectFit: 'contain' }}
-            />
-          </Box>
-
           {/* CTA section */}
           <SplitSection
             containerStyle={{
