@@ -9,7 +9,6 @@ import {
   SimpleGrid,
   Spinner,
   Stack,
-  Text,
   Textarea,
 } from '@chakra-ui/react';
 import axios from 'axios';
@@ -53,7 +52,6 @@ const ContactForm = () => {
 
   return (
     <Container position="relative" maxW="2xl" w="full">
-      <Text>hi {watch('quoteOptions')}</Text>
       <Box
         p={{ base: 4, md: 8 }}
         rounded="lg"
@@ -146,6 +144,14 @@ const ContactForm = () => {
             </SimpleGrid>
             {watch('inquiryType') === 'quote' && (
               <FormControl isInvalid={!!errors.quoteOptions}>
+                <FormLabel
+                  marginBottom={1}
+                  fontSize="xs"
+                  fontWeight="normal"
+                  letterSpacing="wide"
+                >
+                  Choose quote details
+                </FormLabel>
                 <ContactFormQuoteOptions
                   name="quoteOptions"
                   control={control}
