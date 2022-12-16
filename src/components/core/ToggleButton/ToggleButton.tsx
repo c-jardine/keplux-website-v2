@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import { ContactFormProps } from '../../../../pages/contact';
+import { ContactFormProps } from '../../sections';
 
 const ToggleButton = (props: {
   name: string;
