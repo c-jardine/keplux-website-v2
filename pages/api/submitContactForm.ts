@@ -11,7 +11,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       email,
       website,
       inquiryType,
-      interestedIn,
+      quoteOptions,
       message,
     }: ContactFormProps = req.body;
 
@@ -472,7 +472,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                         <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
                           
                     <div style="line-height: 140%; text-align: left; word-wrap: break-word;">
-                      <p style="font-size: 14px; line-height: 140%;">${interestedIn}</p>
+                      <p style="font-size: 14px; line-height: 140%;">${quoteOptions}</p>
                     </div>
 
                         </td>

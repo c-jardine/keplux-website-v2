@@ -13,52 +13,54 @@ import {
   Textarea,
 } from '@chakra-ui/react';
 import axios from 'axios';
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { ContactInterestedInOptions } from '../ContactInterestedInOptions';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { ContactFormProps } from './ContactForm.types';
 import ContactFormInquiryOptions from './ContactFormInquiryOptions';
+import ContactFormQuoteOptions from './ContactFormQuoteOptions';
 
-const InitialFormState: ContactFormProps = {
+const defaultValues: ContactFormProps = {
   name: '',
   email: '',
   website: '',
   inquiryType: 'general',
-  interestedIn: [],
+  quoteOptions: [],
   message: '',
 };
 
 const ContactForm = () => {
-  const [formData, setFormData] =
-    React.useState<ContactFormProps>(InitialFormState);
-
+  // Configure react-hook-form
   const {
-    handleSubmit,
     register,
     watch,
+    handleSubmit,
+    reset,
     control,
     formState: { errors, isSubmitting },
-  } = useForm<ContactFormProps>();
+  } = useForm<ContactFormProps>({ defaultValues });
 
-  const onSubmit = async () => {
+  // Form submission handler
+  const onSubmit: SubmitHandler<ContactFormProps> = async (
+    data: ContactFormProps
+  ) => {
     try {
-      await axios.post('/api/submitContactForm', { ...formData });
-      setFormData(InitialFormState);
+      await axios.post('/api/submitContactForm', data);
+      reset(); // Reset the form state
     } catch (e) {
+      // TODO: Show Toast on error.
       console.log(e);
     }
   };
 
   return (
     <Container position="relative" maxW="2xl" w="full">
-      {/* <Text>hi {watch('inquiryType')}</Text> */}
+      <Text>hi {watch('quoteOptions')}</Text>
       <Box
         p={{ base: 4, md: 8 }}
         rounded="lg"
         borderWidth={1}
         borderColor="gray.300"
       >
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}>
           <Stack spacing={4}>
             <SimpleGrid columns={{ base: 1, lg: 2 }} gap={4}>
               <FormControl isInvalid={!!errors.name}>
@@ -83,7 +85,7 @@ const ContactForm = () => {
                   {errors.name && errors.name.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl>
+              <FormControl isInvalid={!!errors.email}>
                 <FormLabel
                   marginBottom={1}
                   fontSize="xs"
@@ -105,7 +107,7 @@ const ContactForm = () => {
                   {errors.email && errors.email.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl>
+              <FormControl isInvalid={!!errors.website}>
                 <FormLabel
                   marginBottom={1}
                   fontSize="xs"
@@ -124,7 +126,7 @@ const ContactForm = () => {
                   {errors.website && errors.website.message}
                 </FormErrorMessage>
               </FormControl>
-              <FormControl>
+              <FormControl isInvalid={!!errors.inquiryType}>
                 <FormLabel
                   marginBottom={1}
                   fontSize="xs"
@@ -137,15 +139,24 @@ const ContactForm = () => {
                   name="inquiryType"
                   control={control}
                 />
+                <FormErrorMessage>
+                  {errors.inquiryType && errors.inquiryType.message}
+                </FormErrorMessage>
               </FormControl>
             </SimpleGrid>
             {watch('inquiryType') === 'quote' && (
-              <ContactInterestedInOptions
-                formData={formData}
-                setFormData={setFormData}
-              />
+              <FormControl isInvalid={!!errors.quoteOptions}>
+                <ContactFormQuoteOptions
+                  name="quoteOptions"
+                  control={control}
+                  errors={errors}
+                />
+                <FormErrorMessage>
+                  {errors.quoteOptions && errors.quoteOptions.message}
+                </FormErrorMessage>
+              </FormControl>
             )}
-            <FormControl>
+            <FormControl isInvalid={!!errors.message}>
               <FormLabel
                 marginBottom={1}
                 fontSize="xs"

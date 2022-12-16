@@ -3,6 +3,6 @@ export interface ContactFormProps {
   email: string;
   website: string;
   inquiryType: 'quote' | 'general';
-  interestedIn: string[];
+  quoteOptions: string[];
   message: string;
 }
