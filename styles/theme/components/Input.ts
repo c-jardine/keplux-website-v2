@@ -10,6 +10,7 @@ const Input: ComponentStyleConfig = helpers.defineMultiStyleConfig({
   variants: {
     outline: helpers.definePartsStyle({
       field: {
+        fontSize: 'sm',
         _hover: {
           borderColor: 'brand.600',
         },

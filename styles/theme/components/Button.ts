@@ -26,14 +26,51 @@ const secondaryLink = defineStyle({
   },
 });
 
+const primary = defineStyle({
+  bg: 'brand.600',
+  fontSize: 'sm',
+  color: 'white',
+  _hover: {
+    bg: 'brand.500',
+  },
+});
+
+const secondary = defineStyle({
+  bg: 'black',
+  borderWidth: 2,
+  borderColor: 'black',
+  _hover: {
+    bg: 'gray.50',
+    color: 'black',
+    textDecoration: 'none',
+  },
+  color: 'white',
+  fontSize: 'sm',
+});
+
+const subtle = defineStyle({
+  fontSize: 'xs',
+  color: 'gray.600',
+  borderWidth: 1,
+  borderColor: 'gray.400',
+  h: 'fit-content',
+  fontWeight: 'light',
+  py: 2,
+  transition: '200ms ease-in-out',
+  _hover: {
+    color: 'black',
+    borderColor: 'black',
+  },
+});
+
 const Button = defineStyleConfig({
   baseStyle: {
-    textTransform: 'uppercase',
+    letterSpacing: 'wide',
     _hover: {
       textDecoration: 'none',
     },
   },
-  variants: { primaryLink, secondaryLink },
+  variants: { primaryLink, secondaryLink, primary, secondary, subtle },
 });
 
 export default Button;

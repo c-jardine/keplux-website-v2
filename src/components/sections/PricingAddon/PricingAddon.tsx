@@ -1,57 +1,73 @@
-import { Box, Heading, HStack, Stack, Text } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Heading,
+  Icon,
+  Link,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 import { PricingAddonProps } from './PricingAddon.types';
 
 const PricingAddon = (props: PricingAddonProps) => {
   return (
-    <Stack bg="white" rounded="lg" shadow="lg" justifyContent="space-between">
-      <Box p={{ base: 4, md: 8 }}>
+    <Stack
+      justifyContent="space-between"
+      rounded="lg"
+      borderWidth={1}
+      borderColor="gray.300"
+      p={{ base: 4, md: 8 }}
+      spacing={6}
+    >
+      <Stack spacing={4}>
         <Heading as="h3" fontSize="lg" textTransform="uppercase">
           {props.heading}
         </Heading>
+        <Flex gap={1} alignItems="flex-end">
+          {props.price.abovePrice && (
+            <Text color="gray.600">{props.price.abovePrice}</Text>
+          )}
+          {props.price.price && (
+            <Text
+              fontSize="3xl"
+              fontWeight="black"
+              lineHeight={1}
+              color="brand.600"
+            >
+              {props.price.price}
+            </Text>
+          )}
+          {props.price.belowPrice && (
+            <Text color="gray.600">{props.price.belowPrice}</Text>
+          )}
+        </Flex>
         <Text color="gray.600" fontSize="sm">
           {props.description}
         </Text>
-      </Box>
-      <Stack
-        bg="brand.50"
-        justifyContent="space-between"
-        alignItems="center"
-        roundedRight="lg"
-        spacing={0}
-        px={{ base: 4, md: 8 }}
-        py={{ base: 8, md: 12 }}
-      >
-        <Stack alignItems="center">
-          {props.price?.abovePrice && (
-            <Text textTransform="uppercase" color="gray.600">
-              {props.price?.abovePrice}
-            </Text>
-          )}
-          <Text fontWeight="black" fontSize="6xl" lineHeight={1}>
-            {props.price?.price}
-          </Text>
-          {props.price?.belowPrice && (
-            <Text
-              textTransform="uppercase"
-              fontWeight="semibold"
-              color="gray.600"
-            >
-              {props.price?.belowPrice}
-            </Text>
-          )}
-          {props.price?.primaryCta && (
-            <HStack pt={8}>
-              {props.price?.primaryCta}
-              {props.price?.secondaryCta && props.price?.secondaryCta}
-            </HStack>
-          )}
-        </Stack>
-        {props.price?.disclaimer && (
-          <Text pt={4} fontSize="xs" fontStyle="italic" color="blackAlpha.600">
-            {props.price?.disclaimer}
-          </Text>
-        )}
       </Stack>
+      <Button
+        as={Link}
+        href={props.cta.href}
+        target={props.cta.href.startsWith('https://') && '_blank'}
+        rel={props.cta.href.startsWith('https://') && 'noreferrer'}
+        bg="black"
+        borderWidth={2}
+        borderColor="black"
+        _hover={{
+          bg: 'gray.50',
+          color: 'black',
+          textDecoration: 'none',
+        }}
+        color="white"
+        fontSize="sm"
+        letterSpacing="wide"
+        justifyContent="space-between"
+        textTransform="none"
+      >
+        <Text>{props.cta.label}</Text>
+        <Icon as={FaChevronRight} />
+      </Button>
     </Stack>
   );
 };

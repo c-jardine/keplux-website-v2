@@ -20,7 +20,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/pageContents/referralProgram/ReferralPayoutChart",
-    "next-sitemap.config.js"
+    "next-sitemap.config.js",
+    "src/lib/googleAnalytics/gtag.js"
   ],
   "exclude": ["node_modules"]
 }

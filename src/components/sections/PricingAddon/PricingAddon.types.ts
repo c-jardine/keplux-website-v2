@@ -4,4 +4,8 @@ export interface PricingAddonProps {
   heading: string;
   description: string;
   price: PricingStructureProps;
+  cta: {
+    label: string;
+    href: string;
+  };
 }
