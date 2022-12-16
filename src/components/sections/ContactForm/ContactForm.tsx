@@ -8,9 +8,11 @@ import {
   Input,
   SimpleGrid,
   Stack,
+  Text,
   Textarea,
   useRadioGroup,
 } from '@chakra-ui/react';
+import axios from 'axios';
 import React from 'react';
 import { RadioCard } from '../../core';
 import { ContactInterestedInOptions } from '../ContactInterestedInOptions';
@@ -40,6 +42,12 @@ const ContactForm = () => {
 
   const _handleChange = (e: { target: { name: string; value: string } }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const _handleSubmit = async () => {
+    const res = await axios.post('/api/submitContactForm', { ...formData });
+    const data = await res.data;
+    console.log(data);
   };
 
   return (
@@ -139,7 +147,9 @@ const ContactForm = () => {
               onChange={_handleChange}
             />
           </FormControl>
-          <Button variant="primary">Send</Button>
+          <Button variant="primary" onClick={_handleSubmit}>
+            Send
+          </Button>
         </Stack>
       </Box>
     </Container>
