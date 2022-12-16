@@ -11,7 +11,6 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import React from 'react';
 import { NavbarItemProps } from './Navbar.types';
 import NavbarItemDesktop from './NavbarItemDesktop';
 
@@ -19,6 +18,7 @@ const NavbarDropdownDesktopItem = (props: NavbarItemProps) => {
   return (
     <LinkBox
       as="article"
+      cursor="pointer"
       aria-label={`View ${props.label} solutions`}
       role="group"
       p={4}
@@ -37,11 +37,15 @@ const NavbarDropdownDesktopItem = (props: NavbarItemProps) => {
         rounded="md"
         mb={4}
       />
-      <LinkOverlay href={props.href}>
-        <Text textTransform="uppercase" fontWeight="semibold">
+      <Text>
+        <LinkOverlay
+          href={props.href}
+          textTransform="uppercase"
+          fontWeight="semibold"
+        >
           {props.label}
-        </Text>
-      </LinkOverlay>
+        </LinkOverlay>
+      </Text>
       <Text fontSize="xs">{props.description}</Text>
     </LinkBox>
   );

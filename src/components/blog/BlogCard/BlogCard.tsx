@@ -4,7 +4,6 @@ import {
   Flex,
   Heading,
   Image,
-  Link,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -12,7 +11,7 @@ import { formatDistanceToNow } from 'date-fns';
 import React from 'react';
 import { PostProps } from '../../../lib/studio/types';
 import { urlForImage } from '../../../lib/studio/urlForImage';
-import { Tag } from '../../core';
+import { KLink, Tag } from '../../core';
 
 const BlogCard = (props: PostProps) => {
   const [publishedOn, setPublishedOn] = React.useState<string>(
@@ -36,7 +35,7 @@ const BlogCard = (props: PostProps) => {
       <Box maxW={{ md: 64 }} w="full">
         {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
           <AspectRatio ratio={1.91 / 1}>
-            <Link href={`/blog/post/${props.slug.current}`}>
+            <KLink href={`/blog/post/${props.slug.current}`}>
               <Image
                 src={urlForImage(props.coverPhoto).url()}
                 alt={props.coverPhoto.caption}
@@ -44,7 +43,7 @@ const BlogCard = (props: PostProps) => {
                 h="full"
                 objectFit="cover"
               />
-            </Link>
+            </KLink>
           </AspectRatio>
         )}
       </Box>
@@ -55,9 +54,9 @@ const BlogCard = (props: PostProps) => {
           ))}
         </Flex>
         <Heading as="h3" size="lg">
-          <Link href={`/blog/post/${props.slug.current}`}>{props.title}</Link>
+          <KLink href={`/blog/post/${props.slug.current}`}>{props.title}</KLink>
         </Heading>
-        <Link
+        <KLink
           href={`/blog/author/${props.author.slug.current}`}
           zIndex={1}
           mt={2}
@@ -67,7 +66,7 @@ const BlogCard = (props: PostProps) => {
           fontWeight="semibold"
         >
           {props.author.name}
-        </Link>
+        </KLink>
         <Text fontSize="xs" textTransform="uppercase">
           {publishedOn} ago
         </Text>

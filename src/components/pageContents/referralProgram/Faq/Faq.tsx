@@ -6,10 +6,10 @@ import {
   AccordionPanel,
   Box,
   Heading,
-  Link,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { KLink } from '../../../core';
 import FaqContents from './Faq.constants';
 
 const Faq = () => {
@@ -25,9 +25,9 @@ const Faq = () => {
         <Heading as="h2">FAQ</Heading>
         <Text>
           These should cover everything you need to know, but feel free to{' '}
-          <Link href="/contact" color="brand.600" fontWeight="semibold">
+          <KLink href="/contact" color="brand.600" fontWeight="semibold">
             contact us
-          </Link>{' '}
+          </KLink>{' '}
           if we&apos;re missing something or you have other questions.
         </Text>
       </Box>

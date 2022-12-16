@@ -1,17 +1,18 @@
 import {
-  chakra,
   Box,
   Button,
-  Heading,
-  Stack,
-  Text,
+  chakra,
   Container,
+  Heading,
   Image as ChakraImage,
   SlideFade,
+  Stack,
+  Text,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import developmentIllustration from '../../../../public/illustrations/web-development.png';
+import { KLink } from '../../core';
 import { SplitSection } from '../../sections';
 
 const Development = () => {
@@ -53,11 +54,14 @@ const Development = () => {
                 <Stack mt={6} color="whiteAlpha.800">
                   <Text>
                     By using modern tools like{' '}
-                    <Link href="https://reactjs.org">
-                      <chakra.span color="brand.50" fontWeight="semibold">
-                        React.js
-                      </chakra.span>
-                    </Link>
+                    <KLink
+                      href="https://reactjs.org"
+                      rel="noopener"
+                      color="brand.50"
+                      fontWeight="semibold"
+                    >
+                      React.js
+                    </KLink>
                     , your website will be lightning fast. Frequently used tools
                     like WordPress and SquareSpace are often bloated and require
                     time and skills to maintain that you may not have.

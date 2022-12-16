@@ -1,6 +1,6 @@
 import { Box, chakra, Container, Heading, Stack, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
-import Link from 'next/link';
+import { KLink } from '../src/components/core';
 
 const RefundPolicyPage: NextPage = () => {
   return (
@@ -49,9 +49,9 @@ const RefundPolicyPage: NextPage = () => {
         <Text>
           If you have any questions, concerns, or complaints about our return
           policy, please contact us at{' '}
-          <Link href="mailto:contact@keplux.com">
-            <chakra.span fontWeight="semibold">contact@keplux.com</chakra.span>
-          </Link>{' '}
+          <KLink href="mailto:contact@keplux.com" fontWeight="semibold">
+            contact@keplux.com
+          </KLink>{' '}
           and we&apos;d be happy to speak with you.
         </Text>
       </Box>

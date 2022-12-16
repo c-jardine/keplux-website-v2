@@ -27,7 +27,7 @@ import { FaTrash } from '@react-icons/all-files/fa/FaTrash';
 import { FaUsers } from '@react-icons/all-files/fa/FaUsers';
 import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { NextSeo } from 'next-seo';
-import { LighthouseScore } from '../src/components/core';
+import { KLink, LighthouseScore } from '../src/components/core';
 import {
   LeadInHeading,
   SplitSection,
@@ -261,7 +261,7 @@ const Home = () => {
                         as={Link}
                         href="https://www.sanity.io/structured-content"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener"
                         justifyContent="space-between"
                         w="full"
                       >
@@ -272,7 +272,7 @@ const Home = () => {
                   }
                   rightContent={
                     <Box>
-                      <Link
+                      <KLink
                         href="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
                         target="_blank"
                         rel="noreferrer"
@@ -281,7 +281,7 @@ const Home = () => {
                           src="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
                           alt=""
                         />
-                      </Link>
+                      </KLink>
                     </Box>
                   }
                 />
@@ -289,7 +289,7 @@ const Home = () => {
                 <Subsection
                   markerPos={40}
                   leftContent={
-                    <Link
+                    <KLink
                       href="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
                       target="_blank"
                       rel="noreferrer"
@@ -298,7 +298,7 @@ const Home = () => {
                         src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
                         alt=""
                       />
-                    </Link>
+                    </KLink>
                   }
                   rightContent={
                     <Stack spacing={3} mt={{ lg: '4.5rem' }} h="full">
@@ -353,7 +353,7 @@ const Home = () => {
                     </Stack>
                   }
                   rightContent={
-                    <Link
+                    <KLink
                       href="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
                       target="_blank"
                       rel="noreferrer"
@@ -362,7 +362,7 @@ const Home = () => {
                         src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
                         alt=""
                       />
-                    </Link>
+                    </KLink>
                   }
                 />
               </Box>
@@ -399,7 +399,7 @@ const Home = () => {
               >
                 <SplitSection.LeftContent>
                   <Stack spacing={12}>
-                    <Link
+                    <KLink
                       href="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
                       target="_blank"
                       rel="noreferrer"
@@ -408,7 +408,7 @@ const Home = () => {
                         src="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
                         alt=""
                       />
-                    </Link>
+                    </KLink>
                   </Stack>
                 </SplitSection.LeftContent>
                 <SplitSection.RightContent>
@@ -471,14 +471,14 @@ const Home = () => {
                     </Stack>
                     <Text fontSize="sm" fontStyle="italic" color="gray.500">
                       *When using the Swell headless e-commerce platform.{' '}
-                      <Link
+                      <KLink
                         href="https://www.swell.is"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener"
                         fontWeight="semibold"
                       >
                         Click to learn more about Swell.
-                      </Link>
+                      </KLink>
                     </Text>
                   </Stack>
                 </SplitSection.RightContent>
@@ -518,7 +518,7 @@ const Home = () => {
                       as={Link}
                       href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
                       target="_blank"
-                      rel="external"
+                      rel="noopener"
                       bg="#d946ef"
                       color="white"
                       transition="200ms ease-in-out"
@@ -670,7 +670,7 @@ const Home = () => {
                     as={Link}
                     href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
                     target="_blank"
-                    rel="external"
+                    rel="noopener"
                     bg="#d946ef"
                     color="white"
                     transition="200ms ease-in-out"

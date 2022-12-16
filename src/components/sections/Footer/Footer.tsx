@@ -4,14 +4,14 @@ import {
   Divider,
   Flex,
   Icon,
-  Link,
   SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
 import Image from 'next/image';
 import logo from '../../../../public/keplux-logo-full-dark.png';
-import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
+import { KLink } from '../../core';
 
 const Footer = () => {
   return (
@@ -29,13 +29,13 @@ const Footer = () => {
               </Box>
               <Flex pt={2} alignSelf="flex-start" alignItems="center" gap={2}>
                 <Icon as={FaEnvelope} />
-                <Link
+                <KLink
                   href="mailto:contact@keplux.com"
                   fontSize="sm"
                   textTransform="uppercase"
                 >
                   contact@keplux.com
-                </Link>
+                </KLink>
               </Flex>
             </Stack>
             <Stack>
@@ -55,12 +55,12 @@ const Footer = () => {
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
-                <Link href="/">Home</Link>
-                <Link href="/pricing">Pricing</Link>
-                <Link href="/our-work">Our Work</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/referral-program">Referral Program</Link>
-                <Link href="/contact">Contact</Link>
+                <KLink href="/">Home</KLink>
+                <KLink href="/pricing">Pricing</KLink>
+                <KLink href="/our-work">Our Work</KLink>
+                <KLink href="/blog">Blog</KLink>
+                <KLink href="/referral-program">Referral Program</KLink>
+                <KLink href="/contact">Contact</KLink>
               </Stack>
             </Stack>
             <Stack>
@@ -80,14 +80,14 @@ const Footer = () => {
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
-                <Link href="/solutions#development">Development</Link>
-                <Link href="/solutions#ecommerce">E-Commerce</Link>
-                <Link href="/solutions#content-management">
+                <KLink href="/solutions#development">Development</KLink>
+                <KLink href="/solutions#ecommerce">E-Commerce</KLink>
+                <KLink href="/solutions#content-management">
                   Content Management
-                </Link>
-                <Link href="/solutions#hosting">Hosting</Link>
-                <Link href="/solutions#analytics">Analytics</Link>
-                <Link href="/solutions#maintenance">Maintenance</Link>
+                </KLink>
+                <KLink href="/solutions#hosting">Hosting</KLink>
+                <KLink href="/solutions#analytics">Analytics</KLink>
+                <KLink href="/solutions#maintenance">Maintenance</KLink>
               </Stack>
             </Stack>
           </SimpleGrid>

@@ -1,6 +1,5 @@
 import {
   Box,
-  chakra,
   Container,
   Heading,
   HStack,
@@ -11,7 +10,7 @@ import {
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import { NextPage } from 'next';
-import Link from 'next/link';
+import { KLink } from '../src/components/core';
 import { ContactForm, SplitSection } from '../src/components/sections';
 
 const ContactPage: NextPage = () => {
@@ -54,7 +53,7 @@ const ContactPage: NextPage = () => {
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
             <Container w="full" h="full">
-              <Stack justifyContent="center" h="full" spacing={4} pb={16}>
+              <Stack justifyContent="flex-start" h="full" spacing={4} pb={16}>
                 <Heading as="h2">Contact information</Heading>
                 <Stack spacing={8} pl={4}>
                   <Box
@@ -70,11 +69,9 @@ const ContactPage: NextPage = () => {
                     >
                       Email
                     </Text>
-                    <Link href="mailto:contact@keplux.com">
-                      <chakra.span color="gray.500">
-                        contact@keplux.com
-                      </chakra.span>
-                    </Link>
+                    <KLink href="mailto:contact@keplux.com" color="gray.500">
+                      contact@keplux.com
+                    </KLink>
                   </Box>
                   <Stack
                     borderLeftWidth={4}
