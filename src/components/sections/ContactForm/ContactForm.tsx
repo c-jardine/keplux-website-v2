@@ -10,7 +10,9 @@ import {
   SimpleGrid,
   Spinner,
   Stack,
+  Text,
   Textarea,
+  useToast,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -28,6 +30,8 @@ const defaultValues: ContactFormProps = {
 };
 
 const ContactForm = () => {
+  const toast = useToast();
+
   // Configure react-hook-form
   const {
     register,
@@ -45,9 +49,40 @@ const ContactForm = () => {
     try {
       await axios.post('/api/submitContactForm', data);
       reset(); // Reset the form state
+      toast({
+        position: 'bottom',
+        duration: 2000,
+        render: () => (
+          <Box bg="green.600" py={4} rounded="md">
+            <Text
+              textAlign="center"
+              textTransform="uppercase"
+              color="white"
+              fontWeight="bold"
+            >
+              Success!
+            </Text>
+          </Box>
+        ),
+      });
     } catch (e) {
       // TODO: Show Toast on error.
-      console.log(e);
+      toast({
+        position: 'bottom',
+        duration: 2000,
+        render: () => (
+          <Box bg="red.600" py={4} rounded="md">
+            <Text
+              textAlign="center"
+              textTransform="uppercase"
+              color="white"
+              fontWeight="bold"
+            >
+              Something went wrong
+            </Text>
+          </Box>
+        ),
+      });
     }
   };
 

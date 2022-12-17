@@ -566,7 +566,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const response = await client.send(command);
     res.send(response);
   } catch (e) {
-    res.send(e);
+    throw new Error('INTERNAL SERVER ERROR');
   }
 };
 
