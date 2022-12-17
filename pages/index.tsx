@@ -1,9 +1,13 @@
+import cmsLivePreview from '../public/images/content-management-live-preview.png';
+import cmsMetadata from '../public/images/content-management-metadata.png';
+import cmsMovies from '../public/images/content-management-movies.png';
+import swellOrders from '../public/images/swell-ecommerce-orders.png';
+
 import {
   AbsoluteCenter,
   Box,
   Button,
   Center,
-  Image as ChakraImage,
   Container,
   HStack,
   Heading,
@@ -28,6 +32,7 @@ import { FaTrash } from '@react-icons/all-files/fa/FaTrash';
 import { FaUsers } from '@react-icons/all-files/fa/FaUsers';
 import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 import { KLink, LighthouseScore } from '../src/components/core';
 import {
   LeadInHeading,
@@ -287,9 +292,9 @@ const Home = () => {
                         rel="noreferrer"
                         position="relative"
                       >
-                        <ChakraImage
-                          src="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
-                          alt=""
+                        <Image
+                          src={cmsMovies}
+                          alt="Content management system interface showing the management of movies, actors, and screenings."
                         />
                       </KLink>
                     </Box>
@@ -314,9 +319,9 @@ const Home = () => {
                         rel="noreferrer"
                         position="relative"
                       >
-                        <ChakraImage
-                          src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
-                          alt=""
+                        <Image
+                          src={cmsMetadata}
+                          alt="Content management system interface showing the management of a website's metadata, colors, and navigation."
                         />
                       </KLink>
                     </Box>
@@ -389,9 +394,9 @@ const Home = () => {
                         rel="noreferrer"
                         position="relative"
                       >
-                        <ChakraImage
-                          src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
-                          alt=""
+                        <Image
+                          src={cmsLivePreview}
+                          alt="Content management system interface showing a live preview of a web page built with Sanity."
                         />
                       </KLink>
                     </Box>
@@ -445,9 +450,9 @@ const Home = () => {
                       rel="noreferrer"
                       position="relative"
                     >
-                      <ChakraImage
-                        src="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
-                        alt=""
+                      <Image
+                        src={swellOrders}
+                        alt="Swell e-commerce orders screen showing all recent orders, including paid, unpaid, refunded, and canceled orders. Also includes price paid, customer name, and fulfillment status."
                       />
                     </KLink>
                   </Box>

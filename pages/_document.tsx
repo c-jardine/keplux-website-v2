@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 const Document = () => {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <link
           rel="apple-touch-icon"
