@@ -157,7 +157,7 @@ const ContactPage: NextPage = () => {
                         />
                       </Box>
                       {/* Marker */}
-                      <Box position="absolute" bottom="82px" left={2}>
+                      <Box position="absolute" bottom="44px" left={2}>
                         <AbsoluteCenter>
                           <Circle
                             bgGradient="linear-gradient(to-br, gray.600, gray.300)"
