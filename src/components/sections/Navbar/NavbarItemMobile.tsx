@@ -1,13 +1,12 @@
-import { Link } from '@chakra-ui/react';
-import React from 'react';
-import { NavbarItemProps } from './Navbar.types';
 import { useRouter } from 'next/router';
+import { KLink } from '../../core';
+import { NavbarItemProps } from './Navbar.types';
 
 const NavbarItemMobile = (props: NavbarItemProps) => {
   const router = useRouter();
 
   return (
-    <Link
+    <KLink
       key={props.label}
       onClick={props.onClick}
       href={!props.items ? props.href : '#'}
@@ -25,7 +24,7 @@ const NavbarItemMobile = (props: NavbarItemProps) => {
       borderColor={router.route === props.href ? 'brand.500' : 'transparent'}
     >
       {props.label}
-    </Link>
+    </KLink>
   );
 };
 

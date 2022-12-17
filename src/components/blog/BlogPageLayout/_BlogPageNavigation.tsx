@@ -12,8 +12,8 @@ import {
 } from '@chakra-ui/react';
 import type { PortableTextBlock } from '@portabletext/types';
 import { FaCircle } from '@react-icons/all-files/fa/FaCircle';
-import Link from 'next/link';
 import { PostProps } from '../../../lib/studio/types';
+import { KLink } from '../../core';
 
 const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
   // @ts-ignore
@@ -61,7 +61,7 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                     color="gray.700"
                     w="fit-content"
                   >
-                    <Link href={`#${block._key}`} role="group">
+                    <KLink href={`#${block._key}`} role="group">
                       {block.children[0].text}
                       <Box
                         position="absolute"
@@ -74,7 +74,7 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                         _groupHover={{ transform: 'scaleY(100%)' }}
                         transition="200ms ease-in-out"
                       />
-                    </Link>
+                    </KLink>
                   </ListItem>
                 )}
                 {block.style === 'h3' && (
@@ -87,9 +87,9 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                     color="gray.600"
                   >
                     <ListIcon as={FaCircle} w={1} h={1} />
-                    <Link href={`#${block._key}`}>
+                    <KLink href={`#${block._key}`}>
                       {block.children[0].text}
-                    </Link>
+                    </KLink>
                   </ListItem>
                 )}
               </Box>

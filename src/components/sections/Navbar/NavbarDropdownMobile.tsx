@@ -4,15 +4,15 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
-  Link,
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { KLink } from '../../core';
 import { NavbarItemProps } from './Navbar.types';
 
 const NavbarDropdownMobileItem = (props: NavbarItemProps) => {
   return (
-    <Link
+    <KLink
       key={props.label}
       href={props.href}
       position="relative"
@@ -28,7 +28,7 @@ const NavbarDropdownMobileItem = (props: NavbarItemProps) => {
       onClick={props.onClick}
     >
       {props.label}
-    </Link>
+    </KLink>
   );
 };
 

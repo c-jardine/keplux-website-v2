@@ -1,12 +1,13 @@
 import {
+  AbsoluteCenter,
   Box,
   Button,
   Center,
-  Container,
-  Heading,
-  HStack,
-  Icon,
   Image as ChakraImage,
+  Container,
+  HStack,
+  Heading,
+  Icon,
   Link,
   Stack,
   StackDivider,
@@ -27,7 +28,7 @@ import { FaTrash } from '@react-icons/all-files/fa/FaTrash';
 import { FaUsers } from '@react-icons/all-files/fa/FaUsers';
 import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { NextSeo } from 'next-seo';
-import { LighthouseScore } from '../src/components/core';
+import { KLink, LighthouseScore } from '../src/components/core';
 import {
   LeadInHeading,
   SplitSection,
@@ -43,7 +44,7 @@ const Home = () => {
         description="Websites built with modern technologies, resulting in lightning performance, amazing SEO, and more conversions."
         canonical="https://www.keplux.com"
       />
-      <Stack alignItems="center" spacing={16} py={28}>
+      <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">
@@ -261,7 +262,7 @@ const Home = () => {
                         as={Link}
                         href="https://www.sanity.io/structured-content"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener"
                         justifyContent="space-between"
                         w="full"
                       >
@@ -271,17 +272,26 @@ const Home = () => {
                     </Stack>
                   }
                   rightContent={
-                    <Box>
-                      <Link
+                    <Box position="relative">
+                      <AbsoluteCenter w="85%" h="85%" zIndex={0}>
+                        <Box
+                          h="full"
+                          bgGradient="linear-gradient(to-br, orange.400, brand.600)"
+                          filter="blur(32px) brightness(150%)"
+                          p={8}
+                        />
+                      </AbsoluteCenter>
+                      <KLink
                         href="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
                         target="_blank"
                         rel="noreferrer"
+                        position="relative"
                       >
                         <ChakraImage
                           src="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
                           alt=""
                         />
-                      </Link>
+                      </KLink>
                     </Box>
                   }
                 />
@@ -289,16 +299,27 @@ const Home = () => {
                 <Subsection
                   markerPos={40}
                   leftContent={
-                    <Link
-                      href="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ChakraImage
-                        src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
-                        alt=""
-                      />
-                    </Link>
+                    <Box position="relative">
+                      <AbsoluteCenter w="85%" h="85%" zIndex={0}>
+                        <Box
+                          h="full"
+                          bgGradient="linear-gradient(to-tl, orange.400, brand.600)"
+                          filter="blur(32px) brightness(150%)"
+                          p={8}
+                        />
+                      </AbsoluteCenter>
+                      <KLink
+                        href="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
+                        target="_blank"
+                        rel="noreferrer"
+                        position="relative"
+                      >
+                        <ChakraImage
+                          src="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
+                          alt=""
+                        />
+                      </KLink>
+                    </Box>
                   }
                   rightContent={
                     <Stack spacing={3} mt={{ lg: '4.5rem' }} h="full">
@@ -353,16 +374,27 @@ const Home = () => {
                     </Stack>
                   }
                   rightContent={
-                    <Link
-                      href="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ChakraImage
-                        src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
-                        alt=""
-                      />
-                    </Link>
+                    <Box position="relative">
+                      <AbsoluteCenter w="85%" h="85%" zIndex={0}>
+                        <Box
+                          h="full"
+                          bgGradient="linear-gradient(to-br, orange.400, brand.600)"
+                          filter="blur(32px) brightness(150%)"
+                          p={8}
+                        />
+                      </AbsoluteCenter>
+                      <KLink
+                        href="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
+                        target="_blank"
+                        rel="noreferrer"
+                        position="relative"
+                      >
+                        <ChakraImage
+                          src="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
+                          alt=""
+                        />
+                      </KLink>
+                    </Box>
                   }
                 />
               </Box>
@@ -398,18 +430,27 @@ const Home = () => {
                 containerStyle={{ maxW: '6xl', w: 'full', gap: 16 }}
               >
                 <SplitSection.LeftContent>
-                  <Stack spacing={12}>
-                    <Link
+                  <Box position="relative">
+                    <AbsoluteCenter w="85%" h="85%" zIndex={0}>
+                      <Box
+                        h="full"
+                        bgGradient="linear-gradient(to-br, cyan.600, #e879f9)"
+                        filter="blur(32px) brightness(150%)"
+                        p={8}
+                      />
+                    </AbsoluteCenter>
+                    <KLink
                       href="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
                       target="_blank"
                       rel="noreferrer"
+                      position="relative"
                     >
                       <ChakraImage
                         src="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
                         alt=""
                       />
-                    </Link>
-                  </Stack>
+                    </KLink>
+                  </Box>
                 </SplitSection.LeftContent>
                 <SplitSection.RightContent>
                   <Stack spacing={8} px={{ base: 4, md: 8 }}>
@@ -471,14 +512,14 @@ const Home = () => {
                     </Stack>
                     <Text fontSize="sm" fontStyle="italic" color="gray.500">
                       *When using the Swell headless e-commerce platform.{' '}
-                      <Link
+                      <KLink
                         href="https://www.swell.is"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener"
                         fontWeight="semibold"
                       >
                         Click to learn more about Swell.
-                      </Link>
+                      </KLink>
                     </Text>
                   </Stack>
                 </SplitSection.RightContent>
@@ -518,7 +559,7 @@ const Home = () => {
                       as={Link}
                       href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
                       target="_blank"
-                      rel="external"
+                      rel="noopener"
                       bg="#d946ef"
                       color="white"
                       transition="200ms ease-in-out"
@@ -670,7 +711,7 @@ const Home = () => {
                     as={Link}
                     href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
                     target="_blank"
-                    rel="external"
+                    rel="noopener"
                     bg="#d946ef"
                     color="white"
                     transition="200ms ease-in-out"

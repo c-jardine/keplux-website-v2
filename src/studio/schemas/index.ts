@@ -3,9 +3,11 @@ import {
   navbarType,
   pageType,
   postType,
+  projectType,
   seriesType,
   tagType,
 } from './documents';
+
 import {
   codeBlockType,
   codeTabGroupType,
@@ -39,6 +41,7 @@ const documents = [
   authorType,
   pageType,
   tagType,
+  projectType,
 ];
 
 export const schemaTypes = [...objects, ...documents];

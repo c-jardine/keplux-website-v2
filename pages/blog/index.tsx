@@ -14,7 +14,7 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
         description="Geared towards developers, you can learn about our development process and how to implement some of what we do into your own projects."
         canonical="https://www.keplux.com/blog"
       />
-      <Stack alignItems="center" spacing={16} py={28}>
+      <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">

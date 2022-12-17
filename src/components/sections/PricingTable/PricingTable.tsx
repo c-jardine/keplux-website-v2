@@ -8,7 +8,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  Heading,
   Icon,
   Link,
   Show,
@@ -17,11 +16,11 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
+import { FaShoppingCart } from '@react-icons/all-files/fa/FaShoppingCart';
 import React from 'react';
-import PlanPricing from './constants/planPricing';
 import PricingTableDesktop from './PricingTableDesktop';
 import PricingTableMobile from './PricingTableMobile';
-import { FaShoppingCart } from '@react-icons/all-files/fa/FaShoppingCart';
+import PlanPricing from './constants/planPricing';
 
 const PricingTable = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -38,20 +37,6 @@ const PricingTable = () => {
 
   return (
     <Box>
-      <Container maxW="6xl" w="full" mb={8}>
-        <Heading
-          as="h2"
-          fontWeight="black"
-          color="black"
-          fontSize={['3xl', , '5xl']}
-        >
-          Business packages
-        </Heading>
-        <Text>
-          These packages are designed to get businesses up and running quickly.
-        </Text>
-      </Container>
-
       <Show below="md">
         <Flex
           position="sticky"

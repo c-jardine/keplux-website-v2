@@ -6,6 +6,7 @@ import { deskTool } from 'sanity/desk';
 import {
   BlogPostsViewerStructure,
   BlogStructure,
+  ProjectStructure,
 } from './src/studio/deskStructure';
 import { schemaTypes } from './src/studio/schemas';
 
@@ -22,7 +23,12 @@ const config = defineConfig({
       structure: (S) => {
         return S.list()
           .title('Content')
-          .items([BlogStructure(S), S.divider(), BlogPostsViewerStructure(S)]);
+          .items([
+            BlogStructure(S),
+            ProjectStructure(S),
+            S.divider(),
+            BlogPostsViewerStructure(S),
+          ]);
       },
     }),
     codeInput(),

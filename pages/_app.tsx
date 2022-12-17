@@ -6,7 +6,6 @@ import React from 'react';
 import { hotjar } from 'react-hotjar';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Footer, Navbar } from '../src/components/sections';
-import * as gtag from '../src/lib/googleAnalytics/gtag';
 import '../styles/globals.css';
 import theme from '../styles/theme';
 
@@ -17,17 +16,6 @@ const App = ({ Component, pageProps }: AppProps) => {
   React.useEffect(() => {
     hotjar.initialize(3288819, 1);
   }, []);
-
-  // Google Analytics
-  React.useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
 
   return (
     <ChakraProvider theme={theme}>
@@ -52,7 +40,10 @@ const App = ({ Component, pageProps }: AppProps) => {
           }}
         />
         {!router.asPath.startsWith('/studio') && <Navbar />}
-        <Box py={!router.asPath.startsWith('/studio') && 16}>
+        <Box
+          pt={!router.asPath.startsWith('/studio') && 44}
+          pb={!router.asPath.startsWith('/studio') && 28}
+        >
           <Component {...pageProps} />
         </Box>
         {!router.asPath.startsWith('/studio') && <Footer />}

@@ -1,7 +1,6 @@
 import {
   Code,
   Heading,
-  Link,
   List,
   ListIcon,
   ListItem,
@@ -13,6 +12,7 @@ import React from 'react';
 import { CodeBlock } from '../CodeBlock';
 import { CodeTabs } from '../CodeTabs';
 import { CopyCodeInline } from '../CopyCodeInline';
+import { KLink } from '../KLink';
 import { CodeBlockProps } from './PortableText.types';
 
 const block = {
@@ -99,14 +99,14 @@ const marks = {
     children: React.ReactNode;
     value: { href: string };
   }) => (
-    <Link
+    <KLink
       href={value.href}
       target="_blank"
-      rel="noreferrer"
+      rel="noopener"
       fontWeight="semibold"
     >
       {children}
-    </Link>
+    </KLink>
   ),
 };
 

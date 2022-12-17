@@ -49,8 +49,8 @@ const Navbar = () => {
           as={Link}
           href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
           target="_blank"
-          rel="external"
-          variant="primaryLink"
+          rel="noopener"
+          variant="primary"
         >
           Customer Login
         </Button>
@@ -96,8 +96,8 @@ const Navbar = () => {
                 as={Link}
                 href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
                 target="_blank"
-                rel="external"
-                colorScheme="brand"
+                rel="noopener"
+                variant="primary"
               >
                 Customer Login
               </Button>

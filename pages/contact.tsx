@@ -1,9 +1,10 @@
 import {
+  AbsoluteCenter,
   Box,
-  chakra,
+  Circle,
   Container,
-  Heading,
   HStack,
+  Heading,
   Icon,
   Stack,
   Text,
@@ -11,13 +12,19 @@ import {
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import { NextPage } from 'next';
-import Link from 'next/link';
+import { KLink } from '../src/components/core';
 import { ContactForm, SplitSection } from '../src/components/sections';
+import { NextSeo } from 'next-seo';
 
 const ContactPage: NextPage = () => {
   return (
     <>
-      <Stack alignItems="center" spacing={16} py={28}>
+      <NextSeo
+        title="Get a free web development quote"
+        description="Send us a message for a free quote for your new or updated website."
+        canonical="https://www.keplux.com/contact"
+      />
+      <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">
@@ -54,62 +61,154 @@ const ContactPage: NextPage = () => {
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
             <Container w="full" h="full">
-              <Stack justifyContent="center" h="full" spacing={4} pb={16}>
-                <Heading as="h2">Contact information</Heading>
-                <Stack spacing={8} pl={4}>
-                  <Box
-                    borderLeftWidth={4}
-                    borderColor="brand.600"
-                    pl={4}
-                    py={2}
-                  >
-                    <Text
-                      textTransform="uppercase"
-                      fontWeight="semibold"
-                      color="gray.600"
+              <Stack justifyContent="flex-start" h="full">
+                <Heading
+                  as="h2"
+                  bgGradient="linear-gradient(to-r, brand.600, brand.400)"
+                  bgClip="text"
+                  ml={8}
+                >
+                  Contact information
+                </Heading>
+                <Stack position="relative" spacing={0} top={-6}>
+                  <HStack alignItems="flex-end">
+                    <Stack
+                      position="relative"
+                      h="full"
+                      spacing={0}
+                      w="fit-content"
+                      alignItems="center"
                     >
-                      Email
-                    </Text>
-                    <Link href="mailto:contact@keplux.com">
-                      <chakra.span color="gray.500">
+                      {/* Faded overlay */}
+                      <AbsoluteCenter top={8} left={2} zIndex={1} h="full">
+                        <Box
+                          ml="-2px"
+                          h="32px"
+                          w={1}
+                          bgGradient="linear-gradient(to-b, gray.50, transparent)"
+                        />
+                      </AbsoluteCenter>
+                      {/* Main line */}
+                      <Box
+                        position="relative"
+                        left={2}
+                        h="full"
+                        borderLeftWidth="1px"
+                        borderColor="gray.400"
+                        borderStyle="dashed"
+                      />
+                      {/* Marker */}
+                      <Box position="absolute" bottom="34px" left={2}>
+                        <AbsoluteCenter>
+                          <Circle
+                            bgGradient="linear-gradient(to-br, gray.600, gray.300)"
+                            size={4}
+                          />
+                        </AbsoluteCenter>
+                        <AbsoluteCenter>
+                          <Circle bg="gray.50" size={3} />
+                        </AbsoluteCenter>
+                      </Box>
+                    </Stack>
+                    <Box position="relative" pt={8} left={6}>
+                      <Text
+                        textTransform="uppercase"
+                        fontSize="sm"
+                        fontWeight="semibold"
+                      >
+                        Email
+                      </Text>
+                      <KLink href="mailto:contact@keplux.com" color="gray.500">
                         contact@keplux.com
-                      </chakra.span>
-                    </Link>
-                  </Box>
-                  <Stack
-                    borderLeftWidth={4}
-                    borderColor="brand.600"
-                    pl={4}
-                    py={2}
-                  >
-                    <Text
-                      textTransform="uppercase"
-                      fontWeight="semibold"
-                      color="gray.600"
+                      </KLink>
+                    </Box>
+                  </HStack>
+
+                  <HStack alignItems="flex-end">
+                    <Stack
+                      position="relative"
+                      h="full"
+                      spacing={0}
+                      w="fit-content"
+                      alignItems="center"
                     >
-                      Social Media
-                    </Text>
-                    <HStack>
-                      <Icon
-                        as={FaFacebook}
-                        color="gray.500"
-                        w={6}
-                        h={6}
-                        _hover={{ color: 'black' }}
-                        transition="200ms ease-in-out"
-                        cursor="pointer"
+                      {/* Main line */}
+                      <Box
+                        position="relative"
+                        left={2}
+                        h="full"
+                        borderLeftWidth="1px"
+                        borderColor="gray.400"
+                        borderStyle="dashed"
                       />
-                      <Icon
-                        as={FaLinkedinIn}
-                        color="gray.500"
-                        w={6}
-                        h={6}
-                        _hover={{ color: 'black' }}
-                        transition="200ms ease-in-out"
-                        cursor="pointer"
-                      />
-                    </HStack>
-                  </Stack>
+                      {/* Faded overlay */}
+                      <Box
+                        position="absolute"
+                        bottom={0}
+                        left={2}
+                        zIndex={1}
+                        h={8}
+                      >
+                        <Box
+                          ml="-2px"
+                          h="full"
+                          w={1}
+                          bgGradient="linear-gradient(to-t, gray.50, transparent)"
+                        />
+                      </Box>
+                      {/* Marker */}
+                      <Box position="absolute" bottom="82px" left={2}>
+                        <AbsoluteCenter>
+                          <Circle
+                            bgGradient="linear-gradient(to-br, gray.600, gray.300)"
+                            size={4}
+                          />
+                        </AbsoluteCenter>
+                        <AbsoluteCenter>
+                          <Circle bg="gray.50" size={3} />
+                        </AbsoluteCenter>
+                      </Box>
+                    </Stack>
+                    <Stack position="relative" pt={6} left={6}>
+                      <Text
+                        textTransform="uppercase"
+                        fontSize="sm"
+                        fontWeight="semibold"
+                      >
+                        Social Media
+                      </Text>
+                      <HStack>
+                        <KLink
+                          href="https://www.facebook.com/kepluxdev/"
+                          target="_blank"
+                        >
+                          <Icon
+                            as={FaFacebook}
+                            w={5}
+                            h={5}
+                            color="gray.500"
+                            _hover={{ color: 'black' }}
+                            transition="200ms ease-in-out"
+                            cursor="pointer"
+                          />
+                        </KLink>
+                        <KLink
+                          href="https://www.linkedin.com/company/keplux-development/"
+                          target="_blank"
+                        >
+                          <Icon
+                            as={FaLinkedinIn}
+                            w={5}
+                            h={5}
+                            color="gray.500"
+                            _hover={{ color: 'black' }}
+                            transition="200ms ease-in-out"
+                            cursor="pointer"
+                          />
+                        </KLink>
+                      </HStack>
+                    </Stack>
+                  </HStack>
                 </Stack>
               </Stack>
             </Container>

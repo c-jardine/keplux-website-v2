@@ -1,5 +1,5 @@
 export const pageview = (url) => {
-  window.gtag('config', 'TRACKING-ID', {
+  window.gtag('config', '317846737', {
     page_path: url,
   });
 };

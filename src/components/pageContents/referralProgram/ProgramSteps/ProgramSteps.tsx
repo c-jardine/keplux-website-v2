@@ -1,5 +1,5 @@
-import { Box, Heading, Link, Stack, Text } from '@chakra-ui/react';
-import { ProcessStep } from '../../../core';
+import { Box, Heading, Stack, Text } from '@chakra-ui/react';
+import { KLink, ProcessStep } from '../../../core';
 
 const ProgramSteps = () => {
   return (
@@ -18,9 +18,9 @@ const ProgramSteps = () => {
         <Text>
           Our referral program is designed with individuals in mind. If
           you&apos;re a business that would like to work with us, please{' '}
-          <Link href="/contact" color="brand.600" fontWeight="semibold">
+          <KLink href="/contact" color="brand.600" fontWeight="semibold">
             contact us
-          </Link>{' '}
+          </KLink>{' '}
           instead. The referral program works like this:
         </Text>
       </Stack>

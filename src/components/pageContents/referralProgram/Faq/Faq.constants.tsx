@@ -1,11 +1,5 @@
-import {
-  chakra,
-  Link,
-  ListItem,
-  Stack,
-  Text,
-  UnorderedList,
-} from '@chakra-ui/react';
+import { chakra, ListItem, Stack, Text, UnorderedList } from '@chakra-ui/react';
+import { KLink } from '../../../core';
 
 const FaqContents = [
   {
@@ -17,9 +11,9 @@ const FaqContents = [
             This program is designed for individuals, not necessarily for
             businesses. If you&apos;re a business that could benefit from a
             mutual relationship, such as a designer or copywriter, please{' '}
-            <Link href="/contact" color="brand.600" fontWeight="semibold">
+            <KLink href="/contact" color="brand.600" fontWeight="semibold">
               contact us
-            </Link>{' '}
+            </KLink>{' '}
             directly to propose an agreement.
           </Text>
         </Stack>
@@ -212,13 +206,13 @@ const FaqContents = [
           <Text>
             This depends on the scope of your referral&apos;s project. However,
             you can expect to be paid in accordance to the{' '}
-            <Link
+            <KLink
               href="#referral-payout-chart"
               color="brand.600"
               fontWeight="semibold"
             >
               Referral Payout Chart
-            </Link>
+            </KLink>
             .
           </Text>
         </Stack>

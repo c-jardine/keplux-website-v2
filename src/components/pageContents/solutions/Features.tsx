@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Heading,
-  Link,
   SimpleGrid,
   Stack,
   Text,
@@ -12,7 +11,7 @@ import { FaServer } from '@react-icons/all-files/fa/FaServer';
 import { IoMdStats } from '@react-icons/all-files/io/IoMdStats';
 import { MdRefresh } from '@react-icons/all-files/md/MdRefresh';
 import { Parallax } from 'react-scroll-parallax';
-import { IconHeader } from '../../core';
+import { IconHeader, KLink } from '../../core';
 import { SplitSection } from '../../sections';
 
 const Features = () => {
@@ -28,9 +27,13 @@ const Features = () => {
               <Stack mt={6} color="gray.600">
                 <Text>
                   With our{' '}
-                  <Link href="/pricing" color="brand.600" fontWeight="semibold">
+                  <KLink
+                    href="/pricing"
+                    color="brand.600"
+                    fontWeight="semibold"
+                  >
                     Keplux One
-                  </Link>{' '}
+                  </KLink>{' '}
                   package, we make sure your website gets online and stays
                   online. We handle everything, letting you focus on running
                   your business.

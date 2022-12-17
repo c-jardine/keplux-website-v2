@@ -2,14 +2,13 @@ import {
   AbsoluteCenter,
   Box,
   Center,
-  chakra,
-  Circle,
   HStack,
   Show,
   SimpleGrid,
   Stack,
   StackDivider,
   Text,
+  chakra,
 } from '@chakra-ui/react';
 import { LighthouseScoreProps } from './LighthouseScore.types';
 
@@ -146,8 +145,9 @@ const LighthouseScore = (props: LighthouseScoreProps) => {
 
   return (
     <Box position="relative">
-      <AbsoluteCenter w="full" h="50%" zIndex={0}>
-        <Circle
+      <AbsoluteCenter w="75%" h="75%" zIndex={0}>
+        <Box
+          h="full"
           bgGradient="linear-gradient(to-br, brand.600, orange.400)"
           filter="blur(32px) brightness(150%)"
           p={8}

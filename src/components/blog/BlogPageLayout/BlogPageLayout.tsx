@@ -14,7 +14,7 @@ const BlogPageLayout = (props: PostProps) => {
   const { seo } = props;
   const router = useRouter();
   return (
-    <Container as={Stack} spacing={16} my={16} alignItems="center" maxW="8xl">
+    <>
       <NextSeo
         title={seo.seoMetadata?.title || props.title}
         description={seo.seoMetadata?.description || props.excerpt || ''}
@@ -36,22 +36,24 @@ const BlogPageLayout = (props: PostProps) => {
           cardType: 'summary_large_image',
         }}
       />
-      {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
-        <_BlogPageHeader {...props} />
-      )}
-      <AspectRatio ratio={1.91 / 1} maxW="4xl" w="full">
-        <Image
-          src={urlForImage(props.coverPhoto).url()}
-          alt={props.coverPhoto.caption}
-          mx="auto"
-          w="full"
-          h="full"
-          objectFit="cover"
-        />
-      </AspectRatio>
-      <_BlogPageMain {...props} />
-      <_BlogPageAuthorCard author={props.author} />
-    </Container>
+      <Container as={Stack} spacing={16} my={16} alignItems="center" maxW="8xl">
+        {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
+          <_BlogPageHeader {...props} />
+        )}
+        <AspectRatio ratio={1.91 / 1} maxW="4xl" w="full">
+          <Image
+            src={urlForImage(props.coverPhoto).url()}
+            alt={props.coverPhoto.caption}
+            mx="auto"
+            w="full"
+            h="full"
+            objectFit="cover"
+          />
+        </AspectRatio>
+        <_BlogPageMain {...props} />
+        <_BlogPageAuthorCard author={props.author} />
+      </Container>
+    </>
   );
 };
 

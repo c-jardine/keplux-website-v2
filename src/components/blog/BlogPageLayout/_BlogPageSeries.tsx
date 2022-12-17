@@ -1,5 +1,6 @@
-import { Flex, Link, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import { PostProps } from '../../../lib/studio/types';
+import { KLink } from '../../core';
 
 /**
  * Section showing what series the post belongs to, if any.
@@ -27,7 +28,7 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
       >
         Series
       </Text>
-      <Link>{props.postSeries.title}</Link>
+      <KLink href="/#">{props.postSeries.title}</KLink>
     </Flex>
   );
 };
