@@ -1,6 +1,9 @@
-import { Container, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { Container, Heading, SimpleGrid, Stack } from '@chakra-ui/react';
+import { FaBoxOpen } from '@react-icons/all-files/fa/FaBoxOpen';
+import { FaBriefcase } from '@react-icons/all-files/fa/FaBriefcase';
 import { NextPage } from 'next';
-import { PricingTable } from '../src/components/sections';
+import { KLink } from '../src/components/core';
+import { LeadInHeading, PricingTable } from '../src/components/sections';
 import { PricingAddon } from '../src/components/sections/PricingAddon';
 
 const PricingPage: NextPage = () => {
@@ -19,33 +22,52 @@ const PricingPage: NextPage = () => {
               >
                 Find a plan or package for your business
               </Heading>
+              <Heading
+                as="h2"
+                maxW="2xl"
+                w="full"
+                fontSize="xl"
+                textAlign="center"
+                fontWeight="medium"
+                color="gray.500"
+              >
+                Choose a pre-designed package or build your own from scratch.
+                Need something different?{' '}
+                <KLink href="/contact" color="brand.600">
+                  Contact us
+                </KLink>{' '}
+                and we&apos;ll help you out.
+              </Heading>
             </Stack>
+          </Stack>
+        </Container>
+
+        <Container maxW="7xl" w="full">
+          <Stack alignItems="center" w="full" spacing={8}>
+            <LeadInHeading
+              smallText="Packages to get you up and running"
+              heading="Business packages"
+              icon={FaBriefcase}
+              color={['brand.600', 'brand.400']}
+            />
           </Stack>
         </Container>
 
         <PricingTable />
 
         <Container maxW="7xl" w="full">
-          <Stack alignItems="center" spacing={8}>
-            <Stack pt={28} maxW="7xl" w="full" mx="auto">
-              <Heading
-                as="h2"
-                fontWeight="black"
-                color="black"
-                fontSize={['3xl', , '5xl']}
-              >
-                Add-ons and other services
-              </Heading>
-              <Stack mt={2} color="gray.600">
-                <Text>
-                  Not all businesses require the same features on their website.
-                  Whether you need something simple to showcase your business or
-                  portfolio, or a platform to run your business on, we&apos;ve
-                  got you covered.
-                </Text>
-              </Stack>
-            </Stack>
+          <Stack alignItems="center" w="full" spacing={8}>
+            <LeadInHeading
+              smallText="Other services"
+              heading="Add-ons and more"
+              icon={FaBoxOpen}
+              color={['brand.600', 'brand.400']}
+            />
+          </Stack>
+        </Container>
 
+        <Container maxW="7xl" w="full">
+          <Stack alignItems="center" spacing={8}>
             <SimpleGrid columns={{ base: 1, lg: 3 }} columnGap={4} rowGap={8}>
               <PricingAddon
                 heading="Landing page"
