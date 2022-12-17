@@ -73,7 +73,7 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                 <CardHeader position="relative" h={{ lg: 72, xl: 52 }} p={0}>
                   <Image
                     src={urlForImage(project.gallery[0]).url()}
-                    alt=""
+                    alt={`An example of the project called ${project.title}.`}
                     w="full"
                     h="full"
                     objectFit="cover"
