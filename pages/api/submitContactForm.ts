@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
-import { SendEmailCommand, SESv2Client } from '@aws-sdk/client-sesv2';
+import { SESv2Client, SendEmailCommand } from '@aws-sdk/client-sesv2';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { ContactFormProps } from '../../src/components/sections';
+import { ContactFormProps } from '../../src/components/sections/ContactForm/ContactForm.types';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -18,12 +18,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const client = new SESv2Client({
       region: 'us-east-2',
       credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET,
+        accessKeyId: process.env.AWS_SES_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SES_ACCESS_KEY_SECRET,
       },
     });
     const command = new SendEmailCommand({
-      Destination: { ToAddresses: ['chris@keplux.com'] },
+      Destination: { ToAddresses: ['contact@keplux.com'] },
       FromEmailAddress: 'noreply@keplux.com',
       Content: {
         Simple: {
