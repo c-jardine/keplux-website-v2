@@ -14,10 +14,16 @@ import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import { NextPage } from 'next';
 import { KLink } from '../src/components/core';
 import { ContactForm, SplitSection } from '../src/components/sections';
+import { NextSeo } from 'next-seo';
 
 const ContactPage: NextPage = () => {
   return (
     <>
+      <NextSeo
+        title="Get a free web development quote"
+        description="Send us a message for a free quote for your new or updated website."
+        canonical="https://www.keplux.com/contact"
+      />
       <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>

@@ -2,6 +2,7 @@ import { Container, Heading, SimpleGrid, Stack } from '@chakra-ui/react';
 import { FaBoxOpen } from '@react-icons/all-files/fa/FaBoxOpen';
 import { FaBriefcase } from '@react-icons/all-files/fa/FaBriefcase';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 import { KLink } from '../src/components/core';
 import { LeadInHeading, PricingTable } from '../src/components/sections';
 import { PricingAddon } from '../src/components/sections/PricingAddon';
@@ -9,6 +10,11 @@ import { PricingAddon } from '../src/components/sections/PricingAddon';
 const PricingPage: NextPage = () => {
   return (
     <>
+      <NextSeo
+        title="Web design and development prices"
+        description="Monthly plans to get your business online quickly. Custom websites available for when you need something more."
+        canonical="https://www.keplux.com/pricing"
+      />
       <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
