@@ -44,7 +44,7 @@ const Home = () => {
         description="Websites built with modern technologies, resulting in lightning performance, amazing SEO, and more conversions."
         canonical="https://www.keplux.com"
       />
-      <Stack alignItems="center" spacing={16} py={28}>
+      <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">

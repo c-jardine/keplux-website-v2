@@ -18,7 +18,7 @@ import { ContactForm, SplitSection } from '../src/components/sections';
 const ContactPage: NextPage = () => {
   return (
     <>
-      <Stack alignItems="center" spacing={16} py={28}>
+      <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">
@@ -55,7 +55,7 @@ const ContactPage: NextPage = () => {
           </SplitSection.LeftContent>
           <SplitSection.RightContent>
             <Container w="full" h="full">
-              <Stack justifyContent="flex-start" h="full" pb={16}>
+              <Stack justifyContent="flex-start" h="full">
                 <Heading
                   as="h2"
                   bgGradient="linear-gradient(to-r, brand.600, brand.400)"
@@ -163,7 +163,7 @@ const ContactPage: NextPage = () => {
                         </AbsoluteCenter>
                       </Box>
                     </Stack>
-                    <Stack position="relative" pt={6} pb={10} left={6}>
+                    <Stack position="relative" pt={6} left={6}>
                       <Text
                         textTransform="uppercase"
                         fontSize="sm"
@@ -172,24 +172,34 @@ const ContactPage: NextPage = () => {
                         Social Media
                       </Text>
                       <HStack>
-                        <Icon
-                          as={FaFacebook}
-                          color="gray.500"
-                          w={6}
-                          h={6}
-                          _hover={{ color: 'black' }}
-                          transition="200ms ease-in-out"
-                          cursor="pointer"
-                        />
-                        <Icon
-                          as={FaLinkedinIn}
-                          color="gray.500"
-                          w={6}
-                          h={6}
-                          _hover={{ color: 'black' }}
-                          transition="200ms ease-in-out"
-                          cursor="pointer"
-                        />
+                        <KLink
+                          href="https://www.facebook.com/kepluxdev/"
+                          target="_blank"
+                        >
+                          <Icon
+                            as={FaFacebook}
+                            w={5}
+                            h={5}
+                            color="gray.500"
+                            _hover={{ color: 'black' }}
+                            transition="200ms ease-in-out"
+                            cursor="pointer"
+                          />
+                        </KLink>
+                        <KLink
+                          href="https://www.linkedin.com/company/keplux-development/"
+                          target="_blank"
+                        >
+                          <Icon
+                            as={FaLinkedinIn}
+                            w={5}
+                            h={5}
+                            color="gray.500"
+                            _hover={{ color: 'black' }}
+                            transition="200ms ease-in-out"
+                            cursor="pointer"
+                          />
+                        </KLink>
                       </HStack>
                     </Stack>
                   </HStack>

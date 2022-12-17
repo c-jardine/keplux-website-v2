@@ -9,7 +9,7 @@ import { PricingAddon } from '../src/components/sections/PricingAddon';
 const PricingPage: NextPage = () => {
   return (
     <>
-      <Stack alignItems="center" spacing={16} py={28}>
+      <Stack alignItems="center" spacing={16}>
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" spacing={12}>
             <Stack alignItems="center">

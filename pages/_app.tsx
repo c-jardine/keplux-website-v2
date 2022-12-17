@@ -40,7 +40,10 @@ const App = ({ Component, pageProps }: AppProps) => {
           }}
         />
         {!router.asPath.startsWith('/studio') && <Navbar />}
-        <Box py={!router.asPath.startsWith('/studio') && 16}>
+        <Box
+          pt={!router.asPath.startsWith('/studio') && 44}
+          pb={!router.asPath.startsWith('/studio') && 28}
+        >
           <Component {...pageProps} />
         </Box>
         {!router.asPath.startsWith('/studio') && <Footer />}

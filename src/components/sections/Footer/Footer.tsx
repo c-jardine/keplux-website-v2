@@ -2,13 +2,14 @@ import {
   Box,
   Container,
   Divider,
-  Flex,
+  HStack,
   Icon,
   SimpleGrid,
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { FaEnvelope } from '@react-icons/all-files/fa/FaEnvelope';
+import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
+import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import Image from 'next/image';
 import logo from '../../../../public/keplux-logo-full-dark.png';
 import { KLink } from '../../core';
@@ -27,16 +28,9 @@ const Footer = () => {
                   style={{ objectFit: 'contain' }}
                 />
               </Box>
-              <Flex pt={2} alignSelf="flex-start" alignItems="center" gap={2}>
-                <Icon as={FaEnvelope} />
-                <KLink
-                  href="mailto:contact@keplux.com"
-                  fontSize="sm"
-                  textTransform="uppercase"
-                >
-                  contact@keplux.com
-                </KLink>
-              </Flex>
+              <Text mt={2} fontSize="xs" color="gray.500">
+                &#169; 2022 Keplux Development, LLC.
+              </Text>
             </Stack>
             <Stack>
               <Box>
@@ -70,7 +64,7 @@ const Footer = () => {
                   textTransform="uppercase"
                   fontWeight="semibold"
                 >
-                  Solutions
+                  Contact
                 </Text>
                 <Divider w={16} borderWidth={2} borderColor="brand.600" />
               </Box>
@@ -80,14 +74,37 @@ const Footer = () => {
                 textTransform="uppercase"
                 letterSpacing="wide"
               >
-                <KLink href="/solutions#development">Development</KLink>
-                <KLink href="/solutions#ecommerce">E-Commerce</KLink>
-                <KLink href="/solutions#content-management">
-                  Content Management
+                <KLink href="mailto:contact@keplux.com">
+                  contact@keplux.com
                 </KLink>
-                <KLink href="/solutions#hosting">Hosting</KLink>
-                <KLink href="/solutions#analytics">Analytics</KLink>
-                <KLink href="/solutions#maintenance">Maintenance</KLink>
+                <HStack>
+                  <KLink
+                    href="https://www.facebook.com/kepluxdev/"
+                    target="_blank"
+                  >
+                    <Icon
+                      as={FaFacebook}
+                      w={5}
+                      h={5}
+                      _hover={{ color: 'brand.500' }}
+                      transition="200ms ease-in-out"
+                      cursor="pointer"
+                    />
+                  </KLink>
+                  <KLink
+                    href="https://www.linkedin.com/company/keplux-development/"
+                    target="_blank"
+                  >
+                    <Icon
+                      as={FaLinkedinIn}
+                      w={5}
+                      h={5}
+                      _hover={{ color: 'brand.500' }}
+                      transition="200ms ease-in-out"
+                      cursor="pointer"
+                    />
+                  </KLink>
+                </HStack>
               </Stack>
             </Stack>
           </SimpleGrid>

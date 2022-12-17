@@ -4,7 +4,7 @@ import { KLink } from '../src/components/core';
 
 const RefundPolicyPage: NextPage = () => {
   return (
-    <Container as={Stack} maxW="4xl" w="full" spacing={8} py={16}>
+    <Container as={Stack} maxW="4xl" w="full" spacing={8}>
       <Stack>
         <Heading as="h1">Keplux Development Refund Policy</Heading>
         <Text fontWeight="semibold">
