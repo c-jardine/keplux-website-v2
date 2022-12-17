@@ -1,4 +1,5 @@
 import {
+  AbsoluteCenter,
   Box,
   Button,
   Container,
@@ -52,11 +53,21 @@ const ContactForm = () => {
 
   return (
     <Container position="relative" maxW="2xl" w="full">
+      <AbsoluteCenter w="85%" h="85%" zIndex={0}>
+        <Box
+          h="full"
+          bgGradient="linear-gradient(to-br, orange.400, brand.600)"
+          filter="blur(32px) brightness(150%)"
+          p={8}
+        />
+      </AbsoluteCenter>
       <Box
+        position="relative"
         p={{ base: 4, md: 8 }}
         rounded="lg"
+        bg="gray.50"
         borderWidth={1}
-        borderColor="gray.300"
+        borderColor="gray.200"
       >
         <form onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}>
           <Stack spacing={4}>
