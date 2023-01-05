@@ -33,9 +33,7 @@ const _BlogPageAuthorCard = (props: Pick<PostProps, 'author'>) => {
       <CardBody>
         <Text>{author.bio}</Text>
       </CardBody>
-      <CardFooter>
-        <Text>Placeholder for social links</Text>
-      </CardFooter>
+      <CardFooter>{/* <Text>Placeholder for social links</Text> */}</CardFooter>
     </Card>
   );
 };

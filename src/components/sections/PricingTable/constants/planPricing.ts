@@ -3,7 +3,7 @@ import { PlanPricingProps } from './planPricing.types';
 const PlanPricing: PlanPricingProps = {
   starter: {
     abovePrice: 'No contract required',
-    price: '$150',
+    price: '$200',
     belowPrice: 'per month',
   },
   professional: {

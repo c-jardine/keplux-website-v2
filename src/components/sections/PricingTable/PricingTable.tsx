@@ -150,7 +150,7 @@ const PricingTable = () => {
                 </Text>
                 <Button
                   as={Link}
-                  href=""
+                  href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
                   bg="black"
@@ -182,7 +182,7 @@ const PricingTable = () => {
                 </Text>
                 <Button
                   as={Link}
-                  href=""
+                  href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
                   bg="black"
@@ -214,7 +214,7 @@ const PricingTable = () => {
                 </Text>
                 <Button
                   as={Link}
-                  href=""
+                  href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
                   bg="black"
@@ -246,7 +246,7 @@ const PricingTable = () => {
                 </Text>
                 <Button
                   as={Link}
-                  href=""
+                  href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
                   bg="black"

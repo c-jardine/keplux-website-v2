@@ -16,7 +16,6 @@ import {
   Stack,
   StackDivider,
   Text,
-  Tooltip,
 } from '@chakra-ui/react';
 import { CgListTree } from '@react-icons/all-files/cg/CgListTree';
 import { FaBolt } from '@react-icons/all-files/fa/FaBolt';
@@ -559,24 +558,22 @@ const Home = () => {
                   </Text>
                 </Stack>
                 <HStack spacing={4}>
-                  <Tooltip label="Pay a 50% retainer and we'll be in touch with the next steps.">
-                    <Button
-                      as={Link}
-                      href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
-                      target="_blank"
-                      rel="noopener"
-                      bg="#d946ef"
-                      color="white"
-                      transition="200ms ease-in-out"
-                      _hover={{
-                        textDecoration: 'none',
-                        filter: 'brightness(110%)',
-                      }}
-                      gap={4}
-                    >
-                      Buy now
-                    </Button>
-                  </Tooltip>
+                  <Button
+                    as={Link}
+                    href="/contact"
+                    target="_blank"
+                    rel="noopener"
+                    bg="#d946ef"
+                    color="white"
+                    transition="200ms ease-in-out"
+                    _hover={{
+                      textDecoration: 'none',
+                      filter: 'brightness(110%)',
+                    }}
+                    gap={4}
+                  >
+                    Buy now
+                  </Button>
                   <Button as={Link} href="/pricing" variant="secondary">
                     View other options
                   </Button>
@@ -617,7 +614,7 @@ const Home = () => {
                     py={{ base: 8, lg: 0 }}
                   >
                     <Text fontWeight="black" fontSize="4xl" lineHeight={1}>
-                      $150
+                      $200
                     </Text>
                     <Text
                       textTransform="uppercase"
@@ -711,24 +708,22 @@ const Home = () => {
                 ))}
               </Stack>
               <HStack spacing={4}>
-                <Tooltip label="Pay a 50% retainer and we'll be in touch with the next steps.">
-                  <Button
-                    as={Link}
-                    href="https://buy.stripe.com/cN2g0r2PYeRI0Zq145"
-                    target="_blank"
-                    rel="noopener"
-                    bg="#d946ef"
-                    color="white"
-                    transition="200ms ease-in-out"
-                    _hover={{
-                      textDecoration: 'none',
-                      filter: 'brightness(110%)',
-                    }}
-                    gap={4}
-                  >
-                    Buy now
-                  </Button>
-                </Tooltip>
+                <Button
+                  as={Link}
+                  href="/contact"
+                  target="_blank"
+                  rel="noopener"
+                  bg="#d946ef"
+                  color="white"
+                  transition="200ms ease-in-out"
+                  _hover={{
+                    textDecoration: 'none',
+                    filter: 'brightness(110%)',
+                  }}
+                  gap={4}
+                >
+                  Buy now
+                </Button>
                 <Button as={Link} href="/pricing" variant="secondary">
                   View other options
                 </Button>
