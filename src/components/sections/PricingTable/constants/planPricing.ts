@@ -8,15 +8,15 @@ const PlanPricing: PlanPricingProps = {
   },
   professional: {
     abovePrice: 'Starting at',
-    price: '$1245',
+    price: '$795',
   },
   ecommerce: {
     abovePrice: 'Starting at',
-    price: '$1495',
+    price: '$1295',
   },
   ultimate: {
     abovePrice: 'Starting at',
-    price: '$2495',
+    price: '$1895',
   },
 };
 

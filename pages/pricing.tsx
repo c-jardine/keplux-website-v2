@@ -96,7 +96,7 @@ const PricingPage: NextPage = () => {
               <PricingAddon
                 heading="On-page SEO"
                 description="Add or optimize priority SEO tags and structure, optimize images for SEO and performance, and verify internal links to reduce bounce rate."
-                price={{ abovePrice: 'Starting at', price: '$349' }}
+                price={{ abovePrice: 'Starting at', price: '$249' }}
                 cta={{
                   label: 'Contact us now',
                   href: '/contact',

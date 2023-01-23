@@ -8,7 +8,6 @@ import {
   DrawerHeader,
   DrawerOverlay,
   Flex,
-  Icon,
   Link,
   Show,
   SimpleGrid,
@@ -16,7 +15,6 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
-import { FaShoppingCart } from '@react-icons/all-files/fa/FaShoppingCart';
 import React from 'react';
 import PricingTableDesktop from './PricingTableDesktop';
 import PricingTableMobile from './PricingTableMobile';
@@ -168,12 +166,7 @@ const PricingTable = () => {
                   textTransform="none"
                   role="group"
                 >
-                  <Icon
-                    as={FaShoppingCart}
-                    color="white"
-                    transition="200ms ease-in-out"
-                    _groupHover={{ color: 'black' }}
-                  />
+                  Get Started
                 </Button>
               </Stack>
               <Stack alignItems="center">
@@ -200,12 +193,7 @@ const PricingTable = () => {
                   textTransform="none"
                   role="group"
                 >
-                  <Icon
-                    as={FaShoppingCart}
-                    color="white"
-                    transition="200ms ease-in-out"
-                    _groupHover={{ color: 'black' }}
-                  />
+                  Get Started
                 </Button>
               </Stack>
               <Stack alignItems="center">
@@ -232,12 +220,7 @@ const PricingTable = () => {
                   textTransform="none"
                   role="group"
                 >
-                  <Icon
-                    as={FaShoppingCart}
-                    color="white"
-                    transition="200ms ease-in-out"
-                    _groupHover={{ color: 'black' }}
-                  />
+                  Get Started
                 </Button>
               </Stack>
               <Stack alignItems="center">
@@ -264,12 +247,7 @@ const PricingTable = () => {
                   textTransform="none"
                   role="group"
                 >
-                  <Icon
-                    as={FaShoppingCart}
-                    color="white"
-                    transition="200ms ease-in-out"
-                    _groupHover={{ color: 'black' }}
-                  />
+                  Get Started
                 </Button>
               </Stack>
             </SimpleGrid>
