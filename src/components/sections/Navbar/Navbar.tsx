@@ -69,6 +69,9 @@ const Navbar = () => {
           p={3}
           onClick={isOpen ? onClose : onOpen}
           bg="transparent"
+          color="whiteAlpha.800"
+          _hover={{ bg: 'whiteAlpha.50' }}
+          _active={{ bg: 'whiteAlpha.50' }}
         />
         {isOpen && (
           <Box
@@ -78,7 +81,8 @@ const Navbar = () => {
             left={0}
             w="full"
             h="calc(100vh - 4rem)"
-            bg="blackAlpha.700"
+            bg="blackAlpha.800"
+            backdropFilter="blur(8px)"
           />
         )}
         <Box position="absolute" zIndex={10} top={16} left={0} w="full">

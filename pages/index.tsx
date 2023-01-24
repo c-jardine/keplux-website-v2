@@ -62,7 +62,7 @@ const Home = () => {
       />
       <Stack alignItems="center" spacing={16}>
         <Box position="relative" w="full">
-          <Box w="full" mt={-32}>
+          <Box w="full" mt={-28}>
             <Box position="relative" maxW="1920px" w="full">
               <Image
                 src={headerImg}
