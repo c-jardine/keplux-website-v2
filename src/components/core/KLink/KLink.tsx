@@ -5,6 +5,9 @@ import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
 const KLink = chakra<typeof NextLink, NextLinkProps>(NextLink, {
   // ensure that you're forwarding all of the required props for your case
   shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
+  baseStyle: {
+    w: 'max',
+  },
 });
 
 export default KLink;

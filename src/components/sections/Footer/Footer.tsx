@@ -17,10 +17,13 @@ import { KLink } from '../../core';
 const Footer = () => {
   return (
     <Box bg="white" shadow="2xl">
-      <Container maxW="4xl" w="full" py={16}>
+      <Container maxW="6xl" w="full" py={16}>
         <Stack alignItems="center">
-          <SimpleGrid columns={{ base: 1, lg: 3 }} gap={16} w="full">
-            <Stack alignItems={{ base: 'center', lg: 'flex-start' }}>
+          <SimpleGrid columns={{ base: 1, lg: 3 }} gap={8} w="full">
+            <Stack
+              alignItems={{ base: 'center', lg: 'flex-start' }}
+              spacing={8}
+            >
               <Box position="relative" w="full" maxW={64}>
                 <Image
                   src={logo}
@@ -28,52 +31,7 @@ const Footer = () => {
                   style={{ objectFit: 'contain' }}
                 />
               </Box>
-              <Text mt={2} fontSize="xs" color="gray.500">
-                &#169; 2022 Keplux Development, LLC.
-              </Text>
-            </Stack>
-            <Stack>
-              <Box>
-                <Text
-                  fontSize="xl"
-                  textTransform="uppercase"
-                  fontWeight="semibold"
-                >
-                  Navigation
-                </Text>
-                <Divider w={16} borderWidth={2} borderColor="brand.600" />
-              </Box>
-              <Stack
-                spacing={1}
-                fontSize="sm"
-                textTransform="uppercase"
-                letterSpacing="wide"
-              >
-                <KLink href="/">Home</KLink>
-                <KLink href="/pricing">Pricing</KLink>
-                <KLink href="/our-work">Our Work</KLink>
-                <KLink href="/blog">Blog</KLink>
-                <KLink href="/referral-program">Referral Program</KLink>
-                <KLink href="/contact">Contact</KLink>
-              </Stack>
-            </Stack>
-            <Stack>
-              <Box>
-                <Text
-                  fontSize="xl"
-                  textTransform="uppercase"
-                  fontWeight="semibold"
-                >
-                  Contact
-                </Text>
-                <Divider w={16} borderWidth={2} borderColor="brand.600" />
-              </Box>
-              <Stack
-                spacing={1}
-                fontSize="sm"
-                textTransform="uppercase"
-                letterSpacing="wide"
-              >
+              <Stack spacing={1} fontSize="sm" letterSpacing="wide">
                 <KLink href="mailto:contact@keplux.com">
                   contact@keplux.com
                 </KLink>
@@ -105,6 +63,54 @@ const Footer = () => {
                     />
                   </KLink>
                 </HStack>
+              </Stack>
+              <Text mt={2} fontSize="xs" color="gray.500">
+                &#169; 2022 Keplux Development, LLC.
+              </Text>
+            </Stack>
+            <Stack>
+              <Box>
+                <Text
+                  fontSize="xl"
+                  textTransform="uppercase"
+                  fontWeight="semibold"
+                >
+                  Navigation
+                </Text>
+                <Divider w={16} borderWidth={2} borderColor="brand.600" />
+              </Box>
+              <Stack
+                spacing={2}
+                fontSize="sm"
+                textTransform="uppercase"
+                letterSpacing="wide"
+              >
+                <KLink href="/">Home</KLink>
+                <KLink href="/pricing">Pricing</KLink>
+                <KLink href="/our-work">Our Work</KLink>
+                <KLink href="/blog">Blog</KLink>
+                <KLink href="/referral-program">Referral Program</KLink>
+                <KLink href="/contact">Contact</KLink>
+              </Stack>
+            </Stack>
+            <Stack>
+              <Box>
+                <Text
+                  fontSize="xl"
+                  textTransform="uppercase"
+                  fontWeight="semibold"
+                >
+                  About
+                </Text>
+                <Divider w={16} borderWidth={2} borderColor="brand.600" />
+              </Box>
+              <Stack spacing={1} fontSize="sm" letterSpacing="wide">
+                <Text>
+                  Keplux Development is a web design and development agency in
+                  Toledo, OH. We provide custom web design and development
+                  services, ecommerce websites, search engine optimization,
+                  website hosting and maintenance, and more.
+                </Text>
               </Stack>
             </Stack>
           </SimpleGrid>

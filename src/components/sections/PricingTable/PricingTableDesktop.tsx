@@ -16,7 +16,6 @@ import {
 import { FaCheckCircle } from '@react-icons/all-files/fa/FaCheckCircle';
 import { FaInfoCircle } from '@react-icons/all-files/fa/FaInfoCircle';
 import PricingFeatures from './constants/features';
-import PlanPricing from './constants/planPricing';
 
 const PricingTableDesktop = () => {
   return (
