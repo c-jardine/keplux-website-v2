@@ -82,7 +82,7 @@ const Home = () => {
                   <Stack alignItems="center">
                     <Heading
                       as="h1"
-                      fontSize={['4xl', , '6xl', '7xl']}
+                      fontSize={['5xl', , '6xl', '7xl']}
                       fontWeight="black"
                       textAlign="center"
                       color="whiteAlpha.800"
@@ -93,7 +93,7 @@ const Home = () => {
                       as="h2"
                       maxW="2xl"
                       w="full"
-                      fontSize={['md', , 'xl']}
+                      fontSize="xl"
                       textAlign="center"
                       fontWeight="medium"
                       color="whiteAlpha.800"

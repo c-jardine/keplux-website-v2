@@ -43,7 +43,13 @@ const PricingTableMobile = (props: { bundle: PricingBundleType }) => {
             </chakra.span>
             <Popover>
               <PopoverTrigger>
-                <Icon ml={1} as={FaInfoCircle} w={4} h={4} color="white" />
+                <Icon
+                  ml={1}
+                  as={FaInfoCircle}
+                  w={4}
+                  h={4}
+                  color="whiteAlpha.800"
+                />
               </PopoverTrigger>
               <PopoverContent bg="black" borderColor="whiteAlpha.300">
                 <PopoverArrow />
