@@ -33,7 +33,7 @@ const ContactPage: NextPage = () => {
                 fontSize={['5xl', , '6xl', '7xl']}
                 fontWeight="black"
                 textAlign="center"
-                color="black"
+                color="whiteAlpha.800"
               >
                 Send a message to get started or learn more
               </Heading>
@@ -44,7 +44,7 @@ const ContactPage: NextPage = () => {
                 fontSize="xl"
                 textAlign="center"
                 fontWeight="medium"
-                color="gray.500"
+                color="whiteAlpha.600"
               >
                 Need a quote or looking for more information? Get in touch with
                 one of the methods below and we&apos;ll get back to you soon.
@@ -74,51 +74,52 @@ const ContactPage: NextPage = () => {
                   <HStack alignItems="flex-end">
                     <Stack
                       position="relative"
-                      h="full"
                       spacing={0}
-                      w="fit-content"
                       alignItems="center"
+                      mt={8}
+                      w="fit-content"
                     >
-                      {/* Faded overlay */}
-                      <AbsoluteCenter top={8} left={2} zIndex={1} h="full">
+                      <AbsoluteCenter top={4} zIndex={1}>
                         <Box
                           ml="-2px"
-                          h="32px"
+                          h={8}
                           w={1}
-                          bgGradient="linear-gradient(to-b, gray.50, transparent)"
+                          bgGradient="linear-gradient(to-b, black, transparent)"
                         />
                       </AbsoluteCenter>
-                      {/* Main line */}
                       <Box
                         position="relative"
-                        left={2}
-                        h="full"
+                        left="-1px"
+                        h={8}
                         borderLeftWidth="1px"
-                        borderColor="gray.400"
+                        borderColor="whiteAlpha.400"
                         borderStyle="dashed"
                       />
-                      {/* Marker */}
-                      <Box position="absolute" bottom="34px" left={2}>
+                      <Box position="relative" bg="black" p={3}>
                         <AbsoluteCenter>
                           <Circle
-                            bgGradient="linear-gradient(to-br, gray.600, gray.300)"
+                            bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.300)"
                             size={4}
                           />
                         </AbsoluteCenter>
                         <AbsoluteCenter>
-                          <Circle bg="gray.50" size={3} />
+                          <Circle bg="black" size={3} />
                         </AbsoluteCenter>
                       </Box>
                     </Stack>
-                    <Box position="relative" pt={8} left={6}>
+                    <Box position="relative" top="22px" left={6}>
                       <Text
                         textTransform="uppercase"
                         fontSize="sm"
                         fontWeight="semibold"
+                        color="whiteAlpha.800"
                       >
                         Email
                       </Text>
-                      <KLink href="mailto:contact@keplux.com" color="gray.500">
+                      <KLink
+                        href="mailto:contact@keplux.com"
+                        color="whiteAlpha.600"
+                      >
                         contact@keplux.com
                       </KLink>
                     </Box>
@@ -127,53 +128,44 @@ const ContactPage: NextPage = () => {
                   <HStack alignItems="flex-end">
                     <Stack
                       position="relative"
-                      h="full"
                       spacing={0}
-                      w="fit-content"
                       alignItems="center"
+                      w="fit-content"
                     >
-                      {/* Main line */}
-                      <Box
-                        position="relative"
-                        left={2}
-                        h="full"
-                        borderLeftWidth="1px"
-                        borderColor="gray.400"
-                        borderStyle="dashed"
-                      />
-                      {/* Faded overlay */}
-                      <Box
-                        position="absolute"
-                        bottom={0}
-                        left={2}
-                        zIndex={1}
-                        h={8}
-                      >
+                      <AbsoluteCenter top={8} zIndex={1}>
                         <Box
                           ml="-2px"
-                          h="full"
+                          h={16}
                           w={1}
-                          bgGradient="linear-gradient(to-t, gray.50, transparent)"
+                          // bgGradient="linear-gradient(to-b, black, transparent)"
                         />
-                      </Box>
-                      {/* Marker */}
-                      <Box position="absolute" bottom="44px" left={2}>
+                      </AbsoluteCenter>
+                      <Box
+                        position="relative"
+                        left="-1px"
+                        h={16}
+                        borderLeftWidth="1px"
+                        borderColor="whiteAlpha.400"
+                        borderStyle="dashed"
+                      />
+                      <Box position="relative" bg="black" p={3}>
                         <AbsoluteCenter>
                           <Circle
-                            bgGradient="linear-gradient(to-br, gray.600, gray.300)"
+                            bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.300)"
                             size={4}
                           />
                         </AbsoluteCenter>
                         <AbsoluteCenter>
-                          <Circle bg="gray.50" size={3} />
+                          <Circle bg="black" size={3} />
                         </AbsoluteCenter>
                       </Box>
                     </Stack>
-                    <Stack position="relative" pt={6} left={6}>
+                    <Stack position="relative" top={8} left={6}>
                       <Text
                         textTransform="uppercase"
                         fontSize="sm"
                         fontWeight="semibold"
+                        color="whiteAlpha.800"
                       >
                         Social Media
                       </Text>
@@ -186,8 +178,8 @@ const ContactPage: NextPage = () => {
                             as={FaFacebook}
                             w={5}
                             h={5}
-                            color="gray.500"
-                            _hover={{ color: 'black' }}
+                            color="whiteAlpha.600"
+                            _hover={{ color: 'whiteAlpha.800' }}
                             transition="200ms ease-in-out"
                             cursor="pointer"
                           />
@@ -200,8 +192,8 @@ const ContactPage: NextPage = () => {
                             as={FaLinkedinIn}
                             w={5}
                             h={5}
-                            color="gray.500"
-                            _hover={{ color: 'black' }}
+                            color="whiteAlpha.600"
+                            _hover={{ color: 'whiteAlpha.800' }}
                             transition="200ms ease-in-out"
                             cursor="pointer"
                           />

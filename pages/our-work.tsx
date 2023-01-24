@@ -67,7 +67,7 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                 rounded="lg"
                 overflow="hidden"
                 borderWidth={1}
-                borderColor="whiteAlpha.300"
+                borderColor="whiteAlpha.400"
                 shadow="none"
                 bg="black"
               >

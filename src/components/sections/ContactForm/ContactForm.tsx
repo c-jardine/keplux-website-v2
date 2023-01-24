@@ -100,9 +100,9 @@ const ContactForm = () => {
         position="relative"
         p={{ base: 4, md: 8 }}
         rounded="lg"
-        bg="gray.50"
+        bg="black"
         borderWidth={1}
-        borderColor="gray.200"
+        borderColor="whiteAlpha.300"
       >
         <form onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}>
           <Stack spacing={4}>
@@ -113,6 +113,7 @@ const ContactForm = () => {
                   fontSize="xs"
                   fontWeight="normal"
                   letterSpacing="wide"
+                  color="whiteAlpha.600"
                 >
                   Name
                 </FormLabel>
@@ -124,6 +125,20 @@ const ContactForm = () => {
                     required: 'Required',
                     minLength: { value: 2, message: 'Too short' },
                   })}
+                  borderColor="whiteAlpha.400"
+                  color="whiteAlpha.600"
+                  _hover={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
+                  _active={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
+                  _focus={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
                 />
                 <FormErrorMessage fontSize="xs">
                   {errors.name && errors.name.message}
@@ -135,6 +150,7 @@ const ContactForm = () => {
                   fontSize="xs"
                   fontWeight="normal"
                   letterSpacing="wide"
+                  color="whiteAlpha.600"
                 >
                   Email
                 </FormLabel>
@@ -146,6 +162,20 @@ const ContactForm = () => {
                   {...register('email', {
                     required: 'Required',
                   })}
+                  borderColor="whiteAlpha.400"
+                  color="whiteAlpha.600"
+                  _hover={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
+                  _active={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
+                  _focus={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
                 />
                 <FormErrorMessage fontSize="xs">
                   {errors.email && errors.email.message}
@@ -157,6 +187,7 @@ const ContactForm = () => {
                   fontSize="xs"
                   fontWeight="normal"
                   letterSpacing="wide"
+                  color="whiteAlpha.600"
                 >
                   Website
                 </FormLabel>
@@ -165,6 +196,20 @@ const ContactForm = () => {
                   name="website"
                   disabled={isSubmitting}
                   {...register('website')}
+                  borderColor="whiteAlpha.400"
+                  color="whiteAlpha.600"
+                  _hover={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
+                  _active={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
+                  _focus={{
+                    color: 'whiteAlpha.800',
+                    borderColor: 'whiteAlpha.800',
+                  }}
                 />
                 <FormErrorMessage fontSize="xs">
                   {errors.website && errors.website.message}
@@ -176,6 +221,7 @@ const ContactForm = () => {
                   fontSize="xs"
                   fontWeight="normal"
                   letterSpacing="wide"
+                  color="whiteAlpha.600"
                 >
                   Inquiry Type
                 </FormLabel>
@@ -195,6 +241,7 @@ const ContactForm = () => {
                   fontSize="xs"
                   fontWeight="normal"
                   letterSpacing="wide"
+                  color="whiteAlpha.600"
                 >
                   Choose quote details
                 </FormLabel>
@@ -214,6 +261,7 @@ const ContactForm = () => {
                 fontSize="xs"
                 fontWeight="normal"
                 letterSpacing="wide"
+                color="whiteAlpha.600"
               >
                 Message
               </FormLabel>
@@ -225,6 +273,20 @@ const ContactForm = () => {
                   required: 'Required',
                   minLength: { value: 32, message: 'Provide more details' },
                 })}
+                borderColor="whiteAlpha.400"
+                color="whiteAlpha.600"
+                _hover={{
+                  color: 'whiteAlpha.800',
+                  borderColor: 'whiteAlpha.800',
+                }}
+                _active={{
+                  color: 'whiteAlpha.800',
+                  borderColor: 'whiteAlpha.800',
+                }}
+                _focus={{
+                  color: 'whiteAlpha.800',
+                  borderColor: 'whiteAlpha.800',
+                }}
               />
               <FormErrorMessage fontSize="xs">
                 {errors.message && errors.message.message}

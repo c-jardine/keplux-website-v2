@@ -17,17 +17,17 @@ const ToggleButton = (props: CheckboxProps) => {
         key={props.name}
         px={4}
         py={2}
-        bg={state.isChecked ? 'brand.600' : 'gray.50'}
+        bg={state.isChecked ? 'brand.600' : 'black'}
         fontSize="sm"
-        color={state.isChecked ? 'white' : 'black'}
+        color={state.isChecked ? 'white' : 'whiteAlpha.600'}
         rounded="lg"
         borderWidth={1}
-        borderColor={state.isChecked ? 'brand.600' : 'gray.200'}
+        borderColor={state.isChecked ? 'brand.600' : 'whiteAlpha.300'}
         cursor="pointer"
         _hover={{
-          bg: state.isChecked ? 'brand.500' : 'gray.50',
-          color: state.isChecked ? 'white' : 'black',
-          borderColor: 'brand.500',
+          bg: state.isChecked ? 'brand.500' : 'black',
+          color: 'whiteAlpha.800',
+          borderColor: state.isChecked ? 'brand.500' : 'whiteAlpha.800',
         }}
         transition="200ms ease-in-out"
         {...getCheckboxProps()}
