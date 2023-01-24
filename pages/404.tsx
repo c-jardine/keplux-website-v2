@@ -7,7 +7,7 @@ import { Container, Heading, Stack } from '@chakra-ui/react';
  */
 const ErrorPage = () => {
   return (
-    <Stack alignItems="center" spacing={16}>
+    <Stack alignItems="center" spacing={16} py={32}>
       <Container maxW="7xl" w="full">
         <Stack alignItems="center" spacing={12}>
           <Stack alignItems="center">
@@ -16,7 +16,7 @@ const ErrorPage = () => {
               fontSize={['5xl', , '6xl', '7xl']}
               fontWeight="black"
               textAlign="center"
-              color="black"
+              color="whiteAlpha.800"
             >
               404
             </Heading>
@@ -27,7 +27,7 @@ const ErrorPage = () => {
               fontSize="xl"
               textAlign="center"
               fontWeight="medium"
-              color="gray.500"
+              color="whiteAlpha.600"
             >
               Page not found
             </Heading>

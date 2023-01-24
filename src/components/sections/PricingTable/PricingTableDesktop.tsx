@@ -26,7 +26,7 @@ const PricingTableDesktop = () => {
           templateColumns="2fr 1fr 1fr 1fr 1fr"
           placeItems="center"
           borderBottomWidth={1}
-          borderColor="whiteAlpha.300"
+          borderColor="whiteAlpha.400"
           gap={2}
         >
           <Flex
@@ -43,12 +43,12 @@ const PricingTableDesktop = () => {
               <PopoverTrigger>
                 <Icon as={FaInfoCircle} w={4} h={4} color="whiteAlpha.800" />
               </PopoverTrigger>
-              <PopoverContent bg="black" borderColor="whiteAlpha.300">
+              <PopoverContent bg="black" borderColor="whiteAlpha.400">
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader
                   fontWeight="semibold"
-                  borderColor="whiteAlpha.300"
+                  borderColor="whiteAlpha.400"
                   color="whiteAlpha.800"
                 >
                   {feature.feature}
@@ -96,7 +96,7 @@ const PricingTableDesktop = () => {
         mx="auto"
         placeItems="center"
         borderBottomWidth={1}
-        borderColor="whiteAlpha.300"
+        borderColor="whiteAlpha.400"
         gap={2}
       >
         <Flex
@@ -113,12 +113,12 @@ const PricingTableDesktop = () => {
             <PopoverTrigger>
               <Icon as={FaInfoCircle} w={4} h={4} color="white" />
             </PopoverTrigger>
-            <PopoverContent bg="black" borderColor="whiteAlpha.300">
+            <PopoverContent bg="black" borderColor="whiteAlpha.400">
               <PopoverArrow />
               <PopoverCloseButton />
               <PopoverHeader
                 fontWeight="semibold"
-                borderColor="whiteAlpha.300"
+                borderColor="whiteAlpha.400"
                 color="whiteAlpha.800"
               >
                 Price

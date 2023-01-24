@@ -22,7 +22,7 @@ const ToggleButton = (props: CheckboxProps) => {
         color={state.isChecked ? 'white' : 'whiteAlpha.600'}
         rounded="lg"
         borderWidth={1}
-        borderColor={state.isChecked ? 'brand.600' : 'whiteAlpha.300'}
+        borderColor={state.isChecked ? 'brand.600' : 'whiteAlpha.400'}
         cursor="pointer"
         _hover={{
           bg: state.isChecked ? 'brand.500' : 'black',

@@ -11,7 +11,7 @@ import { PortableTextProps } from './PortableText.types';
  */
 const PortableText = (props: PortableTextProps) => {
   return (
-    <Stack spacing={4}>
+    <Stack spacing={4} color="whiteAlpha.600">
       {/* TODO: Fix this TypeScript problem. */}
       {/* @ts-ignore */}
       <RPortableText value={props.value} components={PortableTextComponents} />

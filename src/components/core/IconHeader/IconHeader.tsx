@@ -22,7 +22,7 @@ const IconHeader = (props: { icon: IconType }) => {
           transform="rotate(70deg)"
         />
       </AbsoluteCenter>
-      <Icon as={props.icon} position="relative" w={6} h={6} color="gray.50" />
+      <Icon as={props.icon} position="relative" w={6} h={6} color="black" />
     </Flex>
   );
 };

@@ -52,7 +52,7 @@ const NavbarDropdownMobile = (props: NavbarItemProps) => {
           as={Stack}
           borderWidth={0}
           borderLeftWidth={2}
-          borderColor="gray.200"
+          borderColor="whiteAlpha.400"
           ml={2}
           py={1}
         >

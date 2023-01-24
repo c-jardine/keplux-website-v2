@@ -31,7 +31,7 @@ const _BlogPageHeader = (props: PostProps) => {
       <Divider borderWidth={2} borderColor="brand.600" />
       <Stack spacing={4}>
         {props.postSeries && <_BlogPageSeries postSeries={props.postSeries} />}
-        <Heading as="h1" size="3xl">
+        <Heading as="h1" size="3xl" color="whiteAlpha.800">
           {props.title}
         </Heading>
         <Box>
@@ -40,10 +40,11 @@ const _BlogPageHeader = (props: PostProps) => {
             textTransform="uppercase"
             letterSpacing="wider"
             fontWeight="semibold"
+            color="whiteAlpha.800"
           >
             {props.author.name}
           </Text>
-          <Text fontSize="xs" color="gray.500">
+          <Text fontSize="xs" color="whiteAlpha.600">
             {publishedOn}
           </Text>
         </Box>

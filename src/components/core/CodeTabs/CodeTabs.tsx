@@ -35,17 +35,20 @@ const CodeTabs = (props: CodeTabsProps) => {
             key={tab._key}
             p={0}
             role="group"
-            bg="gray.50"
+            bg="black"
             borderWidth={1}
-            borderColor="brand.200"
-            _hover={{ bg: 'brand.100' }}
-            _selected={{ bg: 'brand.100' }}
+            borderColor="whiteAlpha.400"
+            _hover={{ borderColor: 'whiteAlpha.800' }}
+            _selected={{
+              borderColor: 'whiteAlpha.800',
+              color: 'whiteAlpha.800 !important',
+            }}
           >
             <Code
               px={2}
               py={1}
               fontSize="xs"
-              color="gray.600"
+              color="whiteAlpha.600"
               letterSpacing="wide"
               bg="transparent"
             >

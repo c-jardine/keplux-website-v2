@@ -44,7 +44,7 @@ const PricingTable = () => {
           mx="auto"
           placeItems="center"
           borderBottomWidth={2}
-          borderColor="whiteAlpha.300"
+          borderColor="whiteAlpha.400"
           py={4}
           bg="black"
           zIndex={1}
@@ -80,7 +80,7 @@ const PricingTable = () => {
               <DrawerContent
                 bg="black"
                 borderTopWidth={1}
-                borderColor="whiteAlpha.300"
+                borderColor="whiteAlpha.400"
               >
                 <DrawerHeader color="whiteAlpha.800">Select plan</DrawerHeader>
                 <DrawerBody as={Stack}>
@@ -150,7 +150,7 @@ const PricingTable = () => {
           position="sticky"
           top={16}
           borderBottomWidth={1}
-          borderColor="whiteAlpha.300"
+          borderColor="whiteAlpha.400"
           py={4}
           bg="black"
           zIndex={1}

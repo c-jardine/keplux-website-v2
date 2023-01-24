@@ -16,7 +16,7 @@ const PricingAddon = (props: PricingAddonProps) => {
       justifyContent="space-between"
       rounded="lg"
       borderWidth={1}
-      borderColor="whiteAlpha.300"
+      borderColor="whiteAlpha.400"
       p={{ base: 4, md: 8 }}
       spacing={6}
     >

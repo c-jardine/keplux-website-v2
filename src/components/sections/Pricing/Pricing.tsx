@@ -57,7 +57,7 @@ const Pricing = (props: PricingProps) => {
                   <Heading as="h3" fontSize="md">
                     {item.heading}
                   </Heading>
-                  <Text fontSize="sm" color="gray.600">
+                  <Text fontSize="sm" color="whiteAlpha.600">
                     {item.description}
                   </Text>
                 </Box>
@@ -76,7 +76,7 @@ const Pricing = (props: PricingProps) => {
         >
           <Stack alignItems="center">
             {props.price.abovePrice && (
-              <Text textTransform="uppercase" color="gray.600">
+              <Text textTransform="uppercase" color="whiteAlpha.600">
                 {props.price.abovePrice}
               </Text>
             )}
@@ -87,7 +87,7 @@ const Pricing = (props: PricingProps) => {
               <Text
                 textTransform="uppercase"
                 fontWeight="semibold"
-                color="gray.600"
+                color="whiteAlpha.600"
               >
                 {props.price.belowPrice}
               </Text>

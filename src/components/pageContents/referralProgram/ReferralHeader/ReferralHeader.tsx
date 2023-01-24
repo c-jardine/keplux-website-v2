@@ -11,7 +11,7 @@ const ReferralHeader = () => {
           <Heading as="h1" fontWeight="black">
             Join our referral program and start earning today!
           </Heading>
-          <Stack mt={6} color="gray.600">
+          <Stack mt={6} color="whiteAlpha.600">
             <Text>
               Know an individual or business that could benefit from Keplux
               Development&apos;s services? Let us know about them and we&apos;ll

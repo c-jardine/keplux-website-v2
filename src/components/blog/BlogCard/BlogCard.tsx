@@ -53,7 +53,7 @@ const BlogCard = (props: PostProps) => {
             <Tag key={tag._key} {...tag} />
           ))}
         </Flex>
-        <Heading as="h3" size="lg">
+        <Heading as="h3" size="lg" color="whiteAlpha.800">
           <KLink href={`/blog/post/${props.slug.current}`}>{props.title}</KLink>
         </Heading>
         <KLink
@@ -64,13 +64,14 @@ const BlogCard = (props: PostProps) => {
           textTransform="uppercase"
           letterSpacing="wider"
           fontWeight="semibold"
+          color="whiteAlpha.800"
         >
           {props.author.name}
         </KLink>
-        <Text fontSize="xs" textTransform="uppercase">
+        <Text fontSize="xs" textTransform="uppercase" color="whiteAlpha.600">
           {publishedOn} ago
         </Text>
-        <Text mt={4} maxW="2xl" fontSize="sm">
+        <Text mt={4} maxW="2xl" fontSize="sm" color="whiteAlpha.600">
           {props.excerpt}
         </Text>
       </Box>

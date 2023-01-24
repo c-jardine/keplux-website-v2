@@ -101,7 +101,7 @@ const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
   return (
     <HStack
       justifyContent="center"
-      divider={<StackDivider borderColor="whiteAlpha.300" />}
+      divider={<StackDivider borderColor="whiteAlpha.400" />}
     >
       <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
         <Text
@@ -207,7 +207,7 @@ const LighthouseScore = (props: LighthouseScoreProps) => {
           rounded="md"
           fontSize="sm"
           borderWidth={1}
-          borderColor="whiteAlpha.300"
+          borderColor="whiteAlpha.400"
           color="whiteAlpha.600"
         >
           {props.heading}
@@ -220,7 +220,7 @@ const LighthouseScore = (props: LighthouseScoreProps) => {
         pt={9}
         pb={4}
         borderWidth={1}
-        borderColor="whiteAlpha.300"
+        borderColor="whiteAlpha.400"
         rounded="lg"
       >
         <Show below="lg">

@@ -24,7 +24,7 @@ const Features = () => {
               <Heading as="h2" fontWeight="black">
                 Get your website online
               </Heading>
-              <Stack mt={6} color="gray.600">
+              <Stack mt={6} color="whiteAlpha.600">
                 <Text>
                   With our{' '}
                   <KLink
@@ -68,7 +68,7 @@ const Features = () => {
                   <Heading as="h3" size="sm" pt={8} textTransform="uppercase">
                     Hosting
                   </Heading>
-                  <Stack color="gray.600" fontSize="sm">
+                  <Stack color="whiteAlpha.600" fontSize="sm">
                     <Text>
                       To access your website, you need a hosting provider. There
                       are tons of options and considerations, but we make it
@@ -99,7 +99,7 @@ const Features = () => {
                   <Heading as="h3" size="sm" pt={8} textTransform="uppercase">
                     Updates
                   </Heading>
-                  <Stack color="gray.600" fontSize="sm">
+                  <Stack color="whiteAlpha.600" fontSize="sm">
                     <Text>
                       With the Keplux One package, there are a variety of
                       updates we can perform for you. Some are automatic, others
@@ -131,7 +131,7 @@ const Features = () => {
                   <Heading as="h3" size="sm" pt={8} textTransform="uppercase">
                     Maintenance
                   </Heading>
-                  <Stack color="gray.600" fontSize="sm">
+                  <Stack color="whiteAlpha.600" fontSize="sm">
                     <Text>
                       Websites aren&apos;t something you want to set up and
                       forget. Over time, technologies can become vulnerable to
@@ -162,7 +162,7 @@ const Features = () => {
                   <Heading as="h3" size="sm" pt={8} textTransform="uppercase">
                     Analytics
                   </Heading>
-                  <Stack color="gray.600" fontSize="sm">
+                  <Stack color="whiteAlpha.600" fontSize="sm">
                     <Text>
                       Google Analytics provides useful insights about your
                       website&apos;s traffic and engagement. We&apos;ll include

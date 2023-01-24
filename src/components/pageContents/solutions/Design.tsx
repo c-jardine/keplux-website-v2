@@ -29,7 +29,7 @@ const Design = () => {
             <Heading as="h1" fontWeight="black">
               Professional web design
             </Heading>
-            <Stack mt={6} color="gray.600">
+            <Stack mt={6} color="whiteAlpha.600">
               <Text>
                 Whether you choose a template or custom design solution, we make
                 sure your website&apos;s design matches your brand. All of our

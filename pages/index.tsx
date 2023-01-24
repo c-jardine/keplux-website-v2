@@ -708,11 +708,11 @@ const Home = () => {
                 py={8}
                 borderTopWidth={1}
                 borderBottomWidth={1}
-                borderColor="whiteAlpha.300"
+                borderColor="whiteAlpha.400"
               >
                 <Stack
                   direction={{ base: 'column', lg: 'row' }}
-                  divider={<StackDivider borderColor="whiteAlpha.300" />}
+                  divider={<StackDivider borderColor="whiteAlpha.400" />}
                 >
                   <Stack
                     alignItems="center"

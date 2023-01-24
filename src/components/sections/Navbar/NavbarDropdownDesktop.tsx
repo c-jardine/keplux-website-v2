@@ -59,7 +59,7 @@ const NavbarDropdownDesktop = (props: NavbarItemProps) => {
       <NavbarItemDesktop {...props} onClick={onOpen} />
       <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
         <DrawerOverlay mt={16} />
-        <DrawerContent mt={16} py={8} bg="gray.50">
+        <DrawerContent mt={16} py={8} bg="black">
           <DrawerCloseButton zIndex={1} />
           <DrawerBody maxW="7xl" w="full" mx="auto">
             <SimpleGrid columns={{ md: 2, lg: 3 }} gap={2}>

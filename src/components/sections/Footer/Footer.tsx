@@ -21,7 +21,7 @@ const Footer = () => {
       color="whiteAlpha.600"
       shadow="2xl"
       borderTopWidth={1}
-      borderColor="whiteAlpha.300"
+      borderColor="whiteAlpha.400"
     >
       <Container maxW="6xl" w="full" py={16}>
         <Stack alignItems="center">
@@ -70,7 +70,7 @@ const Footer = () => {
                   </KLink>
                 </HStack>
               </Stack>
-              <Text mt={2} fontSize="xs" color="gray.500">
+              <Text mt={2} fontSize="xs" color="black0">
                 &#169; 2022 Keplux Development, LLC.
               </Text>
             </Stack>

@@ -38,7 +38,7 @@ const Addons = () => {
               <Heading as="h2" fontSize="lg" textTransform="uppercase">
                 E-Commerce
               </Heading>
-              <Stack color="gray.600" fontSize="sm">
+              <Stack color="whiteAlpha.600" fontSize="sm">
                 <Text>
                   The best e-commerce websites load fast, regardless of how many
                   products are listed, and should reflect the company&apos;s
@@ -80,7 +80,7 @@ const Addons = () => {
               <Heading as="h2" fontSize="lg" textTransform="uppercase">
                 Content Management
               </Heading>
-              <Stack color="gray.600" fontSize="sm">
+              <Stack color="whiteAlpha.600" fontSize="sm">
                 <Text>
                   Whether your website showcases your blog, your rental
                   properties, weekly specials for your store, or anything else

@@ -14,11 +14,11 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
     >
       <Text
         w="fit-content"
-        bg="brand.100"
-        color="brand.600"
+        bg="brand.900"
+        color="brand.400"
         fontSize="sm"
         borderWidth={1}
-        borderColor="brand.200"
+        borderColor="brand.400"
         fontWeight="bold"
         textTransform="uppercase"
         letterSpacing="wider"
@@ -28,7 +28,9 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
       >
         Series
       </Text>
-      <KLink href="/#">{props.postSeries.title}</KLink>
+      <KLink href="/#" color="whiteAlpha.600">
+        {props.postSeries.title}
+      </KLink>
     </Flex>
   );
 };

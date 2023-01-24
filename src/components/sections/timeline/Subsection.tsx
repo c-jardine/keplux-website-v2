@@ -48,7 +48,7 @@ const MobileSubsection = (props: {
         <Box position="relative" bg="black" p={3}>
           <AbsoluteCenter>
             <Circle
-              bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.300)"
+              bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.400)"
               size={4}
             />
           </AbsoluteCenter>
@@ -119,7 +119,7 @@ const DesktopSubsection = (props: {
           <Box bg="black" p={3}>
             <AbsoluteCenter>
               <Circle
-                bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.300)"
+                bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.400)"
                 size={4}
               />
             </AbsoluteCenter>

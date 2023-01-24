@@ -23,7 +23,7 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h1" size="3xl" pt={8}>
+    <Heading id={value._key} as="h1" size="3xl" pt={8} color="whiteAlpha.800">
       {children}
     </Heading>
   ),
@@ -34,7 +34,7 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h2" size="2xl" pt={8}>
+    <Heading id={value._key} as="h2" size="2xl" pt={8} color="whiteAlpha.800">
       {children}
     </Heading>
   ),
@@ -45,7 +45,7 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h3" size="xl" pt={8}>
+    <Heading id={value._key} as="h3" size="xl" pt={8} color="whiteAlpha.800">
       {children}
     </Heading>
   ),
@@ -56,7 +56,7 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h4" size="lg" pt={8}>
+    <Heading id={value._key} as="h4" size="lg" pt={8} color="whiteAlpha.800">
       {children}
     </Heading>
   ),
@@ -67,7 +67,7 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h5" size="md" pt={8}>
+    <Heading id={value._key} as="h5" size="md" pt={8} color="whiteAlpha.800">
       {children}
     </Heading>
   ),
@@ -78,7 +78,7 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h6" size="sm" pt={8}>
+    <Heading id={value._key} as="h6" size="sm" pt={8} color="whiteAlpha.800">
       {children}
     </Heading>
   ),
@@ -89,7 +89,9 @@ const marks = {
     return children[0].startsWith('npm') || children[0].startsWith('npx') ? (
       <CopyCodeInline codeToCopy={children} />
     ) : (
-      <Code>{children}</Code>
+      <Code bg="whiteAlpha.100" color="whiteAlpha.800">
+        {children}
+      </Code>
     );
   },
   link: ({
@@ -104,6 +106,7 @@ const marks = {
       target="_blank"
       rel="noopener"
       fontWeight="semibold"
+      color="whiteAlpha.800"
     >
       {children}
     </KLink>
@@ -126,7 +129,7 @@ const list = {
   listItem: {
     bullet: ({ children }) => (
       <ListItem display="flex" alignItems="center">
-        <ListIcon as={FaChevronRight} color="black" w={3} h={3} />
+        <ListIcon as={FaChevronRight} color="whiteAlpha.800" w={3} h={3} />
         <Text>{children}</Text>
       </ListItem>
     ),

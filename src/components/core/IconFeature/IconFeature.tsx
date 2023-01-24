@@ -20,7 +20,7 @@ const IconFeature = (props: {
         >
           {props.heading}
         </Heading>
-        <Text fontSize="sm" color="gray.600">
+        <Text fontSize="sm" color="whiteAlpha.600">
           {props.description}
         </Text>
       </Stack>

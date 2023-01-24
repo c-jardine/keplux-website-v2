@@ -29,7 +29,7 @@ const PricingTableMobile = (props: { bundle: PricingBundleType }) => {
           mx="auto"
           placeItems="center"
           borderBottomWidth={1}
-          borderColor="whiteAlpha.300"
+          borderColor="whiteAlpha.400"
         >
           <Flex
             py={5}
@@ -51,12 +51,12 @@ const PricingTableMobile = (props: { bundle: PricingBundleType }) => {
                   color="whiteAlpha.800"
                 />
               </PopoverTrigger>
-              <PopoverContent bg="black" borderColor="whiteAlpha.300">
+              <PopoverContent bg="black" borderColor="whiteAlpha.400">
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverHeader
                   fontWeight="semibold"
-                  borderColor="whiteAlpha.300"
+                  borderColor="whiteAlpha.400"
                   color="whiteAlpha.800"
                 >
                   {feature.feature}

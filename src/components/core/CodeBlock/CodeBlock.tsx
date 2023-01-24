@@ -16,7 +16,12 @@ import { lightfair } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
  */
 const CodeBlock = (props: CodeBlockProps) => {
   return (
-    <Box bg="white" rounded="lg" borderWidth={1} borderColor="gray.200">
+    <Box
+      bg="whiteAlpha.100"
+      rounded="lg"
+      borderWidth={1}
+      borderColor="whiteAlpha.400"
+    >
       <Flex
         position="relative"
         px={4}
@@ -31,11 +36,11 @@ const CodeBlock = (props: CodeBlockProps) => {
             left={4}
             px={2}
             py={1}
-            bg="brand.100"
+            bg="black"
             borderWidth={1}
-            borderColor="brand.200"
+            borderColor="whiteAlpha.400"
             fontSize="xs"
-            color="gray.600"
+            color="whiteAlpha.600"
             letterSpacing="wide"
           >
             {props.filename}
@@ -49,6 +54,8 @@ const CodeBlock = (props: CodeBlockProps) => {
             padding: 0,
             fontSize: '0.8rem',
             alignSelf: 'center',
+            color: 'white',
+            opacity: 0.9,
           }}
         >
           {props.code?.code}
@@ -57,11 +64,11 @@ const CodeBlock = (props: CodeBlockProps) => {
       </Flex>
       {props.filename && (
         <>
-          <Divider borderColor="gray.200" rounded="full" />
+          <Divider borderColor="whiteAlpha.400" rounded="full" />
           <Flex
             px={4}
             py={2}
-            bg="gray.100"
+            bg="whiteAlpha.100"
             justifyContent="space-between"
             alignItems="center"
             roundedBottom="lg"
@@ -71,7 +78,7 @@ const CodeBlock = (props: CodeBlockProps) => {
               fontSize="0.75rem"
               fontWeight="semibold"
               letterSpacing="wider"
-              color="gray.600"
+              color="whiteAlpha.600"
             >
               {props.language}
             </Text>

@@ -23,7 +23,7 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
                 fontSize={['5xl', , '6xl', '7xl']}
                 fontWeight="black"
                 textAlign="center"
-                color="black"
+                color="whiteAlpha.800"
               >
                 Web Development Blog
               </Heading>
@@ -34,7 +34,7 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
                 fontSize="xl"
                 textAlign="center"
                 fontWeight="medium"
-                color="gray.500"
+                color="whiteAlpha.600"
               >
                 Check out our development process and learn about the tools and
                 technologies we use, such as Next.js, TypeScript, Sanity, and
@@ -44,10 +44,13 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
           </Stack>
           <Container as={Stack} spacing={16} maxW="6xl" my={16}>
             <Stack spacing={4}>
-              <Heading as="h2" fontWeight="black">
+              <Heading as="h2" fontWeight="black" color="whiteAlpha.800">
                 Latest posts
               </Heading>
-              <Stack gap={16} divider={<StackDivider />}>
+              <Stack
+                gap={16}
+                divider={<StackDivider borderColor="whiteAlpha.400" />}
+              >
                 {posts.map((post: PostProps) => (
                   <BlogCard key={post._id} {...post} />
                 ))}

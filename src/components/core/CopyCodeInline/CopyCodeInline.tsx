@@ -29,8 +29,10 @@ const CopyCodeInline = (props: { codeToCopy: string }) => {
         rounded="md"
         cursor="pointer"
         onClick={_handleClick}
-        _hover={{ bg: 'purple.200' }}
+        _hover={{ bg: 'whiteAlpha.400' }}
         transition="200ms ease-in-out"
+        bg="whiteAlpha.100"
+        color="whiteAlpha.800"
       >
         {props.codeToCopy}
       </Code>

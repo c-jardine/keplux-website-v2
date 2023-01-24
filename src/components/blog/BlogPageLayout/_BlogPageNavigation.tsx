@@ -27,10 +27,10 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
   return (
     <Accordion allowToggle>
       <AccordionItem
-        bg="brand.100"
+        bg="brand.900"
         flexDirection="column"
         borderWidth={1}
-        borderColor="brand.200"
+        borderColor="brand.400"
       >
         <AccordionButton px={{ base: 4, md: 8 }} py={4}>
           <Box>
@@ -39,13 +39,13 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
               fontWeight="bold"
               textTransform="uppercase"
               letterSpacing="wide"
-              color="brand.600"
+              color="brand.400"
             >
               Jump to section
             </Text>
           </Box>
         </AccordionButton>
-        <AccordionPanel bg="brand.50">
+        <AccordionPanel bg="black">
           <List mt={2}>
             {headerBlocks.map((block) => (
               <Box key={block._key}>
@@ -58,7 +58,7 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                     fontWeight="bold"
                     letterSpacing="wide"
                     lineHeight="taller"
-                    color="gray.700"
+                    color="whiteAlpha.800"
                     w="fit-content"
                   >
                     <KLink href={`#${block._key}`} role="group">
@@ -68,7 +68,7 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                         bottom={0}
                         h={1}
                         w="full"
-                        bg="gray.500"
+                        bg="whiteAlpha.600"
                         transform="scaleY(0%)"
                         transformOrigin="top"
                         _groupHover={{ transform: 'scaleY(100%)' }}
@@ -84,7 +84,7 @@ const _BlogPageNavigation = (props: Pick<PostProps, 'content'>) => {
                     ml={2}
                     fontSize="sm"
                     letterSpacing="wide"
-                    color="gray.600"
+                    color="whiteAlpha.600"
                   >
                     <ListIcon as={FaCircle} w={1} h={1} />
                     <KLink href={`#${block._key}`}>

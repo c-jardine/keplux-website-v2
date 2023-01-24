@@ -43,7 +43,7 @@ const ReferralPayoutChart = () => {
               <Td>Example</Td>
             </Tr>
           </Thead>
-          <Tbody bg="gray.50">
+          <Tbody bg="black">
             <Tr>
               <Td fontWeight="bold">Keplux One</Td>
               <Td>$50 at closing, $150 after 6 months</Td>

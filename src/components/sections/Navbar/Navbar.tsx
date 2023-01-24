@@ -128,7 +128,7 @@ const Navbar = () => {
       left={0}
       bg="blackAlpha.800"
       borderBottomWidth={1}
-      borderColor="whiteAlpha.300"
+      borderColor="whiteAlpha.400"
       backdropFilter="blur(8px)"
       h={16}
       w="full"

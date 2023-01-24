@@ -16,7 +16,7 @@ const RefundPolicyPage: NextPage = () => {
           <Heading as="h1">Keplux Development Refund Policy</Heading>
           <Text fontWeight="semibold">
             Effective date:{' '}
-            <chakra.span color="gray.600">December 13, 2022</chakra.span>.
+            <chakra.span color="whiteAlpha.600">December 13, 2022</chakra.span>.
           </Text>
           <Text>
             While we strive to provide the best service possible, we understand

@@ -102,7 +102,7 @@ const ContactForm = () => {
         rounded="lg"
         bg="black"
         borderWidth={1}
-        borderColor="whiteAlpha.300"
+        borderColor="whiteAlpha.400"
       >
         <form onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}>
           <Stack spacing={4}>

@@ -44,7 +44,7 @@ const ProcessStep = (props: {
         </AbsoluteCenter>
         <Text
           position="relative"
-          color="gray.50"
+          color="black"
           fontWeight="black"
           fontSize="2xl"
         >
@@ -55,7 +55,7 @@ const ProcessStep = (props: {
         <Heading as="h3" fontSize="xl" textTransform="uppercase">
           {props.heading}
         </Heading>
-        <Text color="gray.600">{props.description}</Text>
+        <Text color="whiteAlpha.600">{props.description}</Text>
       </Stack>
     </Stack>
   );

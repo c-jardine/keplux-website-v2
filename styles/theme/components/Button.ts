@@ -39,7 +39,7 @@ const primary = defineStyle({
 const secondary = defineStyle({
   bg: 'black',
   borderWidth: 2,
-  borderColor: 'whiteAlpha.300',
+  borderColor: 'whiteAlpha.400',
   _hover: {
     borderColor: 'whiteAlpha.800',
     color: 'whiteAlpha.800',
