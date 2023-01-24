@@ -35,7 +35,7 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                 fontSize={['5xl', , '6xl', '7xl']}
                 fontWeight="black"
                 textAlign="center"
-                color="black"
+                color="whiteAlpha.800"
               >
                 Check out some of our work
               </Heading>
@@ -46,7 +46,7 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                 fontSize="xl"
                 textAlign="center"
                 fontWeight="medium"
-                color="gray.500"
+                color="whiteAlpha.600"
               >
                 A collection of some of our past work, much of which can be used
                 as a template in our{' '}
@@ -67,8 +67,9 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                 rounded="lg"
                 overflow="hidden"
                 borderWidth={1}
-                borderColor="gray.200"
+                borderColor="whiteAlpha.300"
                 shadow="none"
+                bg="black"
               >
                 <CardHeader position="relative" h={{ lg: 72, xl: 52 }} p={0}>
                   <Image
@@ -80,7 +81,7 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                   />
                 </CardHeader>
                 <CardBody>
-                  <Heading as="h3" fontSize="lg">
+                  <Heading as="h3" fontSize="lg" color="whiteAlpha.800">
                     {project.title}
                   </Heading>
                   <Heading
@@ -88,17 +89,29 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
                     mt={1}
                     fontSize="sm"
                     fontWeight="normal"
-                    color="gray.600"
+                    color="whiteAlpha.600"
                   >
                     {project.subtitle}
                   </Heading>
-                  <Text mt={4} fontSize="sm" color="gray.500">
+                  <Text mt={4} fontSize="sm" color="whiteAlpha.600">
                     {project.description}
                   </Text>
                 </CardBody>
                 <CardFooter justifyContent="flex-end">
-                  <KLink href={project.url} target="_blank" fontSize="sm">
-                    View <Icon as={FaExternalLinkAlt} ml={1} w={3} h={3} />
+                  <KLink
+                    href={project.url}
+                    target="_blank"
+                    fontSize="sm"
+                    color="whiteAlpha.600"
+                  >
+                    View{' '}
+                    <Icon
+                      as={FaExternalLinkAlt}
+                      ml={1}
+                      w={3}
+                      h={3}
+                      color="whiteAlpha.800"
+                    />
                   </KLink>
                 </CardFooter>
               </Card>
