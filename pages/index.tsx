@@ -9,6 +9,7 @@ import {
   Button,
   Center,
   Container,
+  Flex,
   HStack,
   Heading,
   Icon,
@@ -81,7 +82,7 @@ const Home = () => {
                   <Stack alignItems="center">
                     <Heading
                       as="h1"
-                      fontSize={['5xl', , '6xl', '7xl']}
+                      fontSize={['4xl', , '6xl', '7xl']}
                       fontWeight="black"
                       textAlign="center"
                       color="whiteAlpha.800"
@@ -92,7 +93,7 @@ const Home = () => {
                       as="h2"
                       maxW="2xl"
                       w="full"
-                      fontSize="xl"
+                      fontSize={['md', , 'xl']}
                       textAlign="center"
                       fontWeight="medium"
                       color="whiteAlpha.800"
@@ -103,14 +104,23 @@ const Home = () => {
                       conversions.
                     </Heading>
                   </Stack>
-                  <HStack spacing={4}>
+                  <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
                     <Button as={Link} href="/contact" variant="primary">
                       Start your project
                     </Button>
-                    <Button as={Link} href="/pricing" variant="secondary">
-                      View pricing
+                    <Button
+                      as={Link}
+                      href="/pricing"
+                      variant="secondary"
+                      justifyContent="space-between"
+                      borderColor="black"
+                    >
+                      <Flex alignItems="center" gap={4}>
+                        <Text>View pricing</Text>
+                        <Icon as={FaChevronRight} color="white" />
+                      </Flex>
                     </Button>
-                  </HStack>
+                  </Stack>
                 </Stack>
               </Container>
             </Box>

@@ -26,7 +26,7 @@ const PricingTableDesktop = () => {
           templateColumns="2fr 1fr 1fr 1fr 1fr"
           placeItems="center"
           borderBottomWidth={1}
-          borderColor="gray.200"
+          borderColor="whiteAlpha.300"
           gap={2}
         >
           <Flex
@@ -36,18 +36,26 @@ const PricingTableDesktop = () => {
             gap={2}
             position="relative"
           >
-            <Text fontSize="sm">{feature.feature}</Text>
+            <Text fontSize="sm" color="whiteAlpha.600">
+              {feature.feature}
+            </Text>
             <Popover>
               <PopoverTrigger>
-                <Icon as={FaInfoCircle} w={3} h={3} color="brand.300" />
+                <Icon as={FaInfoCircle} w={4} h={4} color="whiteAlpha.800" />
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent bg="black" borderColor="whiteAlpha.300">
                 <PopoverArrow />
                 <PopoverCloseButton />
-                <PopoverHeader fontWeight="semibold">
+                <PopoverHeader
+                  fontWeight="semibold"
+                  borderColor="whiteAlpha.300"
+                  color="whiteAlpha.800"
+                >
                   {feature.feature}
                 </PopoverHeader>
-                <PopoverBody fontSize="sm">{feature.description}</PopoverBody>
+                <PopoverBody fontSize="sm" color="whiteAlpha.600">
+                  {feature.description}
+                </PopoverBody>
               </PopoverContent>
             </Popover>
           </Flex>
@@ -88,7 +96,7 @@ const PricingTableDesktop = () => {
         mx="auto"
         placeItems="center"
         borderBottomWidth={1}
-        borderColor="gray.200"
+        borderColor="whiteAlpha.300"
         gap={2}
       >
         <Flex
@@ -98,31 +106,39 @@ const PricingTableDesktop = () => {
           gap={2}
           position="relative"
         >
-          <Text fontSize="sm">Price</Text>
+          <Text fontSize="sm" color="whiteAlpha.600">
+            Price
+          </Text>
           <Popover>
             <PopoverTrigger>
-              <Icon as={FaInfoCircle} w={3} h={3} color="brand.300" />
+              <Icon as={FaInfoCircle} w={4} h={4} color="white" />
             </PopoverTrigger>
-            <PopoverContent>
+            <PopoverContent bg="black" borderColor="whiteAlpha.300">
               <PopoverArrow />
               <PopoverCloseButton />
-              <PopoverHeader fontWeight="semibold">Price</PopoverHeader>
-              <PopoverBody fontSize="sm">
+              <PopoverHeader
+                fontWeight="semibold"
+                borderColor="whiteAlpha.300"
+                color="whiteAlpha.800"
+              >
+                Price
+              </PopoverHeader>
+              <PopoverBody fontSize="sm" color="whiteAlpha.600">
                 Prices do not reflect customizations and addons.
               </PopoverBody>
             </PopoverContent>
           </Popover>
         </Flex>
-        <Text fontSize="sm" textAlign="center" py={5}>
+        <Text fontSize="sm" textAlign="center" py={5} color="whiteAlpha.600">
           $0 down, $175 per month
         </Text>
-        <Text fontSize="sm" textAlign="center" py={5}>
+        <Text fontSize="sm" textAlign="center" py={5} color="whiteAlpha.600">
           Contact us
         </Text>
-        <Text fontSize="sm" textAlign="center" py={5}>
+        <Text fontSize="sm" textAlign="center" py={5} color="whiteAlpha.600">
           Contact us
         </Text>
-        <Text fontSize="sm" textAlign="center" py={5}>
+        <Text fontSize="sm" textAlign="center" py={5} color="whiteAlpha.600">
           Contact us
         </Text>
       </SimpleGrid>

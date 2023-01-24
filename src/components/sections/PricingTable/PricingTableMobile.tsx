@@ -29,7 +29,7 @@ const PricingTableMobile = (props: { bundle: PricingBundleType }) => {
           mx="auto"
           placeItems="center"
           borderBottomWidth={1}
-          borderColor="gray.100"
+          borderColor="whiteAlpha.300"
         >
           <Text position="relative" justifySelf="flex-start" py={5}>
             <chakra.span fontSize="sm">{feature.feature}</chakra.span>

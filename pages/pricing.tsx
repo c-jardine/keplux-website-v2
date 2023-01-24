@@ -24,7 +24,7 @@ const PricingPage: NextPage = () => {
                 fontSize={['5xl', , '6xl', '7xl']}
                 fontWeight="black"
                 textAlign="center"
-                color="black"
+                color="whiteAlpha.800"
               >
                 Find a plan or package for your business
               </Heading>
@@ -35,7 +35,7 @@ const PricingPage: NextPage = () => {
                 fontSize="xl"
                 textAlign="center"
                 fontWeight="medium"
-                color="gray.500"
+                color="whiteAlpha.600"
               >
                 Choose a pre-designed package or build your own from scratch.
                 Need something different?{' '}

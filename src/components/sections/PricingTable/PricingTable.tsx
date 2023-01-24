@@ -44,9 +44,9 @@ const PricingTable = () => {
           mx="auto"
           placeItems="center"
           borderBottomWidth={2}
-          borderColor="gray.200"
+          borderColor="whiteAlpha.300"
           py={4}
-          bg="gray.50"
+          bg="black"
           zIndex={1}
         >
           <Container
@@ -96,7 +96,7 @@ const PricingTable = () => {
                     fontWeight="light"
                     onClick={() => _handleChange('professional')}
                   >
-                    Professional
+                    klasjdlf
                   </Button>
                   <Button
                     variant="ghost"
@@ -128,9 +128,9 @@ const PricingTable = () => {
           position="sticky"
           top={16}
           borderBottomWidth={1}
-          borderColor="gray.200"
+          borderColor="whiteAlpha.300"
           py={4}
-          bg="gray.50"
+          bg="black"
           zIndex={1}
         >
           <Container maxW="7xl" w="full">
@@ -143,7 +143,7 @@ const PricingTable = () => {
             >
               <Box />
               <Stack alignItems="center" w="full">
-                <Text color="black" fontWeight="semibold">
+                <Text color="whiteAlpha.800" fontWeight="semibold">
                   Starter
                 </Text>
                 <Button
@@ -156,7 +156,7 @@ const PricingTable = () => {
                   borderColor="black"
                   w="full"
                   _hover={{
-                    bg: 'gray.50',
+                    bg: 'black',
                     color: 'black',
                     textDecoration: 'none',
                   }}
@@ -170,7 +170,7 @@ const PricingTable = () => {
                 </Button>
               </Stack>
               <Stack alignItems="center">
-                <Text color="black" fontWeight="semibold">
+                <Text color="whiteAlpha.800" fontWeight="semibold">
                   Professional
                 </Text>
                 <Button
@@ -183,7 +183,7 @@ const PricingTable = () => {
                   borderColor="black"
                   w="full"
                   _hover={{
-                    bg: 'gray.50',
+                    bg: 'black',
                     color: 'black',
                     textDecoration: 'none',
                   }}
@@ -197,7 +197,7 @@ const PricingTable = () => {
                 </Button>
               </Stack>
               <Stack alignItems="center">
-                <Text color="black" fontWeight="semibold">
+                <Text color="whiteAlpha.800" fontWeight="semibold">
                   E-Commerce
                 </Text>
                 <Button
@@ -210,7 +210,7 @@ const PricingTable = () => {
                   borderColor="black"
                   w="full"
                   _hover={{
-                    bg: 'gray.50',
+                    bg: 'black',
                     color: 'black',
                     textDecoration: 'none',
                   }}
@@ -224,7 +224,7 @@ const PricingTable = () => {
                 </Button>
               </Stack>
               <Stack alignItems="center">
-                <Text color="black" fontWeight="semibold">
+                <Text color="whiteAlpha.800" fontWeight="semibold">
                   Ultimate
                 </Text>
                 <Button
@@ -237,7 +237,7 @@ const PricingTable = () => {
                   borderColor="black"
                   w="full"
                   _hover={{
-                    bg: 'gray.50',
+                    bg: 'black',
                     color: 'black',
                     textDecoration: 'none',
                   }}
@@ -266,7 +266,7 @@ const PricingTable = () => {
         >
           <Stack alignItems="center">
             {PlanPricing[bundle].abovePrice && (
-              <Text textTransform="uppercase" color="gray.600">
+              <Text textTransform="uppercase" color="whiteAlpha.600">
                 {PlanPricing[bundle].abovePrice}
               </Text>
             )}
@@ -277,7 +277,7 @@ const PricingTable = () => {
               <Text
                 textTransform="uppercase"
                 fontWeight="semibold"
-                color="gray.600"
+                color="whiteAlpha.600"
               >
                 {PlanPricing[bundle].belowPrice}
               </Text>

@@ -29,28 +29,31 @@ const secondaryLink = defineStyle({
 const primary = defineStyle({
   bg: 'brand.600',
   fontSize: 'sm',
-  color: 'white',
+  color: 'whiteAlpha.900',
   _hover: {
     bg: 'brand.500',
+    color: 'white',
   },
 });
 
 const secondary = defineStyle({
   bg: 'black',
   borderWidth: 2,
-  borderColor: 'black',
+  borderColor: 'whiteAlpha.300',
   _hover: {
-    bg: 'whiteAlpha.800',
-    color: 'black',
+    borderColor: 'whiteAlpha.800',
+    color: 'whiteAlpha.800',
     textDecoration: 'none',
   },
-  color: 'whiteAlpha.800',
+  color: 'whiteAlpha.600',
   fontSize: 'sm',
+  letterSpacing: 'wide',
+  textTransform: 'none',
 });
 
 const subtle = defineStyle({
   fontSize: 'xs',
-  color: 'whiteAlpha.600',
+  color: 'whiteAlpha.800',
   borderWidth: 1,
   borderColor: 'whiteAlpha.400',
   h: 'fit-content',
