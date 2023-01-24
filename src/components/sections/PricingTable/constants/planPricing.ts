@@ -7,16 +7,16 @@ const PlanPricing: PlanPricingProps = {
     belowPrice: 'per month',
   },
   professional: {
-    abovePrice: 'Contact us',
+    abovePrice: 'For pricing',
     price: 'Contact us',
   },
   ecommerce: {
-    abovePrice: 'Contact us',
-    price: '$1295',
+    abovePrice: 'For pricing',
+    price: 'Contact us',
   },
   ultimate: {
-    abovePrice: 'Contact us',
-    price: '$1895',
+    abovePrice: 'For pricing',
+    price: 'Contact us',
   },
 };
 

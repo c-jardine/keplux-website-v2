@@ -66,6 +66,17 @@ const subtle = defineStyle({
   },
 });
 
+const ghost = defineStyle({
+  color: 'whiteAlpha.800',
+  fontWeight: 'light',
+  _hover: {
+    bg: 'whiteAlpha.50',
+  },
+  _active: {
+    bg: 'whiteAlpha.50',
+  },
+});
+
 const Button = defineStyleConfig({
   baseStyle: {
     letterSpacing: 'wide',
@@ -73,7 +84,7 @@ const Button = defineStyleConfig({
       textDecoration: 'none',
     },
   },
-  variants: { primaryLink, secondaryLink, primary, secondary, subtle },
+  variants: { primaryLink, secondaryLink, primary, secondary, subtle, ghost },
 });
 
 export default Button;

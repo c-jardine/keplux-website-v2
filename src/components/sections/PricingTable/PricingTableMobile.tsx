@@ -1,6 +1,7 @@
 import {
   Box,
   chakra,
+  Flex,
   Icon,
   Popover,
   PopoverArrow,
@@ -10,7 +11,6 @@ import {
   PopoverHeader,
   PopoverTrigger,
   SimpleGrid,
-  Text,
 } from '@chakra-ui/react';
 import { FaCheckCircle } from '@react-icons/all-files/fa/FaCheckCircle';
 import { FaInfoCircle } from '@react-icons/all-files/fa/FaInfoCircle';
@@ -31,22 +31,36 @@ const PricingTableMobile = (props: { bundle: PricingBundleType }) => {
           borderBottomWidth={1}
           borderColor="whiteAlpha.300"
         >
-          <Text position="relative" justifySelf="flex-start" py={5}>
-            <chakra.span fontSize="sm">{feature.feature}</chakra.span>
+          <Flex
+            py={5}
+            justifySelf="flex-start"
+            alignItems="center"
+            gap={2}
+            position="relative"
+          >
+            <chakra.span fontSize="sm" color="whiteAlpha.600">
+              {feature.feature}
+            </chakra.span>
             <Popover>
               <PopoverTrigger>
-                <Icon ml={1} as={FaInfoCircle} w={3} h={3} color="brand.300" />
+                <Icon ml={1} as={FaInfoCircle} w={4} h={4} color="white" />
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent bg="black" borderColor="whiteAlpha.300">
                 <PopoverArrow />
                 <PopoverCloseButton />
-                <PopoverHeader fontWeight="semibold">
+                <PopoverHeader
+                  fontWeight="semibold"
+                  borderColor="whiteAlpha.300"
+                  color="whiteAlpha.800"
+                >
                   {feature.feature}
                 </PopoverHeader>
-                <PopoverBody fontSize="sm">{feature.description}</PopoverBody>
+                <PopoverBody fontSize="sm" color="whiteAlpha.600">
+                  {feature.description}
+                </PopoverBody>
               </PopoverContent>
             </Popover>
-          </Text>
+          </Flex>
           {feature.included[props.bundle] ? (
             <Icon as={FaCheckCircle} color="brand.600" />
           ) : (

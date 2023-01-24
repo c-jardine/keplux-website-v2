@@ -56,7 +56,7 @@ const PricingTable = () => {
             justifyContent="space-between"
           >
             <Text
-              color="black"
+              color="whiteAlpha.800"
               fontWeight="semibold"
               textTransform="capitalize"
             >
@@ -71,17 +71,24 @@ const PricingTable = () => {
               h="fit-content"
               fontWeight="light"
             >
-              <Text px={2} py={1}>
+              <Text px={2} py={1} color="whiteAlpha.600">
                 Switch plan
               </Text>
             </Button>
             <Drawer isOpen={isOpen} onClose={onClose} placement="bottom">
-              <DrawerOverlay />
-              <DrawerContent>
-                <DrawerHeader>Select plan</DrawerHeader>
+              <DrawerOverlay backdropFilter="blur(8px)" />
+              <DrawerContent
+                bg="black"
+                borderTopWidth={1}
+                borderColor="whiteAlpha.300"
+              >
+                <DrawerHeader color="whiteAlpha.800">Select plan</DrawerHeader>
                 <DrawerBody as={Stack}>
                   <Button
                     variant="ghost"
+                    color={
+                      bundle === 'starter' ? 'whiteAlpha.800' : 'whiteAlpha.600'
+                    }
                     justifyContent="flex-start"
                     textTransform="capitalize"
                     fontWeight="light"
@@ -91,15 +98,25 @@ const PricingTable = () => {
                   </Button>
                   <Button
                     variant="ghost"
+                    color={
+                      bundle === 'professional'
+                        ? 'whiteAlpha.800'
+                        : 'whiteAlpha.600'
+                    }
                     justifyContent="flex-start"
                     textTransform="capitalize"
                     fontWeight="light"
                     onClick={() => _handleChange('professional')}
                   >
-                    klasjdlf
+                    Professional
                   </Button>
                   <Button
                     variant="ghost"
+                    color={
+                      bundle === 'ecommerce'
+                        ? 'whiteAlpha.800'
+                        : 'whiteAlpha.600'
+                    }
                     justifyContent="flex-start"
                     textTransform="capitalize"
                     fontWeight="light"
@@ -109,6 +126,11 @@ const PricingTable = () => {
                   </Button>
                   <Button
                     variant="ghost"
+                    color={
+                      bundle === 'ultimate'
+                        ? 'whiteAlpha.800'
+                        : 'whiteAlpha.600'
+                    }
                     justifyContent="flex-start"
                     textTransform="capitalize"
                     fontWeight="light"
@@ -270,7 +292,12 @@ const PricingTable = () => {
                 {PlanPricing[bundle].abovePrice}
               </Text>
             )}
-            <Text fontWeight="black" fontSize="6xl" lineHeight={1}>
+            <Text
+              fontWeight="black"
+              fontSize="6xl"
+              lineHeight={1}
+              color="whiteAlpha.800"
+            >
               {PlanPricing[bundle].price}
             </Text>
             {PlanPricing[bundle].belowPrice && (
