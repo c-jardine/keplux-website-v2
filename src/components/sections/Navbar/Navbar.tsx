@@ -85,7 +85,15 @@ const Navbar = () => {
             backdropFilter="blur(8px)"
           />
         )}
-        <Box position="absolute" zIndex={10} top={16} left={0} w="full">
+        <Box
+          position="absolute"
+          zIndex={10}
+          top={16}
+          left={0}
+          w="full"
+          borderBottomWidth={isOpen ? 1 : 0}
+          borderColor="whiteAlpha.400"
+        >
           <Collapse in={isOpen} animateOpacity>
             <Stack bg="black" p={4}>
               {NavItems.map((item) => {
