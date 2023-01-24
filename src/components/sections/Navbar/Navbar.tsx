@@ -83,7 +83,7 @@ const Navbar = () => {
         )}
         <Box position="absolute" zIndex={10} top={16} left={0} w="full">
           <Collapse in={isOpen} animateOpacity>
-            <Stack bg="white" p={4}>
+            <Stack bg="black" p={4}>
               {NavItems.map((item) => {
                 return !item.items ? (
                   <NavbarItemMobile {...item} />
@@ -114,7 +114,10 @@ const Navbar = () => {
       zIndex={100}
       top={0}
       left={0}
-      bg="white"
+      bg="blackAlpha.800"
+      borderBottomWidth={1}
+      borderColor="whiteAlpha.300"
+      backdropFilter="blur(8px)"
       h={16}
       w="full"
       shadow="sm"

@@ -79,7 +79,7 @@ const Home = () => {
                       fontSize={['5xl', , '6xl', '7xl']}
                       fontWeight="black"
                       textAlign="center"
-                      color="white"
+                      color="whiteAlpha.800"
                     >
                       Toledo Web Design and Development
                     </Heading>
@@ -90,7 +90,7 @@ const Home = () => {
                       fontSize="xl"
                       textAlign="center"
                       fontWeight="medium"
-                      color="white"
+                      color="whiteAlpha.800"
                     >
                       At Keplux Development, we build websites with modern
                       technologies and strategies that give your website
@@ -151,7 +151,13 @@ const Home = () => {
             />
             <Stack alignItems="center" spacing={16} w="full">
               <Stack alignItems="center">
-                <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                <Heading
+                  as="h4"
+                  maxW="3xl"
+                  w="full"
+                  textAlign="center"
+                  color="whiteAlpha.800"
+                >
                   Don&apos;t miss out on conversions because of a slow website.
                 </Heading>
                 <Text
@@ -159,7 +165,7 @@ const Home = () => {
                   w="full"
                   fontSize="xl"
                   textAlign="center"
-                  color="gray.500"
+                  color="whiteAlpha.600"
                 >
                   The longer your website takes to load, the sooner your
                   visitors will leave. That shouldn&apos;t happen.
@@ -197,10 +203,15 @@ const Home = () => {
                       >
                         <Icon as={FaGlobe} color="whiteAlpha.900" w={5} h={5} />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         Websites built with the power of React
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         Your website is built with the same technology used by
                         Facebook, Netflix, Instagram, and more.
                       </Text>
@@ -214,10 +225,15 @@ const Home = () => {
                       >
                         <Icon as={FaTrash} color="whiteAlpha.900" w={5} h={5} />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         No unnecessary packages or plugins
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         Websites with unnecessary packages and plugins reduce
                         performance and increase security risks.
                       </Text>
@@ -236,10 +252,15 @@ const Home = () => {
                           h={6}
                         />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         Performance monitoring throughout development
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         We catch performance issues quickly, eliminating
                         bottlenecks and ensuring your website is as fast as
                         possible.
@@ -262,7 +283,13 @@ const Home = () => {
             />
             <Stack alignItems="center" spacing={{ base: 0, lg: 16 }} w="full">
               <Stack alignItems="center">
-                <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                <Heading
+                  as="h4"
+                  maxW="3xl"
+                  w="full"
+                  textAlign="center"
+                  color="whiteAlpha.800"
+                >
                   Manage your content any way you want
                 </Heading>
                 <Text
@@ -270,7 +297,7 @@ const Home = () => {
                   w="full"
                   fontSize="xl"
                   textAlign="center"
-                  color="gray.500"
+                  color="whiteAlpha.600"
                 >
                   Fully customizable content management system to manage blogs,
                   rental properties, or anything else you can think of.
@@ -303,11 +330,16 @@ const Home = () => {
                             h={5}
                           />
                         </Center>
-                        <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                        <Heading
+                          as="h5"
+                          fontSize="xl"
+                          fontWeight="semibold"
+                          color="whiteAlpha.800"
+                        >
                           Structured content matching your workflow
                         </Heading>
                         <Text
-                          color="gray.500"
+                          color="whiteAlpha.600"
                           letterSpacing="wide"
                           textAlign={{ lg: 'right' }}
                         >
@@ -390,10 +422,15 @@ const Home = () => {
                       >
                         <Icon as={FaCog} color="whiteAlpha.900" w={5} h={5} />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         Dynamically update your website
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         Easily change metadata for your website, the color
                         palette, navigation, and much more.
                       </Text>
@@ -419,11 +456,16 @@ const Home = () => {
                       >
                         <Icon as={FaEye} color="whiteAlpha.900" w={5} h={5} />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         Custom content previews
                       </Heading>
                       <Text
-                        color="gray.500"
+                        color="whiteAlpha.600"
                         letterSpacing="wide"
                         textAlign={{ lg: 'right' }}
                       >
@@ -471,7 +513,13 @@ const Home = () => {
             />
             <Stack alignItems="center" spacing={16} w="full">
               <Stack alignItems="center">
-                <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                <Heading
+                  as="h4"
+                  maxW="3xl"
+                  w="full"
+                  textAlign="center"
+                  color="whiteAlpha.800"
+                >
                   Customizable e-commerce platform
                 </Heading>
                 <Text
@@ -479,7 +527,7 @@ const Home = () => {
                   w="full"
                   fontSize="xl"
                   textAlign="center"
-                  color="gray.500"
+                  color="whiteAlpha.600"
                 >
                   Fully customizable e-commerce platform that looks and performs
                   the way you want it to.
@@ -527,10 +575,15 @@ const Home = () => {
                           h={5}
                         />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         Choose the right plan for you*
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         Get selling for 2.0% of sales or $299/mo. with a 0%
                         transaction fee up to $500k/yr., then 1.5%.
                       </Text>
@@ -544,10 +597,15 @@ const Home = () => {
                       >
                         <Icon as={FaPlug} color="whiteAlpha.900" w={5} h={5} />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         40+ integrations
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         Including Square, Stripe, PayPal, HubSpot, Mailchimp,
                         ShipStation, and Zapier.
                       </Text>
@@ -561,15 +619,24 @@ const Home = () => {
                       >
                         <Icon as={FaUsers} color="whiteAlpha.900" w={6} h={6} />
                       </Center>
-                      <Heading as="h5" fontSize="xl" fontWeight="semibold">
+                      <Heading
+                        as="h5"
+                        fontSize="xl"
+                        fontWeight="semibold"
+                        color="whiteAlpha.800"
+                      >
                         Multiple user support
                       </Heading>
-                      <Text color="gray.500" letterSpacing="wide">
+                      <Text color="whiteAlpha.600" letterSpacing="wide">
                         Have a larger business? Add up to three* admin users to
                         your store to stay on top of things.
                       </Text>
                     </Stack>
-                    <Text fontSize="sm" fontStyle="italic" color="gray.500">
+                    <Text
+                      fontSize="sm"
+                      fontStyle="italic"
+                      color="whiteAlpha.600"
+                    >
                       *When using the Swell headless e-commerce platform.{' '}
                       <KLink
                         href="https://www.swell.is"
@@ -598,7 +665,13 @@ const Home = () => {
             <Stack alignItems="center" spacing={16} w="full">
               <Stack alignItems="center" spacing={8}>
                 <Stack>
-                  <Heading as="h4" maxW="3xl" w="full" textAlign="center">
+                  <Heading
+                    as="h4"
+                    maxW="3xl"
+                    w="full"
+                    textAlign="center"
+                    color="whiteAlpha.800"
+                  >
                     We&apos;ll manage everything for you
                   </Heading>
                   <Text
@@ -606,7 +679,7 @@ const Home = () => {
                     w="full"
                     fontSize="xl"
                     textAlign="center"
-                    color="gray.500"
+                    color="whiteAlpha.600"
                   >
                     Choose a monthly plan and let us handle everything for you,
                     giving you more time to focus on your business.
@@ -619,7 +692,7 @@ const Home = () => {
                     target="_blank"
                     rel="noopener"
                     bg="#d946ef"
-                    color="white"
+                    color="whiteAlpha.800"
                     transition="200ms ease-in-out"
                     _hover={{
                       textDecoration: 'none',
@@ -636,29 +709,34 @@ const Home = () => {
               </Stack>
               <Center
                 w="100vw"
-                bg="white"
+                bg="whiteAlpha.50"
                 py={8}
                 borderTopWidth={1}
                 borderBottomWidth={1}
-                borderColor="gray.300"
+                borderColor="whiteAlpha.300"
               >
                 <Stack
                   direction={{ base: 'column', lg: 'row' }}
-                  divider={<StackDivider borderColor="gray.200" />}
+                  divider={<StackDivider borderColor="whiteAlpha.300" />}
                 >
                   <Stack
                     alignItems="center"
                     px={{ lg: 16 }}
                     py={{ base: 8, lg: 0 }}
                   >
-                    <Text fontWeight="black" fontSize="4xl" lineHeight={1}>
+                    <Text
+                      fontWeight="black"
+                      fontSize="4xl"
+                      lineHeight={1}
+                      color="whiteAlpha.800"
+                    >
                       $0
                     </Text>
                     <Text
                       textTransform="uppercase"
                       letterSpacing="wide"
                       fontWeight="bold"
-                      color="gray.500"
+                      color="whiteAlpha.600"
                     >
                       down
                     </Text>
@@ -668,14 +746,19 @@ const Home = () => {
                     px={{ lg: 16 }}
                     py={{ base: 8, lg: 0 }}
                   >
-                    <Text fontWeight="black" fontSize="4xl" lineHeight={1}>
+                    <Text
+                      fontWeight="black"
+                      fontSize="4xl"
+                      lineHeight={1}
+                      color="whiteAlpha.800"
+                    >
                       $175
                     </Text>
                     <Text
                       textTransform="uppercase"
                       letterSpacing="wide"
                       fontWeight="bold"
-                      color="gray.500"
+                      color="whiteAlpha.600"
                     >
                       per month
                     </Text>
@@ -685,14 +768,19 @@ const Home = () => {
                     px={{ lg: 16 }}
                     py={{ base: 8, lg: 0 }}
                   >
-                    <Text fontWeight="black" fontSize="4xl" lineHeight={1}>
+                    <Text
+                      fontWeight="black"
+                      fontSize="4xl"
+                      lineHeight={1}
+                      color="whiteAlpha.800"
+                    >
                       No contract
                     </Text>
                     <Text
                       textTransform="uppercase"
                       letterSpacing="wide"
                       fontWeight="bold"
-                      color="gray.500"
+                      color="whiteAlpha.600"
                     >
                       required
                     </Text>
@@ -705,6 +793,7 @@ const Home = () => {
                   textTransform="uppercase"
                   fontSize="sm"
                   fontWeight="semibold"
+                  color="whiteAlpha.600"
                 >
                   What&apos;s included
                 </Text>
@@ -727,11 +816,12 @@ const Home = () => {
                             fontSize="lg"
                             textTransform="uppercase"
                             letterSpacing="wide"
+                            color="whiteAlpha.800"
                           >
                             {feature.heading}
                           </Text>
                           <Text
-                            color="gray.500"
+                            color="whiteAlpha.600"
                             letterSpacing="wide"
                             textAlign={
                               index % 2 === 0 ? { lg: 'right' } : 'left'
@@ -750,10 +840,11 @@ const Home = () => {
                             fontSize="lg"
                             textTransform="uppercase"
                             letterSpacing="wide"
+                            color="whiteAlpha.800"
                           >
                             {feature.heading}
                           </Text>
-                          <Text color="gray.500" letterSpacing="wide">
+                          <Text color="whiteAlpha.600" letterSpacing="wide">
                             {feature.description}
                           </Text>
                         </Box>
@@ -769,7 +860,7 @@ const Home = () => {
                   target="_blank"
                   rel="noopener"
                   bg="#d946ef"
-                  color="white"
+                  color="whiteAlpha.800"
                   transition="200ms ease-in-out"
                   _hover={{
                     textDecoration: 'none',

@@ -11,12 +11,18 @@ import {
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import Image from 'next/image';
-import logo from '../../../../public/keplux-logo-full-dark.png';
+import logo from '../../../../public/keplux-logo-full-light.png';
 import { KLink } from '../../core';
 
 const Footer = () => {
   return (
-    <Box bg="white" shadow="2xl">
+    <Box
+      bg="whiteAlpha.50"
+      color="whiteAlpha.600"
+      shadow="2xl"
+      borderTopWidth={1}
+      borderColor="whiteAlpha.300"
+    >
       <Container maxW="6xl" w="full" py={16}>
         <Stack alignItems="center">
           <SimpleGrid columns={{ base: 1, lg: 3 }} gap={8} w="full">
@@ -74,6 +80,7 @@ const Footer = () => {
                   fontSize="xl"
                   textTransform="uppercase"
                   fontWeight="semibold"
+                  color="whiteAlpha.800"
                 >
                   Navigation
                 </Text>
@@ -99,6 +106,7 @@ const Footer = () => {
                   fontSize="xl"
                   textTransform="uppercase"
                   fontWeight="semibold"
+                  color="whiteAlpha.800"
                 >
                   About
                 </Text>

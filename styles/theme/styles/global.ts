@@ -1,6 +1,6 @@
 const global = (props) => ({
   'html, body': {
-    bg: 'gray.50',
+    bg: 'black',
   },
   a: {
     transition: '200ms ease-in-out',

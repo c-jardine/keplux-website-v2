@@ -16,13 +16,13 @@ const primaryLink = defineStyle({
 const secondaryLink = defineStyle({
   bg: 'white',
   fontWeight: 'normal',
-  color: 'gray.600',
+  color: 'whiteAlpha.600',
   px: 6,
   _hover: {
     color: 'black',
   },
   _active: {
-    bg: 'gray.100',
+    bg: 'whiteAlpha.100',
   },
 });
 
@@ -40,26 +40,26 @@ const secondary = defineStyle({
   borderWidth: 2,
   borderColor: 'black',
   _hover: {
-    bg: 'gray.50',
+    bg: 'whiteAlpha.800',
     color: 'black',
     textDecoration: 'none',
   },
-  color: 'white',
+  color: 'whiteAlpha.800',
   fontSize: 'sm',
 });
 
 const subtle = defineStyle({
   fontSize: 'xs',
-  color: 'gray.600',
+  color: 'whiteAlpha.600',
   borderWidth: 1,
-  borderColor: 'gray.400',
+  borderColor: 'whiteAlpha.400',
   h: 'fit-content',
   fontWeight: 'light',
   py: 2,
   transition: '200ms ease-in-out',
   _hover: {
-    color: 'black',
-    borderColor: 'black',
+    color: 'whiteAlpha.800',
+    borderColor: 'whiteAlpha.800',
   },
 });
 

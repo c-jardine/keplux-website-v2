@@ -34,7 +34,7 @@ const MobileSubsection = (props: {
             ml="-2px"
             h={16}
             w={1}
-            bgGradient="linear-gradient(to-b, gray.50, transparent)"
+            bgGradient="linear-gradient(to-b, black, transparent)"
           />
         </AbsoluteCenter>
         <Box
@@ -42,18 +42,18 @@ const MobileSubsection = (props: {
           left="-1px"
           h={16}
           borderLeftWidth="1px"
-          borderColor="gray.400"
+          borderColor="whiteAlpha.400"
           borderStyle="dashed"
         />
-        <Box position="relative" bg="gray.50" p={3}>
+        <Box position="relative" bg="black" p={3}>
           <AbsoluteCenter>
             <Circle
-              bgGradient="linear-gradient(to-br, gray.600, gray.300)"
+              bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.300)"
               size={4}
             />
           </AbsoluteCenter>
           <AbsoluteCenter>
-            <Circle bg="gray.50" size={3} />
+            <Circle bg="black" size={3} />
           </AbsoluteCenter>
         </Box>
       </Stack>
@@ -105,26 +105,26 @@ const DesktopSubsection = (props: {
             <Box
               h="4.5rem"
               w={1}
-              bgGradient="linear-gradient(to-b, gray.50, transparent)"
+              bgGradient="linear-gradient(to-b, black, transparent)"
             />
           </AbsoluteCenter>
         )}
         <Box
           h="full"
           borderLeftWidth="1px"
-          borderColor="gray.400"
+          borderColor="whiteAlpha.400"
           borderStyle="dashed"
         />
         <AbsoluteCenter top={props.markerPos}>
-          <Box bg="gray.50" p={3}>
+          <Box bg="black" p={3}>
             <AbsoluteCenter>
               <Circle
-                bgGradient="linear-gradient(to-br, gray.600, gray.300)"
+                bgGradient="linear-gradient(to-br, whiteAlpha.600, whiteAlpha.300)"
                 size={4}
               />
             </AbsoluteCenter>
             <AbsoluteCenter>
-              <Circle bg="gray.50" size={3} />
+              <Circle bg="black" size={3} />
             </AbsoluteCenter>
           </Box>
         </AbsoluteCenter>

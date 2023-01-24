@@ -5,7 +5,12 @@ const LeadInHeading = (props: LeadInHeadingProps) => {
   const gradient = `linear-gradient(to-r, ${props.color[0]}, ${props.color[1]})`;
   return (
     <>
-      <Text textTransform="uppercase" fontSize="sm" fontWeight="semibold">
+      <Text
+        textTransform="uppercase"
+        fontSize="sm"
+        fontWeight="semibold"
+        color="whiteAlpha.600"
+      >
         {props.smallText}
       </Text>
       <Stack spacing={0} alignItems="center">
@@ -13,7 +18,7 @@ const LeadInHeading = (props: LeadInHeadingProps) => {
           <Box
             h={32}
             w="1px"
-            bgGradient="linear-gradient(to-b, gray.50, transparent)"
+            bgGradient="linear-gradient(to-b, black, transparent)"
           />
         </Box>
         <Circle bgGradient={gradient} size={12}>

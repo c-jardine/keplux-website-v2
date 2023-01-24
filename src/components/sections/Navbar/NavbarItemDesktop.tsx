@@ -25,6 +25,7 @@ const NavbarItemDesktop = (props: NavbarItemProps) => {
         textTransform="uppercase"
         fontWeight={router.route === props.href ? 'bold' : 'normal'}
         letterSpacing="wider"
+        color="whiteAlpha.600"
       >
         {props.label}
       </Text>

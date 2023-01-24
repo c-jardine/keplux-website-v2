@@ -22,11 +22,16 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
         borderRightWidth={1}
         borderBottomWidth={1}
       >
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.performance}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -35,11 +40,16 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
         </Text>
       </Stack>
       <Stack py={8} alignItems="center" px={4} borderBottomWidth={1}>
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.accessibility}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -48,11 +58,16 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
         </Text>
       </Stack>
       <Stack py={8} alignItems="center" borderRightWidth={1}>
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.bestPractices}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -61,11 +76,16 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
         </Text>
       </Stack>
       <Stack py={8} alignItems="center">
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.seo}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -79,13 +99,21 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
 
 const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
   return (
-    <HStack justifyContent="center" divider={<StackDivider />}>
+    <HStack
+      justifyContent="center"
+      divider={<StackDivider borderColor="whiteAlpha.300" />}
+    >
       <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.performance}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -94,11 +122,16 @@ const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
         </Text>
       </Stack>
       <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.accessibility}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -107,11 +140,16 @@ const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
         </Text>
       </Stack>
       <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.bestPractices}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -120,11 +158,16 @@ const DesktopLighthouseScore = (props: LighthouseScoreProps) => {
         </Text>
       </Stack>
       <Stack alignItems="center" px={{ base: 2, xl: 4 }}>
-        <Text fontWeight="black" fontSize="xl" lineHeight={1}>
+        <Text
+          fontWeight="black"
+          fontSize="xl"
+          lineHeight={1}
+          color="whiteAlpha.800"
+        >
           {props.seo}%
         </Text>
         <Text
-          color="gray.500"
+          color="whiteAlpha.600"
           fontWeight="semibold"
           textTransform="uppercase"
           fontSize="xs"
@@ -156,27 +199,28 @@ const LighthouseScore = (props: LighthouseScoreProps) => {
       <Center position="relative" zIndex={1}>
         <chakra.span
           position="relative"
-          bg="gray.50"
+          bg="black"
           px={4}
           py={2}
-          fontWeight="semibold"
           textTransform="uppercase"
           letterSpacing="wide"
           rounded="md"
+          fontSize="sm"
           borderWidth={1}
-          borderColor="gray.300"
+          borderColor="whiteAlpha.300"
+          color="whiteAlpha.600"
         >
           {props.heading}
         </chakra.span>
       </Center>
       <Box
         position="relative"
-        bg="gray.50"
+        bg="black"
         mt="-22px"
         pt={9}
         pb={4}
         borderWidth={1}
-        borderColor="gray.300"
+        borderColor="whiteAlpha.300"
         rounded="lg"
       >
         <Show below="lg">

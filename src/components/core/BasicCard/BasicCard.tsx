@@ -5,7 +5,9 @@ const BasicCard = (props: BasicCardProps) => {
   return (
     <Stack
       position="relative"
-      bg="white"
+      bg="black"
+      borderWidth={1}
+      borderColor="whiteAlpha.200"
       shadow="md"
       p={8}
       spacing={8}
@@ -24,10 +26,11 @@ const BasicCard = (props: BasicCardProps) => {
           fontSize="lg"
           textTransform="uppercase"
           textAlign="center"
+          color="whiteAlpha.800"
         >
           {props.title}
         </Heading>
-        <Text fontSize="sm" textAlign="center" color="blackAlpha.800">
+        <Text fontSize="sm" textAlign="center" color="whiteAlpha.600">
           {props.body}
         </Text>
       </Stack>
