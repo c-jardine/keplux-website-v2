@@ -38,6 +38,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             site: '@kepluxdev',
             cardType: 'summary_large_image',
           }}
+          themeColor="black"
         />
         {!router.asPath.startsWith('/studio') && <Navbar />}
         <Box
