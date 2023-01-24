@@ -38,7 +38,12 @@ import { MdWeb } from '@react-icons/all-files/md/MdWeb';
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import headerImg from '../public/backgrounds/web-development.jpg';
-import { BasicCard, KLink, LighthouseScore } from '../src/components/core';
+import {
+  BasicCard,
+  KLightbox,
+  KLink,
+  LighthouseScore,
+} from '../src/components/core';
 import {
   LeadInHeading,
   SplitSection,
@@ -372,17 +377,12 @@ const Home = () => {
                           p={8}
                         />
                       </AbsoluteCenter>
-                      <KLink
-                        href="https://cdn.sanity.io/images/3do82whm/next/ba70e2ccf32f958597d1f5ad5d97a91643618340-1397x966.png?w=800&h=553&fit=clip&auto=format"
-                        target="_blank"
-                        rel="noreferrer"
-                        position="relative"
-                      >
-                        <Image
-                          src={cmsMovies}
+                      <Box position="relative">
+                        <KLightbox
+                          image={cmsMovies}
                           alt="Content management system interface showing the management of movies, actors, and screenings."
                         />
-                      </KLink>
+                      </Box>
                     </Box>
                   }
                 />
@@ -399,17 +399,12 @@ const Home = () => {
                           p={8}
                         />
                       </AbsoluteCenter>
-                      <KLink
-                        href="https://cdn.sanity.io/images/3do82whm/next/16010730db213f3f7f4200b06ed84e54b7c33886-1439x764.png?rect=0,0,1438,764&w=800&h=425&fit=clip&auto=format"
-                        target="_blank"
-                        rel="noreferrer"
-                        position="relative"
-                      >
-                        <Image
-                          src={cmsMetadata}
+                      <Box position="relative">
+                        <KLightbox
+                          image={cmsMetadata}
                           alt="Content management system interface showing the management of a website's metadata, colors, and navigation."
                         />
-                      </KLink>
+                      </Box>
                     </Box>
                   }
                   rightContent={
@@ -484,17 +479,12 @@ const Home = () => {
                           p={8}
                         />
                       </AbsoluteCenter>
-                      <KLink
-                        href="https://cdn.sanity.io/images/bmj8cwsg/production/afb24ff1a497bbc3f1aaaf6288842370a8048b80-1920x1080.png?w=1300&fit=max&auto=format"
-                        target="_blank"
-                        rel="noreferrer"
-                        position="relative"
-                      >
-                        <Image
-                          src={cmsLivePreview}
+                      <Box position="relative">
+                        <KLightbox
+                          image={cmsLivePreview}
                           alt="Content management system interface showing a live preview of a web page built with Sanity."
                         />
-                      </KLink>
+                      </Box>
                     </Box>
                   }
                 />
@@ -546,17 +536,12 @@ const Home = () => {
                         p={8}
                       />
                     </AbsoluteCenter>
-                    <KLink
-                      href="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/136c87ca-091f-4095-b85f-219db073bfda.png"
-                      target="_blank"
-                      rel="noreferrer"
-                      position="relative"
-                    >
-                      <Image
-                        src={swellOrders}
+                    <Box position="relative">
+                      <KLightbox
+                        image={swellOrders}
                         alt="Swell e-commerce orders screen showing all recent orders, including paid, unpaid, refunded, and canceled orders. Also includes price paid, customer name, and fulfillment status."
                       />
-                    </KLink>
+                    </Box>
                   </Box>
                 </SplitSection.LeftContent>
                 <SplitSection.RightContent>

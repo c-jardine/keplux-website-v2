@@ -14,7 +14,7 @@ import {
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
 import { MdClose } from '@react-icons/all-files/md/MdClose';
 import Image from 'next/image';
-import logo from '../../../../public/keplux-logo-square-dark.png';
+import logo from '../../../../public/keplux-logo-square-light.png';
 import { NavItems } from './Navbar.constants';
 import NavbarDropdownDesktop from './NavbarDropdownDesktop';
 import NavbarDropdownMobile from './NavbarDropdownMobile';
