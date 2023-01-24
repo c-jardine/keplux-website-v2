@@ -115,16 +115,16 @@ const PricingTableDesktop = () => {
           </Popover>
         </Flex>
         <Text fontSize="sm" textAlign="center" py={5}>
-          $0 down, $200 per month
+          $0 down, $175 per month
         </Text>
         <Text fontSize="sm" textAlign="center" py={5}>
-          Starting at {PlanPricing.professional.price}
+          Contact us
         </Text>
         <Text fontSize="sm" textAlign="center" py={5}>
-          Starting at {PlanPricing.ecommerce.price}
+          Contact us
         </Text>
         <Text fontSize="sm" textAlign="center" py={5}>
-          Starting at {PlanPricing.ultimate.price}
+          Contact us
         </Text>
       </SimpleGrid>
     </>
