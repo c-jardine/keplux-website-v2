@@ -11,12 +11,19 @@ const RefundPolicyPage: NextPage = () => {
         description="View our refund policy. We aim to please, but sometimes you need to back out of a project for one reason or another."
         canonical="https://www.keplux.com/refund-policy"
       />
-      <Container as={Stack} maxW="4xl" w="full" spacing={8}>
+      <Container
+        as={Stack}
+        maxW="4xl"
+        w="full"
+        spacing={8}
+        color="whiteAlpha.600"
+      >
         <Stack>
-          <Heading as="h1">Keplux Development Refund Policy</Heading>
+          <Heading as="h1" color="whiteAlpha.800">
+            Keplux Development Refund Policy
+          </Heading>
           <Text fontWeight="semibold">
-            Effective date:{' '}
-            <chakra.span color="whiteAlpha.600">December 13, 2022</chakra.span>.
+            Effective date: <chakra.span>December 13, 2022</chakra.span>.
           </Text>
           <Text>
             While we strive to provide the best service possible, we understand
@@ -27,7 +34,7 @@ const RefundPolicyPage: NextPage = () => {
           </Text>
         </Stack>
         <Box>
-          <Heading as="h2" fontSize="xl">
+          <Heading as="h2" fontSize="xl" color="whiteAlpha.800">
             Retainer Fees
           </Heading>
           <Text>
@@ -37,7 +44,7 @@ const RefundPolicyPage: NextPage = () => {
           </Text>
         </Box>
         <Box>
-          <Heading as="h2" fontSize="xl">
+          <Heading as="h2" fontSize="xl" color="whiteAlpha.800">
             Services
           </Heading>
           <Text>
@@ -50,7 +57,7 @@ const RefundPolicyPage: NextPage = () => {
           </Text>
         </Box>
         <Box>
-          <Heading as="h2" fontSize="xl">
+          <Heading as="h2" fontSize="xl" color="whiteAlpha.800">
             Questions, concerns, and complaints
           </Heading>
           <Text>

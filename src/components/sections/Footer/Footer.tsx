@@ -98,8 +98,9 @@ const Footer = () => {
                 <KLink href="/pricing">Pricing</KLink>
                 <KLink href="/our-work">Our Work</KLink>
                 <KLink href="/blog">Blog</KLink>
-                <KLink href="/referral-program">Referral Program</KLink>
                 <KLink href="/contact">Contact</KLink>
+                <KLink href="/referral-program">Referral Program</KLink>
+                <KLink href="/refund-policy">Refund Policy</KLink>
               </Stack>
             </Stack>
             <Stack>
