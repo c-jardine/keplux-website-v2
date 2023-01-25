@@ -53,6 +53,7 @@ const Footer = () => {
                       _hover={{ color: 'brand.500' }}
                       transition="200ms ease-in-out"
                       cursor="pointer"
+                      aria-label="View Keplux Development's Facebook page."
                     />
                   </KLink>
                   <KLink
@@ -66,6 +67,7 @@ const Footer = () => {
                       _hover={{ color: 'brand.500' }}
                       transition="200ms ease-in-out"
                       cursor="pointer"
+                      aria-label="View Keplux Development's LinkedIn page."
                     />
                   </KLink>
                 </HStack>

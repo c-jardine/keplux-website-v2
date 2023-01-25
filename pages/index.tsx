@@ -68,6 +68,7 @@ const Home = () => {
                 src={headerImg}
                 alt=""
                 fill
+                priority
                 style={{ objectFit: 'cover', opacity: 0.5 }}
               />
               <Box
