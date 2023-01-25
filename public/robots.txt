@@ -1,5 +1,9 @@
 # *
 User-agent: *
+Disallow: /404
+
+# *
+User-agent: *
 Allow: /
 
 # Host
@@ -7,3 +11,4 @@ Host: https://www.keplux.com
 
 # Sitemaps
 Sitemap: https://www.keplux.com/sitemap.xml
+Sitemap: https://www.keplux.com/server-sitemap.xml

@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# sitemap
+sitemap.xml
+sitemap-0.xml
+robots.txt
+
 # testing
 /coverage
 
