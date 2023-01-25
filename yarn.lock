@@ -8138,11 +8138,6 @@ react-hook-form@^7.40.0:
   resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.40.0.tgz"
   integrity sha512-0rokdxMPJs0k9bvFtY6dbcSydyNhnZNXCR49jgDr/aR03FDHFOK6gfh8ccqB3fl696Mk7lqh04xdm+agqWXKSw==
 
-react-hotjar@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.npmjs.org/react-hotjar/-/react-hotjar-5.3.0.tgz"
-  integrity sha512-QkqVxrKR0cjloce6QozOwEjQlRI9iuGluBz3c2aqxDK97n1Za37PIsQ0bhLYea3SvRTuzrZ+Gu3Yg2n7YF/l1w==
-
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"

@@ -3,7 +3,6 @@ import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { hotjar } from 'react-hotjar';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { Footer, Navbar } from '../src/components/sections';
 import '../styles/globals.css';
@@ -11,11 +10,6 @@ import theme from '../styles/theme';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
-
-  // Hotjar
-  React.useEffect(() => {
-    hotjar.initialize(3288819, 1);
-  }, []);
 
   return (
     <ChakraProvider theme={theme}>
