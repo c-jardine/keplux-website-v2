@@ -36,7 +36,8 @@ const SmallStuffSection = () => {
               textAlign="center"
               color="whiteAlpha.800"
             >
-              We don&apos;t skip the small stuff overlooked by other agencies.
+              We don&apos;t skip the important stuff overlooked by other
+              agencies.
             </Heading>
             <Text
               maxW="xl"
@@ -46,7 +47,7 @@ const SmallStuffSection = () => {
               color="whiteAlpha.600"
             >
               We build websites so they fit in with the modern world and on any
-              device, which means paying attention to small details.
+              device, which means paying attention to overlooked details.
             </Text>
           </Stack>
 
