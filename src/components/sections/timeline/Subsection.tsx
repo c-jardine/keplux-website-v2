@@ -58,7 +58,7 @@ const MobileSubsection = (props: {
         </Box>
       </Stack>
       {props.leftContent && (
-        <Box py={4} w="full">
+        <Box py={8} w="full">
           <Show below="lg">
             {props.flipContentOnMobile ? props.rightContent : props.leftContent}
           </Show>

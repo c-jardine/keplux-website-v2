@@ -12,7 +12,7 @@ const KLightbox = (props: KLightboxProps) => {
         thumbnail={props.image.src}
         width={props.image.width}
         height={props.image.height}
-        alt="Photo of seashore by Folkert Gorter"
+        alt={props.alt}
       >
         {({ ref, open }) => (
           <Image

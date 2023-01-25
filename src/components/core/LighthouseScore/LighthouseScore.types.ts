@@ -4,4 +4,5 @@ export interface LighthouseScoreProps {
   accessibility: number;
   bestPractices: number;
   seo: number;
+  bgGradient?: string;
 }

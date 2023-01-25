@@ -200,12 +200,20 @@ const LighthouseScore = (props: LighthouseScoreProps) => {
 
   return (
     <Box position="relative">
-      <AbsoluteCenter w="75%" h="75%" zIndex={0}>
+      <AbsoluteCenter
+        w="full"
+        h="full"
+        zIndex={0}
+        display="flex"
+        justifyContent="center"
+      >
         <Box
-          h="full"
-          bgGradient="linear-gradient(to-br, brand.600, orange.400)"
-          filter="blur(32px) brightness(150%)"
-          p={8}
+          h="50%"
+          w="25%"
+          bgGradient={
+            props.bgGradient ?? 'linear-gradient(to-br, brand.600, pink.400)'
+          }
+          filter="blur(32px) brightness(100%)"
         />
       </AbsoluteCenter>
       <Center position="relative" zIndex={1}>
