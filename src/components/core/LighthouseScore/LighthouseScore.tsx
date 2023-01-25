@@ -21,6 +21,7 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
         px={4}
         borderRightWidth={1}
         borderBottomWidth={1}
+        borderColor="whiteAlpha.400"
       >
         <Text
           fontWeight="black"
@@ -39,7 +40,13 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
           Performance
         </Text>
       </Stack>
-      <Stack py={8} alignItems="center" px={4} borderBottomWidth={1}>
+      <Stack
+        py={8}
+        alignItems="center"
+        px={4}
+        borderBottomWidth={1}
+        borderColor="whiteAlpha.400"
+      >
         <Text
           fontWeight="black"
           fontSize="xl"
@@ -57,7 +64,12 @@ const MobileLighthouseScore = (props: LighthouseScoreProps) => {
           Accessibility
         </Text>
       </Stack>
-      <Stack py={8} alignItems="center" borderRightWidth={1}>
+      <Stack
+        py={8}
+        alignItems="center"
+        borderRightWidth={1}
+        borderColor="whiteAlpha.400"
+      >
         <Text
           fontWeight="black"
           fontSize="xl"
