@@ -11,6 +11,10 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ['cdn.sanity.io'],
+    loader: 'custom',
+  },
 };
 
 module.exports = nextConfig;

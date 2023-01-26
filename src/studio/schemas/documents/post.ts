@@ -86,7 +86,12 @@ const postType = defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'codeBlock' }, { type: 'codeTabGroup' }],
+      of: [
+        { type: 'block' },
+        { type: 'photo' },
+        { type: 'codeBlock' },
+        { type: 'codeTabGroup' },
+      ],
       validation: (Rule) => Rule.required(),
       group: 'content',
     },

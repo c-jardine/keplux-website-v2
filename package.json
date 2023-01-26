@@ -35,6 +35,7 @@
     "framer-motion": "^7.6.18",
     "next": "13.0.6",
     "next-sanity": "^3.1.2",
+    "next-sanity-image": "^5.0.0",
     "next-seo": "^5.15.0",
     "next-sitemap": "^3.1.32",
     "photoswipe": "^5.3.4",

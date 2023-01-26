@@ -11,5 +11,6 @@ export * from './LighthouseScore';
 export * from './PortableText';
 export * from './ProcessStep';
 export * from './RadioCard';
+export * from './SanityImage';
 export * from './Tag';
 export * from './ToggleButton';

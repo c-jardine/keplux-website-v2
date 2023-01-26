@@ -5,6 +5,7 @@ import {
   ListIcon,
   ListItem,
   OrderedList,
+  Stack,
   Text,
 } from '@chakra-ui/react';
 import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
@@ -13,6 +14,7 @@ import { CodeBlock } from '../CodeBlock';
 import { CodeTabs } from '../CodeTabs';
 import { CopyCodeInline } from '../CopyCodeInline';
 import { KLink } from '../KLink';
+import { SanityImage, SanityImageProps } from '../SanityImage';
 import { CodeBlockProps } from './PortableText.types';
 
 const block = {
@@ -142,6 +144,14 @@ const types = {
     return <CodeBlock {...value} />;
   },
   codeTabGroup: ({ value }) => <CodeTabs {...value} />,
+  photo: ({ value }: { value: SanityImageProps }) => (
+    <Stack>
+      <SanityImage {...value} />
+      <Text textAlign="center" fontSize="sm">
+        {value.caption}
+      </Text>
+    </Stack>
+  ),
 };
 
 export const PortableTextComponents = {
