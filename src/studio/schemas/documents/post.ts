@@ -1,5 +1,5 @@
-import { defineType } from 'sanity';
 import { FaFile } from '@react-icons/all-files/fa/FaFile';
+import { defineType } from 'sanity';
 
 const postType = defineType({
   name: 'post',
@@ -80,6 +80,7 @@ const postType = defineType({
       title: 'Cover Photo',
       type: 'coverPhoto',
       group: 'content',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'content',
