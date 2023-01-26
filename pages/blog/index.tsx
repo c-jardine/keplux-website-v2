@@ -1,7 +1,7 @@
 import { Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import { BlogCard } from '../../src/components/blog';
+import { BlogCard, GoogleAdsense } from '../../src/components/blog';
 import { allPostsQuery, client } from '../../src/lib/studio';
 import { PostProps } from '../../src/lib/studio/types';
 
@@ -51,9 +51,23 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
                 gap={16}
                 divider={<StackDivider borderColor="whiteAlpha.400" />}
               >
-                {posts.map((post: PostProps) => (
-                  <BlogCard key={post._id} {...post} />
-                ))}
+                {posts.map((post: PostProps, index) =>
+                  index % 3 === 0 ? (
+                    <Stack
+                      key={post._id}
+                      gap={16}
+                      divider={<StackDivider borderColor="whiteAlpha.400" />}
+                      w="full"
+                    >
+                      <BlogCard {...post} />
+                      <GoogleAdsense />
+                    </Stack>
+                  ) : (
+                    <>
+                      <BlogCard key={post._id} {...post} />
+                    </>
+                  )
+                )}
               </Stack>
             </Stack>
           </Container>
