@@ -5,7 +5,7 @@ export const allPostSlugsQuery = groq`
 `;
 
 export const allPostsQuery = groq`
-  *[_type == "post"] {
+  *[_type == "post"] | order(_createdAt desc) {
     ...,
     "author": author->{...},
     "postSeries": postSeries->{...},
