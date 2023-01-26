@@ -2,6 +2,7 @@ import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export interface SeoMetadataProps {
   _type: 'seoMetadata';
+  canonical?: string;
   description: string;
   options: {
     _type: 'seoOptions';

@@ -1,6 +1,5 @@
 import { AspectRatio, Container, Image, Stack } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 import { PostProps } from '../../../lib/studio/types';
 import { urlForImage } from '../../../lib/studio/urlForImage';
 import _BlogPageAuthorCard from './_BlogPageAuthorCard';
@@ -12,16 +11,20 @@ import _BlogPageMain from './_BlogPageMain';
  */
 const BlogPageLayout = (props: PostProps) => {
   const { seo } = props;
-  const router = useRouter();
   return (
     <>
       <NextSeo
         title={seo.seoMetadata?.title || props.title}
         description={seo.seoMetadata?.description || props.excerpt || ''}
-        canonical={`http://localhost:3000${router.asPath}`}
+        canonical={
+          seo.seoMetadata.canonical ||
+          `https://www.keplux.com/blog/post/${props.slug.current}`
+        }
         openGraph={{
           type: 'article',
-          url: `http://localhost:3000${router.asPath}`,
+          url:
+            seo.seoMetadata.canonical ||
+            `https://www.keplux.com/blog/post/${props.slug.current}`,
           title: seo.seoMetadata?.title || props.title,
           description: seo.seoMetadata.description || props.excerpt || '',
           images: [
