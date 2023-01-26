@@ -7,19 +7,17 @@ const Document = () => {
     <Html lang="en">
       <Head>
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=G-R73J8RZW28"
+          strategy="afterInteractive"
         />
-        <Script
-          id="google-analytics-script"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-R73J8RZW28');`,
-          }}
-        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-R73J8RZW28');
+        `}
+        </Script>
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5784502386040084"
