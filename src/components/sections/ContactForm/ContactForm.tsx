@@ -65,6 +65,10 @@ const ContactForm = () => {
           </Box>
         ),
       });
+      window.gtag('event', 'contacted', {
+        event_category: 'Contact',
+        event_label: data.email,
+      });
     } catch (e) {
       // TODO: Show Toast on error.
       toast({
