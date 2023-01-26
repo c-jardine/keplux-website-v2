@@ -8,7 +8,7 @@ const Document = () => {
       <Head>
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=317846737"
+          src="https://www.googletagmanager.com/gtag/js?id=G-R73J8RZW28"
         />
         <Script
           id="google-analytics-script"
@@ -17,10 +17,10 @@ const Document = () => {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '317846737');`,
+              gtag('config', 'G-R73J8RZW28');`,
           }}
         />
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5784502386040084"
           crossOrigin="anonymous"
