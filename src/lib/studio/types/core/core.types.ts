@@ -4,6 +4,7 @@ export interface SanityResponseBaseProps {
   _id: string;
   __rev: string;
   _updatedAt: string;
+  _key?: string;
 }
 
 export type SlugProps = {

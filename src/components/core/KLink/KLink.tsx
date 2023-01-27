@@ -7,6 +7,7 @@ const KLink = chakra<typeof NextLink, NextLinkProps>(NextLink, {
   shouldForwardProp: (prop) => ['href', 'target', 'children'].includes(prop),
   baseStyle: {
     w: 'max',
+    color: 'whiteAlpha.600',
   },
 });
 

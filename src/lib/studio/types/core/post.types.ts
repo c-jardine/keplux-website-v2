@@ -15,6 +15,7 @@ import { TagProps } from './tag.types';
  */
 export interface PostProps extends SanityResponseBaseProps {
   _id: string;
+  _type: 'post';
   author: AuthorProps;
   content: PortableTextBlock[] | TypedObject | TypedObject[];
   coverPhoto: CoverPhotoProps;
