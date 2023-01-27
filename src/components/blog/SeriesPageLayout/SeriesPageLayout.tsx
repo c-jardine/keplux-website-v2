@@ -1,13 +1,20 @@
 import {
   AspectRatio,
+  Box,
   Container,
   Heading,
   Image,
+  ListIcon,
+  ListItem,
   Stack,
+  Text,
+  UnorderedList,
 } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import { SeriesProps } from '../../../studio/types';
 import { urlForImage } from '../../../studio/urlForImage';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
+import { KLink } from '../../core';
 
 /**
  * The main blog page wrapper.
@@ -53,7 +60,33 @@ const SeriesPageLayout = (props: SeriesProps) => {
             objectFit="cover"
           />
         </AspectRatio>
-        <Heading as="h1">{props.title}</Heading>
+        <Stack maxW="4xl">
+          <Heading as="h1" color="whiteAlpha.800">
+            {props.title}
+          </Heading>
+          <Text color="whiteAlpha.600">{props.description}</Text>
+          <Box>
+            <Heading as="h3" color="whiteAlpha.800" fontSize="sm">
+              Posts in this series
+            </Heading>
+            <UnorderedList mt={2} spacing={2}>
+              {props.posts?.map((post) => (
+                <ListItem key={post._key} display="flex">
+                  <ListIcon
+                    as={FaChevronRight}
+                    color="whiteAlpha.800"
+                    w={3}
+                    h={3}
+                    mt="6px"
+                  />
+                  <KLink href={`/blog/post/${post.slug.current}`}>
+                    {post.title}
+                  </KLink>
+                </ListItem>
+              ))}
+            </UnorderedList>
+          </Box>
+        </Stack>
       </Container>
     </>
   );

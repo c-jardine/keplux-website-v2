@@ -52,12 +52,13 @@ const BlogCard = (props: SeriesProps) => {
           </Heading>
           <UnorderedList mt={2} spacing={2}>
             {props.posts?.map((post) => (
-              <ListItem key={post._key} display="flex" alignItems="center">
+              <ListItem key={post._key} display="flex">
                 <ListIcon
                   as={FaChevronRight}
                   color="whiteAlpha.800"
                   w={3}
                   h={3}
+                  mt="6px"
                 />
                 <KLink href={`/blog/post/${post.slug.current}`}>
                   {post.title}
