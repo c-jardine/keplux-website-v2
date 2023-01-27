@@ -1,5 +1,6 @@
-import { Flex, Text } from '@chakra-ui/react';
-import { PostProps } from '../../../lib/studio/types';
+import { Flex, Icon, Text } from '@chakra-ui/react';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
+import { PostProps } from '../../../studio/types';
 import { KLink } from '../../core';
 
 /**
@@ -28,8 +29,12 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
       >
         Series
       </Text>
-      <KLink href="/#" color="whiteAlpha.600">
+      <KLink
+        href={`/blog/series/${props.postSeries?.slug.current}`}
+        color="whiteAlpha.600"
+      >
         {props.postSeries.title}
+        <Icon as={FaChevronRight} color="whiteAlpha.800" w={3} h={3} ml={2} />
       </KLink>
     </Flex>
   );
