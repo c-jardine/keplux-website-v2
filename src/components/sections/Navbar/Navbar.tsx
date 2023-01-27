@@ -96,11 +96,15 @@ const Navbar = () => {
         >
           <Collapse in={isOpen} animateOpacity>
             <Stack bg="black" p={4}>
-              {NavItems.map((item) => {
+              {NavItems.map((item, index) => {
                 return !item.items ? (
-                  <NavbarItemMobile {...item} />
+                  <NavbarItemMobile key={index} {...item} />
                 ) : (
-                  <NavbarDropdownMobile {...item} onClick={onClose} />
+                  <NavbarDropdownMobile
+                    key={index}
+                    {...item}
+                    onClick={onClose}
+                  />
                 );
               })}
               <Button

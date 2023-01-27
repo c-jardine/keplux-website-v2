@@ -25,7 +25,14 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h1" size="3xl" pt={8} color="whiteAlpha.800">
+    <Heading
+      id={value._key}
+      as="h1"
+      size="3xl"
+      pt={8}
+      color="whiteAlpha.800"
+      scrollMarginTop={8}
+    >
       {children}
     </Heading>
   ),
@@ -36,7 +43,14 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h2" size="2xl" pt={8} color="whiteAlpha.800">
+    <Heading
+      id={value._key}
+      as="h2"
+      size="2xl"
+      pt={8}
+      color="whiteAlpha.800"
+      scrollMarginTop={8}
+    >
       {children}
     </Heading>
   ),
@@ -47,7 +61,14 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h3" size="xl" pt={8} color="whiteAlpha.800">
+    <Heading
+      id={value._key}
+      as="h3"
+      size="xl"
+      pt={8}
+      color="whiteAlpha.800"
+      scrollMarginTop={8}
+    >
       {children}
     </Heading>
   ),
@@ -58,7 +79,14 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h4" size="lg" pt={8} color="whiteAlpha.800">
+    <Heading
+      id={value._key}
+      as="h4"
+      size="lg"
+      pt={8}
+      color="whiteAlpha.800"
+      scrollMarginTop={8}
+    >
       {children}
     </Heading>
   ),
@@ -69,7 +97,14 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h5" size="md" pt={8} color="whiteAlpha.800">
+    <Heading
+      id={value._key}
+      as="h5"
+      size="md"
+      pt={8}
+      color="whiteAlpha.800"
+      scrollMarginTop={8}
+    >
       {children}
     </Heading>
   ),
@@ -80,7 +115,14 @@ const block = {
     children: React.ReactNode;
     value: { _key: string };
   }) => (
-    <Heading id={value._key} as="h6" size="sm" pt={8} color="whiteAlpha.800">
+    <Heading
+      id={value._key}
+      as="h6"
+      size="sm"
+      pt={8}
+      color="whiteAlpha.800"
+      scrollMarginTop={8}
+    >
       {children}
     </Heading>
   ),

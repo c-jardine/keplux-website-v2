@@ -49,8 +49,8 @@ const _BlogPageHeader = (props: PostProps) => {
           </Text>
         </Box>
         <Flex gap={4}>
-          {props.tags?.map((tag) => (
-            <Tag key={tag._key} {...tag} />
+          {props.tags?.map((tag, index) => (
+            <Tag key={tag._key || index} {...tag} />
           ))}
         </Flex>
       </Stack>

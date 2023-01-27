@@ -1,5 +1,4 @@
-import { Flex, Icon, Text } from '@chakra-ui/react';
-import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
+import { Flex, Text } from '@chakra-ui/react';
 import { PostProps } from '../../../studio/types';
 import { KLink } from '../../core';
 
@@ -34,7 +33,6 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
         color="whiteAlpha.600"
       >
         {props.postSeries.title}
-        <Icon as={FaChevronRight} color="whiteAlpha.800" w={3} h={3} ml={2} />
       </KLink>
     </Flex>
   );
