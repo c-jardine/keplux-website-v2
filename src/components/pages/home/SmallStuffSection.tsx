@@ -16,6 +16,7 @@ import mobileAppIcon from '../../../../public/images/website-mobile-app-icon.jpg
 import mobileUi from '../../../../public/images/website-mobile-ui.png';
 import { KLightbox } from '../../core';
 import { LeadInHeading, Subsection } from '../../sections';
+import { motion } from 'framer-motion';
 
 const SmallStuffSection = () => {
   return (
@@ -117,15 +118,21 @@ const SmallStuffSection = () => {
                     />
                   </AbsoluteCenter>
                   <Box
+                    as={motion.div}
                     position="relative"
                     borderRadius="lg"
                     overflow="hidden"
                     filter="saturate(0.65)"
-                    _hover={{
-                      filter: 'saturate(1)',
-                    }}
-                    transition="200ms ease-in-out"
                     shadow="dark-lg"
+                    whileHover={{
+                      scale: 1.05,
+                      filter: 'saturate(1)',
+                      transition: {
+                        duration: 0.2,
+                        easings: 'cubic-bezier(0.17, 0.55, 0.55, 1)',
+                      },
+                    }}
+                    whileTap={{ scale: 0.975 }}
                   >
                     <KLightbox
                       image={cls}
@@ -152,7 +159,23 @@ const SmallStuffSection = () => {
                         filter="blur(32px) brightness(100%)"
                       />
                     </AbsoluteCenter>
-                    <Box position="relative">
+                    <Box
+                      as={motion.div}
+                      position="relative"
+                      borderRadius="lg"
+                      overflow="hidden"
+                      filter="saturate(0.65)"
+                      shadow="dark-lg"
+                      whileHover={{
+                        scale: 1.05,
+                        filter: 'saturate(1)',
+                        transition: {
+                          duration: 0.2,
+                          easings: 'cubic-bezier(0.17, 0.55, 0.55, 1)',
+                        },
+                      }}
+                      whileTap={{ scale: 0.975 }}
+                    >
                       <KLightbox
                         image={mobileUi}
                         alt="Content management system interface showing the management of movies, actors, and screenings."
@@ -223,21 +246,27 @@ const SmallStuffSection = () => {
                   <AbsoluteCenter w="85%" h="85%" zIndex={0}>
                     <Box
                       h="full"
-                      bgGradient="linear-gradient(to-br, orange.400, brand.600)"
+                      bgGradient="linear-gradient(to-br, pink.400, brand.600)"
                       filter="blur(32px) brightness(150%)"
                       p={8}
                     />
                   </AbsoluteCenter>
                   <Box
+                    as={motion.div}
                     position="relative"
-                    rounded="lg"
+                    borderRadius="lg"
                     overflow="hidden"
                     filter="saturate(0.65)"
-                    _hover={{
-                      filter: 'saturate(1)',
-                    }}
-                    transition="200ms ease-in-out"
                     shadow="dark-lg"
+                    whileHover={{
+                      scale: 1.05,
+                      filter: 'saturate(1)',
+                      transition: {
+                        duration: 0.2,
+                        easings: 'cubic-bezier(0.17, 0.55, 0.55, 1)',
+                      },
+                    }}
+                    whileTap={{ scale: 0.975 }}
                   >
                     <KLightbox
                       image={mobileAppIcon}
