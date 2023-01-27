@@ -1,7 +1,7 @@
 import { Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
-import { GoogleAdsense, SeriesCard } from '../../../src/components/blog';
+import { SeriesCard } from '../../../src/components/blog';
 import { client } from '../../../src/studio/client';
 import { allSeriesWithPostsQuery } from '../../../src/studio/queries';
 import { SeriesProps } from '../../../src/studio/types';
@@ -49,23 +49,9 @@ const Series = (props: { series: SeriesProps[] }) => {
                 gap={16}
                 divider={<StackDivider borderColor="whiteAlpha.400" />}
               >
-                {series.map((series: SeriesProps, index) =>
-                  index % 3 === 0 ? (
-                    <Stack
-                      key={series._id}
-                      gap={16}
-                      divider={<StackDivider borderColor="whiteAlpha.400" />}
-                      w="full"
-                    >
-                      <SeriesCard {...series} />
-                      <GoogleAdsense />
-                    </Stack>
-                  ) : (
-                    <>
-                      <SeriesCard key={series._id} {...series} />
-                    </>
-                  )
-                )}
+                {series.map((series: SeriesProps, index) => (
+                  <SeriesCard key={series._id} {...series} />
+                ))}
               </Stack>
             </Stack>
           </Container>
