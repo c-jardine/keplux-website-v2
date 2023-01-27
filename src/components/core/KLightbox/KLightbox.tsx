@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import React from 'react';
-import { KLightboxProps } from './KLightbox.types';
-import { Gallery, Item } from 'react-photoswipe-gallery';
 import 'photoswipe/dist/photoswipe.css';
+import React from 'react';
+import { Gallery, Item } from 'react-photoswipe-gallery';
+import { KLightboxProps } from './KLightbox.types';
 
 const KLightbox = (props: KLightboxProps) => {
   return (
@@ -16,7 +16,10 @@ const KLightbox = (props: KLightboxProps) => {
       >
         {({ ref, open }) => (
           <Image
-            style={{ objectFit: 'cover', cursor: 'pointer' }}
+            style={{
+              objectFit: 'cover',
+              cursor: 'pointer',
+            }}
             src={props.image}
             alt={props.alt}
             ref={ref as React.MutableRefObject<HTMLImageElement>}

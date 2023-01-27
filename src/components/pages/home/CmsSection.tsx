@@ -20,6 +20,7 @@ import cmsMetadata from '../../../../public/images/content-management-metadata.p
 import cmsMovies from '../../../../public/images/content-management-movies.png';
 import { KLightbox } from '../../core';
 import { LeadInHeading, Subsection } from '../../sections';
+import { motion } from 'framer-motion';
 
 const CmsSection = () => {
   return (
@@ -123,15 +124,21 @@ const CmsSection = () => {
                     />
                   </AbsoluteCenter>
                   <Box
+                    as={motion.div}
                     position="relative"
                     borderRadius="lg"
                     overflow="hidden"
                     filter="saturate(0.65)"
-                    _hover={{
-                      filter: 'saturate(1)',
-                    }}
-                    transition="200ms ease-in-out"
                     shadow="dark-lg"
+                    whileHover={{
+                      scale: 1.05,
+                      filter: 'saturate(1)',
+                      transition: {
+                        duration: 0.2,
+                        easings: 'cubic-bezier(0.17, 0.55, 0.55, 1)',
+                      },
+                    }}
+                    whileTap={{ scale: 0.975 }}
                   >
                     <KLightbox
                       image={cmsMovies}
