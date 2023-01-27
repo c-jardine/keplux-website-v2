@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Stack } from '@chakra-ui/react';
-import { PostProps } from '../../../lib/studio/types';
+import { PostProps } from '../../../studio/types';
 import { PortableText } from '../../core';
 import _BlogPageNavigation from './_BlogPageNavigation';
 

@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { SeriesPageLayout } from '../../../src/components/blog';
+import { client } from '../../../src/studio/client';
 import {
   allSeriesSlugsQuery,
-  client,
   seriesBySlugQuery,
-} from '../../../src/lib/studio';
-import { SeriesProps, SlugProps } from '../../../src/lib/studio/types';
+} from '../../../src/studio/queries';
+import { SeriesProps, SlugProps } from '../../../src/studio/types';
 
 const SeriesPage = (props: SeriesProps) => {
   return <SeriesPageLayout {...props} />;

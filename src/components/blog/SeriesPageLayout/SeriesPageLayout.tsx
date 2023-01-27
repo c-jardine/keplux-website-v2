@@ -1,5 +1,5 @@
 import { Container, Heading, Stack } from '@chakra-ui/react';
-import { SeriesProps } from '../../../lib/studio/types';
+import { SeriesProps } from '../../../studio/types';
 
 /**
  * The main blog page wrapper.

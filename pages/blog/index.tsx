@@ -2,8 +2,9 @@ import { Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import { BlogCard, GoogleAdsense } from '../../src/components/blog';
-import { allPostsQuery, client } from '../../src/lib/studio';
-import { PostProps } from '../../src/lib/studio/types';
+import { client } from '../../src/studio/client';
+import { allPostsQuery } from '../../src/studio/queries';
+import { PostProps } from '../../src/studio/types';
 
 const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
   const { posts } = props;

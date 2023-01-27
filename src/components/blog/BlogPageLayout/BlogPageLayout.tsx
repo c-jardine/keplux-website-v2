@@ -1,7 +1,7 @@
 import { AspectRatio, Container, Image, Stack } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
-import { PostProps } from '../../../lib/studio/types';
-import { urlForImage } from '../../../lib/studio/urlForImage';
+import { PostProps } from '../../../studio/types';
+import { urlForImage } from '../../../studio/urlForImage';
 import _BlogPageAuthorCard from './_BlogPageAuthorCard';
 import _BlogPageHeader from './_BlogPageHeader';
 import _BlogPageMain from './_BlogPageMain';

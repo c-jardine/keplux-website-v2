@@ -2,9 +2,9 @@ import { Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import { NextSeo } from 'next-seo';
 import { GoogleAdsense, SeriesCard } from '../../../src/components/blog';
-import { client } from '../../../src/lib/studio';
-import { allSeriesWithPostsQuery } from '../../../src/lib/studio/queries';
-import { SeriesProps } from '../../../src/lib/studio/types';
+import { client } from '../../../src/studio/client';
+import { allSeriesWithPostsQuery } from '../../../src/studio/queries';
+import { SeriesProps } from '../../../src/studio/types';
 
 const Series = (props: { series: SeriesProps[] }) => {
   const { series } = props;

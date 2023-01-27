@@ -1,5 +1,5 @@
 import { Flex, Text } from '@chakra-ui/react';
-import { PostProps } from '../../../lib/studio/types';
+import { PostProps } from '../../../studio/types';
 import { KLink } from '../../core';
 
 /**

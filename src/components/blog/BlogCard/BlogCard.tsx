@@ -9,8 +9,8 @@ import {
 } from '@chakra-ui/react';
 import { formatDistanceToNow } from 'date-fns';
 import React from 'react';
-import { PostProps } from '../../../lib/studio/types';
-import { urlForImage } from '../../../lib/studio/urlForImage';
+import { PostProps } from '../../../studio/types';
+import { urlForImage } from '../../../studio/urlForImage';
 import { KLink, Tag } from '../../core';
 
 const BlogCard = (props: PostProps) => {

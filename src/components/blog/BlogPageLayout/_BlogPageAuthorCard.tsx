@@ -7,8 +7,8 @@ import {
   Flex,
   Text,
 } from '@chakra-ui/react';
-import { urlForImage } from '../../../lib/studio';
-import { PostProps } from '../../../lib/studio/types';
+import { PostProps } from '../../../studio/types';
+import { urlForImage } from '../../../studio/urlForImage';
 
 /**
  * Card component containing the author's information.

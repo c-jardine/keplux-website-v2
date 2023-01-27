@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { BlogPageLayout } from '../../../src/components/blog';
+import { client } from '../../../src/studio/client';
 import {
   allPostSlugsQuery,
-  client,
   postBySlugQuery,
-} from '../../../src/lib/studio';
-import { PostProps, SlugProps } from '../../../src/lib/studio/types';
+} from '../../../src/studio/queries';
+import { PostProps, SlugProps } from '../../../src/studio/types';
 
 const BlogPostPage: NextPage = (props: PostProps) => {
   return <BlogPageLayout {...props} />;

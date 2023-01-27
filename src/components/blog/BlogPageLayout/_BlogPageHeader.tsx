@@ -1,7 +1,7 @@
 import { Box, Divider, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import { format } from 'date-fns';
 import React from 'react';
-import { PostProps } from '../../../lib/studio/types';
+import { PostProps } from '../../../studio/types';
 import { Tag } from '../../core';
 import _BlogPageSeries from './_BlogPageSeries';
 
