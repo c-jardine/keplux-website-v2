@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
-import { TagProps } from '../../../lib/studio/types';
+import { TagProps } from '../../../studio/types';
 
 const Tag = (props: TagProps) => {
   return (

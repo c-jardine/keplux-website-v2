@@ -1,7 +1,8 @@
 import { GetServerSidePropsContext } from 'next';
 import { ISitemapField, getServerSideSitemap } from 'next-sitemap';
-import { allPostsQuery, client } from '../../src/lib/studio';
-import { PostProps } from '../../src/lib/studio/types';
+import { client } from '../../src/studio/client';
+import { allPostsQuery } from '../../src/studio/queries';
+import { PostProps } from '../../src/studio/types';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 

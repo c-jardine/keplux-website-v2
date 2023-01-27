@@ -13,10 +13,12 @@ import {
 } from '@chakra-ui/react';
 import { FaExternalLinkAlt } from '@react-icons/all-files/fa/FaExternalLinkAlt';
 import { GetStaticProps, NextPage } from 'next';
-import { KLink } from '../src/components/core';
-import { allProjectsQuery, client, urlForImage } from '../src/lib/studio';
-import { ProjectProps } from '../src/lib/studio/types';
 import { NextSeo } from 'next-seo';
+import { KLink } from '../src/components/core';
+import { client } from '../src/studio/client';
+import { allProjectsQuery } from '../src/studio/queries';
+import { ProjectProps } from '../src/studio/types';
+import { urlForImage } from '../src/studio/urlForImage';
 
 const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
   return (
