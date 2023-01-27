@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             siteName: 'Keplux Development',
             images: [
               {
-                url: 'https://i.imgur.com/5qsDLWr.png',
+                url: 'https://i.imgur.com/8lVjcsD.jpg',
               },
             ],
           }}
