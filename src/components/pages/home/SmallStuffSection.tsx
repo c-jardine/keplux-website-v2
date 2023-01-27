@@ -103,7 +103,12 @@ const SmallStuffSection = () => {
               }
               rightContent={
                 <Box position="relative">
-                  <AbsoluteCenter w="85%" h="85%" zIndex={0}>
+                  <AbsoluteCenter
+                    w="85%"
+                    h="85%"
+                    zIndex={0}
+                    mx={{ base: 'auto', lg: 0 }}
+                  >
                     <Box
                       h="full"
                       bgGradient="linear-gradient(to-tl, pink.400, brand.600)"
@@ -135,7 +140,11 @@ const SmallStuffSection = () => {
               markerPos={40}
               leftContent={
                 <Stack alignItems={{ lg: 'flex-end' }}>
-                  <Box position="relative" w={{ md: '50%' }}>
+                  <Box
+                    position="relative"
+                    w={{ md: '50%' }}
+                    mx={{ base: 'auto', lg: 0 }}
+                  >
                     <AbsoluteCenter w="50%" h="70%" zIndex={0}>
                       <Box
                         h="full"
@@ -210,7 +219,7 @@ const SmallStuffSection = () => {
                 </Stack>
               }
               rightContent={
-                <Box position="relative" w="75%">
+                <Box position="relative" w="75%" mx={{ base: 'auto', lg: 0 }}>
                   <AbsoluteCenter w="85%" h="85%" zIndex={0}>
                     <Box
                       h="full"
