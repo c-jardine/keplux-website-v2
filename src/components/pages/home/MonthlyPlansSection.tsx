@@ -151,12 +151,13 @@ const MonthlyPlansSection = () => {
             </Stack>
           </Center>
 
-          <Stack alignItems="center" w="full">
+          <Stack alignItems="center" w="full" spacing={0}>
             <Text
               textTransform="uppercase"
               fontSize="sm"
               fontWeight="semibold"
               color="whiteAlpha.600"
+              mb={8}
             >
               What&apos;s included
             </Text>
