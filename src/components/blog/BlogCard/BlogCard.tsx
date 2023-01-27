@@ -54,7 +54,12 @@ const BlogCard = (props: PostProps) => {
           ))}
         </Flex>
         <Heading as="h3" size="lg" color="whiteAlpha.800">
-          <KLink href={`/blog/post/${props.slug.current}`}>{props.title}</KLink>
+          <KLink
+            href={`/blog/post/${props.slug.current}`}
+            color="whiteAlpha.800"
+          >
+            {props.title}
+          </KLink>
         </Heading>
         <KLink
           href={`/blog/author/${props.author.slug.current}`}
