@@ -2,6 +2,7 @@ import { codeInput } from '@sanity/code-input';
 import { colorInput } from '@sanity/color-input';
 import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
+import { media } from 'sanity-plugin-media';
 import { deskTool } from 'sanity/desk';
 import {
   BlogPostsViewerStructure,
@@ -38,6 +39,7 @@ const config = defineConfig({
       defaultApiVersion: 'v2021-10-21',
       defaultDataset: 'production',
     }),
+    media(),
   ],
 
   schema: {
