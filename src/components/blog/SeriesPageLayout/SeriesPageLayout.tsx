@@ -10,10 +10,10 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
+import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 import { NextSeo } from 'next-seo';
 import { SeriesProps } from '../../../studio/types';
 import { urlForImage } from '../../../studio/urlForImage';
-import { FaChevronRight } from '@react-icons/all-files/fa/FaChevronRight';
 import { KLink } from '../../core';
 
 /**
@@ -49,7 +49,7 @@ const SeriesPageLayout = (props: SeriesProps) => {
           cardType: 'summary_large_image',
         }}
       />
-      <Container as={Stack} spacing={16} my={16} alignItems="center" maxW="8xl">
+      <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
         <AspectRatio ratio={1.91 / 1} maxW="4xl" w="full">
           <Image
             src={urlForImage(props.coverPhoto).url()}

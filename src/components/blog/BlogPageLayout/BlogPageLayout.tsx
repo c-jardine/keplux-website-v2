@@ -39,7 +39,7 @@ const BlogPageLayout = (props: PostProps) => {
           cardType: 'summary_large_image',
         }}
       />
-      <Container as={Stack} spacing={16} my={16} alignItems="center" maxW="8xl">
+      <Container as={Stack} spacing={16} alignItems="center" maxW="8xl">
         {props.coverPhoto && Object.keys(props.coverPhoto).length > 2 && (
           <_BlogPageHeader {...props} />
         )}
