@@ -10,7 +10,7 @@ const config = {
     policies: [
       {
         userAgent: '*',
-        disallow: ['/404'],
+        disallow: ['/404', '/studio', '/studio/*'],
       },
       {
         userAgent: '*',
