@@ -1,9 +1,15 @@
 import { Heading, Icon, Stack, Text } from '@chakra-ui/react';
+import { useInView } from 'framer-motion';
+import React from 'react';
 import BasicCardProps from './BasicCard.types';
 
 const BasicCard = (props: BasicCardProps) => {
+  const ref = React.useRef(null);
+  const inView = useInView(ref, { once: true });
+
   return (
     <Stack
+      ref={ref}
       position="relative"
       bg="black"
       borderWidth={1}
@@ -12,6 +18,9 @@ const BasicCard = (props: BasicCardProps) => {
       p={8}
       spacing={8}
       rounded="lg"
+      transform={inView ? 'none' : 'translateY(200px)'}
+      opacity={inView ? 1 : 0}
+      transition="all 0.5s cubic-bezier(0.17, 0.55, 0.55, 1)"
     >
       <Icon
         as={props.icon}

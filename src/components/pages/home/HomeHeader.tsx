@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Container,
   Flex,
   Heading,
@@ -14,12 +13,27 @@ import { MdSearch } from '@react-icons/all-files/md/MdSearch';
 import { MdSettings } from '@react-icons/all-files/md/MdSettings';
 import { MdStore } from '@react-icons/all-files/md/MdStore';
 import { MdWeb } from '@react-icons/all-files/md/MdWeb';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import headerImg from '../../../../public/backgrounds/web-development.jpg';
-import { BasicCard } from '../../core';
+import { BasicCard, MotionButton } from '../../core';
 
 const HomeHeader = () => {
+  const router = useRouter();
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.5,
+      },
+    },
+  };
+  const item = {
+    hidden: { opacity: 0, y: 100 },
+    show: { opacity: 1, y: 0 },
+  };
   return (
     <Box position="relative" w="full">
       <Box w="full" mt={-28}>
@@ -64,22 +78,43 @@ const HomeHeader = () => {
                   fast performance and SEO that helps boost conversions.
                 </Heading>
               </Stack>
-              <Stack direction={{ base: 'column', sm: 'row' }} spacing={4}>
-                <Button as={Link} href="/contact" variant="primary">
-                  Start your project
-                </Button>
-                <Button
-                  as={Link}
-                  href="/pricing"
-                  variant="secondary"
-                  justifyContent="space-between"
-                  borderColor="black"
-                >
-                  <Flex alignItems="center" gap={4}>
-                    <Text>View pricing</Text>
-                    <Icon as={FaChevronRight} color="white" />
-                  </Flex>
-                </Button>
+              <Stack
+                as={motion.div}
+                variants={container}
+                initial="hidden"
+                animate="show"
+                direction={{ base: 'column', sm: 'row' }}
+                spacing={4}
+              >
+                <motion.div variants={item}>
+                  <MotionButton
+                    variant="primary"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      void router.push('/contact');
+                    }}
+                  >
+                    <Text onPointerEnterCapture={(e) => e.stopPropagation()}>
+                      Start your project
+                    </Text>
+                  </MotionButton>
+                </motion.div>
+                <motion.div variants={item}>
+                  <MotionButton
+                    variant="secondary"
+                    justifyContent="space-between"
+                    borderColor="black"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      void router.push('/pricing');
+                    }}
+                  >
+                    <Flex alignItems="center" gap={4}>
+                      <Text>View pricing</Text>
+                      <Icon as={FaChevronRight} color="white" />
+                    </Flex>
+                  </MotionButton>
+                </motion.div>
               </Stack>
             </Stack>
           </Container>
@@ -87,7 +122,13 @@ const HomeHeader = () => {
       </Box>
 
       <Container maxW="8xl" w="full" mt={-32}>
-        <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={16}>
+        <SimpleGrid
+          as={motion.div}
+          columns={{ base: 1, md: 2, xl: 4 }}
+          gap={16}
+          variants={container}
+          animate="show"
+        >
           <BasicCard
             icon={MdWeb}
             title="Website design and development"

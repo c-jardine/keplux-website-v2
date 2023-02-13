@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Container,
   HStack,
@@ -10,11 +9,14 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaCalendarAlt } from '@react-icons/all-files/fa/FaCalendarAlt';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { StarterPricing } from '../../../lib/pricing';
+import { MotionButton } from '../../core';
 import { LeadInHeading, Subsection } from '../../sections';
 
 const MonthlyPlansSection = () => {
+  const router = useRouter();
+
   return (
     <Container maxW="7xl" w="full">
       <Stack alignItems="center" w="full" spacing={8}>
@@ -48,18 +50,24 @@ const MonthlyPlansSection = () => {
               </Text>
             </Stack>
             <HStack spacing={4}>
-              <Button
+              <MotionButton
                 variant="primary"
-                as={Link}
-                href="/contact"
-                target="_blank"
-                rel="noopener"
+                onClick={(e) => {
+                  e.preventDefault();
+                  void router.push('/contact');
+                }}
               >
                 Buy now
-              </Button>
-              <Button as={Link} href="/pricing" variant="secondary">
+              </MotionButton>
+              <MotionButton
+                onClick={(e) => {
+                  e.preventDefault();
+                  void router.push('/pricing');
+                }}
+                variant="secondary"
+              >
                 View other options
-              </Button>
+              </MotionButton>
             </HStack>
           </Stack>
           <Center
@@ -143,12 +151,13 @@ const MonthlyPlansSection = () => {
             </Stack>
           </Center>
 
-          <Stack alignItems="center" w="full">
+          <Stack alignItems="center" w="full" spacing={0}>
             <Text
               textTransform="uppercase"
               fontSize="sm"
               fontWeight="semibold"
               color="whiteAlpha.600"
+              mb={8}
             >
               What&apos;s included
             </Text>
@@ -207,18 +216,24 @@ const MonthlyPlansSection = () => {
             ))}
           </Stack>
           <HStack spacing={4}>
-            <Button
+            <MotionButton
               variant="primary"
-              as={Link}
-              href="/contact"
-              target="_blank"
-              rel="noopener"
+              onClick={(e) => {
+                e.preventDefault();
+                void router.push('/contact');
+              }}
             >
               Buy now
-            </Button>
-            <Button as={Link} href="/pricing" variant="secondary">
+            </MotionButton>
+            <MotionButton
+              onClick={(e) => {
+                e.preventDefault();
+                void router.push('/pricing');
+              }}
+              variant="secondary"
+            >
               View other options
-            </Button>
+            </MotionButton>
           </HStack>
         </Stack>
       </Stack>

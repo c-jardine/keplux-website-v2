@@ -8,6 +8,7 @@ export * from './IconHeader';
 export * from './KLightbox';
 export * from './KLink';
 export * from './LighthouseScore';
+export * from './MotionButton';
 export * from './PortableText';
 export * from './ProcessStep';
 export * from './RadioCard';
