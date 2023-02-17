@@ -37,7 +37,7 @@ const HomeHeader = () => {
   return (
     <Box position="relative" w="full">
       <Box w="full" mt={-28}>
-        <Box position="relative" maxW="1920px" w="full">
+        <Box position="relative" maxW="1920px" w="full" mx="auto">
           <Image
             src={headerImg}
             alt="A laptop developing a website."
