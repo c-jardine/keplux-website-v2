@@ -3,7 +3,7 @@ import { FaPenFancy } from '@react-icons/all-files/fa/FaPenFancy';
 import { ListItemBuilder, StructureBuilder } from 'sanity/desk';
 import { Tag } from '../../components/core';
 import { SanityPreviewLayout } from '../../components/layouts';
-import { author, post, series, tag } from '../schemas/documents';
+import { author, comment, post, series, tag } from '../schemas/documents';
 
 const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
   return S.listItem()
@@ -67,6 +67,14 @@ const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
               S.documentTypeList('author')
                 .title('Authors')
                 .child(S.document().schemaType('author'))
+            ),
+          S.listItem()
+            .title('Comments')
+            .icon(comment.icon)
+            .child(
+              S.documentTypeList('comment')
+                .title('Comments')
+                .child(S.document().schemaType('comment'))
             ),
         ])
     );

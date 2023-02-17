@@ -1,8 +1,10 @@
 import { defineType } from 'sanity';
+import { MdChat } from '@react-icons/all-files/md/MdChat';
 
 export default defineType({
   title: 'Comment',
   name: 'comment',
+  icon: MdChat,
   type: 'document',
   fields: [
     {
