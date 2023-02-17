@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const commentType = defineType({
+export const commentType = defineType({
   title: 'Comment',
   name: 'comment',
   type: 'document',

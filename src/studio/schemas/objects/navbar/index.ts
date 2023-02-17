@@ -1,1 +1,1 @@
-export { default as navbarLinkType } from './navbarLink';
+export { default as navbarLink } from './navbarLink';

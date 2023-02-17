@@ -1,1 +1,1 @@
-export { default as coverPhotoType } from './coverPhoto';
+export { default as coverPhoto } from './coverPhoto';
