@@ -3,12 +3,7 @@ import { FaPenFancy } from '@react-icons/all-files/fa/FaPenFancy';
 import { ListItemBuilder, StructureBuilder } from 'sanity/desk';
 import { Tag } from '../../components/core';
 import { SanityPreviewLayout } from '../../components/layouts';
-import {
-  authorType,
-  postType,
-  seriesType,
-  tagType,
-} from '../schemas/documents';
+import { author, post, series, tag } from '../schemas/documents';
 
 const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
   return S.listItem()
@@ -20,7 +15,7 @@ const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
         .items([
           S.listItem()
             .title('Posts')
-            .icon(postType.icon)
+            .icon(post.icon)
             .child(
               S.documentTypeList('post')
                 .title('Posts')
@@ -28,7 +23,7 @@ const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
             ),
           S.listItem()
             .title('Series')
-            .icon(seriesType.icon)
+            .icon(series.icon)
             .child(
               S.documentTypeList('series').child(
                 S.document().schemaType('series')
@@ -36,7 +31,7 @@ const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
             ),
           S.listItem()
             .title('Tags')
-            .icon(tagType.icon)
+            .icon(tag.icon)
             .child(
               S.documentTypeList('tag')
                 .title('Tags')
@@ -67,7 +62,7 @@ const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
             ),
           S.listItem()
             .title('Authors')
-            .icon(authorType.icon)
+            .icon(author.icon)
             .child(
               S.documentTypeList('author')
                 .title('Authors')
