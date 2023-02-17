@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-export const commentType = defineType({
+export default defineType({
   title: 'Comment',
   name: 'comment',
   type: 'document',
@@ -52,5 +52,3 @@ export const commentType = defineType({
     },
   },
 });
-
-export default commentType;

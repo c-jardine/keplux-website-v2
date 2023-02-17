@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const photo = defineType({
+export default defineType({
   title: 'Photo',
   name: 'photo',
   type: 'object',
@@ -20,5 +20,3 @@ const photo = defineType({
     },
   ],
 });
-
-export default photo;

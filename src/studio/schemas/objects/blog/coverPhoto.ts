@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const coverPhotoType = defineType({
+export default defineType({
   name: 'coverPhoto',
   title: 'Cover Photo',
   type: 'image',
@@ -18,5 +18,3 @@ const coverPhotoType = defineType({
     },
   ],
 });
-
-export default coverPhotoType;

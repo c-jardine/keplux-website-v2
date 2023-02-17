@@ -2,7 +2,7 @@ import { Circle } from '@chakra-ui/react';
 import { FaTag } from '@react-icons/all-files/fa/FaTag';
 import { defineType } from 'sanity';
 
-const tagType = defineType({
+export default defineType({
   name: 'tag',
   title: 'Tag',
   icon: FaTag,
@@ -43,5 +43,3 @@ const tagType = defineType({
     },
   },
 });
-
-export default tagType;

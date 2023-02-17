@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const navbarLinkType = defineType({
+export default defineType({
   name: 'navbarLink',
   title: 'Navbar Link',
   type: 'object',
@@ -20,5 +20,3 @@ const navbarLinkType = defineType({
     },
   ],
 });
-
-export default navbarLinkType;

@@ -1,7 +1,7 @@
 import { defineType } from 'sanity';
 import { FaUser } from '@react-icons/all-files/fa/FaUser';
 
-const authorType = defineType({
+export default defineType({
   name: 'author',
   title: 'Author',
   icon: FaUser,
@@ -38,5 +38,3 @@ const authorType = defineType({
     },
   ],
 });
-
-export default authorType;

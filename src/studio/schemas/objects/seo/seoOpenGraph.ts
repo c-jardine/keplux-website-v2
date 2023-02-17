@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const seoOpenGraph = defineType({
+export default defineType({
   name: 'seoOpenGraph',
   title: 'OpenGraph',
   type: 'object',
@@ -17,5 +17,3 @@ const seoOpenGraph = defineType({
     },
   ],
 });
-
-export default seoOpenGraph;

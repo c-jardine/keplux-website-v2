@@ -1,7 +1,7 @@
 import { FaLaptopCode } from '@react-icons/all-files/fa/FaLaptopCode';
 import { defineType } from 'sanity';
 
-const projectType = defineType({
+export default defineType({
   name: 'project',
   title: 'Project',
   icon: FaLaptopCode,
@@ -44,5 +44,3 @@ const projectType = defineType({
     },
   ],
 });
-
-export default projectType;

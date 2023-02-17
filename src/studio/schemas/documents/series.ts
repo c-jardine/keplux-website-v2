@@ -1,7 +1,7 @@
 import { IoIosPaper } from '@react-icons/all-files/io/IoIosPaper';
 import { defineType } from 'sanity';
 
-const series = defineType({
+export default defineType({
   name: 'series',
   title: 'Series',
   icon: IoIosPaper,
@@ -72,5 +72,3 @@ const series = defineType({
     },
   },
 });
-
-export default series;
