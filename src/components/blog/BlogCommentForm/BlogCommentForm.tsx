@@ -55,81 +55,83 @@ const BlogCommentForm = () => {
 
   return (
     <form onSubmit={(...args) => void handleSubmit(onSubmit)(...args)}>
-      <Stack mt={8} spacing={4} maxW="xl">
-        <FormControl isInvalid={!!errors.name} maxW="xs">
-          <FormLabel
-            marginBottom={1}
-            fontSize="xs"
-            fontWeight="normal"
-            letterSpacing="wide"
-            color="whiteAlpha.600"
-          >
-            Name
-          </FormLabel>
-          <Input
-            id="name"
-            name="name"
-            disabled={isSubmitting}
-            {...register('name', {
-              required: 'Required',
-              minLength: { value: 2, message: 'Too short' },
-            })}
-            borderColor="whiteAlpha.400"
-            color="whiteAlpha.600"
-            _hover={{
-              color: 'whiteAlpha.800',
-              borderColor: 'whiteAlpha.800',
-            }}
-            _active={{
-              color: 'whiteAlpha.800',
-              borderColor: 'whiteAlpha.800',
-            }}
-            _focus={{
-              color: 'whiteAlpha.800',
-              borderColor: 'whiteAlpha.800',
-            }}
-          />
-          <FormErrorMessage fontSize="xs">
-            {errors.name && errors.name.message}
-          </FormErrorMessage>
-        </FormControl>
-        <FormControl isInvalid={!!errors.email} maxW="xs">
-          <FormLabel
-            marginBottom={1}
-            fontSize="xs"
-            fontWeight="normal"
-            letterSpacing="wide"
-            color="whiteAlpha.600"
-          >
-            Email
-          </FormLabel>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            disabled={isSubmitting}
-            {...register('email', {
-              required: 'Required',
-            })}
-            borderColor="whiteAlpha.400"
-            color="whiteAlpha.600"
-            _hover={{
-              color: 'whiteAlpha.800',
-              borderColor: 'whiteAlpha.800',
-            }}
-            _active={{
-              color: 'whiteAlpha.800',
-              borderColor: 'whiteAlpha.800',
-            }}
-            _focus={{
-              color: 'whiteAlpha.800',
-              borderColor: 'whiteAlpha.800',
-            }}
-          />
-          <FormErrorMessage fontSize="xs">
-            {errors.email && errors.email.message}
-          </FormErrorMessage>
-        </FormControl>
+      <Stack mt={8} spacing={4}>
+        <Stack spacing={4} direction={{ base: 'column', sm: 'row' }}>
+          <FormControl isInvalid={!!errors.name}>
+            <FormLabel
+              marginBottom={1}
+              fontSize="xs"
+              fontWeight="normal"
+              letterSpacing="wide"
+              color="whiteAlpha.600"
+            >
+              Name
+            </FormLabel>
+            <Input
+              id="name"
+              name="name"
+              disabled={isSubmitting}
+              {...register('name', {
+                required: 'Required',
+                minLength: { value: 2, message: 'Too short' },
+              })}
+              borderColor="whiteAlpha.400"
+              color="whiteAlpha.600"
+              _hover={{
+                color: 'whiteAlpha.800',
+                borderColor: 'whiteAlpha.800',
+              }}
+              _active={{
+                color: 'whiteAlpha.800',
+                borderColor: 'whiteAlpha.800',
+              }}
+              _focus={{
+                color: 'whiteAlpha.800',
+                borderColor: 'whiteAlpha.800',
+              }}
+            />
+            <FormErrorMessage fontSize="xs">
+              {errors.name && errors.name.message}
+            </FormErrorMessage>
+          </FormControl>
+          <FormControl isInvalid={!!errors.email}>
+            <FormLabel
+              marginBottom={1}
+              fontSize="xs"
+              fontWeight="normal"
+              letterSpacing="wide"
+              color="whiteAlpha.600"
+            >
+              Email
+            </FormLabel>
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              disabled={isSubmitting}
+              {...register('email', {
+                required: 'Required',
+              })}
+              borderColor="whiteAlpha.400"
+              color="whiteAlpha.600"
+              _hover={{
+                color: 'whiteAlpha.800',
+                borderColor: 'whiteAlpha.800',
+              }}
+              _active={{
+                color: 'whiteAlpha.800',
+                borderColor: 'whiteAlpha.800',
+              }}
+              _focus={{
+                color: 'whiteAlpha.800',
+                borderColor: 'whiteAlpha.800',
+              }}
+            />
+            <FormErrorMessage fontSize="xs">
+              {errors.email && errors.email.message}
+            </FormErrorMessage>
+          </FormControl>
+        </Stack>
         <FormControl isInvalid={!!errors.message}>
           <FormLabel
             marginBottom={1}

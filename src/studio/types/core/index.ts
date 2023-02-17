@@ -1,5 +1,6 @@
 export * from './author.types';
 export * from './color.types';
+export * from './comment.types';
 export * from './core.types';
 export * from './post.types';
 export * from './project.types';

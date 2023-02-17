@@ -1,6 +1,5 @@
 import {
   AspectRatio,
-  Box,
   Container,
   Divider,
   Heading,
@@ -12,6 +11,7 @@ import { NextSeo } from 'next-seo';
 import { PostProps } from '../../../studio/types';
 import { urlForImage } from '../../../studio/urlForImage';
 import { BlogCommentForm } from '../BlogCommentForm';
+import { BlogComments } from '../BlogComments';
 import _BlogPageAuthorCard from './_BlogPageAuthorCard';
 import _BlogPageHeader from './_BlogPageHeader';
 import _BlogPageMain from './_BlogPageMain';
@@ -66,7 +66,7 @@ const BlogPageLayout = (props: PostProps) => {
         <_BlogPageMain {...props} />
         <_BlogPageAuthorCard author={props.author} />
         <Divider borderColor="whiteAlpha.600" />
-        <Box w="full">
+        <Stack maxW="2xl" w="full">
           <Heading as="h2" color="whiteAlpha.800">
             Leave a comment
           </Heading>
@@ -74,7 +74,8 @@ const BlogPageLayout = (props: PostProps) => {
             Fill out the form below to leave a comment.
           </Text>
           <BlogCommentForm />
-        </Box>
+        </Stack>
+        <BlogComments comments={props.comments} />
       </Container>
     </>
   );

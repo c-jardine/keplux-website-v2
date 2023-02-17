@@ -16,7 +16,7 @@ export default defineType({
     {
       title: 'Date posted',
       name: 'datePosted',
-      type: 'date',
+      type: 'datetime',
       validation: (Rule) => Rule.required(),
     },
     {
