@@ -173,20 +173,7 @@ const PricingTable = () => {
                   href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
-                  bg="black"
-                  borderWidth={2}
-                  borderColor="black"
-                  w="full"
-                  _hover={{
-                    bg: 'black',
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                  color="white"
-                  fontSize="sm"
-                  letterSpacing="wide"
-                  textTransform="none"
-                  role="group"
+                  variant="secondary"
                 >
                   Get Started
                 </Button>
@@ -200,20 +187,7 @@ const PricingTable = () => {
                   href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
-                  bg="black"
-                  borderWidth={2}
-                  borderColor="black"
-                  w="full"
-                  _hover={{
-                    bg: 'black',
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                  color="white"
-                  fontSize="sm"
-                  letterSpacing="wide"
-                  textTransform="none"
-                  role="group"
+                  variant="secondary"
                 >
                   Get Started
                 </Button>
@@ -227,20 +201,7 @@ const PricingTable = () => {
                   href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
-                  bg="black"
-                  borderWidth={2}
-                  borderColor="black"
-                  w="full"
-                  _hover={{
-                    bg: 'black',
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                  color="white"
-                  fontSize="sm"
-                  letterSpacing="wide"
-                  textTransform="none"
-                  role="group"
+                  variant="secondary"
                 >
                   Get Started
                 </Button>
@@ -254,20 +215,7 @@ const PricingTable = () => {
                   href="/contact"
                   target={'_blank'}
                   rel={'noreferrer'}
-                  bg="black"
-                  borderWidth={2}
-                  borderColor="black"
-                  w="full"
-                  _hover={{
-                    bg: 'black',
-                    color: 'black',
-                    textDecoration: 'none',
-                  }}
-                  color="white"
-                  fontSize="sm"
-                  letterSpacing="wide"
-                  textTransform="none"
-                  role="group"
+                  variant="secondary"
                 >
                   Get Started
                 </Button>
