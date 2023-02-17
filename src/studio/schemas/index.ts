@@ -6,6 +6,7 @@ import {
   projectType,
   seriesType,
   tagType,
+  commentType,
 } from './documents';
 
 import {
@@ -44,6 +45,7 @@ const documents = [
   pageType,
   tagType,
   projectType,
+  commentType,
 ];
 
 export const schemaTypes = [...objects, ...documents];

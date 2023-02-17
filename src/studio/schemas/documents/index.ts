@@ -5,3 +5,4 @@ export { default as postType } from './post';
 export { default as projectType } from './project';
 export { default as seriesType } from './series';
 export { default as tagType } from './tag';
+export { default as commentType } from './tag';
