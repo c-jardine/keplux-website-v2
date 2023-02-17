@@ -73,7 +73,7 @@ const BlogPageLayout = (props: PostProps) => {
           <Text color="whiteAlpha.600">
             Fill out the form below to leave a comment.
           </Text>
-          <BlogCommentForm />
+          <BlogCommentForm post={props} />
         </Stack>
         <BlogComments comments={props.comments} />
       </Container>

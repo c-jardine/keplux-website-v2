@@ -11,14 +11,16 @@ import {
   Textarea,
   useToast,
 } from '@chakra-ui/react';
-import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { PostProps } from '../../../studio/types';
 import { BlogCommentFormProps } from './BlogCommentFormProps';
 
-const BlogCommentForm = () => {
+const BlogCommentForm = (props: { post: PostProps }) => {
   const defaultValues: BlogCommentFormProps = {
     name: '',
     email: '',
-    message: '',
+    body: '',
   };
 
   const toast = useToast();
@@ -31,26 +33,49 @@ const BlogCommentForm = () => {
     formState: { errors, isSubmitting },
   } = useForm<BlogCommentFormProps>({ defaultValues });
 
-  // TODO: delete this line
-  // eslint-disable-next-line @typescript-eslint/require-await
-  const onSubmit = async () => {
-    reset(); // Reset the form state
-    toast({
-      position: 'bottom',
-      duration: 2000,
-      render: () => (
-        <Box bg="green.600" py={4} rounded="md">
-          <Text
-            textAlign="center"
-            textTransform="uppercase"
-            color="white"
-            fontWeight="bold"
-          >
-            Success!
-          </Text>
-        </Box>
-      ),
-    });
+  const onSubmit: SubmitHandler<BlogCommentFormProps> = async (
+    data: BlogCommentFormProps
+  ) => {
+    try {
+      await axios.post('/api/submitComment', {
+        ...data,
+        postId: props.post._id,
+      });
+      reset(); // Reset the form state
+      toast({
+        position: 'bottom',
+        duration: 2000,
+        render: () => (
+          <Box bg="green.600" py={4} rounded="md">
+            <Text
+              textAlign="center"
+              textTransform="uppercase"
+              color="white"
+              fontWeight="bold"
+            >
+              Success!
+            </Text>
+          </Box>
+        ),
+      });
+    } catch (e) {
+      toast({
+        position: 'bottom',
+        duration: 2000,
+        render: () => (
+          <Box bg="red.600" py={4} rounded="md">
+            <Text
+              textAlign="center"
+              textTransform="uppercase"
+              color="white"
+              fontWeight="bold"
+            >
+              Something went wrong
+            </Text>
+          </Box>
+        ),
+      });
+    }
   };
 
   return (
@@ -132,7 +157,7 @@ const BlogCommentForm = () => {
             </FormErrorMessage>
           </FormControl>
         </Stack>
-        <FormControl isInvalid={!!errors.message}>
+        <FormControl isInvalid={!!errors.body}>
           <FormLabel
             marginBottom={1}
             fontSize="xs"
@@ -143,10 +168,10 @@ const BlogCommentForm = () => {
             Message
           </FormLabel>
           <Textarea
-            id="message"
-            name="message"
+            id="body"
+            name="body"
             disabled={isSubmitting}
-            {...register('message', {
+            {...register('body', {
               required: 'Required',
               minLength: { value: 32, message: 'Provide more details' },
             })}
@@ -166,7 +191,7 @@ const BlogCommentForm = () => {
             }}
           />
           <FormErrorMessage fontSize="xs">
-            {errors.message && errors.message.message}
+            {errors.body && errors.body.message}
           </FormErrorMessage>
         </FormControl>
         <Button variant="primary" disabled={isSubmitting} type="submit">

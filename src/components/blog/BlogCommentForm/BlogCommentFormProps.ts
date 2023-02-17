@@ -1,5 +1,6 @@
 export interface BlogCommentFormProps {
   name: string;
   email: string;
-  message: string;
+  body: string;
+  postId?: string;
 }
