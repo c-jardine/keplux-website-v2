@@ -17,7 +17,7 @@ export const getServerSideProps = async (ctx: GetServerSidePropsContext) => {
   const posts: PostProps[] = await client.fetch(allPostsQuery);
   const newSitemaps: ISitemapField[] = posts.map((post) => ({
     loc: `${SITE_URL}/blog/post/${post.slug.current}`,
-    lastMod: post._updatedAt,
+    lastmod: post._updatedAt,
     changefreq: 'monthly',
     priority: 0.8,
   }));
