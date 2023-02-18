@@ -1,26 +1,26 @@
 import {
   author,
+  comment,
   navbar,
   page,
   post,
   project,
   series,
   tag,
-  comment,
 } from './documents';
 
 import {
   codeBlock,
-  codeTabGroup,
   codeTab,
+  codeTabGroup,
   coverPhoto,
   link,
   navbarLink,
   photo,
+  seo,
   seoMetadata,
   seoOpenGraph,
   seoOptions,
-  seo,
 } from './objects';
 
 const objects = [

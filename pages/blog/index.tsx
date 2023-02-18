@@ -52,7 +52,7 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
                 gap={16}
                 divider={<StackDivider borderColor="whiteAlpha.400" />}
               >
-                {posts.map((post: PostProps, index) => (
+                {posts.map((post: PostProps) => (
                   <BlogCard key={post._id} {...post} />
                 ))}
               </Stack>

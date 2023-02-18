@@ -1,4 +1,5 @@
 import {
+  Avatar,
   Box,
   Button,
   Collapse,
@@ -13,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
 import { MdClose } from '@react-icons/all-files/md/MdClose';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import logo from '../../../../public/keplux-logo-square-light.png';
 import { NavItems } from './Navbar.constants';
@@ -26,6 +28,8 @@ import NavbarItemMobile from './NavbarItemMobile';
  * TODO: Disable scrolling when mobile nav is open.
  */
 const Navbar = () => {
+  const { data: session } = useSession();
+
   const NavbarDesktop = () => {
     return (
       <Flex
@@ -44,16 +48,17 @@ const Navbar = () => {
             );
           })}
         </HStack>
-        <Button
-          aria-label="Log in to your customer account."
-          as={Link}
-          href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
-          target="_blank"
-          rel="noopener"
-          variant="primary"
-        >
-          Customer Login
-        </Button>
+        {session ? (
+          <Avatar src={session.user.image} onClick={() => void signOut()} />
+        ) : (
+          <Button
+            aria-label="Log in to your account."
+            variant="primary"
+            onClick={() => void signIn('auth0')}
+          >
+            Sign in
+          </Button>
+        )}
       </Flex>
     );
   };
@@ -108,14 +113,13 @@ const Navbar = () => {
                 );
               })}
               <Button
-                aria-label="Log in to your customer account."
-                as={Link}
-                href="https://billing.stripe.com/p/login/6oE3fq2dj2zSeekcMM"
-                target="_blank"
-                rel="noopener"
+                aria-label="Log in to your account."
                 variant="primary"
+                onClick={() =>
+                  session ? void signOut() : void signIn('auth0')
+                }
               >
-                Customer Login
+                {session ? 'Sign out' : 'Sign in'}
               </Button>
             </Stack>
           </Collapse>
