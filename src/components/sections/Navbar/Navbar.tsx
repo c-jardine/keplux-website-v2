@@ -14,7 +14,6 @@ import {
   MenuList,
   Show,
   Stack,
-  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
@@ -57,12 +56,26 @@ const Navbar = () => {
         </HStack>
         {session ? (
           <Menu>
-            <Avatar as={MenuButton} src={session.user.image} />
-            <MenuList>
-              <MenuItem onClick={() => void router.push('/blog/profile')}>
+            <Avatar as={MenuButton} src={session.user.image} p={1} />
+            <MenuList
+              color="whiteAlpha.600"
+              bg="blackAlpha.700"
+              borderColor="whiteAlpha.200"
+            >
+              <MenuItem
+                onClick={() => void router.push('/blog/profile')}
+                bg="transparent"
+                _hover={{ bg: 'whiteAlpha.100' }}
+              >
                 Edit profile
               </MenuItem>
-              <MenuItem onClick={() => void signOut()}>Sign out</MenuItem>
+              <MenuItem
+                onClick={() => void signOut()}
+                bg="transparent"
+                _hover={{ bg: 'whiteAlpha.100' }}
+              >
+                Sign out
+              </MenuItem>
             </MenuList>
           </Menu>
         ) : (
@@ -74,7 +87,6 @@ const Navbar = () => {
             Sign in
           </Button>
         )}
-        {session && <Text color="whiteAlpha.600">{session.user.name}</Text>}
       </Flex>
     );
   };
