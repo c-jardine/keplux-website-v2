@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { client } from '../../src/studio/client';
@@ -22,7 +23,15 @@ import { getSignedInUserQuery } from '../../src/studio/queries';
 import { UserProps } from '../../src/studio/types';
 
 const Profile = () => {
-  const { data: session } = useSession();
+  const router = useRouter();
+  const { data: session, status } = useSession();
+
+  React.useEffect(() => {
+    if (status === 'unauthenticated') {
+      void router.push('/');
+    }
+  }, [router, status]);
+
   const toast = useToast();
 
   const defaultValues = { name: '' };
