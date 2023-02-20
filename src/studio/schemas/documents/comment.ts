@@ -8,10 +8,10 @@ export default defineType({
   type: 'document',
   fields: [
     {
-      title: 'Name',
-      name: 'name',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      title: 'User',
+      name: 'user',
+      type: 'reference',
+      to: [{ type: 'user' }],
     },
     {
       title: 'Date posted',
@@ -20,8 +20,8 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      title: 'Body',
-      name: 'body',
+      title: 'Message',
+      name: 'message',
       type: 'string',
       validation: (Rule) => Rule.required(),
     },

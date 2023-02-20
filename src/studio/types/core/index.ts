@@ -7,3 +7,4 @@ export * from './project.types';
 export * from './seo.types';
 export * from './series.types';
 export * from './tag.types';
+export * from './user.types';

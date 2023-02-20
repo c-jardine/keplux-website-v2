@@ -69,6 +69,14 @@ const BlogStructure = (S: StructureBuilder): ListItemBuilder => {
                 .child(S.document().schemaType('author'))
             ),
           S.listItem()
+            .title('Users')
+            .icon(author.icon)
+            .child(
+              S.documentTypeList('user')
+                .title('Users')
+                .child(S.document().schemaType('user'))
+            ),
+          S.listItem()
             .title('Comments')
             .icon(comment.icon)
             .child(

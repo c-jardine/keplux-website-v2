@@ -6,3 +6,4 @@ export { default as post } from './post';
 export { default as project } from './project';
 export { default as series } from './series';
 export { default as tag } from './tag';
+export { default as user } from './user';

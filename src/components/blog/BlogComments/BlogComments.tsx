@@ -6,7 +6,7 @@ const BlogComments = (props: { comments: CommentProps[] }) => {
   console.log(props);
 
   if (!props.comments.length) {
-    return <Text>Be the first to comment!</Text>;
+    return <Text color="whiteAlpha.600">Be the first to comment!</Text>;
   }
 
   return (

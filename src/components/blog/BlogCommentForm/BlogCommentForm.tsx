@@ -15,12 +15,13 @@ import axios from 'axios';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { PostProps } from '../../../studio/types';
 import { BlogCommentFormProps } from './BlogCommentFormProps';
+import { useSession } from 'next-auth/react';
 
 const BlogCommentForm = (props: { post: PostProps }) => {
+  const { data: session } = useSession();
+
   const defaultValues: BlogCommentFormProps = {
-    name: '',
-    email: '',
-    body: '',
+    message: '',
   };
 
   const toast = useToast();
@@ -157,7 +158,7 @@ const BlogCommentForm = (props: { post: PostProps }) => {
             </FormErrorMessage>
           </FormControl>
         </Stack>
-        <FormControl isInvalid={!!errors.body}>
+        <FormControl isInvalid={!!errors.message}>
           <FormLabel
             marginBottom={1}
             fontSize="xs"
@@ -168,10 +169,10 @@ const BlogCommentForm = (props: { post: PostProps }) => {
             Message
           </FormLabel>
           <Textarea
-            id="body"
-            name="body"
+            id="message"
+            name="message"
             disabled={isSubmitting}
-            {...register('body', {
+            {...register('message', {
               required: 'Required',
               minLength: { value: 32, message: 'Provide more details' },
             })}
@@ -191,7 +192,7 @@ const BlogCommentForm = (props: { post: PostProps }) => {
             }}
           />
           <FormErrorMessage fontSize="xs">
-            {errors.body && errors.body.message}
+            {errors.message && errors.message.message}
           </FormErrorMessage>
         </FormControl>
         <Button variant="primary" disabled={isSubmitting} type="submit">

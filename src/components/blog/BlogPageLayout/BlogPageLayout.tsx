@@ -1,5 +1,6 @@
 import {
   AspectRatio,
+  Button,
   Container,
   Divider,
   Heading,
@@ -15,11 +16,14 @@ import { BlogComments } from '../BlogComments';
 import _BlogPageAuthorCard from './_BlogPageAuthorCard';
 import _BlogPageHeader from './_BlogPageHeader';
 import _BlogPageMain from './_BlogPageMain';
+import { signIn, useSession } from 'next-auth/react';
 
 /**
  * The main blog page wrapper.
  */
 const BlogPageLayout = (props: PostProps) => {
+  const { data: session } = useSession();
+
   const { seo } = props;
   return (
     <>
@@ -66,14 +70,26 @@ const BlogPageLayout = (props: PostProps) => {
         <_BlogPageMain {...props} />
         <_BlogPageAuthorCard author={props.author} />
         <Divider borderColor="whiteAlpha.600" />
-        <Stack maxW="2xl" w="full">
-          <Heading as="h2" color="whiteAlpha.800">
-            Leave a comment
+        <Stack maxW="2xl" w="full" alignItems="center">
+          <Heading as="h2" color="whiteAlpha.800" textAlign="center">
+            {session ? 'Leave a comment' : 'Sign in to leave a comment'}
           </Heading>
-          <Text color="whiteAlpha.600">
-            Fill out the form below to leave a comment.
-          </Text>
-          <BlogCommentForm post={props} />
+          {session ? (
+            <>
+              <Text color="whiteAlpha.600" textAlign="center">
+                Fill out the form below to leave a comment.
+              </Text>
+              <BlogCommentForm post={props} />
+            </>
+          ) : (
+            <Button
+              variant="primary"
+              maxW="max"
+              onClick={() => void signIn('auth0')}
+            >
+              Sign in
+            </Button>
+          )}
         </Stack>
         <BlogComments comments={props.comments} />
       </Container>

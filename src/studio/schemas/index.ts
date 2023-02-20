@@ -7,6 +7,7 @@ import {
   project,
   series,
   tag,
+  user,
 } from './documents';
 
 import {
@@ -37,6 +38,16 @@ const objects = [
   seoOpenGraph,
 ];
 
-const documents = [navbar, post, series, author, page, tag, project, comment];
+const documents = [
+  navbar,
+  post,
+  series,
+  author,
+  page,
+  tag,
+  project,
+  comment,
+  user,
+];
 
 export const schemaTypes = [...objects, ...documents];

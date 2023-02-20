@@ -8,14 +8,20 @@ import {
   HStack,
   IconButton,
   Link,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   Show,
   Stack,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
 import { MdClose } from '@react-icons/all-files/md/MdClose';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import logo from '../../../../public/keplux-logo-square-light.png';
 import { NavItems } from './Navbar.constants';
 import NavbarDropdownDesktop from './NavbarDropdownDesktop';
@@ -29,6 +35,7 @@ import NavbarItemMobile from './NavbarItemMobile';
  */
 const Navbar = () => {
   const { data: session } = useSession();
+  const router = useRouter();
 
   const NavbarDesktop = () => {
     return (
@@ -49,7 +56,15 @@ const Navbar = () => {
           })}
         </HStack>
         {session ? (
-          <Avatar src={session.user.image} onClick={() => void signOut()} />
+          <Menu>
+            <Avatar as={MenuButton} src={session.user.image} />
+            <MenuList>
+              <MenuItem onClick={() => void router.push('/blog/profile')}>
+                Edit profile
+              </MenuItem>
+              <MenuItem onClick={() => void signOut()}>Sign out</MenuItem>
+            </MenuList>
+          </Menu>
         ) : (
           <Button
             aria-label="Log in to your account."
@@ -59,6 +74,7 @@ const Navbar = () => {
             Sign in
           </Button>
         )}
+        {session && <Text color="whiteAlpha.600">{session.user.name}</Text>}
       </Flex>
     );
   };
