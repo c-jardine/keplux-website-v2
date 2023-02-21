@@ -18,21 +18,20 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { client } from '../../src/studio/client';
-import { getSignedInUserQuery } from '../../src/studio/queries';
+import { useSignedInUser } from '../../src/hooks';
 import { UserProps } from '../../src/studio/types';
 
 const Profile = () => {
   const router = useRouter();
   const { data: session, status } = useSession();
+  const { user } = useSignedInUser();
+  const toast = useToast();
 
   React.useEffect(() => {
     if (status === 'unauthenticated') {
       void router.push('/');
     }
   }, [router, status]);
-
-  const toast = useToast();
 
   const defaultValues = { name: '' };
 
@@ -47,15 +46,10 @@ const Profile = () => {
    * Load the user's name from Sanity and reset the form with the fetched data.
    */
   React.useEffect(() => {
-    void (async () => {
-      if (session) {
-        const user: UserProps = await client.fetch(getSignedInUserQuery, {
-          email: session?.user?.email,
-        });
-        reset({ name: user.name });
-      }
-    })();
-  }, [session, reset]);
+    if (session) {
+      reset({ name: user?.name });
+    }
+  }, [session, reset, user?.name]);
 
   /**
    * Handle the form submission.
@@ -63,8 +57,8 @@ const Profile = () => {
   const onSubmit: SubmitHandler<unknown> = async (data: UserProps) => {
     if (session) {
       await axios.post('/api/updateProfile', {
+        ...user,
         name: data.name,
-        email: session.user.email,
       });
     }
 

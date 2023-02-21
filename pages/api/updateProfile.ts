@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { createClient } from 'next-sanity';
-import { getSignedInUserQuery } from '../../src/studio/queries';
 import { UserProps } from '../../src/studio/types';
 
 const client = createClient({
@@ -15,12 +14,8 @@ const client = createClient({
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    await client.delete('0yPlmSh0SROjoBusCmzx6f');
-    const { name, email } = req.body as UserProps;
+    const { _id, name } = req.body as UserProps;
 
-    const { _id }: UserProps = await client.fetch(getSignedInUserQuery, {
-      email,
-    });
     await client.patch(_id).set({ name }).commit();
   } catch (e: unknown) {
     console.error(e);

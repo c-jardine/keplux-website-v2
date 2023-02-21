@@ -22,11 +22,8 @@ import { MdClose } from '@react-icons/all-files/md/MdClose';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React from 'react';
 import logo from '../../../../public/keplux-logo-square-light.png';
-import { client } from '../../../studio/client';
-import { getSignedInUserQuery } from '../../../studio/queries';
-import { UserProps } from '../../../studio/types';
+import { useSignedInUser } from '../../../hooks';
 import { KLink } from '../../core';
 import { NavItems } from './Navbar.constants';
 import NavbarDropdownDesktop from './NavbarDropdownDesktop';
@@ -99,21 +96,7 @@ const Navbar = () => {
 
   const NavbarMobile = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [name, setName] = React.useState<string>('');
-
-    React.useEffect(() => {
-      void (async () => {
-        if (session) {
-          const userProfile: UserProps = await client.fetch(
-            getSignedInUserQuery,
-            {
-              email: session?.user?.email,
-            }
-          );
-          setName(userProfile.name);
-        }
-      })();
-    });
+    const { user } = useSignedInUser();
 
     return (
       <>
@@ -165,7 +148,7 @@ const Navbar = () => {
                 <Text color="whiteAlpha.600" fontSize='sm'>
                   Signed in as{' '}
                   <KLink href='/blog/profile' color="whiteAlpha.800" fontWeight="semibold">
-                    {name}
+                    {user?.name}
                   </KLink>
                 </Text>
               )}
