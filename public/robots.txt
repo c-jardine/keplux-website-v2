@@ -5,10 +5,11 @@ Allow: /
 # *
 User-agent: *
 Disallow: /404
+Disallow: /studio*
 
 # Host
-Host: https://www.keplux.com
+Host: undefined
 
 # Sitemaps
-Sitemap: https://www.keplux.com/sitemap.xml
-Sitemap: https://www.keplux.com/server-sitemap.xml
+Sitemap: undefined/sitemap.xml
+Sitemap: undefined/server-sitemap.xml

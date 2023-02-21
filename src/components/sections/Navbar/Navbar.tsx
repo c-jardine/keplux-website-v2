@@ -14,14 +14,20 @@ import {
   MenuList,
   Show,
   Stack,
-  useDisclosure,
+  Text,
+  useDisclosure
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
 import { MdClose } from '@react-icons/all-files/md/MdClose';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import React from 'react';
 import logo from '../../../../public/keplux-logo-square-light.png';
+import { client } from '../../../studio/client';
+import { getSignedInUserQuery } from '../../../studio/queries';
+import { UserProps } from '../../../studio/types';
+import { KLink } from '../../core';
 import { NavItems } from './Navbar.constants';
 import NavbarDropdownDesktop from './NavbarDropdownDesktop';
 import NavbarDropdownMobile from './NavbarDropdownMobile';
@@ -93,6 +99,21 @@ const Navbar = () => {
 
   const NavbarMobile = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [name, setName] = React.useState<string>('');
+
+    React.useEffect(() => {
+      void (async () => {
+        if (session) {
+          const userProfile: UserProps = await client.fetch(
+            getSignedInUserQuery,
+            {
+              email: session?.user?.email,
+            }
+          );
+          setName(userProfile.name);
+        }
+      })();
+    });
 
     return (
       <>
@@ -140,6 +161,14 @@ const Navbar = () => {
                   />
                 );
               })}
+              {session && (
+                <Text color="whiteAlpha.600" fontSize='sm'>
+                  Signed in as{' '}
+                  <KLink href='/blog/profile' color="whiteAlpha.800" fontWeight="semibold">
+                    {name}
+                  </KLink>
+                </Text>
+              )}
               <Button
                 aria-label="Log in to your account."
                 variant="primary"
