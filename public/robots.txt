@@ -6,11 +6,10 @@ Allow: /
 User-agent: *
 Disallow: /404
 Disallow: /studio*
+Disallow: /blog/profile
 
 # Host
 Host: https://www.keplux.com
 
 # Sitemaps
 Sitemap: https://www.keplux.com/sitemap.xml
-Sitemap: https://www.keplux.com/sitemap-0.xml
-Sitemap: https://www.keplux.com/server-sitemap.xml
