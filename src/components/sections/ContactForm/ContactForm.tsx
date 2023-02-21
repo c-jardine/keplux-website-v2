@@ -9,13 +9,12 @@ import {
   Input,
   SimpleGrid,
   Spinner,
-  Stack,
-  Text,
-  Textarea,
+  Stack, Textarea,
   useToast
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { createToast } from '../../../utils';
 import { ContactFormProps } from './ContactForm.types';
 import ContactFormInquiryOptions from './ContactFormInquiryOptions';
 import ContactFormQuoteOptions from './ContactFormQuoteOptions';
@@ -49,44 +48,13 @@ const ContactForm = () => {
     try {
       await axios.post('/api/submitContactForm', data);
       reset(); // Reset the form state
-      toast({
-        position: 'bottom',
-        duration: 2000,
-        render: () => (
-          <Box bg="green.600" py={4} rounded="md">
-            <Text
-              textAlign="center"
-              textTransform="uppercase"
-              color="white"
-              fontWeight="bold"
-            >
-              Success!
-            </Text>
-          </Box>
-        ),
-      });
+      createToast(toast, { text: 'Success!', status: 'success' })
       window.gtag('event', 'contacted', {
         event_category: 'Contact',
         event_label: data.email,
       });
     } catch (e) {
-      // TODO: Show Toast on error.
-      toast({
-        position: 'bottom',
-        duration: 2000,
-        render: () => (
-          <Box bg="red.600" py={4} rounded="md">
-            <Text
-              textAlign="center"
-              textTransform="uppercase"
-              color="white"
-              fontWeight="bold"
-            >
-              Something went wrong
-            </Text>
-          </Box>
-        ),
-      });
+      createToast(toast, { text: 'Error!', status: 'error' })
     }
   };
 

@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   chakra,
   FormControl,
@@ -17,6 +16,7 @@ import { signOut } from 'next-auth/react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useSignedInUser } from '../../../hooks';
 import { PostProps } from '../../../studio/types';
+import { createToast } from '../../../utils';
 import { BlogCommentFormProps } from './BlogCommentFormProps';
 
 const BlogCommentForm = (props: { post: PostProps; user: User }) => {
@@ -46,39 +46,9 @@ const BlogCommentForm = (props: { post: PostProps; user: User }) => {
         userId: user?._id,
       });
       reset(); // Reset the form state
-      toast({
-        position: 'bottom',
-        duration: 2000,
-        render: () => (
-          <Box bg="green.600" py={4} rounded="md">
-            <Text
-              textAlign="center"
-              textTransform="uppercase"
-              color="white"
-              fontWeight="bold"
-            >
-              Success!
-            </Text>
-          </Box>
-        ),
-      });
+      createToast(toast, { text: 'Success!', status: 'success' })
     } catch (e) {
-      toast({
-        position: 'bottom',
-        duration: 2000,
-        render: () => (
-          <Box bg="red.600" py={4} rounded="md">
-            <Text
-              textAlign="center"
-              textTransform="uppercase"
-              color="white"
-              fontWeight="bold"
-            >
-              Something went wrong
-            </Text>
-          </Box>
-        ),
-      });
+      createToast(toast, { text: 'Error!', status: 'error' })
     }
   };
 

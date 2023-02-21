@@ -1,5 +1,4 @@
 import {
-  Box,
   Button, chakra, Container,
   FormControl,
   FormErrorMessage,
@@ -7,8 +6,7 @@ import {
   Heading,
   Input,
   Spinner,
-  Stack,
-  Text, useToast
+  Stack, useToast
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
@@ -17,6 +15,7 @@ import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useSignedInUser } from '../../src/hooks';
 import { UserProps } from '../../src/studio/types';
+import { createToast } from '../../src/utils';
 
 const Profile = () => {
   const router = useRouter();
@@ -59,22 +58,7 @@ const Profile = () => {
       });
     }
 
-    toast({
-      position: 'bottom',
-      duration: 2000,
-      render: () => (
-        <Box bg="green.600" py={4} rounded="md">
-          <Text
-            textAlign="center"
-            textTransform="uppercase"
-            color="white"
-            fontWeight="bold"
-          >
-            Saved!
-          </Text>
-        </Box>
-      ),
-    });
+    createToast(toast, { text: 'Saved!', status: 'success' })
   };
 
   return (
