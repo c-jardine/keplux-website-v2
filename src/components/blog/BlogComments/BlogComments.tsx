@@ -3,8 +3,6 @@ import { format } from 'date-fns';
 import { CommentProps } from '../../../studio/types';
 
 const BlogComments = (props: { comments: CommentProps[] }) => {
-  console.log(props);
-
   if (!props.comments.length) {
     return <Text color="whiteAlpha.600">Be the first to comment!</Text>;
   }
@@ -19,9 +17,9 @@ const BlogComments = (props: { comments: CommentProps[] }) => {
       {props.comments.map((comment) => (
         <Stack key={comment._key}>
           <Text fontWeight="bold" color="whiteAlpha.600">
-            {comment.name}
+            {comment.user.name}
           </Text>
-          <Text color="whiteAlpha.900">{comment.body}</Text>
+          <Text color="whiteAlpha.900">{comment.message}</Text>
           <Text color="whiteAlpha.600" fontSize="sm">
             {format(new Date(comment.datePosted), 'MMM. do, yyyy - HH:mm a')}
           </Text>

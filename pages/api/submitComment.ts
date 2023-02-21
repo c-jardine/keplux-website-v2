@@ -12,7 +12,7 @@ const client = createClient({
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const { name, message, postId } = req.body as BlogCommentFormProps;
+    const { message, postId, userId } = req.body as BlogCommentFormProps;
 
     await client.create({
       _type: 'comment',
@@ -20,7 +20,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         _type: 'reference',
         _ref: postId,
       },
-      name,
+      user: {
+        _type: 'reference',
+        _ref: userId,
+      },
       datePosted: format(new Date(), 'yyyy-MM-dd HH:mm'),
       message,
     });

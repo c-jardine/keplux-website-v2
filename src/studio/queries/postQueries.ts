@@ -21,6 +21,9 @@ export const postBySlugQuery = groq`
     "tags": tags[]->{...},
     "comments": *[
       _type == "comment" && post._ref == ^._id
-    ] | order(datePosted desc)
+    ] | order(datePosted desc) {
+      ...,
+      "user": user->{...}
+    }
   }
 `;

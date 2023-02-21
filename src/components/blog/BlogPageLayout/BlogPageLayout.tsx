@@ -8,6 +8,8 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import { User } from 'next-auth';
+import { signIn, useSession } from 'next-auth/react';
 import { NextSeo } from 'next-seo';
 import { PostProps } from '../../../studio/types';
 import { urlForImage } from '../../../studio/urlForImage';
@@ -16,7 +18,6 @@ import { BlogComments } from '../BlogComments';
 import _BlogPageAuthorCard from './_BlogPageAuthorCard';
 import _BlogPageHeader from './_BlogPageHeader';
 import _BlogPageMain from './_BlogPageMain';
-import { signIn, useSession } from 'next-auth/react';
 
 /**
  * The main blog page wrapper.
@@ -79,7 +80,7 @@ const BlogPageLayout = (props: PostProps) => {
               <Text color="whiteAlpha.600" textAlign="center">
                 Fill out the form below to leave a comment.
               </Text>
-              <BlogCommentForm post={props} />
+              <BlogCommentForm post={props} user={session.user as User} />
             </>
           ) : (
             <Button

@@ -1,5 +1,5 @@
-import { defineType } from 'sanity';
 import { MdChat } from '@react-icons/all-files/md/MdChat';
+import { defineType } from 'sanity';
 
 export default defineType({
   title: 'Comment',
@@ -34,22 +34,22 @@ export default defineType({
   ],
   preview: {
     select: {
-      name: 'name',
-      comment: 'comment',
+      name: 'user.name',
+      message: 'message',
       post: 'post.title',
     },
     prepare({
       name,
-      comment,
+      message,
       post,
     }: {
       name: string;
-      comment: string;
+      message: string;
       post: string;
     }) {
       return {
         title: `${name} on ${post}`,
-        subtitle: comment,
+        subtitle: message,
       };
     },
   },
