@@ -20,7 +20,7 @@ import { createToast } from '../../src/utils';
 const Profile = () => {
   const router = useRouter();
   const { data: session, status } = useSession();
-  const { user } = useSignedInUser();
+  const [user] = useSignedInUser();
   const toast = useToast();
 
   React.useEffect(() => {

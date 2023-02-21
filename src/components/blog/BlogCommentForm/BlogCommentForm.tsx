@@ -20,7 +20,7 @@ import { createToast } from '../../../utils';
 import { BlogCommentFormProps } from './BlogCommentFormProps';
 
 const BlogCommentForm = (props: { post: PostProps; user: User }) => {
-  const { user } = useSignedInUser();
+  const [user] = useSignedInUser();
 
   const defaultValues: BlogCommentFormProps = {
     message: '',

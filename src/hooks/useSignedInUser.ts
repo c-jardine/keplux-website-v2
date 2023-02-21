@@ -22,7 +22,7 @@ const useSignedInUser = () => {
     })();
   }, [session]);
 
-  return { user };
+  return [user];
 };
 
 export default useSignedInUser;
