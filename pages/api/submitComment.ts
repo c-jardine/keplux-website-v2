@@ -28,7 +28,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       message,
     });
   } catch (e: unknown) {
-    console.error(e);
     return res.status(500).json({ message: "Couldn't submit comment", e });
   }
   return res.status(200).json({ message: 'Comment submitted' });

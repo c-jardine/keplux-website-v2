@@ -7,11 +7,11 @@ const Textarea: ComponentStyleConfig = defineStyleConfig({
       borderColor: 'whiteAlpha.400',
       color: 'whiteAlpha.600',
       _hover: {
-        borderColor: 'brand.600',
+        borderColor: 'whiteAlpha.800',
         color: 'whiteAlpha.800',
       },
       _focus: {
-        borderColor: 'brand.600',
+        borderColor: 'whiteAlpha.800',
         outlineWidth: 0,
         shadow: 'none',
         color: 'whiteAlpha.800',

@@ -96,7 +96,7 @@ const Navbar = () => {
 
   const NavbarMobile = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const { user } = useSignedInUser();
+    const [user] = useSignedInUser();
 
     return (
       <>
