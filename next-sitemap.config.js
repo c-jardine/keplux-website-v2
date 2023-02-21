@@ -17,7 +17,7 @@ const config = {
       },
     ],
     additionalSitemaps: [
-      // `${SITE_URL}/sitemap.xml`,
+      `${SITE_URL}/sitemap-0.xml`,
       `${SITE_URL}/server-sitemap.xml`,
     ],
   },
