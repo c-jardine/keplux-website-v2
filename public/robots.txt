@@ -5,6 +5,7 @@ Allow: /
 # *
 User-agent: *
 Disallow: /404
+Disallow: /studio*
 
 # Host
 Host: https://www.keplux.com

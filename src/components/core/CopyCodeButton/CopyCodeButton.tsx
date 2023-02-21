@@ -1,6 +1,7 @@
-import { Box, IconButton, Text, useToast } from '@chakra-ui/react';
+import { IconButton, useToast } from '@chakra-ui/react';
 import { FaCopy } from '@react-icons/all-files/fa/FaCopy';
 import copy from 'copy-to-clipboard';
+import { createToast } from '../../../utils';
 
 /**
  * An icon button that copies the parameter's contents to the user's clipboard.
@@ -19,22 +20,7 @@ const CopyCodeButton = (props: { codeToCopy: string }) => {
       colorScheme="brand"
       onClick={() => {
         copy(props.codeToCopy);
-        toast({
-          position: 'bottom',
-          duration: 2000,
-          render: () => (
-            <Box bg="green.400" py={4} rounded="md">
-              <Text
-                textAlign="center"
-                textTransform="uppercase"
-                color="white"
-                fontWeight="bold"
-              >
-                Code copied
-              </Text>
-            </Box>
-          ),
-        });
+        createToast(toast, { text: 'Code copied', status: 'info' })
       }}
     />
   );

@@ -14,7 +14,8 @@ import {
   MenuList,
   Show,
   Stack,
-  useDisclosure,
+  Text,
+  useDisclosure
 } from '@chakra-ui/react';
 import { FaBars } from '@react-icons/all-files/fa/FaBars';
 import { MdClose } from '@react-icons/all-files/md/MdClose';
@@ -22,6 +23,8 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import logo from '../../../../public/keplux-logo-square-light.png';
+import { useSignedInUser } from '../../../hooks';
+import { KLink } from '../../core';
 import { NavItems } from './Navbar.constants';
 import NavbarDropdownDesktop from './NavbarDropdownDesktop';
 import NavbarDropdownMobile from './NavbarDropdownMobile';
@@ -93,6 +96,7 @@ const Navbar = () => {
 
   const NavbarMobile = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { user } = useSignedInUser();
 
     return (
       <>
@@ -140,6 +144,14 @@ const Navbar = () => {
                   />
                 );
               })}
+              {session && (
+                <Text color="whiteAlpha.600" fontSize='sm'>
+                  Signed in as{' '}
+                  <KLink href='/blog/profile' color="whiteAlpha.800" fontWeight="semibold">
+                    {user?.name}
+                  </KLink>
+                </Text>
+              )}
               <Button
                 aria-label="Log in to your account."
                 variant="primary"

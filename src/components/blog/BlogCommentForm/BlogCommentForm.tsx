@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   chakra,
   FormControl,
@@ -14,24 +13,15 @@ import {
 import axios from 'axios';
 import { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
-import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { client } from '../../../studio/client';
-import { getSignedInUserQuery } from '../../../studio/queries';
-import { PostProps, UserProps } from '../../../studio/types';
+import { useSignedInUser } from '../../../hooks';
+import { PostProps } from '../../../studio/types';
+import { createToast } from '../../../utils';
 import { BlogCommentFormProps } from './BlogCommentFormProps';
 
 const BlogCommentForm = (props: { post: PostProps; user: User }) => {
-  const [profile, setProfile] = React.useState<UserProps>(null);
+  const { user } = useSignedInUser();
 
-  React.useEffect(() => {
-    void (async () => {
-      const profileData: UserProps = await client.fetch(getSignedInUserQuery, {
-        email: props.user.email,
-      });
-      setProfile(profileData);
-    })();
-  });
   const defaultValues: BlogCommentFormProps = {
     message: '',
   };
@@ -53,42 +43,12 @@ const BlogCommentForm = (props: { post: PostProps; user: User }) => {
       await axios.post('/api/submitComment', {
         ...data,
         postId: props.post._id,
-        userId: profile._id,
+        userId: user?._id,
       });
       reset(); // Reset the form state
-      toast({
-        position: 'bottom',
-        duration: 2000,
-        render: () => (
-          <Box bg="green.600" py={4} rounded="md">
-            <Text
-              textAlign="center"
-              textTransform="uppercase"
-              color="white"
-              fontWeight="bold"
-            >
-              Success!
-            </Text>
-          </Box>
-        ),
-      });
+      createToast(toast, { text: 'Success!', status: 'success' })
     } catch (e) {
-      toast({
-        position: 'bottom',
-        duration: 2000,
-        render: () => (
-          <Box bg="red.600" py={4} rounded="md">
-            <Text
-              textAlign="center"
-              textTransform="uppercase"
-              color="white"
-              fontWeight="bold"
-            >
-              Something went wrong
-            </Text>
-          </Box>
-        ),
-      });
+      createToast(toast, { text: 'Error!', status: 'error' })
     }
   };
 
@@ -98,12 +58,12 @@ const BlogCommentForm = (props: { post: PostProps; user: User }) => {
       w="full"
     >
       <Stack mt={8} spacing={4}>
-        {profile && (
+        {user && (
           <Stack spacing={0}>
             <Text color="whiteAlpha.600">
               Posting as{' '}
               <chakra.span fontWeight="semibold" color="whiteAlpha.800">
-                {profile.name}
+                {user?.name}
               </chakra.span>
             </Text>
             <Text color="whiteAlpha.600" fontSize="sm">
