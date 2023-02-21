@@ -20,6 +20,7 @@ const authOptions: NextAuthOptions = {
       issuer: process.env.AUTH0_ISSUER,
     }),
   ],
+  secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     /**
      * Create user in Sanity on sign in if the user doesn't already exist.
