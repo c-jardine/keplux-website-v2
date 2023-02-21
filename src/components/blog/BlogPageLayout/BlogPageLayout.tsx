@@ -1,7 +1,20 @@
-import { AspectRatio, Container, Image, Stack } from '@chakra-ui/react';
+import {
+  AspectRatio,
+  Button,
+  Container,
+  Divider,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from '@chakra-ui/react';
+import { User } from 'next-auth';
+import { signIn, useSession } from 'next-auth/react';
 import { NextSeo } from 'next-seo';
 import { PostProps } from '../../../studio/types';
 import { urlForImage } from '../../../studio/urlForImage';
+import { BlogCommentForm } from '../BlogCommentForm';
+import { BlogComments } from '../BlogComments';
 import _BlogPageAuthorCard from './_BlogPageAuthorCard';
 import _BlogPageHeader from './_BlogPageHeader';
 import _BlogPageMain from './_BlogPageMain';
@@ -10,6 +23,8 @@ import _BlogPageMain from './_BlogPageMain';
  * The main blog page wrapper.
  */
 const BlogPageLayout = (props: PostProps) => {
+  const { data: session } = useSession();
+
   const { seo } = props;
   return (
     <>
@@ -55,6 +70,29 @@ const BlogPageLayout = (props: PostProps) => {
         </AspectRatio>
         <_BlogPageMain {...props} />
         <_BlogPageAuthorCard author={props.author} />
+        <Divider borderColor="whiteAlpha.600" />
+        <Stack maxW="2xl" w="full" alignItems="center">
+          <Heading as="h2" color="whiteAlpha.800" textAlign="center">
+            {session ? 'Leave a comment' : 'Sign in to leave a comment'}
+          </Heading>
+          {session ? (
+            <>
+              <Text color="whiteAlpha.600" textAlign="center">
+                Fill out the form below to leave a comment.
+              </Text>
+              <BlogCommentForm post={props} user={session.user as User} />
+            </>
+          ) : (
+            <Button
+              variant="primary"
+              maxW="max"
+              onClick={() => void signIn('auth0')}
+            >
+              Sign in
+            </Button>
+          )}
+        </Stack>
+        <BlogComments comments={props.comments} />
       </Container>
     </>
   );

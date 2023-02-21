@@ -12,7 +12,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ['cdn.sanity.io', 's.gravatar.com'],
   },
 };
 

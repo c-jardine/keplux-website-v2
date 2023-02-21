@@ -18,6 +18,12 @@ export const postBySlugQuery = groq`
     ...,
     "author": author->{...},
     "postSeries": postSeries->{...},
-    "tags": tags[]->{...}
+    "tags": tags[]->{...},
+    "comments": *[
+      _type == "comment" && post._ref == ^._id
+    ] | order(datePosted desc) {
+      ...,
+      "user": user->{...}
+    }
   }
 `;

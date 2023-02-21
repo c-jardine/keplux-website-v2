@@ -1,4 +1,4 @@
-export { default as seoType } from './seo';
-export { default as seoMetadataType } from './seoMetadata';
-export { default as seoOpenGraphType } from './seoOpenGraph';
-export { default as seoOptionsType } from './seoOptions';
+export { default as seo } from './seo';
+export { default as seoMetadata } from './seoMetadata';
+export { default as seoOpenGraph } from './seoOpenGraph';
+export { default as seoOptions } from './seoOptions';

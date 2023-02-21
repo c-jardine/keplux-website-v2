@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const navbarType = defineType({
+export default defineType({
   name: 'navbar',
   title: 'Navbar',
   type: 'document',
@@ -18,5 +18,3 @@ const navbarType = defineType({
     },
   ],
 });
-
-export default navbarType;

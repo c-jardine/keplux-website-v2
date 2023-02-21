@@ -1,6 +1,7 @@
 import type { PortableTextBlock } from '@portabletext/types';
 import { TypedObject } from 'sanity';
 import { AuthorProps } from './author.types';
+import { CommentProps } from './comment.types';
 import {
   CoverPhotoProps,
   SanityResponseBaseProps,
@@ -17,6 +18,7 @@ export interface PostProps extends SanityResponseBaseProps {
   _id: string;
   _type: 'post';
   author: AuthorProps;
+  comments: CommentProps[];
   content: PortableTextBlock[] | TypedObject | TypedObject[];
   coverPhoto: CoverPhotoProps;
   excerpt: string;

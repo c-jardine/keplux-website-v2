@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const seoType = defineType({
+export default defineType({
   name: 'seo',
   title: 'SEO',
   type: 'object',
@@ -17,5 +17,3 @@ const seoType = defineType({
     },
   ],
 });
-
-export default seoType;

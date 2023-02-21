@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.keplux.com</loc><lastmod>2023-01-27T03:54:12.272Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/blog</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/blog/series</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/contact</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/our-work</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/pricing</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/refund-policy</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/server-sitemap.xml</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/blog/post/creating-a-starter-project-with-next-js-typescript-sanity-studio-v3-and-chakraui</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/blog/post/content-modeling-with-sanity-schemas</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/blog/post/configuring-eslint-and-prettier-in-next-js-with-typescript</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.keplux.com/blog/series/building-a-blog-with-next-js-typescript-and-sanity-studio-v3</loc><lastmod>2023-01-27T03:54:12.273Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com</loc><lastmod>2023-02-21T01:50:30.927Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog/profile</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog/series</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/contact</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/our-work</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/pricing</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/refund-policy</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/server-sitemap.xml</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog/series/building-a-blog-with-next-js-typescript-and-sanity-studio-v3</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog/post/creating-a-starter-project-with-next-js-typescript-sanity-studio-v3-and-chakraui</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog/post/content-modeling-with-sanity-schemas</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.keplux.com/blog/post/configuring-eslint-and-prettier-in-next-js-with-typescript</loc><lastmod>2023-02-21T01:50:30.928Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

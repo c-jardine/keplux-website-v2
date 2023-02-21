@@ -3,22 +3,21 @@
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 
 const config = {
-  exclude: ['/404'],
   siteUrl: SITE_URL,
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
-        disallow: ['/404', '/studio', '/studio/*'],
+        allow: '/',
       },
       {
         userAgent: '*',
-        allow: '/',
+        disallow: ['/404', '/studio*'],
       },
     ],
     additionalSitemaps: [
-      `${SITE_URL}/sitemap.xml`,
+      // `${SITE_URL}/sitemap.xml`,
       `${SITE_URL}/server-sitemap.xml`,
     ],
   },

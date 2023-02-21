@@ -1,7 +1,7 @@
 import { FaFile } from '@react-icons/all-files/fa/FaFile';
 import { defineType } from 'sanity';
 
-const postType = defineType({
+export default defineType({
   name: 'post',
   title: 'Post',
   icon: FaFile,
@@ -110,5 +110,3 @@ const postType = defineType({
     },
   },
 });
-
-export default postType;

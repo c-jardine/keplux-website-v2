@@ -1,6 +1,6 @@
 import { defineType } from 'sanity';
 
-const pageType = defineType({
+export default defineType({
   name: 'page',
   title: 'Page',
   type: 'document',
@@ -21,5 +21,3 @@ const pageType = defineType({
     },
   ],
 });
-
-export default pageType;

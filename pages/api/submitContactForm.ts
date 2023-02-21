@@ -5,15 +5,8 @@ import { ContactFormProps } from '../../src/components/sections/ContactForm/Cont
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const {
-      name,
-      email,
-      website,
-      inquiryType,
-      quoteOptions,
-      message,
-    }: ContactFormProps = req.body;
+    const { name, email, website, inquiryType, quoteOptions, message } =
+      req.body as ContactFormProps;
 
     const client = new SESv2Client({
       region: 'us-east-2',
