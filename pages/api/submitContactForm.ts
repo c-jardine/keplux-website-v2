@@ -11,8 +11,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     const client = new SESv2Client({
       region: 'us-east-2',
       credentials: {
-        accessKeyId: process.env.AWS_SES_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SES_ACCESS_KEY_SECRET,
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET,
       },
     });
     const command = new SendEmailCommand({
