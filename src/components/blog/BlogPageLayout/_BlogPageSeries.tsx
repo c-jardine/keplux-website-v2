@@ -1,4 +1,4 @@
-import { Flex, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { PostProps } from '../../../studio/types';
 import { KLink } from '../../core';
 
@@ -12,7 +12,8 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
       gap={2}
       alignItems={{ md: 'center' }}
     >
-      <Text
+      <KLink
+        href='/blog/series'
         w="fit-content"
         bg="brand.900"
         color="brand.400"
@@ -27,7 +28,7 @@ const _BlogPageSeries = (props: Pick<PostProps, 'postSeries'>) => {
         py={1}
       >
         Series
-      </Text>
+      </KLink>
       <KLink
         href={`/blog/series/${props.postSeries?.slug.current}`}
         color="whiteAlpha.600"
