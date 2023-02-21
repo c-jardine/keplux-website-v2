@@ -89,7 +89,8 @@ const Profile = () => {
                     disabled={isSubmitting}
                     {...register('name', {
                       required: 'Required',
-                      minLength: { value: 2, message: 'Too short' },
+                      minLength: { value: 2, message: 'Must be at least 2 characters' },
+                      maxLength: { value: 32, message: 'Must be less than 32 characters' }
                     })}
 
                   />
