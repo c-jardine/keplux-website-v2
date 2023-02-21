@@ -1,10 +1,10 @@
 # *
 User-agent: *
-Disallow: /404
+Allow: /
 
 # *
 User-agent: *
-Allow: /
+Disallow: /404
 
 # Host
 Host: https://www.keplux.com

@@ -15,13 +15,13 @@ import axios from 'axios';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { PostProps } from '../../../studio/types';
 import { BlogCommentFormProps } from './BlogCommentFormProps';
-import { useSession } from 'next-auth/react';
 
 const BlogCommentForm = (props: { post: PostProps }) => {
-  const { data: session } = useSession();
 
   const defaultValues: BlogCommentFormProps = {
     message: '',
+    name: '',
+    email: ''
   };
 
   const toast = useToast();

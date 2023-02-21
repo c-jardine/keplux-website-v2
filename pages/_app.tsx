@@ -1,4 +1,5 @@
 import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 import { DefaultSeo } from 'next-seo';
 import type { AppProps } from 'next/app';
@@ -8,7 +9,7 @@ import { Footer, Navbar } from '../src/components/sections';
 import '../styles/globals.css';
 import theme from '../styles/theme';
 
-const App = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps<{ session: Session }>) => {
   const router = useRouter();
 
   return (
