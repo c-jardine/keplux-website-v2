@@ -12,7 +12,7 @@ import {
   Stack,
   Text,
   Textarea,
-  useToast,
+  useToast
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -122,27 +122,12 @@ const ContactForm = () => {
                   Name
                 </FormLabel>
                 <Input
-                  id="name"
-                  name="name"
+                  variant='outline'
                   disabled={isSubmitting}
                   {...register('name', {
                     required: 'Required',
                     minLength: { value: 2, message: 'Too short' },
                   })}
-                  borderColor="whiteAlpha.400"
-                  color="whiteAlpha.600"
-                  _hover={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
-                  _active={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
-                  _focus={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
                 />
                 <FormErrorMessage fontSize="xs">
                   {errors.name && errors.name.message}
@@ -159,27 +144,12 @@ const ContactForm = () => {
                   Email
                 </FormLabel>
                 <Input
-                  id="email"
-                  name="email"
+                  variant='outline'
                   type="email"
                   disabled={isSubmitting}
                   {...register('email', {
                     required: 'Required',
                   })}
-                  borderColor="whiteAlpha.400"
-                  color="whiteAlpha.600"
-                  _hover={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
-                  _active={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
-                  _focus={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
                 />
                 <FormErrorMessage fontSize="xs">
                   {errors.email && errors.email.message}
@@ -196,24 +166,9 @@ const ContactForm = () => {
                   Website
                 </FormLabel>
                 <Input
-                  id="website"
-                  name="website"
+                  variant='outline'
                   disabled={isSubmitting}
                   {...register('website')}
-                  borderColor="whiteAlpha.400"
-                  color="whiteAlpha.600"
-                  _hover={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
-                  _active={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
-                  _focus={{
-                    color: 'whiteAlpha.800',
-                    borderColor: 'whiteAlpha.800',
-                  }}
                 />
                 <FormErrorMessage fontSize="xs">
                   {errors.website && errors.website.message}
@@ -270,27 +225,12 @@ const ContactForm = () => {
                 Message
               </FormLabel>
               <Textarea
-                id="message"
-                name="message"
+                variant='outline'
                 disabled={isSubmitting}
                 {...register('message', {
                   required: 'Required',
                   minLength: { value: 32, message: 'Provide more details' },
                 })}
-                borderColor="whiteAlpha.400"
-                color="whiteAlpha.600"
-                _hover={{
-                  color: 'whiteAlpha.800',
-                  borderColor: 'whiteAlpha.800',
-                }}
-                _active={{
-                  color: 'whiteAlpha.800',
-                  borderColor: 'whiteAlpha.800',
-                }}
-                _focus={{
-                  color: 'whiteAlpha.800',
-                  borderColor: 'whiteAlpha.800',
-                }}
               />
               <FormErrorMessage fontSize="xs">
                 {errors.message && errors.message.message}

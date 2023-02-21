@@ -1,7 +1,6 @@
 import {
   Box,
-  Button,
-  Container,
+  Button, chakra, Container,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -9,9 +8,7 @@ import {
   Input,
   Spinner,
   Stack,
-  Text,
-  chakra,
-  useToast,
+  Text, useToast
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
@@ -104,27 +101,13 @@ const Profile = () => {
                     Name
                   </FormLabel>
                   <Input
-                    id="name"
-                    name="name"
+                    variant='outline'
                     disabled={isSubmitting}
                     {...register('name', {
                       required: 'Required',
                       minLength: { value: 2, message: 'Too short' },
                     })}
-                    borderColor="whiteAlpha.400"
-                    color="whiteAlpha.600"
-                    _hover={{
-                      color: 'whiteAlpha.800',
-                      borderColor: 'whiteAlpha.800',
-                    }}
-                    _active={{
-                      color: 'whiteAlpha.800',
-                      borderColor: 'whiteAlpha.800',
-                    }}
-                    _focus={{
-                      color: 'whiteAlpha.800',
-                      borderColor: 'whiteAlpha.800',
-                    }}
+
                   />
                   <FormErrorMessage fontSize="xs">
                     {errors.name && errors.name.message}
