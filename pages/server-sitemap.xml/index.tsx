@@ -9,7 +9,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 const home: ISitemapField = {
   loc: SITE_URL,
   lastmod: new Date().toISOString(),
-  changefreq: 'daily',
+  changefreq: 'monthly',
   priority: 1,
 };
 
