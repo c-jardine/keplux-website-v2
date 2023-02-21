@@ -13,7 +13,7 @@ const config = {
       },
       {
         userAgent: '*',
-        disallow: ['/404'],
+        disallow: ['/404', '/studio*'],
       },
     ],
     additionalSitemaps: [
