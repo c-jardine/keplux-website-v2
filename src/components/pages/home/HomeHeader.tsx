@@ -2,7 +2,6 @@ import {
   Box,
   Container,
   Flex,
-  Heading,
   Icon,
   SimpleGrid,
   Stack,
@@ -17,7 +16,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import headerImg from '../../../../public/backgrounds/web-development.jpg';
-import { BasicCard, MotionButton } from '../../core';
+import { BasicCard, BasicHeader, MotionButton } from '../../core';
 
 const HomeHeader = () => {
   const router = useRouter();
@@ -54,30 +53,10 @@ const HomeHeader = () => {
           />
           <Container position="relative" maxW="7xl" w="full">
             <Stack alignItems="center" spacing={12} pt={32} pb={64}>
-              <Stack alignItems="center">
-                <Heading
-                  as="h1"
-                  fontSize={['5xl', , '6xl', '7xl']}
-                  fontWeight="black"
-                  textAlign="center"
-                  color="whiteAlpha.800"
-                >
-                  Toledo Web Design and Development
-                </Heading>
-                <Heading
-                  as="h2"
-                  maxW="2xl"
-                  w="full"
-                  fontSize="xl"
-                  textAlign="center"
-                  fontWeight="medium"
-                  color="whiteAlpha.800"
-                >
-                  At Keplux Development, we build websites with modern
-                  technologies and strategies that give your website lightning
-                  fast performance and SEO that helps boost conversions.
-                </Heading>
-              </Stack>
+              <BasicHeader
+                title="Toledo Web Design and Development"
+                subtitle="At Keplux Development, we build websites with modern technologies and strategies that give your website lightning fast performance and SEO that helps boost conversions."
+              />
               <Stack
                 as={motion.div}
                 variants={container}

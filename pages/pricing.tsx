@@ -1,9 +1,9 @@
-import { Container, Heading, SimpleGrid, Stack } from '@chakra-ui/react';
+import { chakra, Container, SimpleGrid, Stack } from '@chakra-ui/react';
 import { FaBoxOpen } from '@react-icons/all-files/fa/FaBoxOpen';
 import { FaBriefcase } from '@react-icons/all-files/fa/FaBriefcase';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import { KLink } from '../src/components/core';
+import { BasicHeader, KLink } from '../src/components/core';
 import { LeadInHeading, PricingTable } from '../src/components/sections';
 import { PricingAddon } from '../src/components/sections/PricingAddon';
 
@@ -16,37 +16,19 @@ const PricingPage: NextPage = () => {
         canonical="https://www.keplux.com/pricing"
       />
       <Stack alignItems="center" spacing={16}>
-        <Container maxW="7xl" w="full">
-          <Stack alignItems="center" spacing={12}>
-            <Stack alignItems="center">
-              <Heading
-                as="h1"
-                fontSize={['5xl', , '6xl', '7xl']}
-                fontWeight="black"
-                textAlign="center"
-                color="whiteAlpha.800"
-              >
-                Find a plan or package for your business
-              </Heading>
-              <Heading
-                as="h2"
-                maxW="2xl"
-                w="full"
-                fontSize="xl"
-                textAlign="center"
-                fontWeight="medium"
-                color="whiteAlpha.600"
-              >
-                Choose a pre-designed package or build your own from scratch.
-                Need something different?{' '}
-                <KLink href="/contact" color="brand.600">
-                  Contact us
-                </KLink>{' '}
-                and we&apos;ll help you out.
-              </Heading>
-            </Stack>
-          </Stack>
-        </Container>
+        <BasicHeader
+          title="Find a plan or package for your business"
+          subtitle={
+            <chakra.span>
+              Choose a pre-designed package or build your own from scratch. Need
+              something different?{' '}
+              <KLink href="/contact" color="brand.600">
+                Contact us
+              </KLink>{' '}
+              and we&apos;ll help you out.
+            </chakra.span>
+          }
+        />
 
         <Container maxW="7xl" w="full">
           <Stack alignItems="center" w="full" spacing={8}>

@@ -3,8 +3,8 @@ import {
   Box,
   Circle,
   Container,
-  HStack,
   Heading,
+  HStack,
   Icon,
   Stack,
   Text,
@@ -12,9 +12,9 @@ import {
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import { NextPage } from 'next';
-import { KLink } from '../src/components/core';
-import { ContactForm, SplitSection } from '../src/components/sections';
 import { NextSeo } from 'next-seo';
+import { BasicHeader, KLink } from '../src/components/core';
+import { ContactForm, SplitSection } from '../src/components/sections';
 
 const ContactPage: NextPage = () => {
   return (
@@ -25,33 +25,10 @@ const ContactPage: NextPage = () => {
         canonical="https://www.keplux.com/contact"
       />
       <Stack alignItems="center" spacing={16}>
-        <Container maxW="7xl" w="full">
-          <Stack alignItems="center" spacing={12}>
-            <Stack alignItems="center">
-              <Heading
-                as="h1"
-                fontSize={['5xl', , '6xl', '7xl']}
-                fontWeight="black"
-                textAlign="center"
-                color="whiteAlpha.800"
-              >
-                Send a message to get started or learn more
-              </Heading>
-              <Heading
-                as="h2"
-                maxW="2xl"
-                w="full"
-                fontSize="xl"
-                textAlign="center"
-                fontWeight="medium"
-                color="whiteAlpha.600"
-              >
-                Need a quote or looking for more information? Get in touch with
-                one of the methods below and we&apos;ll get back to you soon.
-              </Heading>
-            </Stack>
-          </Stack>
-        </Container>
+        <BasicHeader
+          title="Send a message to get started or learn more"
+          subtitle="Need a quote or looking for more information? Get in touch with one of the methods below and we'll get back to you soon."
+        />
 
         <SplitSection
           containerStyle={{ maxW: '7xl', w: 'full', mx: 'auto', gap: 16 }}

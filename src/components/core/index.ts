@@ -1,4 +1,5 @@
 export * from './BasicCard';
+export * from './BasicHeader';
 export * from './CodeBlock';
 export * from './CodeTabs';
 export * from './CopyCodeButton';

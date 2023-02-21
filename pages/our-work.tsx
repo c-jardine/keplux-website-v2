@@ -3,6 +3,7 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  chakra,
   Container,
   Heading,
   Icon,
@@ -14,7 +15,7 @@ import {
 import { FaExternalLinkAlt } from '@react-icons/all-files/fa/FaExternalLinkAlt';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import { KLink } from '../src/components/core';
+import { BasicHeader, KLink } from '../src/components/core';
 import { client } from '../src/studio/client';
 import { allProjectsQuery } from '../src/studio/queries';
 import { ProjectProps } from '../src/studio/types';
@@ -29,37 +30,19 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
         canonical="https://www.keplux.com/our-work"
       />
       <Stack alignItems="center" spacing={16}>
-        <Container maxW="7xl" w="full">
-          <Stack alignItems="center" spacing={12}>
-            <Stack alignItems="center">
-              <Heading
-                as="h1"
-                fontSize={['5xl', , '6xl', '7xl']}
-                fontWeight="black"
-                textAlign="center"
-                color="whiteAlpha.800"
-              >
-                Check out some of our work
-              </Heading>
-              <Heading
-                as="h2"
-                maxW="2xl"
-                w="full"
-                fontSize="xl"
-                textAlign="center"
-                fontWeight="medium"
-                color="whiteAlpha.600"
-              >
-                A collection of some of our past work, much of which can be used
-                as a template in our{' '}
-                <KLink href="/pricing" color="brand.600">
-                  Starter Plan
-                </KLink>
-                .
-              </Heading>
-            </Stack>
-          </Stack>
-        </Container>
+        <BasicHeader
+          title="Check out some of our work"
+          subtitle={
+            <chakra.span>
+              A collection of some of our past work, much of which can be used
+              as a template in our{' '}
+              <KLink href="/pricing" color="brand.600">
+                Starter Plan
+              </KLink>
+              .
+            </chakra.span>
+          }
+        />
 
         <Container maxW="7xl" w="full">
           <SimpleGrid columns={{ base: 1, lg: 2, xl: 3 }} gap={16}>
