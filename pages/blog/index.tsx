@@ -12,14 +12,14 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
   return (
     <>
       <NextSeo
-        title="Blog"
-        description="Geared towards developers, you can learn about our development process and how to implement some of what we do into your own projects."
+        title="Web development blog"
+        description="A web development blog featuring tutorials on React and Next.js, using TypeScript, Sanity, headless e-commerce, and more."
         canonical="https://www.keplux.com/blog"
       />
       <Stack alignItems="center" spacing={16}>
         <BasicHeader
-          title="Web Development Blog"
-          subtitle="Check out our development process and learn about the tools and technologies we use, such as Next.js, TypeScript, Sanity, and Swell."
+          title="Web Development Tutorials"
+          subtitle="Learn how to use React and Next.js with TypeScript-based tutorials."
         />
         <Container as={Stack} spacing={16} maxW="6xl" my={16}>
           <Stack spacing={4}>
