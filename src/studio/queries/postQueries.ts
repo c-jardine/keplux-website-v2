@@ -27,3 +27,7 @@ export const postBySlugQuery = groq`
     }
   }
 `;
+
+export const postsByTagQuery = groq`
+  *[_type == 'post' && $label in tags[]->label] | order(publishedOn desc) [0...8]
+`;

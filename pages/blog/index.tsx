@@ -1,7 +1,7 @@
 import { Container, Heading, Stack, StackDivider } from '@chakra-ui/react';
 import { GetStaticProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import { BlogCard } from '../../src/components/blog';
+import { BlogCard, BlogTabs } from '../../src/components/blog';
 import { BasicHeader } from '../../src/components/core';
 import { client } from '../../src/studio/client';
 import { allPostsQuery } from '../../src/studio/queries';
@@ -21,6 +21,7 @@ const BlogHome: NextPage = (props: { posts: PostProps[] }) => {
           title="Web Development Tutorials"
           subtitle="Learn how to use React and Next.js with TypeScript-based tutorials."
         />
+        <BlogTabs />
         <Container as={Stack} spacing={16} maxW="6xl" my={16}>
           <Stack spacing={4}>
             <Heading as="h2" fontWeight="black" color="whiteAlpha.800">
