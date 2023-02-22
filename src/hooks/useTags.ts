@@ -8,8 +8,9 @@ const useTags = () => {
 
   React.useEffect(() => {
     void (async () => {
-      const t: TagProps[] = await client.fetch(getTagsQuery);
-      setTags(t);
+      const allTags: TagProps[] = await client.fetch(getTagsQuery);
+      setTags(allTags);
+      console.log(allTags);
     })();
   }, []);
 
