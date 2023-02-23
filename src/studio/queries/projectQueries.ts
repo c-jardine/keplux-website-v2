@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 
 export const allProjectsQuery = groq`
-  *[_type == "project"] {...}
+  *[_type == "project"] | order(_createdAt desc) {...}
 `;
 
 export const projectBySlugQuery = groq`
