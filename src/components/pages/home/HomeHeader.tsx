@@ -62,7 +62,7 @@ const HomeHeader = () => {
                   textAlign="center"
                   color="whiteAlpha.800"
                 >
-                  Toledo Web Design and Development
+                  Top Web Design and Web Development Services in Toledo, OH
                 </Heading>
                 <Heading
                   as="h2"
@@ -73,9 +73,11 @@ const HomeHeader = () => {
                   fontWeight="medium"
                   color="whiteAlpha.800"
                 >
-                  At Keplux Development, we build websites with modern
-                  technologies and strategies that give your website lightning
-                  fast performance and SEO that helps boost conversions.
+                  Keplux Development offers expert web design and web
+                  development services in Toledo, OH. Our modern technologies
+                  and cutting-edge strategies deliver exceptional websites that
+                  drive online success. Contact us for custom web solutions
+                  tailored to your business needs.
                 </Heading>
               </Stack>
               <Stack
@@ -132,26 +134,22 @@ const HomeHeader = () => {
           <BasicCard
             icon={MdWeb}
             title="Website design and development"
-            body="Our custom websites are designed to look great on any device
-                    and developed to rank high on search engines."
+            body="Visually stunning websites built with modern technologies and creative design to enhance online presence and engage audiences."
           />
           <BasicCard
             icon={MdStore}
             title="Web apps and ecommerce"
-            body="We build custom web apps, allowing you to manage your business
-                  how you want, including ecommerce and content management."
+            body="Customized web apps and e-commerce solutions that streamline online operations, drive sales, and deliver exceptional user experiences."
           />
           <BasicCard
             icon={MdSearch}
             title="Search engine optimization"
-            body="In-depth, on-page SEO helps your website rank high on search
-                  engines. Included in every plan or package!"
+            body="Boost online visibility & drive targeted traffic with strategic strategies for increased rankings & business growth."
           />
           <BasicCard
             icon={MdSettings}
             title="Website hosting and maintenance"
-            body="If you need your website hosted, managed, and kept up to date,
-                  add this service to your plan and we'll handle it!"
+            body="Reliable hosting and maintenance for optimal website performance & security. Focus on your business, we'll handle the technicalities."
           />
         </SimpleGrid>
       </Container>

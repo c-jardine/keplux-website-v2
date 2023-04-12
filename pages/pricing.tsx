@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Stack } from '@chakra-ui/react';
+import { Container, Heading, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import { FaBoxOpen } from '@react-icons/all-files/fa/FaBoxOpen';
 import { FaBriefcase } from '@react-icons/all-files/fa/FaBriefcase';
 import { NextPage } from 'next';
@@ -11,8 +11,8 @@ const PricingPage: NextPage = () => {
   return (
     <>
       <NextSeo
-        title="Web design and development prices"
-        description="Monthly plans to get your business online quickly. Custom websites available for when you need something more."
+        title="Website Design & Development Pricing"
+        description="Discover our competitive pricing for web design, web development, web apps, e-commerce, SEO, and website hosting. Contact us for a personalized quote!"
         canonical="https://www.keplux.com/pricing"
       />
       <Stack alignItems="center" spacing={16}>
@@ -37,12 +37,13 @@ const PricingPage: NextPage = () => {
                 fontWeight="medium"
                 color="whiteAlpha.600"
               >
-                Choose a pre-designed package or build your own from scratch.
-                Need something different?{' '}
+                Discover our competitive pricing options for our web design, web
+                development, web apps, e-commerce, SEO, and website hosting &
+                maintenance services.{' '}
                 <KLink href="/contact" color="brand.600">
                   Contact us
                 </KLink>{' '}
-                and we&apos;ll help you out.
+                for a personalized quote tailored to your business needs.
               </Heading>
             </Stack>
           </Stack>
@@ -57,6 +58,29 @@ const PricingPage: NextPage = () => {
               color={['brand.600', 'brand.400']}
             />
           </Stack>
+          <Stack alignItems="center">
+            <Heading
+              as="h4"
+              maxW="3xl"
+              w="full"
+              textAlign="center"
+              color="whiteAlpha.800"
+            >
+              These packages are designed with businesses in mind, but they work
+              well for any project.
+            </Heading>
+            <Text
+              maxW="xl"
+              w="full"
+              fontSize="xl"
+              textAlign="center"
+              color="whiteAlpha.600"
+            >
+              Our packages include web design, web development, web apps,
+              e-commerce, SEO, and website hosting & maintenance services,
+              tailored to suit your needs.
+            </Text>
+          </Stack>
         </Container>
 
         <PricingTable />
@@ -69,6 +93,28 @@ const PricingPage: NextPage = () => {
               icon={FaBoxOpen}
               color={['brand.600', 'brand.400']}
             />
+          </Stack>
+          <Stack alignItems="center">
+            <Heading
+              as="h4"
+              maxW="3xl"
+              w="full"
+              textAlign="center"
+              color="whiteAlpha.800"
+            >
+              Need something not included in a package?
+            </Heading>
+            <Text
+              maxW="xl"
+              w="full"
+              fontSize="xl"
+              textAlign="center"
+              color="whiteAlpha.600"
+            >
+              Enhance your online presence with our optional add-on services.
+              Choose from web design, web development, e-commerce, SEO, and more
+              to further customize your package.
+            </Text>
           </Stack>
         </Container>
 

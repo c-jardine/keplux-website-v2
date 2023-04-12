@@ -19,7 +19,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/components/pageContents/referralProgram/ReferralPayoutChart",
     "next-sitemap.config.js",
     "src/lib/googleAnalytics/gtag.js"
   ],

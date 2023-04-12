@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       <NextSeo
-        title="Web development in Toledo, OH"
-        description="Websites built with modern technologies, resulting in lightning performance, amazing SEO, and more conversions."
+        title="Web Design & Web Development in Toledo, OH"
+        description="Seeking web design and web development in Toledo, OH? Keplux Development delivers modern web solutions for online success. Contact us for custom websites!"
         canonical="https://www.keplux.com"
       />
       <Stack alignItems="center" spacing={16}>

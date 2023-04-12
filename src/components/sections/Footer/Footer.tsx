@@ -108,7 +108,7 @@ const Footer = () => {
                   <KLink href="mailto:contact@keplux.com">
                     contact@keplux.com
                   </KLink>
-                  <HStack>
+                  <HStack justifyContent={{ base: 'center', lg: 'flex-start' }}>
                     <KLink
                       href="https://www.facebook.com/kepluxdev/"
                       target="_blank"
@@ -166,7 +166,6 @@ const Footer = () => {
                   <KLink href="/our-work">Our Work</KLink>
                   <KLink href="/blog">Blog</KLink>
                   <KLink href="/contact">Contact</KLink>
-                  <KLink href="/referral-program">Referral Program</KLink>
                   <KLink href="/refund-policy">Refund Policy</KLink>
                 </Stack>
               </Stack>
@@ -184,10 +183,11 @@ const Footer = () => {
                 </Box>
                 <Stack spacing={1} fontSize="sm" letterSpacing="wide">
                   <Text>
-                    Keplux Development is a web design and development agency in
-                    Toledo, OH. We provide custom web design and development
-                    services, ecommerce websites, search engine optimization,
-                    website hosting and maintenance, and more.
+                    We specialize in crafting cutting-edge websites and web apps
+                    that captivate audiences and drive results. From sleek
+                    designs to seamless functionality, we deliver custom digital
+                    solutions that elevate your online presence and empower your
+                    business to thrive in the digital world.
                   </Text>
                 </Stack>
               </Stack>

@@ -24,8 +24,8 @@ const OurWorkPage: NextPage = (props: { projects: ProjectProps[] }) => {
   return (
     <>
       <NextSeo
-        title="Our websites and web apps"
-        description="View websites and web apps we've built, including e-commerce and content management solutions."
+        title="Website and Web App Portfolio"
+        description="View our portfolio of stunning web design, web development, web apps, e-commerce, and SEO projects. See how our work can elevate your online presence. Explore now!"
         canonical="https://www.keplux.com/our-work"
       />
       <Stack alignItems="center" spacing={16}>
