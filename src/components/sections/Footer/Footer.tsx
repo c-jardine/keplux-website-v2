@@ -11,78 +11,12 @@ import {
 import { FaFacebook } from '@react-icons/all-files/fa/FaFacebook';
 import { FaLinkedinIn } from '@react-icons/all-files/fa/FaLinkedinIn';
 import Image from 'next/image';
-import designRush from '../../../../public/featured/design-rush-logo.png';
-import upcity from '../../../../public/featured/upcity-logo.png';
 import logo from '../../../../public/keplux-logo-full-light.png';
 import { KLink } from '../../core';
 
 const Footer = () => {
   return (
     <>
-      <Box>
-        <Text
-          textTransform="uppercase"
-          fontSize="sm"
-          fontWeight="semibold"
-          color="whiteAlpha.600"
-          textAlign="center"
-        >
-          Featured on
-        </Text>
-        <Stack
-          mt={8}
-          mb={20}
-          gap={8}
-          direction={{ base: 'column', md: 'row' }}
-          justifyContent="center"
-          alignItems="center"
-        >
-          <Box
-            as="a"
-            href="https://upcity.com/profiles/keplux-development"
-            target="blank"
-            position="relative"
-            h={16}
-            maxW={64}
-            w="full"
-            filter="grayscale(75%)"
-            transition="200ms ease-in-out"
-            cursor="pointer"
-            _hover={{
-              filter: 'grayscale(0%)',
-            }}
-          >
-            <Image
-              src={upcity}
-              alt="Upcity logo"
-              fill
-              style={{ objectFit: 'contain' }}
-            />
-          </Box>
-          <Box
-            as="a"
-            href="https://www.designrush.com"
-            target="blank"
-            position="relative"
-            h={16}
-            maxW={64}
-            w="full"
-            filter="grayscale(75%)"
-            transition="200ms ease-in-out"
-            cursor="pointer"
-            _hover={{
-              filter: 'grayscale(0%)',
-            }}
-          >
-            <Image
-              src={designRush}
-              alt="Design Rush logo"
-              fill
-              style={{ objectFit: 'contain' }}
-            />
-          </Box>
-        </Stack>
-      </Box>
       <Box
         bg="whiteAlpha.50"
         color="whiteAlpha.600"
